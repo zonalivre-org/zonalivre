@@ -16,7 +16,7 @@
 
 <b>Desenvolvedores:</b> Éric Catarina Parreiras, nome, nome, nome;
 
-- Características Gerais: Pixelado, Runner, 2D;
+- Características Gerais: gênero de Time-Management;
 
 - Plataforma: Mobile e Desktop;
 
