@@ -43,8 +43,7 @@ Em Enem Runner você poderá escolher três personagens: Iraci, Enzo e Valentina
 
 ## Mecânica Do Jogo
 <p align="justify">
-Enem Runner será feito sob um importante conceito, o de Blind Runner: game design de uma corrida infinita acessível à
-cultura com deficiência visual. A mecânica do jogo consistirá na capacidade de Iraci, um dos personagens apresentados, em se orientar através dos sons. Quando um obstáculo como por exemplo: uma árvore ou um carro vier em sua direção, ele será capaz de ouvir o objeto se aproximando, e consequentemente se desviar. Tais obstáculos virão de forma aleatória e gradativa, dessa forma, o jogo ficará mais rápido e mais difícil ao passar do tempo. </p>
+cuidar do pet.
 
 <p align="center">
   <br>
