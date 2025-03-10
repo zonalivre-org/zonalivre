@@ -14,11 +14,11 @@
 
 <br>
 
-<b>Desenvolvedores:</b> Éric Catarina Parreiras, nome, nome, nome;
+<b>Desenvolvedores:</b> Éric Catarina Parreiras, Gabriel Logan Dias Porto, nome, nome;
 
 - Características Gerais: gênero de Time-Management;
 
-- Plataforma: Mobile e Desktop;
+- Plataforma: Mobile e Web;
 
 - Prerrogativa: Retratar os problemas de locomoção de pessoas com deficiência no meio urbano atual;
 
