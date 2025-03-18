@@ -809,8 +809,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 543465967}
   m_HandleRect: {fileID: 543465966}
   m_Direction: 2
-  m_Value: 1.0000008
-  m_Size: 0.60888577
+  m_Value: 1.0000002
+  m_Size: 0.50729513
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1439,7 +1439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 420.9874, y: -168.4876}
+  m_AnchoredPosition: {x: 420.98737, y: -168.48758}
   m_SizeDelta: {x: 300, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382369678
@@ -2370,7 +2370,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022961140}
   m_HandleRect: {fileID: 1022961139}
   m_Direction: 2
-  m_Value: 0.99999774
+  m_Value: 1
   m_Size: 0.98293
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2543,7 +2543,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 816135093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.39111418}
+  m_AnchorMin: {x: 0, y: 0.49270487}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -3050,8 +3050,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.081, y: -246.30093}
-  m_SizeDelta: {x: 1034.9, y: 1259.481}
+  m_AnchoredPosition: {x: -10.081, y: -372.41214}
+  m_SizeDelta: {x: 1034.9, y: 1511.704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &713758538
 MonoBehaviour:
@@ -3103,14 +3103,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Zona Livre - Tutorial\n\nObjetivo\n\nGerencie um abrigo e proteja os c\xE3es
-    da Leishmaniose! Cuide deles, impe\xE7a a propaga\xE7\xE3o e corra contra o tempo.\n\nComo
-    Jogar\n\nCuide dos C\xE3es: Alimente, higienize e coloque coleiras repelentes.\nControle
-    a Doen\xE7a: Identifique sintomas, isole c\xE3es doentes e administre tratamentos.\nGerencie
-    o Tempo: Priorize tarefas e evite atrasos!\n\nDicas\n\nCuide dos mais vulner\xE1veis
-    primeiro. Use os recursos com estrat\xE9gia. Reaja r\xE1pido a surtos!No multiplayer,
-    divida bem as tarefas.\n\nProteja os c\xE3es e ven\xE7a a corrida contra a Leishmaniose!
-    \n"
+  m_text: "Zona Livre - Tutorial\n\nObjetivo\n\nCuide de c\xE3es e proteja o meio
+    ambiente para proteger sua comunidade contra a Leishmaniose.\n\nComo Jogar\n\nCuide
+    dos C\xE3es: Cuide da sa\xFAde do c\xE3o alimentando, dando \xE1gua, brincando,
+    e higienizando o cen\xE1rio para manter sua imunidade em dia! \nLembre-se de
+    colocar coleira repelente e levar o c\xE3o ao veterin\xE1rio.\nControle a Doen\xE7a:
+    Identifique \xE1reas de propaga\xE7\xE3o do mosquito palha e elimine-as! Fique
+    de olho nos c\xE3es no caso de sintomas, isole c\xE3es doentes e administre tratamentos.\nGerencie
+    o Tempo: Priorize tarefas e evite atrasos!\n\nDicas:\n\nCuide dos mais vulner\xE1veis
+    primeiro. Use os recursos com estrat\xE9gia. Reaja r\xE1pido a surtos!\n\nProteja
+    os c\xE3es e ven\xE7a a corrida contra a Leishmaniose! \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3364,7 +3366,7 @@ PrefabInstance:
     - target: {fileID: 56361776955277551, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -549.1532
+      value: -548.8837
       objectReference: {fileID: 0}
     - target: {fileID: 316837127799512820, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
@@ -3414,7 +3416,7 @@ PrefabInstance:
     - target: {fileID: 4548232383462628197, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -79.6855
+      value: -79.68552
       objectReference: {fileID: 0}
     - target: {fileID: 4722407145887675375, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
@@ -4523,7 +4525,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 932849561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.017069949}
+  m_AnchorMin: {x: 0, y: 0.017069995}
   m_AnchorMax: {x: 1, y: 0.99999994}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -4709,7 +4711,7 @@ PrefabInstance:
     - target: {fileID: 56361776955277551, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -549.1532
+      value: -548.65924
       objectReference: {fileID: 0}
     - target: {fileID: 316837127799512820, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
@@ -4870,6 +4872,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231905530601089897, guid: 5b04c8437dd3832479691d803145c3d5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 23.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231905530601089897, guid: 5b04c8437dd3832479691d803145c3d5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.200012
       objectReference: {fileID: 0}
     - target: {fileID: 7755355305849929267, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
@@ -5725,7 +5737,7 @@ PrefabInstance:
     - target: {fileID: 56361776955277551, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -549.1532
+      value: -548.71686
       objectReference: {fileID: 0}
     - target: {fileID: 316837127799512820, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
@@ -6927,7 +6939,7 @@ PrefabInstance:
     - target: {fileID: 56361776955277551, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -549.1532
+      value: -548.8837
       objectReference: {fileID: 0}
     - target: {fileID: 316837127799512820, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
@@ -7900,7 +7912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 420.9874, y: -305.46277}
+  m_AnchoredPosition: {x: 420.98737, y: -305.46274}
   m_SizeDelta: {x: 300, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1844982003
@@ -7960,6 +7972,30 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1613982197}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1629786796}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1448834707}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -8389,7 +8425,7 @@ PrefabInstance:
     - target: {fileID: 56361776955277551, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -549.1532
+      value: -548.8837
       objectReference: {fileID: 0}
     - target: {fileID: 316837127799512820, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
@@ -8434,7 +8470,7 @@ PrefabInstance:
     - target: {fileID: 4548232383462628197, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -79.6855
+      value: -79.68552
       objectReference: {fileID: 0}
     - target: {fileID: 4722407145887675375, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
@@ -9118,7 +9154,7 @@ PrefabInstance:
     - target: {fileID: 4548232383462628197, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -79.6855
+      value: -79.68552
       objectReference: {fileID: 0}
     - target: {fileID: 4722407145887675375, guid: 5b04c8437dd3832479691d803145c3d5,
         type: 3}
