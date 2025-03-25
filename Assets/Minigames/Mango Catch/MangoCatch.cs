@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class MangoCatch : MonoBehaviour
 {
@@ -10,17 +8,19 @@ public class MangoCatch : MonoBehaviour
     [SerializeField] int goal;
     [SerializeField] int current;
     [SerializeField] float mangoFallSpeed;
-    [SerializeField] float cooldownBetweenMangos;
+    [SerializeField] float coolDownBetweenMangos;
 
     [Header("Components")]
     [SerializeField] TMP_Text scoreText;
-    [SerializeField] RectTransform spawnArea;
     [SerializeField] GameObject mangoPrefab;
     [SerializeField] GameObject startPanel, endPanel;
 
     [Header("Variables")]
+    [SerializeField] float spawnMinX;
+    [SerializeField] float spawnMaxX;
+    [SerializeField] float spawnY;
     private float actualTime, nextTime;
-    [SerializeField] private bool canGenerate;
+    [HideInInspector] public bool canGenerate;
 
     void Start()
     {
@@ -38,7 +38,7 @@ public class MangoCatch : MonoBehaviour
             else 
             {
                 spawnMango();
-                nextTime = Time.time + cooldownBetweenMangos;
+                nextTime = Time.time + coolDownBetweenMangos;
             }
         }
 
@@ -52,26 +52,18 @@ public class MangoCatch : MonoBehaviour
 
     private void spawnMango()
     {
-        //Get width and height from the SpawnArea panel
-        float width = spawnArea.rect.width;
-        float height = spawnArea.rect.height;
+        //Set random coordinates within the spawn area
+        float randomX = Random.Range(spawnMinX, spawnMaxX);
 
-        //Set random coordinates within the panel area
-        float randomX = Random.Range(-width / 2, width / 2);
-        float randomY = Random.Range(-height / 2, height / 2);
-
-        //Instantiate the mango inside the spawn area
-        Vector3 randomPosition = new Vector3(randomX, randomY, 0);
-        GameObject mango = Instantiate(mangoPrefab, spawnArea);
+        //Instantiate a mango inside the spawn area
+        Vector3 randomPosition = new Vector3(randomX, spawnY, mangoPrefab.transform.position.z);
+        GameObject mango = Instantiate(mangoPrefab, randomPosition, mangoPrefab.transform.rotation);
 
         // Reference the manager (this class here :D) to the mango generated
         mango.GetComponent<Mango>().mangoCatch = this;
 
         // Set the mango fall speed
-        mango.GetComponent<Mango>().fallSpeed = this.mangoFallSpeed;
-
-        //Set the mango position to the random position
-        mango.GetComponent<RectTransform>().anchoredPosition = randomPosition;
+        mango.GetComponent<Mango>().fallSpeed = mangoFallSpeed;
 
     }
 
@@ -83,8 +75,8 @@ public class MangoCatch : MonoBehaviour
 
     private void updateScore()
     {
-        string formatedText = $"<sprite=12> {current} / {goal}";
-        scoreText.text = formatedText;
+        string formattedText = $"<sprite=12> {current} / {goal}";
+        scoreText.text = formattedText;
 
         if (current == goal)
         {
