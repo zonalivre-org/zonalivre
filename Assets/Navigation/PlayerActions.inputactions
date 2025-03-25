@@ -1,0 +1,34 @@
+{
+    "name": "PlayerActions",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "57699963-9bf4-4da7-b630-2e98aaea9a39",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "7f552923-d250-40dd-a2b3-e1e9bf3f0072",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ee310a51-4a24-40b1-be3e-9bf8a1c3ba0d",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
