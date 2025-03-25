@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour
         {
             agent.SetDestination(hit.point);
             animator.SetTrigger(WALK);
-            Instantiate(clickEffect, hit.point + Vector3.up*0.1f, clickEffect.transform.rotation);
+            ParticleSystem clickEffectInstance = (Instantiate(clickEffect, hit.point + Vector3.up*0.1f, clickEffect.transform.rotation));
+            Destroy(clickEffectInstance.gameObject, 1f);
             
         }
     }
@@ -57,15 +58,29 @@ public class PlayerController : MonoBehaviour
     {
         input.Disable();
     }
-
-    void Start()
+    
+    void Update()
     {
         
     }
 
-
-    void Update()
+    void FaceTarget()
     {
+        Vector3 direction = (agent.destination - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, lookRotationSpeed * Time.deltaTime);
+    }
+
+    void SetAnimations()
+    {
+        if (agent.velocity != Vector3.zero)
+        {
+            animator.SetTrigger(WALK);
+        }
+        else
+        {
+            animator.SetTrigger(IDLE);
+        }
         
     }
 }
