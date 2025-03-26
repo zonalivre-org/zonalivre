@@ -6,14 +6,9 @@ public class MangoCatch : MonoBehaviour
 {
     [Header("Rules Section")]
     [SerializeField] int goal;
-    [SerializeField] int current;
+    int current;
     [SerializeField] float mangoFallSpeed;
     [SerializeField] float coolDownBetweenMangos;
-
-    [Header("Components")]
-    [SerializeField] TMP_Text scoreText;
-    [SerializeField] GameObject mangoPrefab;
-    [SerializeField] GameObject startPanel, endPanel;
 
     [Header("Variables")]
     [SerializeField] float spawnMinX;
@@ -22,9 +17,15 @@ public class MangoCatch : MonoBehaviour
     private float actualTime, nextTime;
     [HideInInspector] public bool canGenerate;
 
+    [Header("Components")]
+    [SerializeField] TMP_Text scoreText;
+    [SerializeField] GameObject mangoPrefab;
+    [SerializeField] GameObject startPanel, endPanel;
+    [SerializeField] Transform zPosition;
+
     void Start()
     {
-        updateScore();
+        UpdateScore();
     }
 
     void Update()
@@ -37,11 +38,10 @@ public class MangoCatch : MonoBehaviour
             }
             else 
             {
-                spawnMango();
+                SpawnMango();
                 nextTime = Time.time + coolDownBetweenMangos;
             }
         }
-
     }
 
     public void StartMangoGame()
@@ -50,30 +50,32 @@ public class MangoCatch : MonoBehaviour
         startPanel.SetActive(false);
     }
 
-    private void spawnMango()
-    {
-        //Set random coordinates within the spawn area
-        float randomX = Random.Range(spawnMinX, spawnMaxX);
+private void SpawnMango()
+{
+    // Set random coordinates within the spawn area
+    float randomX = Random.Range(spawnMinX, spawnMaxX);
 
-        //Instantiate a mango inside the spawn area
-        Vector3 randomPosition = new Vector3(randomX, spawnY, mangoPrefab.transform.position.z);
-        GameObject mango = Instantiate(mangoPrefab, randomPosition, mangoPrefab.transform.rotation);
+    // Instantiate a mango inside the spawn area
+    Vector3 randomPosition = new Vector3(randomX, spawnY, zPosition.position.z);
+    GameObject mango = Instantiate(mangoPrefab, randomPosition, mangoPrefab.transform.rotation);
 
-        // Reference the manager (this class here :D) to the mango generated
-        mango.GetComponent<Mango>().mangoCatch = this;
+    // Set the mango as a child of the Main Object
+    mango.transform.SetParent(this.transform, false);
 
-        // Set the mango fall speed
-        mango.GetComponent<Mango>().fallSpeed = mangoFallSpeed;
+    // Reference the manager (this class here :D) to the mango generated
+    mango.GetComponent<Mango>().mangoCatch = this;
 
-    }
+    // Set the mango fall speed
+    mango.GetComponent<Mango>().fallSpeed = mangoFallSpeed;
+}
 
-    public void addPoint(int amount)
+    public void AddPoint(int amount)
     {
         current += amount;
-        updateScore();
+        UpdateScore();
     }
 
-    private void updateScore()
+    private void UpdateScore()
     {
         string formattedText = $"<sprite=12> {current} / {goal}";
         scoreText.text = formattedText;
