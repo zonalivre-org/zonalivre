@@ -1,39 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class MangoPlayerControl : MonoBehaviour
+public class MangoPlayerControl : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler
+
 {
-    [SerializeField] Camera miniGameCamera;
-    [SerializeField] GameObject outline;
-    [SerializeField] MangoCatch mangoCatch;
-
-    void OnMouseDown()
-    {
-        if (mangoCatch.canGenerate)
-        {
-            outline.SetActive(true);
-        }
+    private Outline playerOutline;
+    private RectTransform playerRectTransform;
+    [SerializeField] RectTransform moveArea;
+    private void Start() {
+        playerOutline = GetComponent<Outline>();
+        playerRectTransform = GetComponent<RectTransform>();
     }
 
-    void OnMouseUp()
+    public void OnPointerDown(PointerEventData eventData)
     {
-        if (mangoCatch.canGenerate)
-        {
-            outline.SetActive(false);
-        }
+        playerOutline.enabled = true;
     }
 
-    void OnMouseDrag()
+    public void OnDrag(PointerEventData eventData)
     {
-        if (mangoCatch.canGenerate)
-        {
-            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
+        // Calculate the new position while dragging only in the x direction
+        Vector2 newPosition = playerRectTransform.anchoredPosition + new Vector2(eventData.delta.x, 0);
 
-            Vector3 playerPosition = miniGameCamera.ScreenToWorldPoint(mousePosition);
+        // Get the bottom left and right corner of the MoveArea, then sum with the MoveArea position according to the Canvas 
+        // In this way, the MoveArea can be at any position of the canvas without breaking the allowed move border
+        Vector2 minBounds = moveArea.rect.min + (Vector2)moveArea.anchoredPosition; 
+        Vector2 maxBounds = moveArea.rect.max + (Vector2)moveArea.anchoredPosition;
 
-            playerPosition.z = transform.position.z;
-            playerPosition.y = transform.position.y;
+        // Get player size (/2 because the pivot is in the center)
+        Vector2 playerSize = playerRectTransform.rect.size / 2;
 
-            transform.position = playerPosition;
-        }
+        // Keep the player in the area
+        newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x + playerSize.x, maxBounds.x - playerSize.x);
+
+        // Update his position, still keeping the original y value
+        playerRectTransform.anchoredPosition = new Vector2(newPosition.x, playerRectTransform.anchoredPosition.y);
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        playerOutline.enabled = false;
     }
 }

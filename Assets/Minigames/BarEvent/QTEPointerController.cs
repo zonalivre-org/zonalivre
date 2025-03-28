@@ -106,8 +106,7 @@ public class QTEPointerController : MonoBehaviour
 
             if (current >= goal)
             {
-                canRun = false;
-                endPanel.SetActive(true);
+
             }
 
         }
@@ -141,4 +140,9 @@ public class QTEPointerController : MonoBehaviour
         }
     }
 
+    public void EndMiniGame()
+    {
+        canRun = false;
+        endPanel.SetActive(true);
+    }
 }

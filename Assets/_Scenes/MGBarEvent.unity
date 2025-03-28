@@ -1372,9 +1372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6c32aff47887d418e70cf1a321f237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: 3
+  goal: 5
   moveSpeed: 500
-  safeZoneSizePercentage: 0.149
+  safeZoneSizePercentage: 0.01
   panel: {fileID: 1883860688}
   safeZone: {fileID: 350433779}
   pointer: {fileID: 1743713063}

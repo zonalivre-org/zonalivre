@@ -292,9 +292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a8a01a6bf44d447b33e41b39077bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillSpeed: 0.179
+  fillSpeed: 0.265
   fillMethod: 4
-  mode: 0
+  mode: 1
   progress: 0
   fill: {fileID: 1368052946}
   icon: {fileID: 1782284970}
@@ -384,10 +384,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -862,5 +862,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 851980723}
   - {fileID: 340997974}
-  - {fileID: 691244847}
   - {fileID: 2143334019}
+  - {fileID: 691244847}
