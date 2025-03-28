@@ -24,7 +24,7 @@ public class MangoCatch : MonoBehaviour
 
     void Start()
     {
-        updateScore();
+        UpdateScore();
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class MangoCatch : MonoBehaviour
             }
             else 
             {
-                spawnMango();
+                SpawnMango();
                 nextTime = Time.time + cooldownBetweenMangos;
             }
         }
@@ -50,7 +50,7 @@ public class MangoCatch : MonoBehaviour
         startPanel.SetActive(false);
     }
 
-    private void spawnMango()
+    private void SpawnMango()
     {
         //Get width and height from the SpawnArea panel
         float width = spawnArea.rect.width;
@@ -75,21 +75,26 @@ public class MangoCatch : MonoBehaviour
 
     }
 
-    public void addPoint(int amount)
+    public void AddPoint(int amount)
     {
         current += amount;
-        updateScore();
+        UpdateScore();
     }
 
-    private void updateScore()
+    private void UpdateScore()
     {
-        string formatedText = $"<sprite=12> {current} / {goal}";
-        scoreText.text = formatedText;
+        string formattedText = $"<sprite=12> {current} / {goal}";
+        scoreText.text = formattedText;
 
         if (current == goal)
         {
-            canGenerate = false;
-            endPanel.SetActive(true);
+
         }
+    }
+
+    public void EndMiniGame()
+    {
+        canGenerate = false;
+        endPanel.SetActive(true);
     }
 }

@@ -22,7 +22,7 @@ public class Mango : MonoBehaviour
         if (other.tag == "MangoPlayer") 
         {
             Debug.Log("Aaaaaa");
-            mangoCatch.addPoint(1);
+            mangoCatch.AddPoint(1);
             Destroy(gameObject);
         }
 
