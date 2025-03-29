@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
         {
             agent.SetDestination(hit.point);
-            animator.SetTrigger(WALK);
+            // animator.SetTrigger(WALK); // This will be needed when we have a walk animation
             ParticleSystem clickEffectInstance = (Instantiate(clickEffect, hit.point + Vector3.up*0.1f, clickEffect.transform.rotation));
             Destroy(clickEffectInstance.gameObject, 1f);
             

@@ -11,7 +11,7 @@ public class ObjectivePlayerCheck : MonoBehaviour
     
     [Header("If object opens a minigame")]
     [SerializeField] private bool hasMinigame = false;
-    [SerializeField] private Canvas minigame;
+    [SerializeField] private GameObject minigame;
 
     [Header("If object requires an item")] // not implemented yet!
     [SerializeField] private bool needsItem = false;
@@ -34,14 +34,13 @@ public class ObjectivePlayerCheck : MonoBehaviour
         ToggleState(false);
         notify = inGameProgress.GetComponent<InGameProgress>();
     }
-    private void Update()
+    private void LateUpdate()
     {
         if(enable && enabletimer)
         {
             timer -= Time.deltaTime;
             if(timer <= 0f)
             {
-                Debug.Log("Acabout o delay!");
                 if(!needsItem) // verificar se o jogador tem ou não o item se essa boolean for verdadeira caso contrario o lugar não pode ser interagido
                 {
                     if(hasMinigame) ToggleUI(true);
@@ -72,8 +71,7 @@ public class ObjectivePlayerCheck : MonoBehaviour
     }
     public void ToggleUI(bool _enable)
     {
-        if(!isTaskDone) minigame.enabled = _enable;
-        CompleteTask();
+        if(!isTaskDone && !minigame.activeSelf) minigame.SetActive(true);
     }
     public void ToggleState(bool _enable)
     {

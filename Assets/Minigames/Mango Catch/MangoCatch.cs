@@ -16,14 +16,32 @@ public class MangoCatch : MonoBehaviour
     [SerializeField] TMP_Text scoreText;
     [SerializeField] RectTransform spawnArea;
     [SerializeField] GameObject mangoPrefab;
+    [SerializeField] GameObject player;
     [SerializeField] GameObject startPanel, endPanel;
+    [SerializeField] ObjectivePlayerCheck objectivePlayerCheck;
+    [SerializeField] GameObject miniGameParent;
 
     [Header("Variables")]
     private float actualTime, nextTime;
     [SerializeField] private bool canGenerate;
+    [SerializeField] private Vector2 playerInitialPosition;
+    //[SerializeField] private GameState gameState; 
+
+    //enum GameState
+    //{
+    //    Start,
+    //    Playing,
+    //    End
+    //}
 
     void Start()
     {
+        UpdateScore();
+    }
+
+    private void OnEnable()
+    {
+        ResetMiniGame();
         UpdateScore();
     }
 
@@ -41,7 +59,13 @@ public class MangoCatch : MonoBehaviour
                 nextTime = Time.time + cooldownBetweenMangos;
             }
         }
+    }
 
+    public void ResetMiniGame()
+    {
+        current = 0;
+        startPanel.SetActive(true);
+        player.GetComponent<RectTransform>().anchoredPosition = playerInitialPosition;
     }
 
     public void StartMangoGame()
@@ -86,15 +110,16 @@ public class MangoCatch : MonoBehaviour
         string formattedText = $"<sprite=12> {current} / {goal}";
         scoreText.text = formattedText;
 
-        if (current == goal)
+        if (current >= goal)
         {
-
+            EndMiniGame();
         }
     }
 
     public void EndMiniGame()
     {
         canGenerate = false;
-        endPanel.SetActive(true);
+        objectivePlayerCheck.CompleteTask();
+        miniGameParent.SetActive(false);
     }
 }

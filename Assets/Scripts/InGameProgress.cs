@@ -12,27 +12,29 @@ public class InGameProgress : MonoBehaviour
     private float currentTime;
     private int scoreProgress = 0;
     private bool win = false;
+    private bool timerStopping = false;
     private void Awake()
     {
         currentTime = levelTime;
         clockSlider.maxValue = levelTime;
         clockNumber.text = levelTime.ToString();
     }
-    private void Update()
+    private void LateUpdate()
     {
-        currentTime -= Time.deltaTime;
-        clockSlider.value = currentTime;
-        clockNumber.text = currentTime.ToString();
-        if(currentTime <= 0)
+        if (timerStopping == false)
         {
-            if(win)
-            {
-                Debug.Log("Venceu! Parabens!");
-            }
-            else
-            {
-                Debug.Log("Oh não! Perdeu!");
-            }
+            currentTime -= Time.deltaTime;
+            clockSlider.value = currentTime;
+            clockNumber.text = Mathf.Round(currentTime).ToString();
+        }
+
+        if (win)
+        {
+            Debug.Log("Venceu! Parabens!");
+        }
+        else if (currentTime <= 0 && win == false)
+        {           
+            Debug.Log("Oh não! Perdeu!");           
         }
     }
     public void AddScore(int score)
