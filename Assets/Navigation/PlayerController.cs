@@ -73,14 +73,14 @@ public class PlayerController : MonoBehaviour
 
     void SetAnimations()
     {
-        if (agent.velocity != Vector3.zero)
-        {
-            animator.SetTrigger(WALK);
-        }
-        else
-        {
-            animator.SetTrigger(IDLE);
-        }
+        // if (agent.velocity != Vector3.zero)
+        // {
+        //     animator.SetTrigger(WALK);
+        // }
+        // else
+        // {
+        //     animator.SetTrigger(IDLE);
+        // }
         
     }
 }
