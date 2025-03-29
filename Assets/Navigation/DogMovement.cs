@@ -8,7 +8,6 @@ public class DogMovement : MonoBehaviour
     private NavMeshAgent agent;
     public List<Transform> destinationTransform;
     private Transform currentDestination;
-    private bool isMoving = false;
     [SerializeField]
     private float timeBetweenMove = 2f;
     
