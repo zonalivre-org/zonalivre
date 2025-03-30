@@ -26,7 +26,6 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         fill.fillAmount = 0;
 
         if (mode == 0) {icon.fillAmount = 0;}
-        
     }
 
     void LateUpdate()
