@@ -21,7 +21,6 @@ public class Mango : MonoBehaviour
     {
         if (other.tag == "MangoPlayer") 
         {
-            Debug.Log("Aaaaaa");
             mangoCatch.AddPoint(1);
             Destroy(gameObject);
         }

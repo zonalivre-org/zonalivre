@@ -1,73 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+using UnityEditor;
 
-public class MiniGameSelector : Editor
+[CustomEditor(typeof(ObjectivePlayerCheck))]
+public class MiniGameSelector : Editor 
 {
-    //// Start is called before the first frame update
-    //void Start()
-    //{
+    SerializedProperty miniGameType;
+    
+    void OnEnable()
+    {
+        miniGameType = serializedObject.FindProperty("miniGameType");
+    }
 
-    //}
+    public override void OnInspectorGUI()
+    {
+        // Update the serialized object
+        serializedObject.Update();
 
-    //// Update is called once per frame
-    //void Update()
-    //{
+        // Draw all properties except the ones you want to customize
+        DrawPropertiesExcluding(serializedObject, "miniGameType", "mangoGoal", "mangoFallSpeed", "coolDownBetweenMangos", "QTEGoal", "QTEMoveSpeed", "QTESafeZoneSizePercentage");
 
-    //}
+        // Draw the custom property field for miniGameType
+        EditorGUILayout.PropertyField(miniGameType);
 
-    //[CustomEditor(typeof(PropertyHolder)), CanEditMultipleObjects]
-    //public class PropertyHolderEditor : Editor
-    //{
+        // Custom logic for specific mini-game settings
+        if (miniGameType.enumValueIndex == 0) // Mango Catch
+        {
+            EditorGUILayout.LabelField("Mango Catch Settings", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("mangoGoal"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("mangoFallSpeed"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("coolDownBetweenMangos"));
+        }
+        else if (miniGameType.enumValueIndex == 1) // Quick Time Event
+        {
+            EditorGUILayout.LabelField("Quick Time Event Settings", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("QTEGoal"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("QTEMoveSpeed"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("QTESafeZoneSizePercentage"));
+        }
 
-    //    public SerializedProperty
-    //        state_Prop,
-    //        valForAB_Prop,
-    //        valForA_Prop,
-    //        valForC_Prop,
-    //        controllable_Prop;
-
-    //    void OnEnable()
-    //    {
-    //        // Setup the SerializedProperties
-    //        state_Prop = serializedObject.FindProperty("state");
-    //        valForAB_Prop = serializedObject.FindProperty("valForAB");
-    //        valForA_Prop = serializedObject.FindProperty("valForA");
-    //        valForC_Prop = serializedObject.FindProperty("valForC");
-    //        controllable_Prop = serializedObject.FindProperty("controllable");
-    //    }
-
-    //    public override void OnInspectorGUI()
-    //    {
-    //        serializedObject.Update();
-
-    //        EditorGUILayout.PropertyField(state_Prop);
-
-    //        PropertyHolder.Status st = (PropertyHolder.Status)state_Prop.enumValueIndex;
-
-    //        switch (st)
-    //        {
-    //            case PropertyHolder.Status.A:
-    //                EditorGUILayout.PropertyField(controllable_Prop, new GUIContent("controllable"));
-    //                EditorGUILayout.IntSlider(valForA_Prop, 0, 10, new GUIContent("valForA"));
-    //                EditorGUILayout.IntSlider(valForAB_Prop, 0, 100, new GUIContent("valForAB"));
-    //                break;
-
-    //            case PropertyHolder.Status.B:
-    //                EditorGUILayout.PropertyField(controllable_Prop, new GUIContent("controllable"));
-    //                EditorGUILayout.IntSlider(valForAB_Prop, 0, 100, new GUIContent("valForAB"));
-    //                break;
-
-    //            case PropertyHolder.Status.C:
-    //                EditorGUILayout.PropertyField(controllable_Prop, new GUIContent("controllable"));
-    //                EditorGUILayout.IntSlider(valForC_Prop, 0, 100, new GUIContent("valForC"));
-    //                break;
-
-    //        }
-
-
-    //        serializedObject.ApplyModifiedProperties();
-    //    }
-    //}
+        // Apply any modified properties
+        serializedObject.ApplyModifiedProperties();
+    }
 }

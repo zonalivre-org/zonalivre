@@ -2,28 +2,28 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QTEPointerController : MonoBehaviour
+public class QuickTimeEvent : MonoBehaviour
 {
-    [Header("Variables")]
+    [Header("Rules")]
     [SerializeField][Range(1, 5)] private int goal;
-    private int current;
     [SerializeField] private float moveSpeed = 100f;
     [SerializeField][Range(0.01f, 1.0f)] private float safeZoneSizePercentage = 0.25f;
+
+    [Header("Variables")]
+    private int current;
     private float direction = 1f;
     private float leftEdge;
     private float rightEdge;
     private float panelWidth;
-    private bool canRun = false;
+    private bool canRun = true;
 
     [Header("Components")]
     [SerializeField] private RectTransform panel;
     [SerializeField] private RectTransform safeZone;
     [SerializeField] private RectTransform pointer;
     [SerializeField] private GameObject[] points;
-    [SerializeField] private GameObject startPanel;
-    [SerializeField] private GameObject endPanel;
-
-
+    [SerializeField] private GameObject miniGameParent;
+    [SerializeField] private ObjectivePlayerCheck objectivePlayerCheck;
     void Start()
     {
         // Get the Canvas scale factor (if applicable)
@@ -68,20 +68,23 @@ public class QTEPointerController : MonoBehaviour
                 direction = 1f;
             }
 
-            // Check for input
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                CheckSuccess();
-            }
         }
+    }
 
+    public void SetMiniGameRules(int goal, float moveSpeed, float safeZoneSizePercentage)
+    {
+        this.goal = goal;
+        this.moveSpeed = moveSpeed;
+        this.safeZoneSizePercentage = safeZoneSizePercentage;
     }
 
     public void StartQTEGame()
     {
+        ResetPoints();
+        SetSafeZone();
         canRun = true;
-        startPanel.SetActive(false);
     }
+
     private void SetSafeZone()
     {
         // Calculate and set the safe zone size based on the percentage of the panel width
@@ -96,7 +99,7 @@ public class QTEPointerController : MonoBehaviour
         safeZone.localPosition = new Vector3(randomX, safeZone.localPosition.y, safeZone.localPosition.z);
     }
 
-    private void CheckSuccess()
+    public void CheckSuccess()
     {
         // Check if the pointer is within the safe zone
         if (RectTransformUtility.RectangleContainsScreenPoint(safeZone, pointer.position, null))
@@ -121,11 +124,19 @@ public class QTEPointerController : MonoBehaviour
 
     private void AddPoint()
     {
-        current++;
-
-        for (int i = 0; i < current; i++)
+        if (current < goal)
         {
-            points[i].GetComponent<Image>().color = Color.green;
+            current++;
+
+            for (int i = 0; i < current; i++)
+            {
+                points[i].GetComponent<Image>().color = Color.green;
+            }
+
+            if (current >= goal)
+            {
+                EndMiniGame();
+            }
         }
     }
 
@@ -143,6 +154,8 @@ public class QTEPointerController : MonoBehaviour
     public void EndMiniGame()
     {
         canRun = false;
-        endPanel.SetActive(true);
+        miniGameParent.SetActive(false);
+        objectivePlayerCheck.CompleteTask();
+        
     }
 }

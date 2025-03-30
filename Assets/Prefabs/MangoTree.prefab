@@ -395,6 +395,7 @@ MonoBehaviour:
   enable: 0
   detectionDelay: 0.5
   scoreValue: 1
+  playerReference: {fileID: 0}
   hasMinigame: 1
   minigame: {fileID: 0}
   needsItem: 0
@@ -404,6 +405,13 @@ MonoBehaviour:
   hasEffect: 0
   effect: {fileID: 0}
   inGameProgress: {fileID: 0}
+  miniGameType: 0
+  mangoGoal: 1
+  mangoFallSpeed: 150
+  coolDownBetweenMangos: 1
+  QTEGoal: 0
+  QTEMoveSpeed: 0
+  QTESafeZoneSizePercentage: 0
 --- !u!1 &7280346830552696428
 GameObject:
   m_ObjectHideFlags: 0
