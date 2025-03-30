@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class InGameProgress : MonoBehaviour
 {
+    [Header("Time")]
     [SerializeField] private Slider clockSlider;
     [SerializeField] private TextMeshProUGUI clockNumber;
     [SerializeField] private int levelTime;
@@ -16,6 +17,9 @@ public class InGameProgress : MonoBehaviour
     [SerializeField] private int stamina = 100;
     [SerializeField] private Slider happynessSlider;
     [SerializeField] private int happyness = 100;
+    [Header("UI components")]
+    [SerializeField] GameObject resultUI;
+    [SerializeField] TextMeshProUGUI resultText;
     private float currentTime;
     private float currentHealth;
     private float currentStamina;
@@ -76,21 +80,17 @@ public class InGameProgress : MonoBehaviour
         }
         else
         {
-            enablecountdown = false;
-            if(win)
-            {
-                Debug.Log("Venceu! Parabens!");
-            }
-            else
-            {           
-                Debug.Log("Oh não! Perdeu!");           
-            }
+            ShowResultPanel();
         }
     }
     public void AddScore(int score)
     {
         scoreProgress += score;
-        if(scoreProgress >= pointsToWin) win = true;
+        if (scoreProgress >= pointsToWin)
+        {
+            win = true;
+            currentTime = 0;
+        }
     }
     public void AddSliderValue(int amount, int which)
     {
@@ -99,4 +99,11 @@ public class InGameProgress : MonoBehaviour
         else if(which == 2) healthSlider.value += amount;
         else Debug.Log(amount + " is not a valid slider number!");
     }
+
+    private void ShowResultPanel()
+    {
+        resultUI.SetActive(true);
+        if (win) resultText.text = "Parabéns! Você venceu!";
+        else resultText.text = "Oh não! Voce perdeu!";
+    } 
 }
