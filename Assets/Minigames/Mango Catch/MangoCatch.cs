@@ -41,8 +41,8 @@ public class MangoCatch : MonoBehaviour
 
     private void OnEnable()
     {
-        ResetMiniGame();
         UpdateScore();
+        ResetMiniGame();
     }
 
     void Update()

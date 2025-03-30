@@ -17,6 +17,7 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     [Header("Components")]
     [SerializeField] private Image fill;
     [SerializeField] private Image icon;
+    [SerializeField] PetInteract petCheck;
 
     void Start()
     {
@@ -38,7 +39,7 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
             icon.fillAmount += fillSpeed * Time.deltaTime;
         }
 
-        if (progress > 1)
+        if (progress >= 1)
         {
             EndMiniGame();
         }
@@ -62,7 +63,11 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
     public void EndMiniGame()
     {
-        // Something happens :O
+        petCheck.CompleteTask();
+        progress = 0;
+        fill.fillAmount = 0;
+        icon.fillAmount = 0;
+        this.gameObject.SetActive(false);
     }
 
     public void OnDrag(PointerEventData eventData)

@@ -60,15 +60,15 @@ public class ObjectivePlayerCheck : MonoBehaviour
             Debug.Log("Contador ativado! = " + enabletimer);
         }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if(enable && other.gameObject.CompareTag("Player"))
-        {
-            enabletimer = false;
-            ToggleState(false);
-            Debug.Log("Saiu da area! = " + enable);
-        }
-    }
+    // private void OnTriggerExit(Collider other)
+    // {
+    //     if(enable && other.gameObject.CompareTag("Player"))
+    //     {
+    //         enabletimer = false;
+    //         ToggleState(false);
+    //         Debug.Log("Saiu da area! = " + enable);
+    //     }
+    // }
     public void ToggleUI(bool _enable)
     {
         if(!isTaskDone && !minigame.activeSelf) minigame.SetActive(true);
