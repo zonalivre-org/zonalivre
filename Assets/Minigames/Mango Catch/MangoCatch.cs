@@ -16,15 +16,26 @@ public class MangoCatch : MonoBehaviour
     [SerializeField] TMP_Text scoreText;
     [SerializeField] RectTransform spawnArea;
     [SerializeField] GameObject mangoPrefab;
+    [SerializeField] GameObject player;
     [SerializeField] GameObject startPanel, endPanel;
+    public ObjectivePlayerCheck objectivePlayerCheck;
+    [SerializeField] GameObject miniGameParent;
 
     [Header("Variables")]
     private float actualTime, nextTime;
     [SerializeField] private bool canGenerate;
+    [SerializeField] private Vector2 playerInitialPosition;
+    private List<GameObject> spawnedMangos = new List<GameObject>();
 
     void Start()
     {
         UpdateScore();
+    }
+
+    private void OnEnable()
+    {
+        UpdateScore();
+        ResetMiniGame();
     }
 
     void Update()
@@ -41,7 +52,21 @@ public class MangoCatch : MonoBehaviour
                 nextTime = Time.time + cooldownBetweenMangos;
             }
         }
+    }
 
+    public void SetMiniGameRules(int goal, float mangoFallSpeed, float cooldownBetweenMangos)
+    {
+        this.goal = goal;
+        this.mangoFallSpeed = mangoFallSpeed;
+        this.cooldownBetweenMangos = cooldownBetweenMangos;
+    }
+    public void ResetMiniGame()
+    {
+        current = 0;
+        startPanel.SetActive(true);
+        player.GetComponent<RectTransform>().anchoredPosition = playerInitialPosition;
+        UpdateScore();
+        miniGameParent.SetActive(true);
     }
 
     public void StartMangoGame()
@@ -73,6 +98,7 @@ public class MangoCatch : MonoBehaviour
         //Set the mango position to the random position
         mango.GetComponent<RectTransform>().anchoredPosition = randomPosition;
 
+        spawnedMangos.Add(mango);
     }
 
     public void AddPoint(int amount)
@@ -86,15 +112,28 @@ public class MangoCatch : MonoBehaviour
         string formattedText = $"<sprite=12> {current} / {goal}";
         scoreText.text = formattedText;
 
-        if (current == goal)
+        if (current >= goal)
         {
-
+            EndMiniGame();
         }
     }
 
     public void EndMiniGame()
     {
         canGenerate = false;
-        endPanel.SetActive(true);
+
+        foreach (var mango in spawnedMangos.ToArray())
+        {
+            if (mango != null)
+            {
+                Destroy(mango);
+            }
+        }
+        spawnedMangos.Clear();
+
+        miniGameParent.SetActive(false);
+        objectivePlayerCheck.CompleteTask();
     }
+
+
 }

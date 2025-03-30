@@ -1,22 +1,15 @@
-using System;
-using System.Buffers.Text;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
-
     const string IDLE = "Idle";
     const string WALK = "Walk";
-
     private PlayerActions input;
-    
     private NavMeshAgent agent;
     private Animator animator;
+    public bool canMove = true;
 
-    [Header("Movement")] 
+    [Header("Movement")]
     [SerializeField] private ParticleSystem clickEffect;
     [SerializeField] private LayerMask clicklableLayers;
     [SerializeField] private float lookRotationSpeed = 8f;
@@ -25,7 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        
+
         input = new PlayerActions();
         AssignInputs();
 
@@ -38,14 +31,17 @@ public class PlayerController : MonoBehaviour
 
     void ClickToMove()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
+        if (canMove)
         {
-            agent.SetDestination(hit.point);
-            animator.SetTrigger(WALK);
-            ParticleSystem clickEffectInstance = (Instantiate(clickEffect, hit.point + Vector3.up*0.1f, clickEffect.transform.rotation));
-            Destroy(clickEffectInstance.gameObject, 1f);
-            
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
+            {
+                agent.SetDestination(hit.point);
+                // animator.SetTrigger(WALK); // This will be needed when we have a walk animation
+                ParticleSystem clickEffectInstance = (Instantiate(clickEffect, hit.point + Vector3.up * 0.1f, clickEffect.transform.rotation));
+                Destroy(clickEffectInstance.gameObject, 1f);
+
+            }
         }
     }
 
@@ -58,10 +54,10 @@ public class PlayerController : MonoBehaviour
     {
         input.Disable();
     }
-    
+
     void Update()
     {
-        
+
     }
 
     void FaceTarget()
@@ -81,6 +77,6 @@ public class PlayerController : MonoBehaviour
         // {
         //     animator.SetTrigger(IDLE);
         // }
-        
+
     }
 }
