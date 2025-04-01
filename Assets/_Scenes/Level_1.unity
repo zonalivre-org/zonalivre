@@ -4871,7 +4871,7 @@ Canvas:
   m_GameObject: {fileID: 1076298683}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 2550437}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
@@ -6136,7 +6136,7 @@ GameObject:
   - component: {fileID: 1447430485}
   - component: {fileID: 1447430484}
   m_Layer: 3
-  m_Name: Ground
+  m_Name: GroundLevel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6171,7 +6171,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: cea6063035c597d46b7f74b1dd75455c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1a47e785ca8b47d4da39f24c235de3c0, type: 2}
   m_BuildHeightMesh: 0
 --- !u!64 &1447430485
 MeshCollider:
