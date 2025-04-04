@@ -491,8 +491,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Sele\xE7\xE3o de n\xEDvel"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c8df45a845750504d8a2795fbd22b608, type: 2}
+  m_sharedMaterial: {fileID: -7351501579672171409, guid: c8df45a845750504d8a2795fbd22b608,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -522,7 +523,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 17
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1712,7 +1713,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 40246518}
   m_HandleRect: {fileID: 40246517}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 0.00000011967684
   m_Size: 0.7901235
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2697,7 +2698,7 @@ PrefabInstance:
     - target: {fileID: 6038472984607575048, guid: ca698facba4542243ab0a33edef21bd0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 357.85715
+      value: 357.85718
       objectReference: {fileID: 0}
     - target: {fileID: 6038472984607575048, guid: ca698facba4542243ab0a33edef21bd0,
         type: 3}
