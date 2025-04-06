@@ -1,16 +1,14 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PauseButton : MonoBehaviour, IPointerClickHandler
+public class PauseButton : MonoBehaviour
 {
     [Tooltip("Se verdadeiro, pausa o jogo. Se falso, despausa.")]
     [SerializeField] private bool pauseOnClick = true;
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void TogglePauseManager(bool toggle)
     {
-        if (pauseOnClick)
-            PauseManager.Instance.Pause();
-        else
-            PauseManager.Instance.Resume();
+        toggle = !toggle;
+        PauseManager.Instance.TogglePause(toggle);
     }
 }

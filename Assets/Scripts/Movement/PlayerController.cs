@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
@@ -52,11 +53,6 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         input.Disable();
-    }
-
-    void Update()
-    {
-
     }
 
     void FaceTarget()
