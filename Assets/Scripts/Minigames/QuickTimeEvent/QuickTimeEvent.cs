@@ -23,7 +23,7 @@ public class QuickTimeEvent : MonoBehaviour
     [SerializeField] private RectTransform pointer;
     [SerializeField] private GameObject[] points;
     [SerializeField] private GameObject miniGameParent;
-    [SerializeField] private ObjectivePlayerCheck objectivePlayerCheck;
+    [SerializeField] private ObjectiveInteract objectivePlayerCheck;
     void Start()
     {
         // Get the Canvas scale factor (if applicable)

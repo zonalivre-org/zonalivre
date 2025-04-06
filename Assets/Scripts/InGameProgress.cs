@@ -60,7 +60,7 @@ public class InGameProgress : MonoBehaviour
     private void LateUpdate()
     {
         if(currentHealth <= 0|| currentStamina <= 0|| currentHappyness <= 0 || currentTime <= 0) win = -1;
-        
+
         if(enablecountdown)
         {
             currentTime -= Time.deltaTime * clockMultiplier;
@@ -139,7 +139,7 @@ public class InGameProgress : MonoBehaviour
             wishHappynessMultiplier = 0f;
             currentHappyness += amount;
         }
-        else Debug.Log(amount + " is not a valid slider number!");
+        else Debug.Log(amount + " is not a valid Pet slider number!");
 
         UpdateUI();
     }

@@ -94,9 +94,8 @@ GameObject:
   - component: {fileID: 3248739765597737770}
   - component: {fileID: 3239189649730633112}
   - component: {fileID: 1439552158984579737}
-  - component: {fileID: 928570308511232511}
   m_Layer: 3
-  m_Name: MangoTree
+  m_Name: Objective
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,22 +156,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 2, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &928570308511232511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5335297561532913243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76a8985756562754f836125bfef4ee03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerObj: {fileID: 7132721130307741846}
-  clicklableLayers:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &6519586772146219156
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +223,7 @@ GameObject:
   - component: {fileID: 3604857335362664292}
   - component: {fileID: 6032869067607691919}
   - component: {fileID: 2128739045807272864}
-  - component: {fileID: 3389470961793161253}
+  - component: {fileID: 8954754393075309963}
   m_Layer: 7
   m_Name: TriggerArea
   m_TagString: Untagged
@@ -380,7 +363,7 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!114 &3389470961793161253
+--- !u!114 &8954754393075309963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -389,26 +372,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 7132721130307741846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edec52dc602f1f7419db14022a10cf1e, type: 3}
+  m_Script: {fileID: 11500000, guid: 76a8985756562754f836125bfef4ee03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enable: 0
   detectionDelay: 0.5
   scoreValue: 1
-  playerReference: {fileID: 0}
-  hasMinigame: 1
+  cooldown: 0
+  playerMovement: {fileID: 0}
+  hasMinigame: 0
   minigame: {fileID: 0}
+  miniGameType: 0
   needsItem: 0
   itemR: {fileID: 0}
   givesItem: 0
   itemG: {fileID: 0}
   hasEffect: 0
   effect: {fileID: 0}
-  inGameProgress: {fileID: 0}
-  miniGameType: 0
-  mangoGoal: 1
-  mangoFallSpeed: 150
-  coolDownBetweenMangos: 1
+  clicklableLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  mangoGoal: 0
+  mangoFallSpeed: 0
+  coolDownBetweenMangos: 0
   QTEGoal: 0
   QTEMoveSpeed: 0
   QTESafeZoneSizePercentage: 0

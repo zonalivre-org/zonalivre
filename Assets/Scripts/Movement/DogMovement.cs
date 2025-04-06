@@ -46,7 +46,7 @@ public class DogMovement : MonoBehaviour
         if(roll >= 24) FollowNode();
         else WaitInPlace(2);
     }
-    private void FollowNode() => MoveToDestination(destinationTransform[Random.Range(0, destinationTransform.Count)].position, 1f, "RandomizeMovement");
+    public void FollowNode() => MoveToDestination(destinationTransform[Random.Range(0, destinationTransform.Count)].position, 1f, "RandomizeMovement");
     public void WaitInPlace(float waitMultiplier) => MoveToDestination(this.transform.position, waitMultiplier, "RandomizeMovement");
     public void FollowPlayer()
     {

@@ -18,7 +18,7 @@ public class MangoCatch : MonoBehaviour
     [SerializeField] GameObject mangoPrefab;
     [SerializeField] GameObject player;
     [SerializeField] GameObject startPanel, endPanel;
-    public ObjectivePlayerCheck objectivePlayerCheck;
+    public ObjectiveInteract objectivePlayerCheck;
     [SerializeField] GameObject miniGameParent;
 
     [Header("Variables")]

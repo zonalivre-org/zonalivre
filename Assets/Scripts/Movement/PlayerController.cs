@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
                 // animator.SetTrigger(WALK); // This will be needed when we have a walk animation
                 ParticleSystem clickEffectInstance = (Instantiate(clickEffect, hit.point + Vector3.up * 0.1f, clickEffect.transform.rotation));
                 Destroy(clickEffectInstance.gameObject, 1f);
-
             }
         }
     }
@@ -79,4 +78,5 @@ public class PlayerController : MonoBehaviour
         // }
 
     }
+    public void ToggleMovement(bool toggle) => canMove = toggle;
 }

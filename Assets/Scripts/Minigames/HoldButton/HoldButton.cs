@@ -18,6 +18,8 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     [SerializeField] private Image fill;
     [SerializeField] private Image icon;
     [SerializeField] PetInteract petCheck;
+    [Header("Debug Variables")]
+    [SerializeField] private int target;
 
     void Start()
     {
@@ -27,7 +29,14 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
         if (mode == 0) {icon.fillAmount = 0;}
     }
+    private void OnEnable()
+    {
+        fill.fillMethod = fillMethod;
+        icon.fillMethod = fillMethod;
+        fill.fillAmount = 0;
 
+        if (mode == 0) {icon.fillAmount = 0;}
+    }
     void LateUpdate()
     {
         if (isHolding && mode == 0)
@@ -62,7 +71,7 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
     public void EndMiniGame()
     {
-        petCheck.CompleteTask();
+        petCheck.CompleteTask(target);
         progress = 0;
         fill.fillAmount = 0;
         icon.fillAmount = 0;

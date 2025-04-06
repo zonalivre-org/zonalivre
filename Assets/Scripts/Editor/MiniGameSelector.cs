@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(ObjectivePlayerCheck))]
+[CustomEditor(typeof(ObjectiveInteract))]
 public class MiniGameSelector : Editor 
 {
     SerializedProperty miniGameType;
