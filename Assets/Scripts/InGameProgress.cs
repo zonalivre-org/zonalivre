@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -27,6 +25,10 @@ public class InGameProgress : MonoBehaviour
     [SerializeField] private Slider happynessSlider;
     [SerializeField] private GameObject resultUI;
     [SerializeField] private TextMeshProUGUI resultText;
+    [SerializeField] private GameObject nextLevelButton;
+    [Header("References")]
+    [SerializeField] private PlayerController playerMovement;
+    [SerializeField] private DogMovement petMovement;
 
     // Constant Values
     private float currentTime, currentHealth, currentStamina, currentHappyness, wishHealthMultiplier, wishStaminaMultiplier, wishHappynessMultiplier;
@@ -109,12 +111,18 @@ public class InGameProgress : MonoBehaviour
         if (state != 0)
         {
             enablecountdown = false;
+            playerMovement.ToggleMovement(false);
+            petMovement.ToggleMovement(false);
             resultUI.SetActive(true);
         }
         else Debug.Log("The results panel was called but the players hasn't won or lost yet!");
 
         if (state > 0) resultText.text = "Parabéns! Você venceu!";
-        else if(state < 0) resultText.text = "Oh não! Voce perdeu!";
+        else if(state < 0) 
+        {
+            nextLevelButton.SetActive(false);
+            resultText.text = "Oh não! Voce perdeu!";
+        }
     } 
     public void AddScore(int score)
     {

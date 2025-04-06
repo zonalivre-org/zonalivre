@@ -19,6 +19,7 @@ public class DogMovement : MonoBehaviour
     private float waitTime;
     private string funcName;
     private int currentQuota;
+    private bool canAutoMove = true;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -34,6 +35,7 @@ public class DogMovement : MonoBehaviour
     }
     private void MoveToDestination(Vector3 currentDestination, float waitTimeMultiplier, string nextFunctionCall)
     {
+        canAutoMove = true;
         destination = currentDestination;
         waitTime = timeBetweenMove * waitTimeMultiplier;
         funcName = nextFunctionCall;
@@ -42,14 +44,26 @@ public class DogMovement : MonoBehaviour
     }
     private void RandomizeMovement()
     {
-        int roll = Random.Range(1, 128);
-        if(roll >= 24) FollowNode();
-        else WaitInPlace(2);
+        if(canAutoMove)
+        {
+            int roll = Random.Range(1, 128);
+            if(roll >= 24) FollowNode();
+            else WaitInPlace(2);
+        }
     }
-    public void FollowNode() => MoveToDestination(destinationTransform[Random.Range(0, destinationTransform.Count)].position, 1f, "RandomizeMovement");
-    public void WaitInPlace(float waitMultiplier) => MoveToDestination(this.transform.position, waitMultiplier, "RandomizeMovement");
+    public void FollowNode()
+    {
+        canAutoMove = false;
+        MoveToDestination(destinationTransform[Random.Range(0, destinationTransform.Count)].position, 1f, "RandomizeMovement");
+    }
+    public void WaitInPlace(float waitMultiplier)
+    {
+        canAutoMove = false;
+        MoveToDestination(this.transform.position, waitMultiplier, "RandomizeMovement");
+    }
     public void FollowPlayer()
     {
+        canAutoMove = false;
         if(currentQuota > 0)
         {
             currentQuota--;
@@ -63,4 +77,10 @@ public class DogMovement : MonoBehaviour
     }
     //public void Panic(){}
     //public void Flee(){}
+    public void ToggleMovement(bool toggle)
+    {
+        canAutoMove = toggle;
+        if(!canAutoMove) agent.SetDestination(this.transform.position);
+        else RandomizeMovement();
+    }
 }

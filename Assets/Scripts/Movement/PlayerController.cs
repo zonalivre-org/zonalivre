@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     public bool canMove = true;
-
+    private float agentOriginalSpeed;
     [Header("Movement")]
     [SerializeField] private ParticleSystem clickEffect;
     [SerializeField] private LayerMask clicklableLayers;
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
         input = new PlayerActions();
         AssignInputs();
-
+        agentOriginalSpeed = agent.speed;
     }
 
     void AssignInputs()
@@ -78,5 +78,14 @@ public class PlayerController : MonoBehaviour
         // }
 
     }
-    public void ToggleMovement(bool toggle) => canMove = toggle;
+    public void ToggleMovement(bool toggle)
+    {
+        canMove = toggle;
+        if(!canMove)
+        {
+            agent.SetDestination(this.transform.position);
+            agent.speed = 0;
+        }
+        else agent.speed = agentOriginalSpeed;
+    }
 }

@@ -91,7 +91,7 @@ public class ObjectiveInteract : MonoBehaviour
     }
     public void CompleteTask()
     {
-        playerMovement.canMove = true;
+        playerMovement.ToggleMovement(true);
         interactable = false;
         inGameProgress.AddScore(scoreValue);
         Debug.Log("Tarefa completa!");
@@ -100,7 +100,7 @@ public class ObjectiveInteract : MonoBehaviour
     {
         if(enable)
         {
-            playerMovement.canMove = false;
+            playerMovement.ToggleMovement(false);
             enable = false;
             switch (miniGameType)
             {
