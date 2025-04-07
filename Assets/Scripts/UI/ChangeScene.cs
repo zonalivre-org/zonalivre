@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    private void Awake() => Time.timeScale = 1;
     public void LoadSceneByIndex(int index)
     {
         SceneManager.LoadScene(index);
