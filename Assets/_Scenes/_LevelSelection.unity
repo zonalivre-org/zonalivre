@@ -491,8 +491,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Sele\xE7\xE3o de n\xEDvel"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c8df45a845750504d8a2795fbd22b608, type: 2}
+  m_sharedMaterial: {fileID: -7351501579672171409, guid: c8df45a845750504d8a2795fbd22b608,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -516,8 +517,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 97.2
-  m_fontSizeBase: 97.2
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1816,8 +1817,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 40246518}
   m_HandleRect: {fileID: 40246517}
   m_Direction: 0
-  m_Value: -0.00000023935368
-  m_Size: 0.7901235
+  m_Value: -0.00000023935357
+  m_Size: 0.79012346
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
