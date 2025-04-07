@@ -37,11 +37,11 @@ RectTransform:
   - {fileID: 2895085231651302151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &814345129670266694
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -189,8 +189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
-  hoverSizePercentage: {x: 120, y: 120}
-  animationDuration: 0.1
 --- !u!1 &3661646115490181449
 GameObject:
   m_ObjectHideFlags: 0
