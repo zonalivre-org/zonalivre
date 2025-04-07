@@ -90,6 +90,16 @@ public class PetInteract : MonoBehaviour
         dogMovement.FollowNode();
         interactable = true;
     }
+    
+    public void CancelTask() // receives a value from another script to cancel the minigame and return to the game.
+    {
+        playerMovement.ToggleMovement(true);
+        dogMovement.FollowNode();
+        enable = false;
+        interactable = true;
+        Debug.Log("Cancelou a ação");
+    }
+
     private void StartMinigame() // receives a value from within this script between 0 and 2 then activate the minigame corresponding to whatever pet slider value is to be changed.
     {
         if(enable)

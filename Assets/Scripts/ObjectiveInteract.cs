@@ -31,6 +31,7 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private bool hasEffect = false;
     [SerializeField] private GameObject effect; // placeholderline!
     [SerializeField] private LayerMask clicklableLayers;
+
     [Header("PlaceHolder Variavles")]
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
@@ -96,6 +97,12 @@ public class ObjectiveInteract : MonoBehaviour
         inGameProgress.AddScore(scoreValue);
         Debug.Log("Tarefa completa!");
     }
+
+    public void CloseTask()
+    {
+        playerMovement.ToggleMovement(true);
+        Debug.Log("Tarefa fechada!");
+    }
     private void StartMinigame()
     {
         if(enable)
@@ -107,7 +114,7 @@ public class ObjectiveInteract : MonoBehaviour
                 case MiniGames.MangoCatch:
                     minigame.GetComponent<MangoCatch>().SetMiniGameRules(mangoGoal, mangoFallSpeed, coolDownBetweenMangos);
                     minigame.GetComponent<MangoCatch>().objectivePlayerCheck = this;
-                    minigame.GetComponent<MangoCatch>().ResetMiniGame();
+                    minigame.GetComponent<MangoCatch>().StartMiniGame();
                     break;
                 case MiniGames.QuickTimeEvent:
                     minigame.GetComponent<QuickTimeEvent>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);

@@ -27,7 +27,6 @@ public class Mango : MonoBehaviour
 
         else if (other.tag == "MangoGround")
         {
-            Debug.Log("Bbbbbb");
             Destroy(gameObject);
         }
     }

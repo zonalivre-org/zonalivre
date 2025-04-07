@@ -22,6 +22,19 @@ public class MangoPlayerControl : MonoBehaviour, IPointerDownHandler, IDragHandl
 
     public void OnDrag(PointerEventData eventData)
     {
+
+        Move(eventData);
+
+        MiniGameBase.OnMinigameInteract.Invoke();
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        playerOutline.enabled = false;
+    }
+
+    private void Move(PointerEventData eventData)
+    {
         // Calculate the new position while dragging only in the x direction
         Vector2 newPosition = playerRectTransform.anchoredPosition + new Vector2(eventData.delta.x, 0);
 
@@ -38,10 +51,5 @@ public class MangoPlayerControl : MonoBehaviour, IPointerDownHandler, IDragHandl
 
         // Update his position, still keeping the original y value
         playerRectTransform.anchoredPosition = new Vector2(newPosition.x, playerRectTransform.anchoredPosition.y);
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        playerOutline.enabled = false;
     }
 }
