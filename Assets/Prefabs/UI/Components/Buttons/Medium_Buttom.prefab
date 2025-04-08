@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3565687784732114627}
   - component: {fileID: 3164091210240687597}
   - component: {fileID: 9134968746990912122}
+  - component: {fileID: -886202332826440703}
   m_Layer: 5
   m_Name: Medium_Buttom
   m_TagString: Untagged
@@ -29,16 +30,16 @@ RectTransform:
   m_GameObject: {fileID: 4310033878480113708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000303, y: 1.0000303, z: 1.0000303}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2129990445947686239}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 561.201, y: 150.826}
+  m_SizeDelta: {x: 561.2009, y: 150.82599}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2140304458284295610
 CanvasRenderer:
@@ -161,6 +162,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &-886202332826440703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4310033878480113708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb9eb8071a478a4a911b0704387266e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &8202529913278176160
 GameObject:
   m_ObjectHideFlags: 0

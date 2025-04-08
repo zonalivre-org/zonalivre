@@ -1,14 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class MangoCatch : MonoBehaviour
+public class MangoCatch : MiniGameBase
 {
     [Header("Rules Section")]
     [SerializeField] int goal;
-    [SerializeField] int current;
+    [SerializeField] int currentPoints;
     [SerializeField] float mangoFallSpeed;
     [SerializeField] float cooldownBetweenMangos;
 
@@ -18,8 +16,7 @@ public class MangoCatch : MonoBehaviour
     [SerializeField] GameObject mangoPrefab;
     [SerializeField] GameObject player;
     [SerializeField] GameObject startPanel, endPanel;
-    public ObjectivePlayerCheck objectivePlayerCheck;
-    [SerializeField] GameObject miniGameParent;
+    public ObjectiveInteract objectivePlayerCheck;
 
     [Header("Variables")]
     private float actualTime, nextTime;
@@ -27,20 +24,16 @@ public class MangoCatch : MonoBehaviour
     [SerializeField] private Vector2 playerInitialPosition;
     private List<GameObject> spawnedMangos = new List<GameObject>();
 
-    void Start()
-    {
-        UpdateScore();
-    }
-
     private void OnEnable()
     {
-        UpdateScore();
-        ResetMiniGame();
+        StartMiniGame();
     }
 
     void Update()
     {
-        if (canGenerate)
+        TipCheck();
+
+        if (canGenerate && firstActionTriggered == true)
         {
             if (actualTime < nextTime)
             {
@@ -54,25 +47,56 @@ public class MangoCatch : MonoBehaviour
         }
     }
 
+    public override void StartMiniGame()
+    {
+        gameObject.SetActive(true);
+
+        OnStart();
+
+        UpdateScore();
+
+        canGenerate = true;
+    }
+
+    public override void EndMiniGame()
+    {
+        if (isMiniGameComplete) objectivePlayerCheck.CompleteTask();
+        else objectivePlayerCheck.CloseTask();
+
+        MiniGameReset();
+
+        gameObject.SetActive(false);
+        //OnMiniGameEnd?.Invoke();
+    }
+
+    public void MiniGameReset()
+    {
+        canGenerate = false;
+        currentPoints = 0;
+
+        foreach (var mango in spawnedMangos.ToArray())
+        {
+            if (mango != null)
+            {
+                Destroy(mango);
+            }
+        }
+
+        spawnedMangos.Clear();
+
+        player.GetComponent<RectTransform>().anchoredPosition = playerInitialPosition;
+
+        isMiniGameActive = false;
+        isMiniGameComplete = false;
+        firstActionTriggered = false;
+
+    }
+    
     public void SetMiniGameRules(int goal, float mangoFallSpeed, float cooldownBetweenMangos)
     {
         this.goal = goal;
         this.mangoFallSpeed = mangoFallSpeed;
         this.cooldownBetweenMangos = cooldownBetweenMangos;
-    }
-    public void ResetMiniGame()
-    {
-        current = 0;
-        startPanel.SetActive(true);
-        player.GetComponent<RectTransform>().anchoredPosition = playerInitialPosition;
-        UpdateScore();
-        miniGameParent.SetActive(true);
-    }
-
-    public void StartMangoGame()
-    {
-        canGenerate = true;
-        startPanel.SetActive(false);
     }
 
     private void SpawnMango()
@@ -103,37 +127,19 @@ public class MangoCatch : MonoBehaviour
 
     public void AddPoint(int amount)
     {
-        current += amount;
+        currentPoints += amount;
         UpdateScore();
     }
 
     private void UpdateScore()
     {
-        string formattedText = $"<sprite=12> {current} / {goal}";
+        string formattedText = $"<sprite=12> {currentPoints} / {goal}";
         scoreText.text = formattedText;
 
-        if (current >= goal)
+        if (currentPoints >= goal)
         {
+            isMiniGameComplete = true;
             EndMiniGame();
         }
     }
-
-    public void EndMiniGame()
-    {
-        canGenerate = false;
-
-        foreach (var mango in spawnedMangos.ToArray())
-        {
-            if (mango != null)
-            {
-                Destroy(mango);
-            }
-        }
-        spawnedMangos.Clear();
-
-        miniGameParent.SetActive(false);
-        objectivePlayerCheck.CompleteTask();
-    }
-
-
 }

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
@@ -8,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     public bool canMove = true;
-
+    private float agentOriginalSpeed;
     [Header("Movement")]
     [SerializeField] private ParticleSystem clickEffect;
     [SerializeField] private LayerMask clicklableLayers;
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
         input = new PlayerActions();
         AssignInputs();
-
+        agentOriginalSpeed = agent.speed;
     }
 
     void AssignInputs()
@@ -40,7 +41,6 @@ public class PlayerController : MonoBehaviour
                 // animator.SetTrigger(WALK); // This will be needed when we have a walk animation
                 ParticleSystem clickEffectInstance = (Instantiate(clickEffect, hit.point + Vector3.up * 0.1f, clickEffect.transform.rotation));
                 Destroy(clickEffectInstance.gameObject, 1f);
-
             }
         }
     }
@@ -53,11 +53,6 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         input.Disable();
-    }
-
-    void Update()
-    {
-
     }
 
     void FaceTarget()
@@ -78,5 +73,15 @@ public class PlayerController : MonoBehaviour
         //     animator.SetTrigger(IDLE);
         // }
 
+    }
+    public void ToggleMovement(bool toggle)
+    {
+        canMove = toggle;
+        if(!canMove)
+        {
+            agent.SetDestination(this.transform.position);
+            agent.speed = 0;
+        }
+        else agent.speed = agentOriginalSpeed;
     }
 }

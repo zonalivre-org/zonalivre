@@ -19,9 +19,9 @@ TagManager:
   - Prop
   - Entity
   - PetRaycast
-  - 
-  - 
-  - 
+  - (Debug)Health
+  - (Debug)Stamina
+  - (Debug)Happyness
   - 
   - 
   - 

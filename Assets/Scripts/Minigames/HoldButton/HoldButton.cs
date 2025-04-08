@@ -3,12 +3,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     [Header("Rules")]
     [Range(0,1)] [SerializeField] private float fillSpeed;
-    [SerializeField] private Image.FillMethod fillMethod;
-    [Range(0,1)] [SerializeField] private int mode;
+    [SerializeField] private Mode mode;
+    enum Mode {
+        Hold,
+        Drag
+    }
 
     [Header("Variables")]
     private bool isHolding = false;
@@ -16,30 +19,32 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
     [Header("Components")]
     [SerializeField] private Image fill;
-    [SerializeField] private Image icon;
     [SerializeField] PetInteract petCheck;
 
-    void Start()
-    {
-        fill.fillMethod = fillMethod;
-        icon.fillMethod = fillMethod;
-        fill.fillAmount = 0;
+    [Header("Debug Variables")]
+    [SerializeField] private int target;
 
-        if (mode == 0) {icon.fillAmount = 0;}
+    private void OnEnable()
+    {
+        StartMiniGame();
     }
 
     void LateUpdate()
     {
-        if (isHolding && mode == 0)
+        TipCheck();
+
+        if (isHolding && mode == Mode.Hold)
         {
+            fill.fillAmount += fillSpeed * Time.deltaTime;
+
             progress = fill.fillAmount;
 
-            fill.fillAmount += fillSpeed * Time.deltaTime;
-            icon.fillAmount += fillSpeed * Time.deltaTime;
+            OnMinigameInteract.Invoke();
         }
 
         if (progress >= 1)
         {
+            isMiniGameComplete = true;
             EndMiniGame();
         }
     }
@@ -56,27 +61,47 @@ public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         if (progress < 1 && mode == 0)
         {
             fill.fillAmount = 0;
-            icon.fillAmount = 0;
         }
     }
 
-    public void EndMiniGame()
+    public override void StartMiniGame()
     {
-        petCheck.CompleteTask();
+        gameObject.SetActive(true);
+
+        fill.fillAmount = 0;
+        
+        OnStart();
+
+        if (mode == Mode.Hold)
+        {
+            fill.fillMethod = Image.FillMethod.Radial360;
+            fill.fillOrigin = 3;
+        }
+        else
+        {
+            fill.fillMethod = Image.FillMethod.Vertical;
+        }
+    }
+    public override void EndMiniGame()
+    {
+        if (isMiniGameComplete) petCheck.CompleteTask(target);
+        else petCheck.CancelTask();
+
         progress = 0;
         fill.fillAmount = 0;
-        icon.fillAmount = 0;
-        this.gameObject.SetActive(false);
+        isMiniGameActive = false;
+        gameObject.SetActive(false);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (mode == 1)
+        OnMinigameInteract.Invoke();
+
+        if (mode == Mode.Drag)
         {
-        fill.fillAmount += fillSpeed * Time.deltaTime;
+            fill.fillAmount += fillSpeed * Time.deltaTime;
 
-        progress = fill.fillAmount;
+            progress = fill.fillAmount;
         }
-
     }
 }
