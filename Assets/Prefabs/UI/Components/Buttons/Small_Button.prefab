@@ -175,6 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+  scaleFactor: 1.2
+  clickSoundEffectIndex: 3
 --- !u!1 &3980203776871833701
 GameObject:
   m_ObjectHideFlags: 0
