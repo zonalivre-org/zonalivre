@@ -189,6 +189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+  scaleFactor: 1.2
+  clickSoundEffectIndex: 2
+  randomPitch: 1
 --- !u!1 &3661646115490181449
 GameObject:
   m_ObjectHideFlags: 0

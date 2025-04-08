@@ -1,7 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class VolumeSlider : MonoBehaviour
+public class VolumeSlider : EventTrigger
 {
     private Slider slider;
 
@@ -31,6 +33,37 @@ public class VolumeSlider : MonoBehaviour
                 slider.value = PlayerPrefs.GetFloat("UISFXVolume");
                 break;
         }
+    }
+
+    public override void OnPointerUp(PointerEventData eventData)
+    {
+        switch (volumeType)
+        {
+            case VolumeType.SFX:
+                SoundManager.Instance.PlaySFXSound(0);
+                break;
+            case VolumeType.UISFX:
+                SoundManager.Instance.PlayUISound(0);
+                break;
+        }
+    }
+
+    public override void OnPointerDown(PointerEventData eventData)
+    {
+        switch (volumeType)
+        {
+            case VolumeType.SFX:
+                SoundManager.Instance.PlaySFXSound(0);
+                break;
+            case VolumeType.UISFX:
+                SoundManager.Instance.PlayUISound(0);
+                break;
+        }
+    }
+
+    public override void OnDrag(PointerEventData eventData)
+    {
+        float normalizedValue = slider.value;
 
     }
 }

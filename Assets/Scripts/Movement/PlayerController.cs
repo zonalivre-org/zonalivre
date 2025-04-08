@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
         input = new PlayerActions();
         AssignInputs();
         agentOriginalSpeed = agent.speed;
+
+        agent.updateRotation = false; // Disable automatic rotation
     }
 
     void AssignInputs()

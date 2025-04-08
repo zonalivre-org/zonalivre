@@ -102,13 +102,16 @@ public class SoundManager : MonoBehaviour
 
     public void PlayUISound(int index)
     {
+        uISFXAudioSource.pitch = 1f;
         uISFXAudioSource.PlayOneShot(uIClips[index]);
     }
 
-    public void PlayRandomHoverSound()
+    public void PlayRandomPitchUISFXSound(int index)
     {
-        int randomIndex = Random.Range(0, 2);
-        uISFXAudioSource.PlayOneShot(uIClips[randomIndex]);
+        float randomPitch = Random.Range(0.8f, 2f);
+
+        uISFXAudioSource.pitch = randomPitch;
+        uISFXAudioSource.PlayOneShot(uIClips[0]);
     }
 
     #endregion
@@ -117,6 +120,15 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySFXSound(int index)
     {
+        sFXAudioSource.pitch = 1f;
+        sFXAudioSource.PlayOneShot(sfxClips[index]);
+    }
+
+    public void PlayRandomPitchSFXSound(int index)
+    {
+        float randomPitch = Random.Range(0.8f, 2f);
+
+        sFXAudioSource.pitch = randomPitch;
         sFXAudioSource.PlayOneShot(sfxClips[index]);
     }
 

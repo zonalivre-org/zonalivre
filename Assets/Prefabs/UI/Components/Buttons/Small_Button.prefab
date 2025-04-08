@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Delegates: []
   scaleFactor: 1.2
   clickSoundEffectIndex: 3
+  randomPitch: 0
 --- !u!1 &3980203776871833701
 GameObject:
   m_ObjectHideFlags: 0

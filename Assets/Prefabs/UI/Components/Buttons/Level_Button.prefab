@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Delegates: []
   scaleFactor: 1.2
   clickSoundEffectIndex: 2
+  randomPitch: 1
 --- !u!95 &937390513926664407
 Animator:
   serializedVersion: 5
