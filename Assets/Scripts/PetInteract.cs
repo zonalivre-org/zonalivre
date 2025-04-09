@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PetInteract : MonoBehaviour
@@ -29,10 +30,19 @@ public class PetInteract : MonoBehaviour
     {
         if(enable && other.gameObject.CompareTag("Player"))
         {
+            dogMovement.canAutoMove = false;
+            dogMovement.StopMovement();
             Debug.Log("Entrou na area do pet!");
             Invoke ("StartMinigame", detectionDelay);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        dogMovement.canAutoMove = true;
+        dogMovement.FollowNode();
+    }
+
     private void SelectObjective()
     {
         RaycastHit hit;
@@ -88,6 +98,7 @@ public class PetInteract : MonoBehaviour
 
         playerMovement.ToggleMovement(true);
         dogMovement.FollowNode();
+        dogMovement.canAutoMove = true;
         interactable = true;
     }
     
