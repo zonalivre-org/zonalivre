@@ -26,7 +26,11 @@ public class DogMovement : MonoBehaviour
         currentQuota = followQuota;
         detectRadius = (this.transform.localScale.x / 2) + detectionRange;
     }
-    private void Start() => Invoke(firstOrder, timeBetweenMove);
+    private void Start()
+    {
+        FollowNode();
+    }
+
     private void Arrival()
     {
         distance = Vector3.Distance(destination, this.transform.position);
@@ -84,4 +88,50 @@ public class DogMovement : MonoBehaviour
             agent.ResetPath(); // Limpa o caminho atual
         }
     }
+    public void FollowPlayerAtSafeDistance(float safeDistance)
+    {
+        if (playerTransform == null) return;
+
+        Vector3 directionToPlayer = transform.position - playerTransform.position;
+        float distanceToPlayer = directionToPlayer.magnitude;
+
+        // Se estiver muito longe, aproxima-se
+        if (distanceToPlayer > safeDistance * 1.2f)
+        {
+            MoveToDestination(playerTransform.position, 0.5f, nameof(FollowPlayerAtSafeDistance));
+        }
+        // Se estiver muito perto, afasta-se um pouco
+        else if (distanceToPlayer < safeDistance)
+        {
+            Vector3 retreatPosition = transform.position + directionToPlayer.normalized * safeDistance;
+            MoveToDestination(retreatPosition, 0.5f, nameof(FollowPlayerAtSafeDistance));
+        }
+        // Se estiver na distância ideal, espera
+        else
+        {
+            WaitInPlace(1f);
+        }
+    }
+    
+    public void FleeFromPlayer(float fleeDistance)
+    {
+        if (playerTransform == null) return;
+
+        Vector3 directionAwayFromPlayer = transform.position - playerTransform.position;
+        Vector3 fleeTarget = transform.position + directionAwayFromPlayer.normalized * fleeDistance;
+
+        // Verifica se o destino de fuga é válido no NavMesh
+        if (NavMesh.SamplePosition(fleeTarget, out NavMeshHit hit, fleeDistance, NavMesh.AllAreas))
+        {
+            MoveToDestination(hit.position, 0.3f, nameof(FleeFromPlayer));
+        }
+        else
+        {
+            // Se não encontrar um local válido, espera
+            WaitInPlace(0.5f);
+        }
+    }
+
+
+    
 }
