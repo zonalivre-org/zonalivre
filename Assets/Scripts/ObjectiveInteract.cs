@@ -31,8 +31,6 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private bool hasEffect = false;
     [SerializeField] private GameObject effect; // placeholderline!
     [SerializeField] private LayerMask clicklableLayers;
-
-    [Header("PlaceHolder Variavles")]
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
     [SerializeField] private float mangoFallSpeed;
