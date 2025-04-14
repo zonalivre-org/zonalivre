@@ -7840,6 +7840,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 286751187742014411, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 599820878256234522, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
         type: 3}
       propertyPath: m_Enabled
@@ -7855,6 +7860,11 @@ PrefabInstance:
       propertyPath: clickEffect
       value: 
       objectReference: {fileID: 1759830959}
+    - target: {fileID: 6420283541446955777, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7532506004628424531, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7863,7 +7873,7 @@ PrefabInstance:
     - target: {fileID: 7532506004628424531, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: 7532506004628424531, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
         type: 3}
