@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.ComponentModel;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -20,17 +18,33 @@ public class DogMovement : MonoBehaviour
     private string funcName;
     private int currentQuota;
     private bool canAutoMove = true;
+    private Animator animator;
+    private int direction = 1; // 1 for right, -1 for left
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         currentQuota = followQuota;
         detectRadius = (this.transform.localScale.x / 2) + detectionRange;
+
+        agent.updateRotation = false; // Disable automatic rotation
     }
-    private void Start() => Invoke(firstOrder, timeBetweenMove);
+
+    void LateUpdate()
+    {
+        SetAnimations();
+    }
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        Invoke(firstOrder, timeBetweenMove);
+    }
+
     private void Arrival()
     {
         distance = Vector3.Distance(destination, this.transform.position);
-        if(distance <= detectRadius) Invoke(funcName, waitTime);
+        if (distance <= detectRadius) Invoke(funcName, waitTime);
         else Invoke("Arrival", 0.7f);
     }
     private void MoveToDestination(Vector3 currentDestination, float waitTimeMultiplier, string nextFunctionCall)
@@ -40,14 +54,18 @@ public class DogMovement : MonoBehaviour
         waitTime = timeBetweenMove * waitTimeMultiplier;
         funcName = nextFunctionCall;
         agent.SetDestination(currentDestination);
+
+        if (currentDestination.x > this.transform.position.x) direction = 1;
+        else if (currentDestination.x < this.transform.position.x) direction = -1;
+
         Arrival();
     }
     private void RandomizeMovement()
     {
-        if(canAutoMove)
+        if (canAutoMove)
         {
             int roll = Random.Range(1, 128);
-            if(roll >= 24) FollowNode();
+            if (roll >= 24) FollowNode();
             else WaitInPlace(2);
         }
     }
@@ -64,7 +82,7 @@ public class DogMovement : MonoBehaviour
     public void FollowPlayer()
     {
         canAutoMove = false;
-        if(currentQuota > 0)
+        if (currentQuota > 0)
         {
             currentQuota--;
             MoveToDestination(playerTransform.position, 0.5f, "FollowPlayer");
@@ -80,7 +98,36 @@ public class DogMovement : MonoBehaviour
     public void ToggleMovement(bool toggle)
     {
         canAutoMove = toggle;
-        if(!canAutoMove) agent.SetDestination(this.transform.position);
+        if (!canAutoMove) agent.SetDestination(this.transform.position);
         else RandomizeMovement();
+    }
+
+    void SetAnimations()
+    {
+        Vector3 movementDirection = agent.velocity.normalized;
+
+        if (agent.velocity.sqrMagnitude > 0.1f) // Check if the dog is moving
+        {
+
+            if (direction == 1)
+            {
+                animator.Play("Walking_Right");
+            }
+            else if (direction == -1)
+            {
+                animator.Play("Walking_Left");
+            }
+        }
+        else
+        {
+            if (direction == 1)
+            {
+                animator.Play("Idle_Right");
+            }
+            else if (direction == -1)
+            {
+                animator.Play("Idle_Left");
+            }
+        }
     }
 }
