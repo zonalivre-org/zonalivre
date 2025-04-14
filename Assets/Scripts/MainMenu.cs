@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
@@ -6,6 +7,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject sidePanel;
     [SerializeField] private GameObject infoPanel;
     [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private GameObject[] mainButtons;
+
+    #region controllers
 
     public void ChangeToMidPanel(GameObject panel)
     {
@@ -32,13 +36,22 @@ public class MainMenu : MonoBehaviour
         midPanel.SetActive(true);
         midPanel.GetComponent<Animator>().Play("BackToMid");
     }
+
+    #endregion
+
     #region Animations
 
     private void SideToMid(GameObject destinationpanel)
     {
-        sidePanel.SetActive(false);
         destinationpanel.SetActive(true);
         destinationpanel.GetComponent<Animator>().Play("ToMid");
+
+        DOTween.Sequence()
+            .AppendInterval(0.1f)
+            .OnComplete(() =>
+            {
+                sidePanel.SetActive(false);
+            });
     }
 
     private void MidToSide(GameObject originPanel)
@@ -67,5 +80,22 @@ public class MainMenu : MonoBehaviour
         destinyPanel.SetActive(true);
     }
     
+    public void ShowButtons()
+    {
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.AppendInterval(1.30f);
+
+        foreach (GameObject button in mainButtons)
+        {
+            button.transform.localScale = Vector3.zero;
+            button.SetActive(true);
+
+            sequence.Append(
+                button.transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack)
+            );
+        }
+
+    }
     #endregion
 }
