@@ -2619,6 +2619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b6efb432bd7194aaaf6e7afc483a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
   volumeType: 2
 --- !u!1001 &663731527
 PrefabInstance:
@@ -3849,7 +3850,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Zona Live
+  m_text: 'Zona Livre
 
     <size=80>Leishmaniose zero'
   m_isRightToLeft: 0
@@ -5035,6 +5036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b6efb432bd7194aaaf6e7afc483a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
   volumeType: 1
 --- !u!1 &1344352227 stripped
 GameObject:
@@ -5427,6 +5429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b6efb432bd7194aaaf6e7afc483a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
   volumeType: 0
 --- !u!1 &1606146250
 GameObject:
