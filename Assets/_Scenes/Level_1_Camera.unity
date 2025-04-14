@@ -5033,6 +5033,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7064341544790471303, guid: 73a42a07c6f39e242b800328ebb2c11a,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bbbb3eab53f93c34ea29c51b156a81c8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7840,16 +7845,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 286751187742014411, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 599820878256234522, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1563018761800909687, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
         type: 3}
       propertyPath: m_Name
@@ -7860,11 +7855,6 @@ PrefabInstance:
       propertyPath: clickEffect
       value: 
       objectReference: {fileID: 1759830959}
-    - target: {fileID: 6420283541446955777, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7532506004628424531, guid: ed0cf981fe7ce0cd9b6f724aefa69222,
         type: 3}
       propertyPath: m_LocalPosition.x
