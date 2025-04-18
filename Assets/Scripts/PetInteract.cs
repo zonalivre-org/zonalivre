@@ -36,21 +36,22 @@ public class PetInteract : MonoBehaviour
     private void SelectObjective()
     {
         RaycastHit hit;
+
         //Placehoulder code bellow VVV
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, healthLayer)) 
         {
-            defineObjective = 0;
-            Debug.Log("Minigame de cura habilitado para o Pet!");
+            InventoryManager.instance.Search(101, true); 
+            Debug.Log(InventoryManager.instance.currentItem.name);
         }
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, staminaLayer))
         {
-            defineObjective = 1;
-            Debug.Log("Minigame de comida habilitado para o Pet!");
+            InventoryManager.instance.Search(102, true); 
+            Debug.Log(InventoryManager.instance.currentItem.name);
         }
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, happynessLayer)) 
         {
-            defineObjective = 2;
-            Debug.Log("Minigame de alegria habilidado para o Pet!");
+            InventoryManager.instance.Search(103, true); 
+            Debug.Log(InventoryManager.instance.currentItem.name);
         }
         //Placehoulder code above ^^^
 
@@ -86,6 +87,7 @@ public class PetInteract : MonoBehaviour
         }
         else Debug.Log(whichTask + " is not a valid Pet task number!");
 
+        InventoryManager.instance.Search(0, true);
         playerMovement.ToggleMovement(true);
         dogMovement.FollowNode();
         interactable = true;
@@ -105,19 +107,20 @@ public class PetInteract : MonoBehaviour
         if(enable)
         {
             playerMovement.ToggleMovement(false);
-            if(defineObjective == 0)
+            InventoryManager imi = InventoryManager.instance;
+            if(imi.currentItem.id == 101) //Minigame de curar a vida
             {
                 healthMinigameUI.SetActive(true);
             }
-            else if(defineObjective == 1)
+            else if(imi.currentItem.id == 102) //Minigame de alimentar
             {
                 staminaMinigameUI.SetActive(true);
             }
-            else if(defineObjective == 2)
+            else if(imi.currentItem.id == 103 || imi.currentItem.id == 0) //Minigame de brincar
             {
                 happynessMinigameUI.SetActive(true);
             }
-            else Debug.Log(defineObjective + " is not a valid objective number!");
+            else Debug.Log(imi.currentItem.id + " is not a valid ID number!");
             enable = false;
             interactable = false;
         }

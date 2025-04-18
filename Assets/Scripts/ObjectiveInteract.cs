@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectiveInteract : MonoBehaviour
@@ -8,6 +9,7 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private float cooldown = 0f;
     [Header("Elements")]
     [SerializeField] private PlayerController playerMovement;
+    [SerializeField] private LayerMask clicklableLayers;
     [Header("If object opens a minigame")]
     [SerializeField] private bool hasMinigame = false;
     [SerializeField] private GameObject minigame;
@@ -21,16 +23,11 @@ public class ObjectiveInteract : MonoBehaviour
     }
     [Header("If object requires an item")] // not implemented yet!
     [SerializeField] private bool needsItem = false;
-    [SerializeField] private GameObject itemR; // placeholderline!
+    [SerializeField] private int idCheck;
 
     [Header("If object gives an item to the player")] // not implemented yet!
     [SerializeField] private bool givesItem = false;
-    [SerializeField] private GameObject itemG; // placeholderline!
-
-    [Header("If Object applies effect")] // not implemented yet!
-    [SerializeField] private bool hasEffect = false;
-    [SerializeField] private GameObject effect; // placeholderline!
-    [SerializeField] private LayerMask clicklableLayers;
+    [SerializeField] private int idGive; // placeholderline!
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
     [SerializeField] private float mangoFallSpeed;
@@ -69,9 +66,24 @@ public class ObjectiveInteract : MonoBehaviour
         if(enable && other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Entrou na area de um Objetivo!");
-            if(hasMinigame) Invoke("StartMinigame", detectionDelay);
-            if(hasEffect) Invoke("ApplyEffect", detectionDelay);
-            if(givesItem) Invoke("GiveItem", detectionDelay);
+            if(needsItem)
+            {
+                if(InventoryManager.instance.currentItem.id == idCheck)
+                {
+                    if(hasMinigame) Invoke("StartMinigame", detectionDelay);
+                    if(givesItem) Invoke("GiveItem", detectionDelay);
+                }
+                else
+                {
+                    int index = InventoryManager.instance.Search(idCheck, false);
+                    Debug.Log("Você não tem o item: '" + InventoryManager.instance.itemsList[index].name + "' necessario!");
+                }
+            }
+            else
+            {
+                if(hasMinigame) Invoke("StartMinigame", detectionDelay);
+                if(givesItem) Invoke("GiveItem", detectionDelay);
+            }
         }
     }
     private void SelectObjective()
@@ -122,20 +134,14 @@ public class ObjectiveInteract : MonoBehaviour
             Debug.Log("Iniciar Minigame!");
         }
     }
-    private void ApplyEffect()
-    {
-        if(enable)
-        {   
-            enable = false;
-            Debug.Log("Jogador recebeu um efeito magico unico!");
-        }
-    }
     private void GiveItem()
     {
         if(enable)
         {
             enable = false;
-            Debug.Log("Jogador recebeu um presente misterioso!");
+            Item setItem = InventoryManager.instance.itemsList[idGive];
+            InventoryManager.instance.SetItem(setItem);
+            Debug.Log("Jogador recebeu o item: '" + setItem.name + "'!");
         }
     }
 }
