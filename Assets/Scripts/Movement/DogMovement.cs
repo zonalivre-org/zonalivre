@@ -1,133 +1,132 @@
-using System.Collections.Generic;
+using FSMC.Runtime;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections.Generic;
+
+public interface IDogAnimator
+{
+    void SetMovementAnimation(Vector3 velocity, int direction);
+}
+
+public class DogAnimator : IDogAnimator
+{
+    private readonly Animator animator;
+
+    public DogAnimator(Animator animator)
+    {
+        this.animator = animator;
+    }
+
+    public void SetMovementAnimation(Vector3 velocity, int direction)
+    {
+        string animationState = (velocity.sqrMagnitude > 0.1f) ? "Walking" : "Idle";
+        animationState += (direction == 1) ? "_Right" : "_Left";
+        animator.Play(animationState);
+    }
+}
 
 public class DogMovement : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private List<Transform> destinationTransform;
-    [SerializeField] private string firstOrder = "FollowNode";
-    [SerializeField] private float timeBetweenMove = 1.5f;
+    [SerializeField] private List<Transform> destinationPoints;
+    [SerializeField] private float timeBetweenMoves = 1.5f;
     [SerializeField] private float detectionRange = 3f;
     [SerializeField] private int followQuota = 5;
+
     private NavMeshAgent agent;
     private float detectRadius;
-    private float distance;
-    private Vector3 destination;
-    private float waitTime;
-    private string funcName;
     private int currentQuota;
     private bool canAutoMove = true;
-    private Animator animator;
     private int direction = 1; // 1 for right, -1 for left
+    private IDogAnimator dogAnimator;
+    private string funcName;
+    [HideInInspector]
+    public FSMC_Executer stateMachine;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
         currentQuota = followQuota;
-        detectRadius = (this.transform.localScale.x / 2) + detectionRange;
-
-        agent.updateRotation = false; // Disable automatic rotation
+        detectRadius = (transform.localScale.x / 2) + detectionRange;
+        dogAnimator = new DogAnimator(GetComponent<Animator>());
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
-        SetAnimations();
+        dogAnimator.SetMovementAnimation(agent.velocity, direction);
     }
 
-    private void Start()
+    public void SetAutonomousMovement(bool enabled)
     {
-        animator = GetComponent<Animator>();
-        Invoke(firstOrder, timeBetweenMove);
-    }
-
-    private void Arrival()
-    {
-        distance = Vector3.Distance(destination, this.transform.position);
-        if (distance <= detectRadius) Invoke(funcName, waitTime);
-        else Invoke("Arrival", 0.7f);
-    }
-    private void MoveToDestination(Vector3 currentDestination, float waitTimeMultiplier, string nextFunctionCall)
-    {
-        canAutoMove = true;
-        destination = currentDestination;
-        waitTime = timeBetweenMove * waitTimeMultiplier;
-        funcName = nextFunctionCall;
-        agent.SetDestination(currentDestination);
-
-        if (currentDestination.x > this.transform.position.x) direction = 1;
-        else if (currentDestination.x < this.transform.position.x) direction = -1;
-
-        Arrival();
-    }
-    private void RandomizeMovement()
-    {
-        if (canAutoMove)
+        canAutoMove = enabled;
+        if (!enabled) 
         {
-            int roll = Random.Range(1, 128);
-            if (roll >= 24) FollowNode();
-            else WaitInPlace(2);
+            agent.SetDestination(transform.position);
+        }
+        else 
+        {
+            MoveToRandomDestination();
         }
     }
-    public void FollowNode()
+
+    public void MoveToRandomDestination()
     {
-        canAutoMove = false;
-        MoveToDestination(destinationTransform[Random.Range(0, destinationTransform.Count)].position, 1f, "RandomizeMovement");
+        if (!canAutoMove) return;
+
+        int roll = Random.Range(1, 128);
+        if (roll >= 24) 
+        {
+            MoveToPoint(destinationPoints[Random.Range(0, destinationPoints.Count)].position);
+        }
+        else 
+        {
+            StopMovementTemporarily(2);
+        }
     }
-    public void WaitInPlace(float waitMultiplier)
+
+    public void MoveToPoint(Vector3 point)
     {
-        canAutoMove = false;
-        MoveToDestination(this.transform.position, waitMultiplier, "RandomizeMovement");
+        SetDestination(point, 1f, nameof(MoveToRandomDestination));
     }
-    public void FollowPlayer()
+
+    public void StopMovementTemporarily(float waitMultiplier)
     {
-        canAutoMove = false;
+        SetDestination(transform.position, waitMultiplier, nameof(MoveToRandomDestination));
+    }
+
+    public void MoveToPlayer()
+    {
         if (currentQuota > 0)
         {
             currentQuota--;
-            MoveToDestination(playerTransform.position, 0.5f, "FollowPlayer");
+            SetDestination(playerTransform.position, 0.5f, nameof(MoveToPlayer));
         }
         else
         {
             currentQuota = followQuota;
-            MoveToDestination(playerTransform.position, 0.5f, "RandomizeMovement");
+            SetDestination(playerTransform.position, 0.5f, nameof(MoveToRandomDestination));
         }
     }
-    //public void Panic(){}
-    //public void Flee(){}
-    public void ToggleMovement(bool toggle)
+
+    private void SetDestination(Vector3 target, float waitMultiplier, string nextAction)
     {
-        canAutoMove = toggle;
-        if (!canAutoMove) agent.SetDestination(this.transform.position);
-        else RandomizeMovement();
+        direction = target.x > transform.position.x ? 1 : -1;
+        agent.SetDestination(target);
+        funcName = nextAction;
+        Invoke(nameof(CheckArrival), 0.7f);
     }
 
-    void SetAnimations()
+    private void CheckArrival()
     {
-        Vector3 movementDirection = agent.velocity.normalized;
-
-        if (agent.velocity.sqrMagnitude > 0.1f) // Check if the dog is moving
+        float distance = Vector3.Distance(agent.destination, transform.position);
+        if (distance <= detectRadius)
         {
-
-            if (direction == 1)
-            {
-                animator.Play("Walking_Right");
-            }
-            else if (direction == -1)
-            {
-                animator.Play("Walking_Left");
-            }
+            Invoke(funcName, timeBetweenMoves);
         }
         else
         {
-            if (direction == 1)
-            {
-                animator.Play("Idle_Right");
-            }
-            else if (direction == -1)
-            {
-                animator.Play("Idle_Left");
-            }
+            Invoke(nameof(CheckArrival), 0.7f);
         }
     }
 }

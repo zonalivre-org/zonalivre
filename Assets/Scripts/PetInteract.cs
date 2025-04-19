@@ -31,6 +31,8 @@ public class PetInteract : MonoBehaviour
         {
             Debug.Log("Entrou na area do pet!");
             Invoke ("StartMinigame", detectionDelay);
+            dogMovement.stateMachine.SetTrigger("Contact");
+            Debug.Log(dogMovement.stateMachine.GetCurrentState().Name);
         }
     }
     private void SelectObjective()
@@ -57,13 +59,13 @@ public class PetInteract : MonoBehaviour
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
         {
             enable = true;
-            dogMovement.WaitInPlace(9999f);
+            dogMovement.StopMovementTemporarily(9999f);
             Debug.Log("Indo olhar o pet!");
         }
         else if(enable)
         {
             enable = false;
-            dogMovement.FollowNode();
+            dogMovement.MoveToRandomDestination();
             Debug.Log("cancelou a ação");
         }
     }
@@ -87,14 +89,14 @@ public class PetInteract : MonoBehaviour
         else Debug.Log(whichTask + " is not a valid Pet task number!");
 
         playerMovement.ToggleMovement(true);
-        dogMovement.FollowNode();
+        dogMovement.MoveToRandomDestination();
         interactable = true;
     }
     
     public void CancelTask() // receives a value from another script to cancel the minigame and return to the game.
     {
         playerMovement.ToggleMovement(true);
-        dogMovement.FollowNode();
+        dogMovement.MoveToRandomDestination();
         enable = false;
         interactable = true;
         Debug.Log("Cancelou a ação");
