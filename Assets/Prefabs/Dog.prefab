@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2930661304112745816}
   - component: {fileID: 6800446877263688219}
   - component: {fileID: 7119006866852938028}
+  - component: {fileID: 3545021248520188088}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -156,10 +157,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  firstOrder: FollowNode
-  timeBetweenMove: 1
-  detectionRange: 1.5
-  followQuota: 5
+  stateMachine: {fileID: 0}
+  currentStateName: 
+  canAutoMove: 1
 --- !u!95 &7119006866852938028
 Animator:
   serializedVersion: 5
@@ -181,6 +181,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3545021248520188088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153931446269487169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7f4d8633f97ce45bbc75a0d23f36af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 11400000, guid: 1782fc211cf3ac8448cd945c42274ab4, type: 2}
 --- !u!1 &4568577620505573760
 GameObject:
   m_ObjectHideFlags: 0

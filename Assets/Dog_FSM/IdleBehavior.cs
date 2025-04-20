@@ -12,15 +12,15 @@ public class IdleBehavior : FSMC_Behaviour
     private NavMeshAgent agent;
     public override void StateInit(FSMC_Controller stateMachine, FSMC_Executer executer)
     {
+        dogMovement = executer.GetComponent<DogMovement>();
         agent = executer.GetComponent<NavMeshAgent>();
     }
     
     public override void OnStateEnter(FSMC_Controller stateMachine, FSMC_Executer executer)
     {
         Debug.Log("Idle state entered");
-        agent.isStopped = true; // Stop the agent from moving
+        dogMovement.StopMovement();
         agent.ResetPath(); // Clear any existing paths
-        dogMovement = executer.GetComponent<DogMovement>();
     }
     
     public override void OnStateUpdate(FSMC_Controller stateMachine, FSMC_Executer executer)

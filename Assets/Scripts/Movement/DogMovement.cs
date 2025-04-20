@@ -1,148 +1,87 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using FSMC.Runtime;
+using Random = UnityEngine.Random;
 
 public class DogMovement : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
     [SerializeField] private List<Transform> destinationTransform;
-    [SerializeField] private string firstOrder = "FollowNode";
-    [SerializeField] private float timeBetweenMove = 1.5f;
-    [SerializeField] private float detectionRange = 3f;
-    [SerializeField] private int followQuota = 5;
+    [SerializeField] private FSMC_Executer stateMachine;
+    [SerializeField] public string currentStateName;
+    
     private NavMeshAgent agent;
     private float detectRadius;
-    private float distance;
-    private Vector3 destination;
-    private float waitTime;
-    private string funcName;
-    private int currentQuota;
     public bool canAutoMove = true;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        currentQuota = followQuota;
-        detectRadius = (this.transform.localScale.x / 2) + detectionRange;
-    }
-    private void Start()
-    {
-        FollowNode();
+        stateMachine = GetComponent<FSMC_Executer>();
     }
 
-    private void Arrival()
+    private void Update()
     {
-        distance = Vector3.Distance(destination, this.transform.position);
-        if(distance <= detectRadius) Invoke(funcName, waitTime);
-        else Invoke(nameof(Arrival), 0.7f);
-    }
-    private void MoveToDestination(Vector3 currentDestination, float waitTimeMultiplier, string nextFunctionCall)
-    {
-        if (!canAutoMove) return;
-        destination = currentDestination;
-        waitTime = timeBetweenMove * waitTimeMultiplier;
-        funcName = nextFunctionCall;
-        agent.SetDestination(currentDestination);
-        Arrival();
-    }
-    private void RandomizeMovement()
-    {
-            int roll = Random.Range(1, 128);
-            if(roll >= 24) FollowNode();
-            else WaitInPlace(2);
+        
+        currentStateName = stateMachine.GetCurrentState().Name;
         
     }
-    public void FollowNode()
+
+    // Core movement methods (used by states)
+    public void MoveToDestination(Vector3 currentDestination)
     {
-        if (destinationTransform == null || destinationTransform.Count == 0)
-        {
-            WaitInPlace(1f);
-            return;
-        }
-        MoveToDestination(destinationTransform[Random.Range(0, destinationTransform.Count)].position, 1f, "RandomizeMovement");
-    }
-    public void WaitInPlace(float waitMultiplier)
-    {
-        MoveToDestination(this.transform.position, waitMultiplier, "RandomizeMovement");
-    }
-    public void FollowPlayer()
-    {
-        if(currentQuota > 0)
-        {
-            currentQuota--;
-            MoveToDestination(playerTransform.position, 0.5f, "FollowPlayer");
-        }
-        else
-        {
-            currentQuota = followQuota;
-            MoveToDestination(playerTransform.position, 0.5f, "RandomizeMovement");
-        }
-    }
-    //public void Panic(){}
-    //public void Flee(){}
-    public void ToggleMovement(bool toggle)
-    {
-        RandomizeMovement();
+        if (!canAutoMove) return;
+        agent.SetDestination(currentDestination);
     }
 
     public void StopMovement()
     {
         if (agent != null)
         {
-            agent.ResetPath(); // Limpa o caminho atual
+            agent.ResetPath();
         }
     }
-    public void FollowPlayerAtSafeDistance(float safeDistance)
+
+    public Vector3 GetRandomDestination()
     {
-        if (playerTransform == null) return;
+        if (destinationTransform == null || destinationTransform.Count == 0)
+            return transform.position;
+            
+        return destinationTransform[Random.Range(0, destinationTransform.Count)].position;
+    }
 
-        Vector3 directionToPlayer = transform.position - playerTransform.position;
-        float distanceToPlayer = directionToPlayer.magnitude;
+    public Vector3 GetPlayerPosition() => playerTransform.position;
 
-        // Se estiver muito longe, aproxima-se
-        if (distanceToPlayer > safeDistance * 1.2f)
-        {
-            MoveToDestination(playerTransform.position, 0.5f, nameof(FollowPlayerAtSafeDistance));
-        }
-        // Se estiver muito perto, afasta-se um pouco
-        else if (distanceToPlayer < safeDistance)
-        {
-            Vector3 retreatPosition = transform.position + directionToPlayer.normalized * safeDistance;
-            MoveToDestination(retreatPosition, 0.5f, nameof(FollowPlayerAtSafeDistance));
-        }
-        // Se estiver na distância ideal, espera
-        else
-        {
-            WaitInPlace(1f);
-        }
+    // State transition helpers
+    public void TriggerFollowPlayer()
+    {
+        stateMachine.SetTrigger("FollowPlayer");
+    }
+
+    public void TriggerIdle()
+    {
+        stateMachine.SetTrigger("Idle");
     }
     
-    public void FleeFromPlayer(float fleeDistance)
+    public void TriggerFlee()
     {
-        if (playerTransform == null) return;
-
-        Vector3 directionAwayFromPlayer = transform.position - playerTransform.position;
-        Vector3 fleeTarget = transform.position + directionAwayFromPlayer.normalized * fleeDistance;
-
-        // Verifica se o destino de fuga é válido no NavMesh
-        if (NavMesh.SamplePosition(fleeTarget, out NavMeshHit hit, fleeDistance, NavMesh.AllAreas))
-        {
-            MoveToDestination(hit.position, 0.3f, nameof(FleeFromPlayer));
-        }
-        else
-        {
-            // Se não encontrar um local válido, espera
-            WaitInPlace(0.5f);
-        }
+        stateMachine.SetTrigger("Flee");
     }
 
+    public void TriggerRandomMovement()
+    {
+        stateMachine.SetTrigger("Wandering");
+        SetAutonomousMovement(true); 
+    }
+
+    // Clean version of SetAutonomousMovement
     public void SetAutonomousMovement(bool enabled)
     {
         canAutoMove = enabled;
-        if (!enabled)
-        {
-            StopMovement();
-        }
+        if (!enabled) StopMovement();
     }
 }

@@ -28,6 +28,9 @@ MonoBehaviour:
     rid: 4724752544776323083
   Parameters:
   - rid: 4724752544776323078
+  - rid: 4724752568674942976
+  - rid: 4724752568674942977
+  - rid: 4724752568674942978
   references:
     version: 2
     RefIds:
@@ -49,7 +52,7 @@ MonoBehaviour:
       data:
         _behaviours:
         - rid: 4724752544776323073
-        Position: {x: 526, y: 341}
+        Position: {x: 526, y: 320}
         _name: FollowingPlayer
         TransitionsFrom: []
         TransitionsTo:
@@ -62,7 +65,7 @@ MonoBehaviour:
       type: {class: FSMC_State, ns: FSMC.Runtime, asm: FSMC.Runtime}
       data:
         _behaviours: []
-        Position: {x: 322, y: 453}
+        Position: {x: 289, y: 395}
         _name: FleeingFromPlayer
         TransitionsFrom: []
         TransitionsTo:
@@ -71,7 +74,7 @@ MonoBehaviour:
       type: {class: FSMC_BoolParameter, ns: FSMC.Runtime, asm: FSMC.Runtime}
       data:
         _type: 3
-        _name: Contact
+        _name: Idle
         _value: 0
     - rid: 4724752544776323079
       type: {class: FSMC_Transition, ns: FSMC.Runtime, asm: FSMC.Runtime}
@@ -153,3 +156,21 @@ MonoBehaviour:
       type: {class: IdleBehavior, ns: , asm: Assembly-CSharp}
       data:
         enabled: 1
+    - rid: 4724752568674942976
+      type: {class: FSMC_BoolParameter, ns: FSMC.Runtime, asm: FSMC.Runtime}
+      data:
+        _type: 3
+        _name: Wandering
+        _value: 0
+    - rid: 4724752568674942977
+      type: {class: FSMC_BoolParameter, ns: FSMC.Runtime, asm: FSMC.Runtime}
+      data:
+        _type: 3
+        _name: FollowPlayer
+        _value: 0
+    - rid: 4724752568674942978
+      type: {class: FSMC_BoolParameter, ns: FSMC.Runtime, asm: FSMC.Runtime}
+      data:
+        _type: 3
+        _name: Flee
+        _value: 0
