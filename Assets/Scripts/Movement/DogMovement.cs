@@ -1,135 +1,148 @@
-using FSMC.Runtime;
+using System.Collections.Generic;
+using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using System.Collections.Generic;
-
-public interface IDogAnimator
-{
-    void SetMovementAnimation(Vector3 velocity, int direction);
-}
-
-public class DogAnimator : IDogAnimator
-{
-    private readonly Animator animator;
-
-    public DogAnimator(Animator animator)
-    {
-        this.animator = animator;
-    }
-
-    public void SetMovementAnimation(Vector3 velocity, int direction)
-    {
-        string animationState = (velocity.sqrMagnitude > 0.1f) ? "Walking" : "Idle";
-        animationState += (direction == 1) ? "_Right" : "_Left";
-        animator.Play(animationState);
-    }
-}
 
 public class DogMovement : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private List<Transform> destinationPoints;
-    [SerializeField] private float timeBetweenMoves = 1.5f;
+    [SerializeField] private List<Transform> destinationTransform;
+    [SerializeField] private string firstOrder = "FollowNode";
+    [SerializeField] private float timeBetweenMove = 1.5f;
     [SerializeField] private float detectionRange = 3f;
     [SerializeField] private int followQuota = 5;
-
     private NavMeshAgent agent;
     private float detectRadius;
-    private int currentQuota;
-    private bool canAutoMove = true;
-    private int direction = 1; // 1 for right, -1 for left
-    private IDogAnimator dogAnimator;
+    private float distance;
+    private Vector3 destination;
+    private float waitTime;
     private string funcName;
-    [HideInInspector]
-    public FSMC_Executer stateMachine;
-    public FSMC_Transition transitions;
-
+    private int currentQuota;
+    public bool canAutoMove = true;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        stateMachine = GetComponent<FSMC_Executer>();
-        agent.updateRotation = false;
         currentQuota = followQuota;
-        detectRadius = (transform.localScale.x / 2) + detectionRange;
-        dogAnimator = new DogAnimator(GetComponent<Animator>());
-        SetAutonomousMovement(true);
+        detectRadius = (this.transform.localScale.x / 2) + detectionRange;
+    }
+    private void Start()
+    {
+        FollowNode();
     }
 
-    private void LateUpdate()
+    private void Arrival()
     {
-        dogAnimator.SetMovementAnimation(agent.velocity, direction);
+        distance = Vector3.Distance(destination, this.transform.position);
+        if(distance <= detectRadius) Invoke(funcName, waitTime);
+        else Invoke(nameof(Arrival), 0.7f);
+    }
+    private void MoveToDestination(Vector3 currentDestination, float waitTimeMultiplier, string nextFunctionCall)
+    {
+        if (!canAutoMove) return;
+        destination = currentDestination;
+        waitTime = timeBetweenMove * waitTimeMultiplier;
+        funcName = nextFunctionCall;
+        agent.SetDestination(currentDestination);
+        Arrival();
+    }
+    private void RandomizeMovement()
+    {
+            int roll = Random.Range(1, 128);
+            if(roll >= 24) FollowNode();
+            else WaitInPlace(2);
+        
+    }
+    public void FollowNode()
+    {
+        if (destinationTransform == null || destinationTransform.Count == 0)
+        {
+            WaitInPlace(1f);
+            return;
+        }
+        MoveToDestination(destinationTransform[Random.Range(0, destinationTransform.Count)].position, 1f, "RandomizeMovement");
+    }
+    public void WaitInPlace(float waitMultiplier)
+    {
+        MoveToDestination(this.transform.position, waitMultiplier, "RandomizeMovement");
+    }
+    public void FollowPlayer()
+    {
+        if(currentQuota > 0)
+        {
+            currentQuota--;
+            MoveToDestination(playerTransform.position, 0.5f, "FollowPlayer");
+        }
+        else
+        {
+            currentQuota = followQuota;
+            MoveToDestination(playerTransform.position, 0.5f, "RandomizeMovement");
+        }
+    }
+    //public void Panic(){}
+    //public void Flee(){}
+    public void ToggleMovement(bool toggle)
+    {
+        RandomizeMovement();
+    }
+
+    public void StopMovement()
+    {
+        if (agent != null)
+        {
+            agent.ResetPath(); // Limpa o caminho atual
+        }
+    }
+    public void FollowPlayerAtSafeDistance(float safeDistance)
+    {
+        if (playerTransform == null) return;
+
+        Vector3 directionToPlayer = transform.position - playerTransform.position;
+        float distanceToPlayer = directionToPlayer.magnitude;
+
+        // Se estiver muito longe, aproxima-se
+        if (distanceToPlayer > safeDistance * 1.2f)
+        {
+            MoveToDestination(playerTransform.position, 0.5f, nameof(FollowPlayerAtSafeDistance));
+        }
+        // Se estiver muito perto, afasta-se um pouco
+        else if (distanceToPlayer < safeDistance)
+        {
+            Vector3 retreatPosition = transform.position + directionToPlayer.normalized * safeDistance;
+            MoveToDestination(retreatPosition, 0.5f, nameof(FollowPlayerAtSafeDistance));
+        }
+        // Se estiver na distância ideal, espera
+        else
+        {
+            WaitInPlace(1f);
+        }
+    }
+    
+    public void FleeFromPlayer(float fleeDistance)
+    {
+        if (playerTransform == null) return;
+
+        Vector3 directionAwayFromPlayer = transform.position - playerTransform.position;
+        Vector3 fleeTarget = transform.position + directionAwayFromPlayer.normalized * fleeDistance;
+
+        // Verifica se o destino de fuga é válido no NavMesh
+        if (NavMesh.SamplePosition(fleeTarget, out NavMeshHit hit, fleeDistance, NavMesh.AllAreas))
+        {
+            MoveToDestination(hit.position, 0.3f, nameof(FleeFromPlayer));
+        }
+        else
+        {
+            // Se não encontrar um local válido, espera
+            WaitInPlace(0.5f);
+        }
     }
 
     public void SetAutonomousMovement(bool enabled)
     {
         canAutoMove = enabled;
-        if (!enabled) 
+        if (!enabled)
         {
-            agent.SetDestination(transform.position);
-        }
-        else 
-        {
-            MoveToRandomDestination();
-        }
-    }
-
-    public void MoveToRandomDestination()
-    {
-        if (!canAutoMove) return;
-
-        int roll = Random.Range(1, 128);
-        if (roll >= 24) 
-        {
-            MoveToPoint(destinationPoints[Random.Range(0, destinationPoints.Count)].position);
-        }
-        else 
-        {
-            StopMovementTemporarily(2);
-        }
-    }
-
-    public void MoveToPoint(Vector3 point)
-    {
-        SetDestination(point, 1f, nameof(MoveToRandomDestination));
-    }
-
-    public void StopMovementTemporarily(float waitMultiplier)
-    {
-        SetDestination(transform.position, waitMultiplier, nameof(MoveToRandomDestination));
-    }
-
-    public void MoveToPlayer()
-    {
-        if (currentQuota > 0)
-        {
-            currentQuota--;
-            SetDestination(playerTransform.position, 0.5f, nameof(MoveToPlayer));
-        }
-        else
-        {
-            currentQuota = followQuota;
-            SetDestination(playerTransform.position, 0.5f, nameof(MoveToRandomDestination));
-        }
-    }
-
-    private void SetDestination(Vector3 target, float waitMultiplier, string nextAction)
-    {
-        direction = target.x > transform.position.x ? 1 : -1;
-        agent.SetDestination(target);
-        funcName = nextAction;
-        Invoke(nameof(CheckArrival), 0.7f);
-    }
-
-    private void CheckArrival()
-    {
-        float distance = Vector3.Distance(agent.destination, transform.position);
-        if (distance <= detectRadius)
-        {
-            Invoke(funcName, timeBetweenMoves);
-        }
-        else
-        {
-            Invoke(nameof(CheckArrival), 0.7f);
+            StopMovement();
         }
     }
 }

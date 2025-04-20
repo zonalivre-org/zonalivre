@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PetInteract : MonoBehaviour
@@ -29,11 +30,19 @@ public class PetInteract : MonoBehaviour
     {
         if(enable && other.gameObject.CompareTag("Player"))
         {
-            dogMovement.stateMachine.SetTrigger("Contact");
+            dogMovement.canAutoMove = false;
+            dogMovement.StopMovement();
+            Debug.Log("Entrou na area do pet!");
             Invoke ("StartMinigame", detectionDelay);
-            Debug.Log(dogMovement.stateMachine.GetCurrentState().Name);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        dogMovement.canAutoMove = true;
+        dogMovement.FollowNode();
+    }
+
     private void SelectObjective()
     {
         RaycastHit hit;
@@ -58,13 +67,13 @@ public class PetInteract : MonoBehaviour
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
         {
             enable = true;
-            dogMovement.StopMovementTemporarily(9999f);
+            dogMovement.WaitInPlace(9999f);
             Debug.Log("Indo olhar o pet!");
         }
         else if(enable)
         {
             enable = false;
-            dogMovement.MoveToRandomDestination();
+            dogMovement.FollowNode();
             Debug.Log("cancelou a ação");
         }
     }
@@ -88,14 +97,15 @@ public class PetInteract : MonoBehaviour
         else Debug.Log(whichTask + " is not a valid Pet task number!");
 
         playerMovement.ToggleMovement(true);
-        dogMovement.MoveToRandomDestination();
+        dogMovement.FollowNode();
+        dogMovement.canAutoMove = true;
         interactable = true;
     }
     
     public void CancelTask() // receives a value from another script to cancel the minigame and return to the game.
     {
         playerMovement.ToggleMovement(true);
-        dogMovement.MoveToRandomDestination();
+        dogMovement.FollowNode();
         enable = false;
         interactable = true;
         Debug.Log("Cancelou a ação");
