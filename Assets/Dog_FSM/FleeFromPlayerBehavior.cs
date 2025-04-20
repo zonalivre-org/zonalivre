@@ -6,21 +6,22 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [Serializable]
-public class IdleBehavior : FSMC_Behaviour
+public class FleeFromPlayerBehavior : FSMC_Behaviour
 {
+    private Transform playerTransform; // Reference to the player's transform
     private DogMovement dogMovement;
     private NavMeshAgent agent;
     public override void StateInit(FSMC_Controller stateMachine, FSMC_Executer executer)
     {
         agent = executer.GetComponent<NavMeshAgent>();
+        dogMovement = executer.GetComponent<DogMovement>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        
     }
     
     public override void OnStateEnter(FSMC_Controller stateMachine, FSMC_Executer executer)
     {
-        Debug.Log("Idle state entered");
-        agent.isStopped = true; // Stop the agent from moving
-        agent.ResetPath(); // Clear any existing paths
-        dogMovement = executer.GetComponent<DogMovement>();
+        agent.SetDestination(playerTransform.position);
     }
     
     public override void OnStateUpdate(FSMC_Controller stateMachine, FSMC_Executer executer)

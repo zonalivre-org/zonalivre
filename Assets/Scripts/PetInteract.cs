@@ -29,9 +29,8 @@ public class PetInteract : MonoBehaviour
     {
         if(enable && other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Entrou na area do pet!");
-            Invoke ("StartMinigame", detectionDelay);
             dogMovement.stateMachine.SetTrigger("Contact");
+            Invoke ("StartMinigame", detectionDelay);
             Debug.Log(dogMovement.stateMachine.GetCurrentState().Name);
         }
     }

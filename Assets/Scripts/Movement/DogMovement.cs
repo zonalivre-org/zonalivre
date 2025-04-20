@@ -42,14 +42,17 @@ public class DogMovement : MonoBehaviour
     private string funcName;
     [HideInInspector]
     public FSMC_Executer stateMachine;
+    public FSMC_Transition transitions;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        stateMachine = GetComponent<FSMC_Executer>();
         agent.updateRotation = false;
         currentQuota = followQuota;
         detectRadius = (transform.localScale.x / 2) + detectionRange;
         dogAnimator = new DogAnimator(GetComponent<Animator>());
+        SetAutonomousMovement(true);
     }
 
     private void LateUpdate()
