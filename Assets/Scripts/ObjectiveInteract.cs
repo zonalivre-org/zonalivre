@@ -17,8 +17,9 @@ public class ObjectiveInteract : MonoBehaviour
     {
         MangoCatch,
         QuickTimeEvent,
-        HoldTheButton,
+        FillTheBowl,
     }
+
     [Header("If object requires an item")] // not implemented yet!
     [SerializeField] private bool needsItem = false;
     [SerializeField] private GameObject itemR; // placeholderline!
@@ -31,8 +32,6 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private bool hasEffect = false;
     [SerializeField] private GameObject effect; // placeholderline!
     [SerializeField] private LayerMask clicklableLayers;
-
-    [Header("PlaceHolder Variavles")]
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
     [SerializeField] private float mangoFallSpeed;
@@ -118,7 +117,11 @@ public class ObjectiveInteract : MonoBehaviour
                     break;
                 case MiniGames.QuickTimeEvent:
                     minigame.GetComponent<QuickTimeEvent>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);
-                    minigame.GetComponent<QuickTimeEvent>().StartQTEGame();
+                    minigame.GetComponent<QuickTimeEvent>().objectivePlayerCheck = this;
+                    minigame.GetComponent<QuickTimeEvent>().StartMiniGame();
+                    break;
+                case MiniGames.FillTheBowl:
+
                     break;
             }
             Debug.Log("Iniciar Minigame!");
