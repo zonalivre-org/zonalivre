@@ -133,7 +133,7 @@ public class MangoCatch : MiniGameBase
     public void AddPoint(int amount)
     {
         currentPoints += amount;
-        SoundManager.Instance.PlayRandomPitchSFXSound(1);
+        AudioManager.Instance.PlayRandomPitchSFXSound(1);
         UpdateScore();
     }
 

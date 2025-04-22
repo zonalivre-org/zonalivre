@@ -1,32 +1,59 @@
+using System.Threading.Tasks;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PauseManager : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
-    public static PauseManager Instance { get; private set; }
     private PlayerController player;
     private DogMovement pet;
+    [SerializeField] private RectTransform pauseMenuUI;
+    [SerializeField] private CanvasGroup backgroundCanvasGroup;
+    [SerializeField] float animationDuration = 0.5f;
+    [SerializeField] float startX;
     private void Awake()
     {
         Time.timeScale = 1;
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+
         player = FindObjectOfType<PlayerController>();
         pet = FindObjectOfType<DogMovement>();
     }
-    public void TogglePause(bool pause)
+
+    public void PauseGame()
     {
-        if(pause) Time.timeScale = 0f;
-        else Time.timeScale = 1f;
-        player.ToggleMovement(!pause);
-        pet.ToggleMovement(!pause);
+        gameObject.SetActive(true);
+        Time.timeScale = 0f;
+
+        player.ToggleMovement(false);
+        pet.ToggleMovement(false);
+
+        PauseIn();
+
     }
-    public void Pause() => Time.timeScale = 0;
-    public void Resume() => Time.timeScale = 1;
+
+    public async void ResumeGame()
+    {
+        await PauseOut();
+        gameObject.SetActive(false);
+
+        Time.timeScale = 1f;
+
+        player.ToggleMovement(true);
+        pet.ToggleMovement(true);  
+    }
+
+    private void PauseIn()
+    {
+        pauseMenuUI.localScale = Vector3.zero;
+        backgroundCanvasGroup.alpha = 0f;
+        backgroundCanvasGroup.DOFade(1f, animationDuration).SetUpdate(true);
+        pauseMenuUI.DOScale(Vector3.one, animationDuration).SetEase(Ease.OutBack).SetUpdate(true);
+    }
+
+    private async Task PauseOut()
+    {
+        backgroundCanvasGroup.DOFade(0f, animationDuration).SetUpdate(true);
+        await pauseMenuUI.DOScale(Vector3.zero, animationDuration).SetEase(Ease.InBack).SetUpdate(true).AsyncWaitForCompletion();
+    }
+
 }

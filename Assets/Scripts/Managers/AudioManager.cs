@@ -2,9 +2,9 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SoundManager : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    public static SoundManager Instance;
+    public static AudioManager Instance;
     public AudioMixer audioMixer;
 
     [Header("Audio Sources")]

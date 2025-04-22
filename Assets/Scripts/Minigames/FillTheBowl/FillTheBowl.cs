@@ -31,7 +31,7 @@ public class FillTheBowl : MiniGameBase
 
             progress = rationFill.fillAmount;
 
-            SoundManager.Instance.PlayRandomPitchSFXSound(2);
+            AudioManager.Instance.PlayRandomPitchSFXSound(2);
         }
 
         else

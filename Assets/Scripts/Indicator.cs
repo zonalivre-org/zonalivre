@@ -5,9 +5,6 @@ public class Indicator : MonoBehaviour
 {
     [SerializeField] private GameObject target;
     [SerializeField] private float offSet = 2.5f;
-    [SerializeField] private float floatDistance = 0.2f; // Distance the indicator floats up and down
-    [SerializeField] private float floatDuration = 1f; // Duration of the floating animation
-
     void Start()
     {
         if (target == null)

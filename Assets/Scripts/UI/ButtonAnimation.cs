@@ -18,7 +18,7 @@ public class ButtonAnimation : EventTrigger
     public override void OnPointerEnter(PointerEventData eventData)
     {
         PlaySFX(0);
-        transform.DOScale(1.2f, 0.2f).SetEase(Ease.OutBack).SetUpdate(true);
+        transform.DOScale(scaleFactor, 0.2f).SetEase(Ease.OutBack).SetUpdate(true);
 
     }
 
@@ -37,11 +37,11 @@ public class ButtonAnimation : EventTrigger
     {
         if (randomPitch)
         {
-            SoundManager.Instance.PlayRandomPitchUISFXSound(index);
+            AudioManager.Instance.PlayRandomPitchUISFXSound(index);
         }
         else
         {
-            SoundManager.Instance.PlayUISound(index);
+            AudioManager.Instance.PlayUISound(index);
         }
     }
 }

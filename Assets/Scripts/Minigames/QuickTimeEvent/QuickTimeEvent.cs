@@ -137,7 +137,7 @@ public class QuickTimeEvent : MiniGameBase
         {
             current++;
 
-            SoundManager.Instance.PlayRandomPitchSFXSound(1);
+            AudioManager.Instance.PlayRandomPitchSFXSound(1);
 
             for (int i = 0; i < current; i++)
             {
