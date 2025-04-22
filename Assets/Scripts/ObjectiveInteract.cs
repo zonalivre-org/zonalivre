@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectiveInteract : MonoBehaviour
@@ -7,7 +8,11 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private int scoreValue = 1;
     [SerializeField] private float cooldown = 0f;
     [Header("Elements")]
+    public string objectiveDescription; 
+    public float averageTimeToComplete;
     [SerializeField] private PlayerController playerMovement;
+    [SerializeField] private GameObject indicator;
+
     [Header("If object opens a minigame")]
     [SerializeField] private bool hasMinigame = false;
     [SerializeField] private GameObject minigame;
@@ -20,6 +25,7 @@ public class ObjectiveInteract : MonoBehaviour
         FillTheBowl,
     }
 
+    #region Objective properties
     [Header("If object requires an item")] // not implemented yet!
     [SerializeField] private bool needsItem = false;
     [SerializeField] private GameObject itemR; // placeholderline!
@@ -32,6 +38,9 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private bool hasEffect = false;
     [SerializeField] private GameObject effect; // placeholderline!
     [SerializeField] private LayerMask clicklableLayers;
+    #endregion
+
+    #region  Minigame Variables
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
     [SerializeField] private float mangoFallSpeed;
@@ -41,12 +50,16 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private int QTEGoal;
     [SerializeField] private float QTEMoveSpeed;
     [SerializeField] private float QTESafeZoneSizePercentage; 
+    #endregion
+
     private bool enable = false, interactable = true;
     private float cooldownTimer;
+    public bool isComplete = false;
     private InGameProgress inGameProgress;
     private void Awake()
     {
         inGameProgress = FindObjectOfType<InGameProgress>();
+        playerMovement = FindObjectOfType<PlayerController>();
         cooldownTimer = cooldown;
     }
     private void LateUpdate()
@@ -93,7 +106,11 @@ public class ObjectiveInteract : MonoBehaviour
     {
         playerMovement.ToggleMovement(true);
         interactable = false;
+        isComplete = true;
+        indicator.SetActive(false);
+        TaskManager.Instance.objectives.Remove(this);
         inGameProgress.AddScore(scoreValue);
+        TaskManager.Instance.UpdateList();
         Debug.Log("Tarefa completa!");
     }
 

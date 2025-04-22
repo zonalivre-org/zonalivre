@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -10,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private RectTransform pauseMenuUI;
     [SerializeField] private CanvasGroup backgroundCanvasGroup;
     [SerializeField] float animationDuration = 0.5f;
-    [SerializeField] float startX;
+    [SerializeField] private GameObject[] HUDButtons;
     private void Awake()
     {
         Time.timeScale = 1;
@@ -33,6 +32,7 @@ public class PauseMenu : MonoBehaviour
 
     public async void ResumeGame()
     {
+        ShowButtons();
         await PauseOut();
         gameObject.SetActive(false);
 
@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     private void PauseIn()
     {
+        HideButtons();
         pauseMenuUI.localScale = Vector3.zero;
         backgroundCanvasGroup.alpha = 0f;
         backgroundCanvasGroup.DOFade(1f, animationDuration).SetUpdate(true);
@@ -54,6 +55,29 @@ public class PauseMenu : MonoBehaviour
     {
         backgroundCanvasGroup.DOFade(0f, animationDuration).SetUpdate(true);
         await pauseMenuUI.DOScale(Vector3.zero, animationDuration).SetEase(Ease.InBack).SetUpdate(true).AsyncWaitForCompletion();
+    }
+
+    public void ShowButtons()
+    {
+        Sequence sequence = DOTween.Sequence();
+
+        foreach (GameObject button in HUDButtons)
+        {
+            button.SetActive(true);
+            button.transform.localScale = Vector3.zero;
+
+            sequence.Append(
+                button.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack)
+            );
+        }
+    }
+
+    public void HideButtons()
+    {
+        foreach (GameObject button in HUDButtons)
+        {
+            button.SetActive(false);
+        }
     }
 
 }

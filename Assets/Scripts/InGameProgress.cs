@@ -21,8 +21,11 @@ public class InGameProgress : MonoBehaviour
     [SerializeField] private Slider clockSlider;
     [SerializeField] private TextMeshProUGUI clockNumber;
     [SerializeField] private Slider healthSlider;
+    [SerializeField] private Image healthFillImage;
     [SerializeField] private Slider staminaSlider;
+    [SerializeField] private Image staminaFillImage;
     [SerializeField] private Slider happynessSlider;
+    [SerializeField] private Image happynessFillImage;
     [SerializeField] private GameObject resultUI;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private GameObject nextLevelButton;
@@ -42,7 +45,7 @@ public class InGameProgress : MonoBehaviour
         //Setup Timer
         currentTime = levelTime;
         clockSlider.maxValue = levelTime;
-        clockNumber.text = levelTime.ToString();
+        clockNumber.text = ConvertTimeToString(levelTime);
 
         //Setup Pet Sliders
         currentHealth = health;
@@ -58,6 +61,10 @@ public class InGameProgress : MonoBehaviour
         wishHealthMultiplier = healthMultiplier;
         wishStaminaMultiplier = staminaMultiplier;
         wishHappynessMultiplier = happynessMultiplier;
+    }
+    void Start()
+    {
+        goal = TaskManager.Instance.objectives.Count;
     }
     private void LateUpdate()
     {
@@ -98,11 +105,16 @@ public class InGameProgress : MonoBehaviour
     private void UpdateUI()
     {
         clockSlider.value = currentTime;
-        clockNumber.text = Mathf.Round(currentTime).ToString();
+        clockNumber.text = ConvertTimeToString(currentTime);
 
         healthSlider.value = currentHealth;
+        healthFillImage.fillAmount = healthSlider.value / healthSlider.maxValue;
+
         staminaSlider.value = currentStamina;
+        staminaFillImage.fillAmount = staminaSlider.value / staminaSlider.maxValue;
+
         happynessSlider.value = currentHappyness;
+        happynessFillImage.fillAmount = happynessSlider.value / happynessSlider.maxValue;
 
         if(win != 0) ShowResultPanel(win);
     }
@@ -151,4 +163,14 @@ public class InGameProgress : MonoBehaviour
 
         UpdateUI();
     }
+    private string ConvertTimeToString(float time)
+{
+    int minutes = Mathf.FloorToInt(time / 60);
+    int seconds = Mathf.FloorToInt(time % 60);
+
+    // Clamp minutes to a maximum of 99
+    minutes = Mathf.Min(minutes, 99);
+
+    return string.Format("{0:00}:{1:00}", minutes, seconds);
+}
 }

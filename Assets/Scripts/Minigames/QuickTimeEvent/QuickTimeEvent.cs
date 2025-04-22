@@ -150,10 +150,17 @@ public class QuickTimeEvent : MiniGameBase
     {
         current = 0;
 
+        // Hide all points and set their color to red
+        for (int i = 0; i < points.Length; i++)
+        {
+            points[i].GetComponent<Image>().color = Color.red;
+            points[i].SetActive(false);
+        }
+
+        // Active the points up to the goal
         for (int i = 0; i < goal; i++)
         {
             points[i].SetActive(true);
-            points[i].GetComponent<Image>().color = Color.red;
         }
     }
 }
