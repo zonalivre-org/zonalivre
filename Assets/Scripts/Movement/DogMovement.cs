@@ -15,7 +15,7 @@ public class DogMovement : MonoBehaviour
     private NavMeshAgent agent;
     private float detectRadius;
     private float distance;
-    private Vector3 destination;
+    public Vector3 destination;
     private float waitTime;
     private string funcName;
     private int currentQuota;
@@ -28,9 +28,7 @@ public class DogMovement : MonoBehaviour
     }
     private void Start()
     {
-        // FollowNode();
-        // FollowPlayer();
-        // FleeFromPlayer(30f);
+        FollowNode();
     }
 
     private void Arrival()
