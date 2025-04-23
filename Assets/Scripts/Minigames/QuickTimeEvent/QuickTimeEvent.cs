@@ -62,9 +62,11 @@ public class QuickTimeEvent : MiniGameBase
     public override void EndMiniGame()
     {
         canRun = false;
+
+        if (isMiniGameComplete) objectivePlayerCheck.CompleteTask();
+        else objectivePlayerCheck.CloseTask();
+
         base.EndMiniGame();
-        
-        objectivePlayerCheck.CompleteTask();
 
         gameObject.SetActive(false);
     }

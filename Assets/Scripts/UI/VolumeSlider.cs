@@ -62,6 +62,7 @@ public class VolumeSlider : EventTrigger
 
     public override void OnDrag(PointerEventData eventData)
     {
+        Debug.Log("Its me");
         switch (volumeType)
         {
             case VolumeType.SFX:

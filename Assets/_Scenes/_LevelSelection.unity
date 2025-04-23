@@ -2077,6 +2077,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1153151865, guid: 31637d5a2ee7d9c4d97f026f77ecf1de,
+        type: 3}
+    - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
+        type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 0.01
       objectReference: {fileID: 0}

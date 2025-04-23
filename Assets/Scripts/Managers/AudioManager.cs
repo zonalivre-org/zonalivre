@@ -32,12 +32,14 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("MusicVolume"))
+        if (PlayerPrefs.HasKey("SFXVolume") && PlayerPrefs.HasKey("MusicVolume") && PlayerPrefs.HasKey("UISFXVolume"))
         {
+            Debug.Log("Volume settings found, loading values.");
             LoadVolumeSettings();
         }
         else 
         {
+            Debug.Log("No volume settings found, setting to default values.");
             SetMusicVolume(0.5f);
             SetSFXVolume(0.5f);
             SetUISFXVolume(0.5f);
@@ -51,6 +53,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetSFXVolume(float normalizedValue)
     {
+        Debug.Log("Setting SFX Volume: " + normalizedValue);
         float dB = ConvertToLog10(Mathf.Clamp(normalizedValue, 0.0001f, 1f)); // Convert normalized value to dB
         audioMixer.SetFloat("SFXVolume", dB);
         PlayerPrefs.SetFloat("SFXVolume", normalizedValue); // Save normalized value
@@ -59,6 +62,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume(float normalizedValue)
     {
+        Debug.Log("Setting Music Volume: " + normalizedValue);
         float dB = ConvertToLog10(Mathf.Clamp(normalizedValue, 0.0001f, 1f)); // Convert normalized value to dB
         audioMixer.SetFloat("MusicVolume", dB);
         PlayerPrefs.SetFloat("MusicVolume", normalizedValue); // Save normalized value
@@ -67,6 +71,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetUISFXVolume(float normalizedValue)
     {
+        Debug.Log("Setting UISFX Volume: " + normalizedValue);
         float dB =ConvertToLog10(Mathf.Clamp(normalizedValue, 0.0001f, 1f)); // Convert normalized value to dB
         audioMixer.SetFloat("UISFXVolume", dB);
         PlayerPrefs.SetFloat("UISFXVolume", normalizedValue); // Save normalized value
