@@ -4136,6 +4136,12 @@ PrefabInstance:
       objectReference: {fileID: 2106747861}
     - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
+      propertyPath: fsmcController
+      value: 
+      objectReference: {fileID: 11400000, guid: 1782fc211cf3ac8448cd945c42274ab4,
+        type: 2}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 837219435}
@@ -4143,6 +4149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timeBetweenMove
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: currentStateName
+      value: l
       objectReference: {fileID: 0}
     - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}

@@ -11,8 +11,11 @@ public class DogMovement : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
     [SerializeField] private List<Transform> destinationTransform;
+    private Transform currentDestination;
     [SerializeField] private FSMC_Executer stateMachine;
-    [SerializeField] public string currentStateName;
+    [SerializeField] private FSMC_Controller fsmcController;
+    // [SerializeField] private FSMC_State currentState;
+    // [SerializeField] public string currentStateName;
     
     private NavMeshAgent agent;
     private float detectRadius;
@@ -21,14 +24,15 @@ public class DogMovement : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        stateMachine = GetComponent<FSMC_Executer>();
+
+        SetAutonomousMovement(true);
+        MoveToDestination(GetRandomDestination());
+
     }
 
     private void Update()
     {
-        
-        currentStateName = stateMachine.GetCurrentState().Name;
-        
+        CheckDestinationArrival();
     }
 
     // Core movement methods (used by states)
@@ -75,13 +79,24 @@ public class DogMovement : MonoBehaviour
     public void TriggerRandomMovement()
     {
         stateMachine.SetTrigger("Wandering");
-        SetAutonomousMovement(true); 
     }
 
     // Clean version of SetAutonomousMovement
     public void SetAutonomousMovement(bool enabled)
     {
         canAutoMove = enabled;
+        // TriggerRandomMovement();
         if (!enabled) StopMovement();
+    }
+    
+    private void CheckDestinationArrival()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+    
+            MoveToDestination(GetRandomDestination());
+            
+        }
+    
     }
 }

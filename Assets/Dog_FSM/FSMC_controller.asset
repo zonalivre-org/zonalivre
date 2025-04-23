@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ece13e57ab2a54e80667f7d20c2544, type: 3}
   m_Name: FSMC_controller
   m_EditorClassIdentifier: 
-  StartPosition: {x: 61, y: 153}
+  StartPosition: {x: 19, y: 227}
   AnyPosition: {x: 289, y: 254}
   States:
   - rid: 4724752544356892677
@@ -46,7 +46,6 @@ MonoBehaviour:
         TransitionsFrom: []
         TransitionsTo:
         - rid: 4724752544776323079
-        - rid: 4724752547466444803
     - rid: 4724752544776323072
       type: {class: FSMC_State, ns: FSMC.Runtime, asm: FSMC.Runtime}
       data:
@@ -64,7 +63,8 @@ MonoBehaviour:
     - rid: 4724752544776323076
       type: {class: FSMC_State, ns: FSMC.Runtime, asm: FSMC.Runtime}
       data:
-        _behaviours: []
+        _behaviours:
+        - rid: 4724752568674942979
         Position: {x: 289, y: 395}
         _name: FleeingFromPlayer
         TransitionsFrom: []
@@ -82,6 +82,7 @@ MonoBehaviour:
         conditions:
         - conditions:
           - rid: 4724752544776323080
+          - rid: 4724752568674942982
         _originState:
           rid: -2
         _destinationState:
@@ -97,18 +98,19 @@ MonoBehaviour:
     - rid: 4724752544776323083
       type: {class: FSMC_State, ns: FSMC.Runtime, asm: FSMC.Runtime}
       data:
-        _behaviours: []
-        Position: {x: 322, y: 99}
+        _behaviours:
+        - rid: 4724752568674942992
+        Position: {x: 322, y: 100}
         _name: Wandering
-        TransitionsFrom:
-        - rid: 4724752547466444803
+        TransitionsFrom: []
         TransitionsTo:
         - rid: 4724752544776323084
     - rid: 4724752544776323084
       type: {class: FSMC_Transition, ns: FSMC.Runtime, asm: FSMC.Runtime}
       data:
         conditions:
-        - conditions: []
+        - conditions:
+          - rid: 4724752568674942981
         _originState:
           rid: -2
         _destinationState:
@@ -118,7 +120,8 @@ MonoBehaviour:
       type: {class: FSMC_Transition, ns: FSMC.Runtime, asm: FSMC.Runtime}
       data:
         conditions:
-        - conditions: []
+        - conditions:
+          - rid: 4724752568674942983
         _originState:
           rid: -2
         _destinationState:
@@ -128,30 +131,13 @@ MonoBehaviour:
       type: {class: FSMC_Transition, ns: FSMC.Runtime, asm: FSMC.Runtime}
       data:
         conditions:
-        - conditions: []
+        - conditions:
+          - rid: 4724752568674942984
         _originState:
           rid: -2
         _destinationState:
           rid: 4724752544776323076
         _name: Any->FleeingFromPlayer
-    - rid: 4724752547466444803
-      type: {class: FSMC_Transition, ns: FSMC.Runtime, asm: FSMC.Runtime}
-      data:
-        conditions:
-        - conditions:
-          - rid: 4724752547466444804
-        _originState:
-          rid: 4724752544776323083
-        _destinationState:
-          rid: 4724752544356892677
-        _name: Wandering->Idle
-    - rid: 4724752547466444804
-      type: {class: FSMC_BoolCondition, ns: FSMC.Runtime, asm: FSMC.Runtime}
-      data:
-        comparison: 0
-        parameter:
-          rid: 4724752544776323078
-        Value: 1
     - rid: 4724752547466444805
       type: {class: IdleBehavior, ns: , asm: Assembly-CSharp}
       data:
@@ -174,3 +160,39 @@ MonoBehaviour:
         _type: 3
         _name: Flee
         _value: 0
+    - rid: 4724752568674942979
+      type: {class: FleeFromPlayerBehavior, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 1
+    - rid: 4724752568674942981
+      type: {class: FSMC_BoolCondition, ns: FSMC.Runtime, asm: FSMC.Runtime}
+      data:
+        comparison: 0
+        parameter:
+          rid: 4724752568674942976
+        Value: 1
+    - rid: 4724752568674942982
+      type: {class: FSMC_BoolCondition, ns: FSMC.Runtime, asm: FSMC.Runtime}
+      data:
+        comparison: 0
+        parameter:
+          rid: 4724752544776323078
+        Value: 1
+    - rid: 4724752568674942983
+      type: {class: FSMC_BoolCondition, ns: FSMC.Runtime, asm: FSMC.Runtime}
+      data:
+        comparison: 0
+        parameter:
+          rid: 4724752568674942977
+        Value: 1
+    - rid: 4724752568674942984
+      type: {class: FSMC_BoolCondition, ns: FSMC.Runtime, asm: FSMC.Runtime}
+      data:
+        comparison: 0
+        parameter:
+          rid: 4724752568674942978
+        Value: 1
+    - rid: 4724752568674942992
+      type: {class: WanderingBehavior, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 1

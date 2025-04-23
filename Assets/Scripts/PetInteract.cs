@@ -32,7 +32,7 @@ public class PetInteract : MonoBehaviour
         {
             dogMovement.canAutoMove = false;
             dogMovement.StopMovement();
-            Debug.Log("Entrou na area do pet!");
+            dogMovement.TriggerIdle();
             Invoke ("StartMinigame", detectionDelay);
         }
     }
