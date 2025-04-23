@@ -6,7 +6,7 @@ public class TaskManager : MonoBehaviour
 {
     public static TaskManager Instance;
     public List<ObjectiveInteract> objectives;
-    [SerializeField] private List<GameObject> taskList;
+    [SerializeField] private List<TaskItem> taskList;
     [SerializeField] private GameObject taskPrefab;
     private void Awake()
     {
@@ -31,9 +31,9 @@ public class TaskManager : MonoBehaviour
 
 
         // Cleating the old task list items
-        foreach (GameObject task in taskList)
+        foreach (TaskItem task in taskList)
         {
-            Destroy(task);
+            Destroy(task.gameObject);
         }
 
         taskList.Clear();
@@ -43,17 +43,22 @@ public class TaskManager : MonoBehaviour
         {
             GameObject newTask = Instantiate(taskPrefab, transform);
             newTask.name = task.gameObject.name + " Task";
-            newTask.GetComponentInChildren<TMP_Text>().text = task.objectiveDescription;
+
+            newTask.GetComponent<TaskItem>().SetTaskDescription(task.objectiveDescription);
+            newTask.GetComponent<TaskItem>().SetAverageTime(task.averageTimeToComplete);
+
             newTask.transform.localScale = Vector3.one;
+
             newTask.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             newTask.GetComponent<RectTransform>().localRotation = Quaternion.identity;
-            taskList.Add(newTask);
+
+            taskList.Add(newTask.GetComponent<TaskItem>());
         }
 
         SortByShortestTime();
     }
 
-    public List<GameObject> GetTaskList()
+    public List<TaskItem> GetTaskList()
     {
         return taskList;
     }

@@ -2404,6 +2404,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
+      propertyPath: averageTimeToComplete
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
       propertyPath: QTESafeZoneSizePercentage
       value: 0.2
       objectReference: {fileID: 0}
@@ -8595,6 +8600,11 @@ PrefabInstance:
         type: 3}
       propertyPath: objectiveDescription
       value: Pega as manga
+      objectReference: {fileID: 0}
+    - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: averageTimeToComplete
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3248739765597737770, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
@@ -16492,6 +16502,11 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 2249948526550260760}
+    - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: averageTimeToComplete
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -16584,6 +16599,11 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 2249948526550260760}
+    - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: averageTimeToComplete
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3248739765597737770, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
       propertyPath: m_LocalPosition.x

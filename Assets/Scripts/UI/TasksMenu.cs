@@ -35,7 +35,7 @@ public class TasksMenu : MonoBehaviour
 
     private void WriteItems()
     {
-        foreach (GameObject task in TaskManager.Instance.GetTaskList())
+        foreach (TaskItem task in TaskManager.Instance.GetTaskList())
         {
             task.transform.SetParent(content.transform, false);
         }
