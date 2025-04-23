@@ -63,8 +63,24 @@ public abstract class MiniGameBase : MonoBehaviour
             tipText.gameObject.SetActive(false);
     }
 
-    public abstract void StartMiniGame();
+    public virtual void StartMiniGame()
+    {
+        gameObject.SetActive(true);
 
-    public abstract void EndMiniGame();
+        isMiniGameActive = true;
+        isMiniGameComplete = false;
+        firstActionTriggered = false;
+
+        timeSinceLastClick = 0f;
+
+        if (tipText != null) tipText.gameObject.SetActive(true);
+    }
+
+    public virtual void EndMiniGame()
+    {
+        isMiniGameActive = false;
+        isMiniGameComplete = false;
+        firstActionTriggered = false;
+    }
 
 }

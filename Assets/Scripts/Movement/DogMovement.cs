@@ -28,7 +28,9 @@ public class DogMovement : MonoBehaviour
     }
     private void Start()
     {
-        FollowNode();
+        // FollowNode();
+        // FollowPlayer();
+        // FleeFromPlayer(30f);
     }
 
     private void Arrival()
