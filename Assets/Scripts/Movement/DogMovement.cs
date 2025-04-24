@@ -11,8 +11,6 @@ public class DogMovement : MonoBehaviour
     [SerializeField] private string firstOrder = "FollowNode";
     [SerializeField] private float timeBetweenMove = 1.5f;
     [SerializeField] private float detectionRange = 3f;
-    [SerializeField] private int followQuota = 5;
-    public int followPlayerCurrentQuota = 5;
     private NavMeshAgent agent;
     private float detectRadius;
     private float distance;
@@ -25,8 +23,8 @@ public class DogMovement : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        currentQuota = followQuota;
-        detectRadius = (this.transform.localScale.x / 2) + detectionRange;
+        
+        detectRadius = agent.stoppingDistance + 1;
     }
     private void Start()
     {
