@@ -121,6 +121,7 @@ public class QuickTimeEvent : MiniGameBase
 
             if (current >= goal)
             {
+                isMiniGameComplete = true;
                 EndMiniGame();
             }
         }

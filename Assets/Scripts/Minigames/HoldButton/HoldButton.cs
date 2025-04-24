@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Rules")]
     [Range(0, 1)][SerializeField] private float fillSpeed;
@@ -32,8 +32,6 @@ public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, 
     {
         backgroundImage.GetComponent<Animator>().Play("RedDefault");
         fill.GetComponent<Animator>().Play("GreenDefault");
-
-        Cursor.SetCursor(handSprite, new Vector2(0, 0), CursorMode.Auto);
 
         StartMiniGame();
     }
@@ -106,8 +104,6 @@ public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, 
 
     public override void EndMiniGame()
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-
         if (isMiniGameComplete) petCheck.CompleteTask(target);
         else petCheck.CancelTask();
 
@@ -131,5 +127,25 @@ public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, 
 
             progress = fill.fillAmount;
         }
+    }
+
+    void OnDisable()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
+    void OnDestroy()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Cursor.SetCursor(handSprite, new Vector2(0, 0), CursorMode.Auto);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }

@@ -33,6 +33,11 @@ public class ButtonAnimation : EventTrigger
         transform.localScale = originalScale;
     }
 
+    void OnDisable()
+    {
+        DOTween.Kill(transform, true);
+    }
+
     private void PlaySFX(int index)
     {
         if (randomPitch)
@@ -44,4 +49,5 @@ public class ButtonAnimation : EventTrigger
             AudioManager.Instance.PlayUISound(index);
         }
     }
+
 }

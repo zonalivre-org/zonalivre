@@ -28,6 +28,7 @@ public class InGameProgress : MonoBehaviour
     [SerializeField] private Image happynessFillImage;
     [SerializeField] private GameObject resultUI;
     [SerializeField] private TextMeshProUGUI resultText;
+    [SerializeField] private TMP_Text loseText;
     [SerializeField] private GameObject nextLevelButton;
     [Header("References")]
     [SerializeField] private PlayerController playerMovement;
@@ -130,10 +131,17 @@ public class InGameProgress : MonoBehaviour
         else Debug.Log("The results panel was called but the players hasn't won or lost yet!");
 
         if (state > 0) resultText.text = "Parabéns! Você venceu!";
+
         else if(state < 0) 
         {
             nextLevelButton.SetActive(false);
+            loseText.gameObject.SetActive(true);
             resultText.text = "Oh não! Voce perdeu!";
+            if (healthSlider.value <= 0.0001) loseText.text = "Saúde do Pet zerada!";
+            else if (staminaSlider.value <= 0.0001) loseText.text = "Fome do Pet zerada!";
+            else if (happynessSlider.value <= 0.0001) loseText.text = "Felicidade do Pet zerada!";
+            else if (clockSlider.value <= 0.0001) loseText.text = "Tempo zerado!";
+            else loseText.text = "Motivo não listado! Vai resolver >:(";
         }
     } 
     public void AddScore(int score)
