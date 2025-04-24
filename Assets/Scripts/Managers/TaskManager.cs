@@ -55,7 +55,7 @@ public class TaskManager : MonoBehaviour
             taskList.Add(newTask.GetComponent<TaskItem>());
         }
 
-        SortByShortestTime();
+        SortByShortestTime(taskList);
     }
 
     public List<TaskItem> GetTaskList()
@@ -63,8 +63,24 @@ public class TaskManager : MonoBehaviour
         return taskList;
     }
 
-    private void SortByShortestTime()
+    private void SortByShortestTime(List<TaskItem> levelTasks)
     {
-        // Bones, this is where you write the sort algorithm!!! :OOOO
+        // Insertion sort algorithm
+        // This is a simple and efficient algorithm for small lists, perfect for our needs!
+        
+        TaskItem taskToInsert;
+        int HelperIndex;
+        int listLenght = levelTasks.Count;
+        for (int i = 1; i < listLenght; i++)
+        {
+            taskToInsert = levelTasks[i];
+            HelperIndex = i - 1;
+            while (HelperIndex >= 0 && levelTasks[HelperIndex].GetAverageTime() > taskToInsert.GetAverageTime())
+            {
+                levelTasks[HelperIndex + 1] = levelTasks[HelperIndex];
+                HelperIndex--;
+            }
+            levelTasks[HelperIndex + 1] = taskToInsert;
+        }
     }
 }

@@ -16,7 +16,7 @@ public class TaskItem : MonoBehaviour
     public void SetAverageTime(float time)
     {
         averageTime = time;
-        textObject.text = $"{taskDescription} - {time}";
+        textObject.text = $"{taskDescription}"; // - {time}
     }
 
     public float GetAverageTime()
