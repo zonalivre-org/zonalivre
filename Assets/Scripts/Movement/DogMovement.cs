@@ -12,6 +12,7 @@ public class DogMovement : MonoBehaviour
     [SerializeField] private float timeBetweenMove = 1.5f;
     [SerializeField] private float detectionRange = 3f;
     [SerializeField] private int followQuota = 5;
+    public int followPlayerCurrentQuota = 5;
     private NavMeshAgent agent;
     private float detectRadius;
     private float distance;
@@ -19,6 +20,7 @@ public class DogMovement : MonoBehaviour
     private float waitTime;
     private string funcName;
     private int currentQuota;
+    private bool isFollowingPlayer = false;
     public bool canAutoMove = true;
     private void Awake()
     {
@@ -46,6 +48,14 @@ public class DogMovement : MonoBehaviour
         agent.SetDestination(currentDestination);
         Arrival();
     }
+
+    private void MoveTowardsPlayer()
+    {
+        if (!canAutoMove || !isFollowingPlayer) return; 
+        agent.SetDestination(playerTransform.position);
+        Invoke(nameof(MoveTowardsPlayer),0.1f);
+
+    }
     private void RandomizeMovement()
     {
             int roll = Random.Range(1, 128);
@@ -63,17 +73,16 @@ public class DogMovement : MonoBehaviour
     }
     public void FollowPlayer()
     {
-        if(currentQuota > 0)
-        {
-            currentQuota--;
-            MoveToDestination(playerTransform.position, 0.5f, "FollowPlayer");
-        }
-        else
-        {
-            currentQuota = followQuota;
-            MoveToDestination(playerTransform.position, 0.5f, "RandomizeMovement");
-        }
+        isFollowingPlayer = true;
+        MoveTowardsPlayer();
+        Invoke(nameof(StopFollowPlayer),3f);
     }
+    public void StopFollowPlayer()
+    {
+        isFollowingPlayer = false;
+        MoveToDestination(destinationTransform[Random.Range(0, destinationTransform.Count)].position, 1f, "RandomizeMovement");
+    }
+
     //public void Panic(){}
     //public void Flee(){}
     public void ToggleMovement(bool toggle)
