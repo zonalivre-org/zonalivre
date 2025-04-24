@@ -42,7 +42,7 @@ public class PetInteract : MonoBehaviour
         dogMovement.canAutoMove = true;
         if (other.gameObject.CompareTag("Player") )
         {
-            dogMovement.FollowNode();
+            dogMovement.RandomizeMovement();
         }
     }
 

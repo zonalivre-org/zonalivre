@@ -31,8 +31,9 @@ public class DogMovement : MonoBehaviour
         FollowNode();
     }
 
-    private void Arrival()
+    public void Arrival()
     {
+        Debug.Log("Arrived!");
         distance = Vector3.Distance(destination, this.transform.position);
         if(distance <= detectRadius) Invoke(funcName, waitTime);
         else Invoke(nameof(Arrival), 0.7f);
@@ -54,7 +55,7 @@ public class DogMovement : MonoBehaviour
         Invoke(nameof(MoveTowardsPlayer),0.1f);
 
     }
-    private void RandomizeMovement()
+    public void RandomizeMovement()
     {
             int roll = Random.Range(1, 128);
             if(roll >= 24) FollowNode();
