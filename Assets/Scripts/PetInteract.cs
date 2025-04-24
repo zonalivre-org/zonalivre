@@ -40,7 +40,7 @@ public class PetInteract : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         dogMovement.canAutoMove = true;
-        if (other.gameObject.CompareTag("Player") && dogMovement.followPlayerCurrentQuota <= 0)
+        if (other.gameObject.CompareTag("Player") )
         {
             dogMovement.FollowNode();
         }
