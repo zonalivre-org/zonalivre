@@ -62,7 +62,7 @@ public class TasksMenu : MonoBehaviour
         Time.timeScale = 0f;
 
         player.ToggleMovement(false);
-        pet.ToggleMovement(false);
+        pet.SetAutonomousMovement(false);
 
         TasksIn();
     }
@@ -76,7 +76,7 @@ public class TasksMenu : MonoBehaviour
         Time.timeScale = 1f;
 
         player.ToggleMovement(true);
-        pet.ToggleMovement(true);
+        pet.SetAutonomousMovement(true);
     }
 
 

@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
 
         player.ToggleMovement(false);
-        pet.ToggleMovement(false);
+        pet.SetAutonomousMovement(false);
 
         PauseIn();
 
@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
 
         player.ToggleMovement(true);
-        pet.ToggleMovement(true);  
+        pet.SetAutonomousMovement(true);  
     }
 
     private void PauseIn()
