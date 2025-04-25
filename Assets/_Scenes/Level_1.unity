@@ -3772,6 +3772,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754755332}
   m_CullTransparentMesh: 1
+--- !u!1 &756822071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 756822072}
+  - component: {fileID: 756822073}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &756822072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756822071}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2006656360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &756822073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756822071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2039e39859997a348a0222b7c1cd0ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsList:
+  - name: Vazio
+    id: 0
+    image: {fileID: 0}
+  - name: "Rem\xE9dio"
+    id: 101
+    image: {fileID: 0}
+  - name: "Ra\xE7\xE3o"
+    id: 102
+    image: {fileID: 0}
+  - name: Bola
+    id: 103
+    image: {fileID: 0}
+  - name: Saco de Lixo (Vazio)
+    id: 201
+    image: {fileID: 0}
+  - name: Saco de Lixo (Cheio)
+    id: 2011
+    image: {fileID: 0}
+  - name: Produtos de Limpeza
+    id: 202
+    image: {fileID: 0}
+  - name: '[MissionItem3]'
+    id: 203
+    image: {fileID: 0}
+  currentItem:
+    name: 
+    id: 0
+    image: {fileID: 0}
 --- !u!1 &760481721
 GameObject:
   m_ObjectHideFlags: 0
@@ -4048,6 +4121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: detectionDelay
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
@@ -9692,6 +9770,7 @@ Transform:
   - {fileID: 1478815601}
   - {fileID: 1787154975}
   - {fileID: 900453328}
+  - {fileID: 756822072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2006999985

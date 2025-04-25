@@ -31,7 +31,7 @@ public class PetInteract : MonoBehaviour
         if(enable && other.gameObject.CompareTag("Player"))
         {
             dogMovement.canAutoMove = false;
-            dogMovement.StopMovement();
+            dogMovement.SetAutonomousMovement(false);
             Debug.Log("Entrou na area do pet!");
             Invoke ("StartMinigame", detectionDelay);
         }
@@ -42,41 +42,42 @@ public class PetInteract : MonoBehaviour
         dogMovement.canAutoMove = true;
         if (other.gameObject.CompareTag("Player") )
         {
-            dogMovement.RandomizeMovement();
+            dogMovement.SetAutonomousMovement(true);
         }
     }
 
     private void SelectObjective()
     {
         RaycastHit hit;
+
         //Placehoulder code bellow VVV
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, healthLayer)) 
         {
-            defineObjective = 0;
-            Debug.Log("Minigame de cura habilitado para o Pet!");
+            InventoryManager.instance.Search(101, true); 
+            Debug.Log(InventoryManager.instance.currentItem.name);
         }
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, staminaLayer))
         {
-            defineObjective = 1;
-            Debug.Log("Minigame de comida habilitado para o Pet!");
+            InventoryManager.instance.Search(102, true); 
+            Debug.Log(InventoryManager.instance.currentItem.name);
         }
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, happynessLayer)) 
         {
-            defineObjective = 2;
-            Debug.Log("Minigame de alegria habilidado para o Pet!");
+            InventoryManager.instance.Search(103, true); 
+            Debug.Log(InventoryManager.instance.currentItem.name);
         }
         //Placehoulder code above ^^^
 
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
         {
             enable = true;
-            dogMovement.WaitInPlace(9999f);
+            dogMovement.SetAutonomousMovement(true);
             Debug.Log("Indo olhar o pet!");
         }
         else if(enable)
         {
             enable = false;
-            dogMovement.FollowNode();
+            dogMovement.SetAutonomousMovement(true);
             Debug.Log("cancelou a ação");
         }
     }
@@ -99,8 +100,9 @@ public class PetInteract : MonoBehaviour
         }
         else Debug.Log(whichTask + " is not a valid Pet task number!");
 
+        InventoryManager.instance.Search(0, true);
         playerMovement.ToggleMovement(true);
-        dogMovement.FollowNode();
+        dogMovement.SetAutonomousMovement(true);
         dogMovement.canAutoMove = true;
         interactable = true;
     }
@@ -108,7 +110,7 @@ public class PetInteract : MonoBehaviour
     public void CancelTask() // receives a value from another script to cancel the minigame and return to the game.
     {
         playerMovement.ToggleMovement(true);
-        dogMovement.FollowNode();
+        dogMovement.SetAutonomousMovement(true);
         enable = false;
         interactable = true;
         Debug.Log("Cancelou a ação");
@@ -119,19 +121,20 @@ public class PetInteract : MonoBehaviour
         if(enable)
         {
             playerMovement.ToggleMovement(false);
-            if(defineObjective == 0)
+            InventoryManager imi = InventoryManager.instance;
+            if(imi.currentItem.id == 101) //Minigame de curar a vida
             {
                 healthMinigameUI.SetActive(true);
             }
-            else if(defineObjective == 1)
+            else if(imi.currentItem.id == 102) //Minigame de alimentar
             {
                 staminaMinigameUI.SetActive(true);
             }
-            else if(defineObjective == 2)
+            else if(imi.currentItem.id == 103 || imi.currentItem.id == 0) //Minigame de brincar
             {
                 happynessMinigameUI.SetActive(true);
             }
-            else Debug.Log(defineObjective + " is not a valid objective number!");
+            else Debug.Log(imi.currentItem.id + " is not a valid ID number!");
             enable = false;
             interactable = false;
         }

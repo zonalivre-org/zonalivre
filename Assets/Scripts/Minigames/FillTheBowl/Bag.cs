@@ -15,14 +15,14 @@ public class Bag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragH
     private bool isHolding;
     private bool canSpawn = true;
 
+    void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
     void OnEnable()
     {
         rectTransform.localRotation = Quaternion.Euler(0, 0, 0);
         canSpawn = true;
-    }
-    void Start()
-    {
-        rectTransform = GetComponent<RectTransform>();
     }
 
     void LateUpdate()

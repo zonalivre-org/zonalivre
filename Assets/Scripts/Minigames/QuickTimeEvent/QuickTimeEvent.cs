@@ -62,9 +62,11 @@ public class QuickTimeEvent : MiniGameBase
     public override void EndMiniGame()
     {
         canRun = false;
+
+        if (isMiniGameComplete) objectivePlayerCheck.CompleteTask();
+        else objectivePlayerCheck.CloseTask();
+
         base.EndMiniGame();
-        
-        objectivePlayerCheck.CompleteTask();
 
         gameObject.SetActive(false);
     }
@@ -119,6 +121,7 @@ public class QuickTimeEvent : MiniGameBase
 
             if (current >= goal)
             {
+                isMiniGameComplete = true;
                 EndMiniGame();
             }
         }
@@ -137,7 +140,7 @@ public class QuickTimeEvent : MiniGameBase
         {
             current++;
 
-            SoundManager.Instance.PlayRandomPitchSFXSound(1);
+            AudioManager.Instance.PlayRandomPitchSFXSound(1);
 
             for (int i = 0; i < current; i++)
             {
@@ -150,10 +153,17 @@ public class QuickTimeEvent : MiniGameBase
     {
         current = 0;
 
+        // Hide all points and set their color to red
+        for (int i = 0; i < points.Length; i++)
+        {
+            points[i].GetComponent<Image>().color = Color.red;
+            points[i].SetActive(false);
+        }
+
+        // Active the points up to the goal
         for (int i = 0; i < goal; i++)
         {
             points[i].SetActive(true);
-            points[i].GetComponent<Image>().color = Color.red;
         }
     }
 }

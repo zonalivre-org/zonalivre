@@ -53,7 +53,10 @@ MonoBehaviour:
   detectionDelay: 0.5
   scoreValue: 1
   cooldown: 0
+  objectiveDescription: Pega as manga
+  averageTimeToComplete: 0
   playerMovement: {fileID: 0}
+  indicator: {fileID: 5723805137986427324}
   hasMinigame: 1
   minigame: {fileID: 0}
   miniGameType: 0
@@ -72,6 +75,7 @@ MonoBehaviour:
   QTEGoal: 0
   QTEMoveSpeed: 0
   QTESafeZoneSizePercentage: 0
+  isComplete: 0
 --- !u!65 &7150128092923358027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -219,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3294039871949936851}
   - component: {fileID: 5032718004271547964}
+  - component: {fileID: 8971092807389639163}
   m_Layer: 0
   m_Name: SpriteModel
   m_TagString: Untagged
@@ -293,6 +298,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8971092807389639163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9152493385670463514}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e34ae7e4e8768bb459c99b77cf0e061d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3560318995166848332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -404,6 +421,12 @@ PrefabInstance:
 --- !u!4 &52014004743121982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3589370232137959794, guid: 87efd9fad480bea4bb223a1d2f506b07,
+    type: 3}
+  m_PrefabInstance: {fileID: 3560318995166848332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5723805137986427324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9081439590564396272, guid: 87efd9fad480bea4bb223a1d2f506b07,
     type: 3}
   m_PrefabInstance: {fileID: 3560318995166848332}
   m_PrefabAsset: {fileID: 0}

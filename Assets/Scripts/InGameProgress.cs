@@ -21,10 +21,14 @@ public class InGameProgress : MonoBehaviour
     [SerializeField] private Slider clockSlider;
     [SerializeField] private TextMeshProUGUI clockNumber;
     [SerializeField] private Slider healthSlider;
+    [SerializeField] private Image healthFillImage;
     [SerializeField] private Slider staminaSlider;
+    [SerializeField] private Image staminaFillImage;
     [SerializeField] private Slider happynessSlider;
+    [SerializeField] private Image happynessFillImage;
     [SerializeField] private GameObject resultUI;
     [SerializeField] private TextMeshProUGUI resultText;
+    [SerializeField] private TMP_Text loseText;
     [SerializeField] private GameObject nextLevelButton;
     [Header("References")]
     [SerializeField] private PlayerController playerMovement;
@@ -42,7 +46,7 @@ public class InGameProgress : MonoBehaviour
         //Setup Timer
         currentTime = levelTime;
         clockSlider.maxValue = levelTime;
-        clockNumber.text = levelTime.ToString();
+        clockNumber.text = ConvertTimeToString(levelTime);
 
         //Setup Pet Sliders
         currentHealth = health;
@@ -58,6 +62,10 @@ public class InGameProgress : MonoBehaviour
         wishHealthMultiplier = healthMultiplier;
         wishStaminaMultiplier = staminaMultiplier;
         wishHappynessMultiplier = happynessMultiplier;
+    }
+    void Start()
+    {
+        goal = TaskManager.Instance.objectives.Count;
     }
     private void LateUpdate()
     {
@@ -98,11 +106,16 @@ public class InGameProgress : MonoBehaviour
     private void UpdateUI()
     {
         clockSlider.value = currentTime;
-        clockNumber.text = Mathf.Round(currentTime).ToString();
+        clockNumber.text = ConvertTimeToString(currentTime);
 
         healthSlider.value = currentHealth;
+        healthFillImage.fillAmount = healthSlider.value / healthSlider.maxValue;
+
         staminaSlider.value = currentStamina;
+        staminaFillImage.fillAmount = staminaSlider.value / staminaSlider.maxValue;
+
         happynessSlider.value = currentHappyness;
+        happynessFillImage.fillAmount = happynessSlider.value / happynessSlider.maxValue;
 
         if(win != 0) ShowResultPanel(win);
     }
@@ -112,16 +125,23 @@ public class InGameProgress : MonoBehaviour
         {
             enablecountdown = false;
             playerMovement.ToggleMovement(false);
-            petMovement.ToggleMovement(false);
+            petMovement.SetAutonomousMovement(false);
             resultUI.SetActive(true);
         }
         else Debug.Log("The results panel was called but the players hasn't won or lost yet!");
 
         if (state > 0) resultText.text = "Parabéns! Você venceu!";
+
         else if(state < 0) 
         {
             nextLevelButton.SetActive(false);
+            loseText.gameObject.SetActive(true);
             resultText.text = "Oh não! Voce perdeu!";
+            if (healthSlider.value <= 0.0001) loseText.text = "Saúde do Pet zerada!";
+            else if (staminaSlider.value <= 0.0001) loseText.text = "Fome do Pet zerada!";
+            else if (happynessSlider.value <= 0.0001) loseText.text = "Felicidade do Pet zerada!";
+            else if (clockSlider.value <= 0.0001) loseText.text = "Tempo zerado!";
+            else loseText.text = "Motivo não listado! Vai resolver >:(";
         }
     } 
     public void AddScore(int score)
@@ -151,4 +171,14 @@ public class InGameProgress : MonoBehaviour
 
         UpdateUI();
     }
+    private string ConvertTimeToString(float time)
+{
+    int minutes = Mathf.FloorToInt(time / 60);
+    int seconds = Mathf.FloorToInt(time % 60);
+
+    // Clamp minutes to a maximum of 99
+    minutes = Mathf.Min(minutes, 99);
+
+    return string.Format("{0:00}:{1:00}", minutes, seconds);
+}
 }
