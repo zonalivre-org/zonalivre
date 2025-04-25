@@ -125,7 +125,7 @@ public class InGameProgress : MonoBehaviour
         {
             enablecountdown = false;
             playerMovement.ToggleMovement(false);
-            petMovement.ToggleMovement(false);
+            petMovement.SetAutonomousMovement(false);
             resultUI.SetActive(true);
         }
         else Debug.Log("The results panel was called but the players hasn't won or lost yet!");

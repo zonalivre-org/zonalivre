@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PetInteract : MonoBehaviour
@@ -29,10 +30,22 @@ public class PetInteract : MonoBehaviour
     {
         if(enable && other.gameObject.CompareTag("Player"))
         {
+            dogMovement.canAutoMove = false;
+            dogMovement.SetAutonomousMovement(false);
             Debug.Log("Entrou na area do pet!");
             Invoke ("StartMinigame", detectionDelay);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        dogMovement.canAutoMove = true;
+        if (other.gameObject.CompareTag("Player") )
+        {
+            dogMovement.SetAutonomousMovement(true);
+        }
+    }
+
     private void SelectObjective()
     {
         RaycastHit hit;
@@ -58,13 +71,13 @@ public class PetInteract : MonoBehaviour
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
         {
             enable = true;
-            dogMovement.WaitInPlace(9999f);
+            dogMovement.SetAutonomousMovement(true);
             Debug.Log("Indo olhar o pet!");
         }
         else if(enable)
         {
             enable = false;
-            dogMovement.FollowNode();
+            dogMovement.SetAutonomousMovement(true);
             Debug.Log("cancelou a ação");
         }
     }
@@ -89,14 +102,15 @@ public class PetInteract : MonoBehaviour
 
         InventoryManager.instance.Search(0, true);
         playerMovement.ToggleMovement(true);
-        dogMovement.FollowNode();
+        dogMovement.SetAutonomousMovement(true);
+        dogMovement.canAutoMove = true;
         interactable = true;
     }
     
     public void CancelTask() // receives a value from another script to cancel the minigame and return to the game.
     {
         playerMovement.ToggleMovement(true);
-        dogMovement.FollowNode();
+        dogMovement.SetAutonomousMovement(true);
         enable = false;
         interactable = true;
         Debug.Log("Cancelou a ação");
