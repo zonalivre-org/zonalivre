@@ -22,23 +22,11 @@ public class TaskManager : MonoBehaviour
 
     void Start()
     {
-        UpdateList();
+        CreateList();
     }
 
-    public void UpdateList()
+    public void CreateList()
     {
-        Debug.Log("Updating Task List");
-
-
-        // Cleating the old task list items
-        foreach (TaskItem task in taskList)
-        {
-            Destroy(task.gameObject);
-        }
-
-        taskList.Clear();
-
-        // Add the new ones :D
         foreach (ObjectiveInteract task in objectives)
         {
             GameObject newTask = Instantiate(taskPrefab, transform);
@@ -46,11 +34,14 @@ public class TaskManager : MonoBehaviour
 
             newTask.GetComponent<TaskItem>().SetTaskDescription(task.objectiveDescription);
             newTask.GetComponent<TaskItem>().SetAverageTime(task.averageTimeToComplete);
+            newTask.GetComponent<TaskItem>().SetIcon(task.taskIcon);
 
             newTask.transform.localScale = Vector3.one;
 
             newTask.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             newTask.GetComponent<RectTransform>().localRotation = Quaternion.identity;
+
+            task.taskItem = newTask.GetComponent<TaskItem>();
 
             taskList.Add(newTask.GetComponent<TaskItem>());
         }
@@ -61,6 +52,16 @@ public class TaskManager : MonoBehaviour
     public List<TaskItem> GetTaskList()
     {
         return taskList;
+    }
+
+    public List<GameObject> GetTaskListItems()
+    {
+        List<GameObject> items = new List<GameObject>();
+        foreach (TaskItem task in taskList)
+        {
+            items.Add(task.gameObject);
+        }
+        return items;
     }
 
     private void SortByShortestTime(List<TaskItem> levelTasks)

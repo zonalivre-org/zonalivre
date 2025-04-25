@@ -35,9 +35,22 @@ public class TasksMenu : MonoBehaviour
 
     private void WriteItems()
     {
-        foreach (TaskItem task in TaskManager.Instance.GetTaskList())
+        items.Clear();
+
+        // Clone the task list from TaskManager
+        items = new List<GameObject>(TaskManager.Instance.GetTaskListItems());
+
+        // Clear the content before adding new items
+        foreach (Transform child in content.transform)
         {
-            task.transform.SetParent(content.transform, false);
+            Destroy(child.gameObject);
+        }
+
+        // Add cloned items to the content
+        foreach (GameObject item in items)
+        {
+            GameObject newItem = Instantiate(item, content.transform, false);
+            newItem.transform.SetParent(content.transform, false);
         }
     }
 

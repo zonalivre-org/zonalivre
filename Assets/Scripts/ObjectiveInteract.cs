@@ -12,6 +12,8 @@ public class ObjectiveInteract : MonoBehaviour
     public float averageTimeToComplete;
     [SerializeField] private PlayerController playerMovement;
     [SerializeField] private GameObject indicator;
+    [HideInInspector] public TaskItem taskItem;
+    public Sprite taskIcon;
 
     [Header("If object opens a minigame")]
     [SerializeField] private bool hasMinigame = false;
@@ -105,12 +107,14 @@ public class ObjectiveInteract : MonoBehaviour
     public void CompleteTask()
     {
         playerMovement.ToggleMovement(true);
+        taskItem.MarkAsComplete();
+
         interactable = false;
         isComplete = true;
         indicator.SetActive(false);
-        TaskManager.Instance.objectives.Remove(this);
+
         inGameProgress.AddScore(scoreValue);
-        TaskManager.Instance.UpdateList();
+
         Debug.Log("Tarefa completa!");
     }
 

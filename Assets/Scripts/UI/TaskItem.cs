@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TaskItem : MonoBehaviour
 {
     private string taskDescription;
     private float averageTime;
+    [SerializeField] private Image checkIcon;
+    [SerializeField] private Image icon;
     [SerializeField] private TMP_Text textObject;
 
     public void SetTaskDescription(string description)
@@ -22,5 +25,15 @@ public class TaskItem : MonoBehaviour
     public float GetAverageTime()
     {
         return averageTime;
+    }
+
+    public void MarkAsComplete()
+    {
+        checkIcon.color = Color.green;
+    }
+
+    public void SetIcon(Sprite iconSprite)
+    {
+        icon.sprite = iconSprite;
     }
 }
