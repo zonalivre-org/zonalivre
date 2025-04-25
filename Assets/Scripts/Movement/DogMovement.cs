@@ -11,6 +11,7 @@ public class DogMovement : MonoBehaviour
     [SerializeField] private string firstOrder = "FollowNode";
     [SerializeField] private float timeBetweenMove = 1.5f;
     [SerializeField] private float detectionRange = 3f;
+    [SerializeField] private float timeFollowingPlayer = 5f;
     private NavMeshAgent agent;
     private float detectRadius;
     private float distance;
@@ -74,7 +75,7 @@ public class DogMovement : MonoBehaviour
     {
         isFollowingPlayer = true;
         MoveTowardsPlayer();
-        Invoke(nameof(StopFollowPlayer),3f);
+        Invoke(nameof(StopFollowPlayer),timeFollowingPlayer);
     }
     public void StopFollowPlayer()
     {
