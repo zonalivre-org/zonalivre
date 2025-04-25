@@ -11,6 +11,7 @@ public class DogMovement : MonoBehaviour
     [Header("Referências")]
     [SerializeField] private Transform playerTransform;
     [SerializeField] private List<Transform> destinationNodes; // Renomeado para clareza
+    [SerializeField] private GameObject waypointsParent;
 
     [Header("Comportamento de Wander")]
     [Tooltip("Tempo que o cão espera em um nó antes de ir para o próximo")]
@@ -66,6 +67,11 @@ public class DogMovement : MonoBehaviour
 
     private void Start()
     {
+
+        foreach (Transform child in waypointsParent.transform)
+        {
+            destinationNodes.Add(child);
+        }
         // Inicia o comportamento baseado no estado inicial e canAutoMove
         if (canAutoMove)
         {
