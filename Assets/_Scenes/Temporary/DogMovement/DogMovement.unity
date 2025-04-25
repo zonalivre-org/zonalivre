@@ -2565,7 +2565,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 768900362}
         m_TargetAssemblyTypeName: DogMovement, Assembly-CSharp
-        m_MethodName: FollowPlayer
+        m_MethodName: RequestFollowPlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4417,6 +4417,51 @@ PrefabInstance:
       propertyPath: followPlayerCurrentQuota
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: destinationNodes.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: destinationNodes.Array.data[0]
+      value: 
+      objectReference: {fileID: 914250361}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: destinationNodes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1680831560}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: destinationNodes.Array.data[2]
+      value: 
+      objectReference: {fileID: 836342892}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: destinationNodes.Array.data[3]
+      value: 
+      objectReference: {fileID: 1362332165}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: destinationNodes.Array.data[4]
+      value: 
+      objectReference: {fileID: 693070220}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: destinationNodes.Array.data[5]
+      value: 
+      objectReference: {fileID: 529089859}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: destinationNodes.Array.data[6]
+      value: 
+      objectReference: {fileID: 87865032}
+    - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: destinationNodes.Array.data[7]
+      value: 
+      objectReference: {fileID: 1104477391}
     - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
       propertyPath: destinationTransform.Array.size
@@ -10702,8 +10747,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 768900362}
         m_TargetAssemblyTypeName: DogMovement, Assembly-CSharp
-        m_MethodName: FleeFromPlayer
-        m_Mode: 4
+        m_MethodName: RequestStopAndIdle
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

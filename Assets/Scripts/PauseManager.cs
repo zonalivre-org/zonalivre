@@ -25,7 +25,7 @@ public class PauseManager : MonoBehaviour
         if(pause) Time.timeScale = 0f;
         else Time.timeScale = 1f;
         player.ToggleMovement(!pause);
-        pet.ToggleMovement(!pause);
+        pet.SetAutonomousMovement(!pause);
     }
     public void Pause() => Time.timeScale = 0;
     public void Resume() => Time.timeScale = 1;
