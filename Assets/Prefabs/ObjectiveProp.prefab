@@ -57,18 +57,18 @@ MonoBehaviour:
   averageTimeToComplete: 0
   playerMovement: {fileID: 0}
   indicator: {fileID: 5723805137986427324}
+  taskItem: {fileID: 0}
+  taskIcon: {fileID: 21300000, guid: 7067c6101b23ad34f961994dd8ffd712, type: 3}
+  clicklableLayers:
+    serializedVersion: 2
+    m_Bits: 64
   hasMinigame: 1
   minigame: {fileID: 0}
   miniGameType: 0
   needsItem: 0
-  itemR: {fileID: 0}
+  idCheck: 0
   givesItem: 0
-  itemG: {fileID: 0}
-  hasEffect: 0
-  effect: {fileID: 0}
-  clicklableLayers:
-    serializedVersion: 2
-    m_Bits: 64
+  idGive: 0
   mangoGoal: 3
   mangoFallSpeed: 275
   coolDownBetweenMangos: 1

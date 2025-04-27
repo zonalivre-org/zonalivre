@@ -14,6 +14,8 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private GameObject indicator;
     [HideInInspector] public TaskItem taskItem;
     public Sprite taskIcon;
+    [SerializeField] private Sprite objectiveCompleteSprite;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private LayerMask clicklableLayers;
     [Header("If object opens a minigame")]
@@ -89,6 +91,7 @@ public class ObjectiveInteract : MonoBehaviour
                 else
                 {
                     int index = InventoryManager.instance.Search(idCheck, false);
+                    Debug.Log(index);
                     Debug.Log("Você não tem o item: '" + InventoryManager.instance.itemsList[index].name + "' necessario!");
                 }
             }
@@ -115,6 +118,11 @@ public class ObjectiveInteract : MonoBehaviour
     }
     public void CompleteTask()
     {
+        if (spriteRenderer != null && objectiveCompleteSprite != null)
+        {
+            spriteRenderer.sprite = objectiveCompleteSprite;
+        }
+
         playerMovement.ToggleMovement(true);
         taskItem.MarkAsComplete();
 

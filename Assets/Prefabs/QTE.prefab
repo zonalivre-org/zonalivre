@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 4.72, z: 0}
-  m_LocalScale: {x: 4.09, y: 4.09, z: 4.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 749470880595202135}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c887d48e8d4aa93468c48f4b7964ccd4, type: 3}
+  m_Sprite: {fileID: -1856619939, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,18 +224,21 @@ MonoBehaviour:
   averageTimeToComplete: 0
   playerMovement: {fileID: 0}
   indicator: {fileID: 5021909201980745173}
+  taskItem: {fileID: 0}
+  taskIcon: {fileID: -1856619939, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  objectiveCompleteSprite: {fileID: 1708439415, guid: 93a113ff14997a24885aa99bdf365d8a,
+    type: 3}
+  spriteRenderer: {fileID: 8723981948991024807}
+  clicklableLayers:
+    serializedVersion: 2
+    m_Bits: 64
   hasMinigame: 1
   minigame: {fileID: 0}
   miniGameType: 1
   needsItem: 0
-  itemR: {fileID: 0}
+  idCheck: 0
   givesItem: 0
-  itemG: {fileID: 0}
-  hasEffect: 0
-  effect: {fileID: 0}
-  clicklableLayers:
-    serializedVersion: 2
-    m_Bits: 64
+  idGive: 0
   mangoGoal: 3
   mangoFallSpeed: 275
   coolDownBetweenMangos: 1
