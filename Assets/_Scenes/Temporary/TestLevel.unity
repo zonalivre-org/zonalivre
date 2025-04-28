@@ -361,6 +361,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 338837419569062859, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: healthGain
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: staminaGain
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: happynessGain
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
       propertyPath: playerMovement
@@ -380,7 +400,7 @@ PrefabInstance:
         type: 3}
       propertyPath: happynessMinigameUI
       value: 
-      objectReference: {fileID: 652309972}
+      objectReference: {fileID: 550874344}
     - target: {fileID: 4538625637960168167, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -943,6 +963,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1361886986}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &550874344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3333777106990127714, guid: 1641f6bee8238874c91216819c3c94cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 6079696958481826940}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &559318474 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
@@ -1024,7 +1050,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ce62c9eb7b2e1fc41bf2b3ac05e13a12, type: 2}
+  - {fileID: 2100000, guid: a6020ee3fbc8ee64c92ed38443f7ace6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2218,7 +2244,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6079696958481826940}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 550874344}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59a8a01a6bf44d447b33e41b39077bdf, type: 3}
@@ -2721,7 +2747,7 @@ MonoBehaviour:
   levelTime: 120
   goal: 4
   health: 100
-  healthMultiplier: 1
+  healthMultiplier: 1.1
   stamina: 100
   staminaMultiplier: 1.1
   happyness: 100
@@ -2995,7 +3021,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6020ee3fbc8ee64c92ed38443f7ace6, type: 2}
+  - {fileID: 2100000, guid: ce62c9eb7b2e1fc41bf2b3ac05e13a12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
