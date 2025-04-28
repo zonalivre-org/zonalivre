@@ -27,7 +27,7 @@ public class TaskManager : MonoBehaviour
     {
         foreach (Transform child in objectivesParent.transform)
         {
-            objectives.Add(child.);
+            //objectives.Add(child.);
         }
 
         CreateList();
