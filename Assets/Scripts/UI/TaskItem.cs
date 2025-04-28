@@ -9,6 +9,7 @@ public class TaskItem : MonoBehaviour
     [SerializeField] private Image checkIcon;
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text textObject;
+    [SerializeField] private GameObject stroke;
 
     public void SetTaskDescription(string description)
     {
@@ -30,6 +31,8 @@ public class TaskItem : MonoBehaviour
     public void MarkAsComplete()
     {
         checkIcon.color = Color.green;
+        stroke.SetActive(true);
+        stroke.GetComponent<Animator>().Play("Chalk stroke");
     }
 
     public void SetIcon(Sprite iconSprite)

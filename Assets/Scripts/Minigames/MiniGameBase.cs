@@ -22,6 +22,8 @@ public abstract class MiniGameBase : MonoBehaviour
 
     protected void OnStart()
     {
+        tipText.gameObject.SetActive(true);
+
         OnMiniGameStart += StartMiniGame;
         OnMiniGameEnd += EndMiniGame;
         OnMinigameInteract += RegisterPlayerClick;

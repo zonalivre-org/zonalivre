@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Rules")]
-    [Range(0, 1)][SerializeField] private float fillSpeed;
+    [Range(0, 3)][SerializeField] private float fillSpeed;
     [SerializeField] private Mode mode;
     enum Mode
     {
@@ -119,7 +119,6 @@ public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, 
 
         if (mode == Mode.Drag)
         {
-
             fill.GetComponent<Animator>().Play("DogPetGreen");
             backgroundImage.GetComponent<Animator>().Play("DogPetRed");
 

@@ -108,6 +108,17 @@ public class InGameProgress : MonoBehaviour
         clockSlider.value = currentTime;
         clockNumber.text = ConvertTimeToString(currentTime);
 
+        UpdateDogStatsUI();
+
+        if(win != 0) ShowResultPanel(win);
+    }
+
+    private void UpdateDogStatsUI()
+    {
+        currentHealth = Mathf.Clamp(currentHealth,0,100);
+        currentHappyness = Mathf.Clamp(currentHappyness,0,100);
+        currentStamina = Mathf.Clamp(currentStamina,0,100);
+
         healthSlider.value = currentHealth;
         healthFillImage.fillAmount = healthSlider.value / healthSlider.maxValue;
 
@@ -116,8 +127,6 @@ public class InGameProgress : MonoBehaviour
 
         happynessSlider.value = currentHappyness;
         happynessFillImage.fillAmount = happynessSlider.value / happynessSlider.maxValue;
-
-        if(win != 0) ShowResultPanel(win);
     }
     private void ShowResultPanel(int state)
     {

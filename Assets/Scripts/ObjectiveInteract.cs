@@ -10,7 +10,7 @@ public class ObjectiveInteract : MonoBehaviour
     [Header("Elements")]
     public string objectiveDescription; 
     public float averageTimeToComplete;
-    [SerializeField] private PlayerController playerMovement;
+    private PlayerController playerMovement;
     [SerializeField] private GameObject indicator;
     [HideInInspector] public TaskItem taskItem;
     public Sprite taskIcon;
@@ -52,7 +52,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     private bool enable = false, interactable = true;
     private float cooldownTimer;
-    public bool isComplete = false;
+    [HideInInspector] public bool isComplete = false;
     private InGameProgress inGameProgress;
     private void Awake()
     {

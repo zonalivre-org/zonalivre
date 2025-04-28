@@ -59,6 +59,8 @@ MonoBehaviour:
   indicator: {fileID: 5723805137986427324}
   taskItem: {fileID: 0}
   taskIcon: {fileID: 21300000, guid: 7067c6101b23ad34f961994dd8ffd712, type: 3}
+  objectiveCompleteSprite: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   clicklableLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -341,7 +343,7 @@ PrefabInstance:
     - target: {fileID: 3589370232137959794, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 15.67
       objectReference: {fileID: 0}
     - target: {fileID: 3589370232137959794, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}

@@ -6,11 +6,12 @@ public class TaskManager : MonoBehaviour
 {
     public static TaskManager Instance;
 
-     public List<ObjectiveInteract> objectives;
+    [HideInInspector] public List<ObjectiveInteract> objectives;
     [SerializeField] private GameObject objectivesParent;
 
-    [SerializeField] private List<TaskItem> taskList;
     [SerializeField] private GameObject taskPrefab;
+    [SerializeField] private List<TaskItem> taskList;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -27,7 +28,7 @@ public class TaskManager : MonoBehaviour
     {
         foreach (Transform child in objectivesParent.transform)
         {
-            //objectives.Add(child.);
+            objectives.Add(child.gameObject.GetComponent<ObjectiveInteract>());
         }
 
         CreateList();
