@@ -8,7 +8,7 @@ public class FillTheBowl : MiniGameBase
 
     [Header("Components")]
     [SerializeField] private Image rationFill;
-    [SerializeField] private PetInteract petCheck;
+    [HideInInspector] public PetInteract petInteract;
 
     [Header("Variables")]
     private float progress;
@@ -55,8 +55,8 @@ public class FillTheBowl : MiniGameBase
 
     public override void EndMiniGame()
     {
-        if (isMiniGameComplete) petCheck.CompleteTask(1);
-        else petCheck.CancelTask();
+        if (isMiniGameComplete) petInteract.CompleteTask(1);
+        else petInteract.CancelTask();
 
         base.EndMiniGame();
         gameObject.SetActive(false);

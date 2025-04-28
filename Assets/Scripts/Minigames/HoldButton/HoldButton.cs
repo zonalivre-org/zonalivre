@@ -21,7 +21,7 @@ public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, 
 
     [Header("Components")]
     [SerializeField] private Image fill;
-    [SerializeField] PetInteract petCheck;
+    [HideInInspector] public PetInteract petInteract;
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Texture2D handSprite;
 
@@ -104,8 +104,8 @@ public class HoldButton : MiniGameBase, IPointerDownHandler, IPointerUpHandler, 
 
     public override void EndMiniGame()
     {
-        if (isMiniGameComplete) petCheck.CompleteTask(target);
-        else petCheck.CancelTask();
+        if (isMiniGameComplete) petInteract.CompleteTask(target);
+        else petInteract.CancelTask();
 
         progress = 0;
         fill.fillAmount = 0;

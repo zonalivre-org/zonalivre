@@ -5,7 +5,10 @@ using UnityEngine;
 public class TaskManager : MonoBehaviour
 {
     public static TaskManager Instance;
-    public List<ObjectiveInteract> objectives;
+
+     public List<ObjectiveInteract> objectives;
+    [SerializeField] private GameObject objectivesParent;
+
     [SerializeField] private List<TaskItem> taskList;
     [SerializeField] private GameObject taskPrefab;
     private void Awake()
@@ -22,6 +25,11 @@ public class TaskManager : MonoBehaviour
 
     void Start()
     {
+        foreach (Transform child in objectivesParent.transform)
+        {
+            objectives.Add(child.);
+        }
+
         CreateList();
     }
 
@@ -68,7 +76,7 @@ public class TaskManager : MonoBehaviour
     {
         // Insertion sort algorithm
         // This is a simple and efficient algorithm for small lists, perfect for our needs!
-        
+
         TaskItem taskToInsert;
         int HelperIndex;
         int listLenght = levelTasks.Count;

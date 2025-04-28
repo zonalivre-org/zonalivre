@@ -21,7 +21,6 @@ public class PetInteract : MonoBehaviour
     private int defineObjective = 2;
     [Header("Place Holder Variables for Debugging Porpuses")]
     [SerializeField] private LayerMask healthLayer, staminaLayer, happynessLayer;
-    private PlayerInventory playerInventory;
     private void Awake() => inGameProgress = FindObjectOfType<InGameProgress>();
     private void LateUpdate()
     {
@@ -66,6 +65,21 @@ public class PetInteract : MonoBehaviour
         RaycastHit hit;
 
         //Placehoulder code bellow VVV
+        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, healthLayer)) 
+        {
+            InventoryManager.instance.Search(101, true); 
+            Debug.Log(InventoryManager.instance.currentItem.name);
+        }
+        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, staminaLayer))
+        {
+            InventoryManager.instance.Search(102, true); 
+            Debug.Log(InventoryManager.instance.currentItem.name);
+        }
+        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, happynessLayer)) 
+        {
+            InventoryManager.instance.Search(103, true); 
+            Debug.Log(InventoryManager.instance.currentItem.name);
+        }
         //Placehoulder code above ^^^
 
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
@@ -100,6 +114,7 @@ public class PetInteract : MonoBehaviour
         }
         else Debug.Log(whichTask + " is not a valid Pet task number!");
 
+        InventoryManager.instance.Search(0, true);
         playerMovement.ToggleMovement(true);
         dogMovement.SetAutonomousMovement(true);
         dogMovement.canAutoMove = true;
@@ -120,15 +135,23 @@ public class PetInteract : MonoBehaviour
         if(enableMinigameStart)
         {
             playerMovement.ToggleMovement(false);
-          
+            InventoryManager imi = InventoryManager.instance;
+            if(imi.currentItem.id == 101) //Minigame de curar a vida
+            {
+                healthMinigameUI.GetComponent<HoldButton>().petInteract = this;
                 healthMinigameUI.SetActive(true);
-            
-            
+            }
+            else if(imi.currentItem.id == 102) //Minigame de alimentar
+            {
+                staminaMinigameUI.GetComponent<FillTheBowl>().petInteract = this;
                 staminaMinigameUI.SetActive(true);
-           
-           
+            }
+            else if(imi.currentItem.id == 103 || imi.currentItem.id == 0) //Minigame de brincar
+            {
+                happynessMinigameUI.GetComponent<HoldButton>().petInteract = this;
                 happynessMinigameUI.SetActive(true);
-            
+            }
+            else Debug.Log(imi.currentItem.id + " is not a valid ID number!");
             enableMinigameStart = false;
             interactable = false;
         }
