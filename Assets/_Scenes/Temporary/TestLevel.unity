@@ -8790,7 +8790,7 @@ PrefabInstance:
     - target: {fileID: 4850658969545060303, guid: 1641f6bee8238874c91216819c3c94cd,
         type: 3}
       propertyPath: fillSpeed
-      value: 0.771
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5125342827159784956, guid: 1641f6bee8238874c91216819c3c94cd,
         type: 3}
@@ -11669,6 +11669,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndMiniGame
       objectReference: {fileID: 0}
+    - target: {fileID: 1875328541632160436, guid: 1641f6bee8238874c91216819c3c94cd,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972469771183047273, guid: 1641f6bee8238874c91216819c3c94cd,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3333777106990127714, guid: 1641f6bee8238874c91216819c3c94cd,
         type: 3}
       propertyPath: m_Name
@@ -11697,7 +11707,7 @@ PrefabInstance:
     - target: {fileID: 4850658969545060303, guid: 1641f6bee8238874c91216819c3c94cd,
         type: 3}
       propertyPath: fillSpeed
-      value: 0.798
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5125342827159784956, guid: 1641f6bee8238874c91216819c3c94cd,
         type: 3}
