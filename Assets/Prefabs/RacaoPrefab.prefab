@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6533705466893352499}
   - component: {fileID: 5872832384199477080}
   m_Layer: 3
-  m_Name: TelaPrefab
+  m_Name: RacaoPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a7fbbf85deb9b99817b2920741927d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToGive: {fileID: 11400000, guid: f789c7116ecb5b7169b2222dbb14dd12, type: 2}
+  itemToGive: {fileID: 11400000, guid: 3c1b6c86d337de54392a04f6de41bb2d, type: 2}
 --- !u!1 &6519586772146219156
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2092278009, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: 1717815786, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
