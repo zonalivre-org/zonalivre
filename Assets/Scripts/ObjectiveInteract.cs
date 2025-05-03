@@ -23,7 +23,7 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private GameObject minigame;
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
-    enum MiniGames
+    public enum MiniGames
     {
         MangoCatch,
         QuickTimeEvent,
@@ -54,10 +54,12 @@ public class ObjectiveInteract : MonoBehaviour
     private float cooldownTimer;
     [HideInInspector] public bool isComplete = false;
     private InGameProgress inGameProgress;
+    private PlayerInventory playerInventory;
     private void Awake()
     {
         inGameProgress = FindObjectOfType<InGameProgress>();
         playerMovement = FindObjectOfType<PlayerController>();
+        playerInventory = FindObjectOfType<PlayerInventory>();
         cooldownTimer = cooldown;
     }
     private void LateUpdate()
@@ -81,25 +83,8 @@ public class ObjectiveInteract : MonoBehaviour
         if(enable && other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Entrou na area de um Objetivo!");
-            if(needsItem)
-            {
-                if(InventoryManager.instance.currentItem.id == idCheck)
-                {
-                    if(hasMinigame) Invoke("StartMinigame", detectionDelay);
-                    if(givesItem) Invoke("GiveItem", detectionDelay);
-                }
-                else
-                {
-                    int index = InventoryManager.instance.Search(idCheck, false);
-                    Debug.Log(index);
-                    Debug.Log("Você não tem o item: '" + InventoryManager.instance.itemsList[index].name + "' necessario!");
-                }
-            }
-            else
-            {
-                if(hasMinigame) Invoke("StartMinigame", detectionDelay);
-                if(givesItem) Invoke("GiveItem", detectionDelay);
-            }
+                    Invoke("StartMinigame", detectionDelay);
+          
         }
     }
     private void SelectObjective()
@@ -129,7 +114,8 @@ public class ObjectiveInteract : MonoBehaviour
         interactable = false;
         isComplete = true;
         indicator.SetActive(false);
-
+        
+        playerInventory.RemoveItem();
         inGameProgress.AddScore(scoreValue);
 
         Debug.Log("Tarefa completa!");
@@ -154,6 +140,13 @@ public class ObjectiveInteract : MonoBehaviour
                     minigame.GetComponent<MangoCatch>().StartMiniGame();
                     break;
                 case MiniGames.QuickTimeEvent:
+                    if (!playerInventory.GetItem())
+                    {
+                        playerMovement.ToggleMovement(true);
+
+                        return;
+                    }
+                    if(playerInventory.GetItem().id != 0.ToString()) return;
                     minigame.GetComponent<QuickTimeEvent>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);
                     minigame.GetComponent<QuickTimeEvent>().objectivePlayerCheck = this;
                     minigame.GetComponent<QuickTimeEvent>().StartMiniGame();
@@ -165,14 +158,5 @@ public class ObjectiveInteract : MonoBehaviour
             Debug.Log("Iniciar Minigame!");
         }
     }
-    private void GiveItem()
-    {
-        if(enable)
-        {
-            enable = false;
-            Item setItem = InventoryManager.instance.itemsList[idGive];
-            InventoryManager.instance.SetItem(setItem);
-            Debug.Log("Jogador recebeu o item: '" + setItem.name + "'!");
-        }
-    }
+
 }
