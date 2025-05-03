@@ -161,6 +161,7 @@ public class ObjectiveInteract : MonoBehaviour
        
         if (playerInventory.GetItem() && playerInventory.GetItem().id == itemId)
         {
+            playerInventory.RemoveItem();
             return true;
 
         }
