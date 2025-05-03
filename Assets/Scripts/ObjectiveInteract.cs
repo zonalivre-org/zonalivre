@@ -140,7 +140,10 @@ public class ObjectiveInteract : MonoBehaviour
                     minigame.GetComponent<MangoCatch>().StartMiniGame();
                     break;
                 case MiniGames.QuickTimeEvent:
-                    CheckIfCanStartMinigame("Tela");
+                    if (!CheckIfCanStartMinigame("Tela"))
+                    {
+                        return;
+                    }
                     minigame.GetComponent<QuickTimeEvent>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);
                     minigame.GetComponent<QuickTimeEvent>().objectivePlayerCheck = this;
                     minigame.GetComponent<QuickTimeEvent>().StartMiniGame();
@@ -153,20 +156,21 @@ public class ObjectiveInteract : MonoBehaviour
         }
     }
 
-    private void CheckIfCanStartMinigame(string itemId = null)
+    private bool CheckIfCanStartMinigame(string itemId = null)
     {
-        if (hasMinigame)
+       
+        if (playerInventory.GetItem() && playerInventory.GetItem().id == itemId)
         {
-            if (playerInventory.GetItem() && playerInventory.GetItem().id == itemId)
-            {
-                StartMinigame();
-            }
-            else
-            {
-                playerMovement.ToggleMovement(true);
-                Debug.Log("Você não tem o item necessário para iniciar o minigame.");
-            }
+            return true;
+
         }
+        else
+        {
+            playerMovement.ToggleMovement(true);
+            Debug.Log("Você não tem o item necessário para iniciar o minigame.");
+            return false;
+        }
+        
     }
 
 }
