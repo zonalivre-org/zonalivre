@@ -140,13 +140,11 @@ public class ObjectiveInteract : MonoBehaviour
                     minigame.GetComponent<MangoCatch>().StartMiniGame();
                     break;
                 case MiniGames.QuickTimeEvent:
-                    if (!playerInventory.GetItem())
+                    if (!playerInventory.GetItem() || playerInventory.GetItem().id != "Tela")
                     {
                         playerMovement.ToggleMovement(true);
-
                         return;
                     }
-                    if(playerInventory.GetItem().id != 0.ToString()) return;
                     minigame.GetComponent<QuickTimeEvent>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);
                     minigame.GetComponent<QuickTimeEvent>().objectivePlayerCheck = this;
                     minigame.GetComponent<QuickTimeEvent>().StartMiniGame();

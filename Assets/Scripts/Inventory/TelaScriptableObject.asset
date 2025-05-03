@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a8cbbe5e03312a79d0df4c38e0d83b, type: 3}
   m_Name: TelaScriptableObject
   m_EditorClassIdentifier: 
-  id: 0
+  id: Tela
   displayName: Tela
   icon: {fileID: -2092278009, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
-  canBeReturned: 0
-  worldPrefab: {fileID: 5335297561532913243, guid: c5d89845df7a65f409018b593cb2015a,
-    type: 3}
