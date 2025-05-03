@@ -18,10 +18,14 @@ public class PetInteract : MonoBehaviour
     [SerializeField] private GameObject happynessMinigameUI;
     private InGameProgress inGameProgress;
     private bool enableMinigameStart = false, interactable = true;
+    private PlayerInventory playerInventory;
     private int defineObjective = 2;
     [Header("Place Holder Variables for Debugging Porpuses")]
     [SerializeField] private LayerMask healthLayer, staminaLayer, happynessLayer;
-    private void Awake() => inGameProgress = FindObjectOfType<InGameProgress>();
+    private void Awake() {
+    inGameProgress = FindObjectOfType<InGameProgress>();
+    playerInventory = FindObjectOfType<PlayerInventory>();
+    }
     private void LateUpdate()
     {
         if (interactable && Input.GetMouseButtonDown(0)) SelectObjective();
@@ -131,7 +135,15 @@ public class PetInteract : MonoBehaviour
         if (enableMinigameStart)
         {
 
-            StartHealthMinigame();
+            if (playerInventory.GetItem() && playerInventory.GetItem().id == "Coleira"){
+                StartHealthMinigame();
+            }
+            else if (playerInventory.GetItem() && playerInventory.GetItem().id == "Racao"){
+                StartStaminaMinigame();
+            }
+            else{
+                StartHappynessMinigame();
+            }
         }
     }
 
