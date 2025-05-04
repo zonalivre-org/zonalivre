@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: UIFont
   m_EditorClassIdentifier: 
-  hashCode: 1437058585
+  hashCode: -1033801969
   material: {fileID: -7351501579672171409}
-  materialHashCode: -236347111
+  materialHashCode: 315525711
   m_Version: 1.1.0
   m_SourceFontFileGUID: d47bb18f9f28ed14db1e56e5b8fe3a11
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: d47bb18f9f28ed14db1e56e5b8fe3a11,

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PetInteract : MonoBehaviour
@@ -16,70 +17,98 @@ public class PetInteract : MonoBehaviour
     [SerializeField] private GameObject staminaMinigameUI;
     [SerializeField] private GameObject happynessMinigameUI;
     private InGameProgress inGameProgress;
-    private bool enable = false, interactable = true;
+    private bool enableMinigameStart = false, interactable = true;
+    private PlayerInventory playerInventory;
     private int defineObjective = 2;
     [Header("Place Holder Variables for Debugging Porpuses")]
     [SerializeField] private LayerMask healthLayer, staminaLayer, happynessLayer;
-    private void Awake() => inGameProgress = FindObjectOfType<InGameProgress>();
+    private void Awake() {
+    inGameProgress = FindObjectOfType<InGameProgress>();
+    playerInventory = FindObjectOfType<PlayerInventory>();
+    }
     private void LateUpdate()
     {
-        if(interactable && Input.GetMouseButtonDown(0)) SelectObjective();
+        if (interactable && Input.GetMouseButtonDown(0)) SelectObjective();
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(enable && other.gameObject.CompareTag("Player"))
+        if (enableMinigameStart && other.gameObject.CompareTag("Player"))
         {
+            dogMovement.canAutoMove = false;
+            dogMovement.SetAutonomousMovement(false);
             Debug.Log("Entrou na area do pet!");
-            Invoke ("StartMinigame", detectionDelay);
+            Invoke("StartMinigame", detectionDelay);
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (enableMinigameStart && other.gameObject.CompareTag("Player"))
+        {
+            dogMovement.canAutoMove = false;
+            dogMovement.SetAutonomousMovement(false);
+            Invoke(nameof(StartMinigame), detectionDelay);
+
+
+        }
+
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        dogMovement.canAutoMove = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            dogMovement.SetAutonomousMovement(true);
+        }
+    }
+
     private void SelectObjective()
     {
         RaycastHit hit;
+
         //Placehoulder code bellow VVV
-        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, healthLayer)) 
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, healthLayer))
         {
-            defineObjective = 0;
-            Debug.Log("Minigame de cura habilitado para o Pet!");
+
         }
-        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, staminaLayer))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, staminaLayer))
         {
-            defineObjective = 1;
-            Debug.Log("Minigame de comida habilitado para o Pet!");
+
         }
-        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, happynessLayer)) 
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, happynessLayer))
         {
-            defineObjective = 2;
-            Debug.Log("Minigame de alegria habilidado para o Pet!");
+
         }
         //Placehoulder code above ^^^
 
-        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
         {
-            enable = true;
-            dogMovement.WaitInPlace(9999f);
+            enableMinigameStart = true;
+            dogMovement.SetAutonomousMovement(false);
             Debug.Log("Indo olhar o pet!");
         }
-        else if(enable)
+        else if (enableMinigameStart)
         {
-            enable = false;
-            dogMovement.FollowNode();
+            enableMinigameStart = false;
+            dogMovement.SetAutonomousMovement(true);
             Debug.Log("cancelou a ação");
         }
     }
     public void CompleteTask(int whichTask) // receives from another script a value between 0 and 2 then adds the score to the assigned pet slider value. 
     {
-        if(whichTask == 0)
+        if (whichTask == 0)
         {
             inGameProgress.AddSliderValue(healthGain, whichTask);
             Debug.Log("Vida do pet tratada!");
         }
-        else if(whichTask == 1)
+        else if (whichTask == 1)
         {
             inGameProgress.AddSliderValue(staminaGain, whichTask);
             Debug.Log("Fome do pet saciada");
         }
-        else if(whichTask == 2)
+        else if (whichTask == 2)
         {
             inGameProgress.AddSliderValue(happynessGain, whichTask);
             Debug.Log("Pet parece estar mais feliz!");
@@ -87,39 +116,65 @@ public class PetInteract : MonoBehaviour
         else Debug.Log(whichTask + " is not a valid Pet task number!");
 
         playerMovement.ToggleMovement(true);
-        dogMovement.FollowNode();
+        dogMovement.SetAutonomousMovement(true);
+        dogMovement.canAutoMove = true;
         interactable = true;
     }
-    
+
     public void CancelTask() // receives a value from another script to cancel the minigame and return to the game.
     {
         playerMovement.ToggleMovement(true);
-        dogMovement.FollowNode();
-        enable = false;
+        dogMovement.SetAutonomousMovement(true);
+        enableMinigameStart = false;
         interactable = true;
         Debug.Log("Cancelou a ação");
     }
 
     private void StartMinigame() // receives a value from within this script between 0 and 2 then activate the minigame corresponding to whatever pet slider value is to be changed.
     {
-        if(enable)
+        if (enableMinigameStart)
         {
-            playerMovement.ToggleMovement(false);
-            if(defineObjective == 0)
-            {
-                healthMinigameUI.SetActive(true);
+
+            if (playerInventory.GetItem() && playerInventory.GetItem().id == "Coleira"){
+                StartHealthMinigame();
             }
-            else if(defineObjective == 1)
-            {
-                staminaMinigameUI.SetActive(true);
+            else if (playerInventory.GetItem() && playerInventory.GetItem().id == "Racao"){
+                StartStaminaMinigame();
             }
-            else if(defineObjective == 2)
-            {
-                happynessMinigameUI.SetActive(true);
+            else{
+                StartHappynessMinigame();
             }
-            else Debug.Log(defineObjective + " is not a valid objective number!");
-            enable = false;
-            interactable = false;
         }
+    }
+
+    public void StartHealthMinigame()
+    {
+        playerMovement.ToggleMovement(false);
+
+        healthMinigameUI.GetComponent<HoldButton>().petInteract = this;
+        healthMinigameUI.SetActive(true);
+
+        enableMinigameStart = false;
+        interactable = false;
+    }
+    public void StartStaminaMinigame()
+    {
+        playerMovement.ToggleMovement(false);
+
+        staminaMinigameUI.GetComponent<FillTheBowl>().petInteract = this;
+        staminaMinigameUI.SetActive(true);
+
+        enableMinigameStart = false;
+        interactable = false;
+    }
+    public void StartHappynessMinigame()
+    {
+        playerMovement.ToggleMovement(false);
+
+        happynessMinigameUI.GetComponent<HoldButton>().petInteract = this;
+        happynessMinigameUI.SetActive(true);
+
+        enableMinigameStart = false;
+        interactable = false;
     }
 }

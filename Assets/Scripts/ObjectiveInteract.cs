@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectiveInteract : MonoBehaviour
@@ -7,32 +8,37 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private int scoreValue = 1;
     [SerializeField] private float cooldown = 0f;
     [Header("Elements")]
-    [SerializeField] private PlayerController playerMovement;
+    public string objectiveDescription; 
+    public float averageTimeToComplete;
+    private PlayerController playerMovement;
+    [SerializeField] private GameObject indicator;
+    [HideInInspector] public TaskItem taskItem;
+    public Sprite taskIcon;
+    [SerializeField] private Sprite objectiveCompleteSprite;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private LayerMask clicklableLayers;
     [Header("If object opens a minigame")]
     [SerializeField] private bool hasMinigame = false;
     [SerializeField] private GameObject minigame;
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
-    enum MiniGames
+    public enum MiniGames
     {
         MangoCatch,
         QuickTimeEvent,
-        HoldTheButton,
+        FillTheBowl,
     }
+
+    #region Objective properties
     [Header("If object requires an item")] // not implemented yet!
     [SerializeField] private bool needsItem = false;
-    [SerializeField] private GameObject itemR; // placeholderline!
+    [SerializeField] private int idCheck;
 
     [Header("If object gives an item to the player")] // not implemented yet!
     [SerializeField] private bool givesItem = false;
-    [SerializeField] private GameObject itemG; // placeholderline!
+    [SerializeField] private int idGive; // placeholderline!
 
-    [Header("If Object applies effect")] // not implemented yet!
-    [SerializeField] private bool hasEffect = false;
-    [SerializeField] private GameObject effect; // placeholderline!
-    [SerializeField] private LayerMask clicklableLayers;
-
-    [Header("PlaceHolder Variavles")]
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
     [SerializeField] private float mangoFallSpeed;
@@ -42,12 +48,18 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private int QTEGoal;
     [SerializeField] private float QTEMoveSpeed;
     [SerializeField] private float QTESafeZoneSizePercentage; 
+    #endregion
+
     private bool enable = false, interactable = true;
     private float cooldownTimer;
+    [HideInInspector] public bool isComplete = false;
     private InGameProgress inGameProgress;
+    private PlayerInventory playerInventory;
     private void Awake()
     {
         inGameProgress = FindObjectOfType<InGameProgress>();
+        playerMovement = FindObjectOfType<PlayerController>();
+        playerInventory = FindObjectOfType<PlayerInventory>();
         cooldownTimer = cooldown;
     }
     private void LateUpdate()
@@ -71,9 +83,8 @@ public class ObjectiveInteract : MonoBehaviour
         if(enable && other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Entrou na area de um Objetivo!");
-            if(hasMinigame) Invoke("StartMinigame", detectionDelay);
-            if(hasEffect) Invoke("ApplyEffect", detectionDelay);
-            if(givesItem) Invoke("GiveItem", detectionDelay);
+                    Invoke("StartMinigame", detectionDelay);
+          
         }
     }
     private void SelectObjective()
@@ -92,9 +103,21 @@ public class ObjectiveInteract : MonoBehaviour
     }
     public void CompleteTask()
     {
+        if (spriteRenderer != null && objectiveCompleteSprite != null)
+        {
+            spriteRenderer.sprite = objectiveCompleteSprite;
+        }
+
         playerMovement.ToggleMovement(true);
+        taskItem.MarkAsComplete();
+
         interactable = false;
+        isComplete = true;
+        indicator.SetActive(false);
+        
+        playerInventory.RemoveItem();
         inGameProgress.AddScore(scoreValue);
+
         Debug.Log("Tarefa completa!");
     }
 
@@ -117,27 +140,38 @@ public class ObjectiveInteract : MonoBehaviour
                     minigame.GetComponent<MangoCatch>().StartMiniGame();
                     break;
                 case MiniGames.QuickTimeEvent:
+                    if (!CheckIfCanStartMinigame("Tela"))
+                    {
+                        return;
+                    }
                     minigame.GetComponent<QuickTimeEvent>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);
-                    minigame.GetComponent<QuickTimeEvent>().StartQTEGame();
+                    minigame.GetComponent<QuickTimeEvent>().objectivePlayerCheck = this;
+                    minigame.GetComponent<QuickTimeEvent>().StartMiniGame();
+                    break;
+                case MiniGames.FillTheBowl:
+
                     break;
             }
             Debug.Log("Iniciar Minigame!");
         }
     }
-    private void ApplyEffect()
+
+    private bool CheckIfCanStartMinigame(string itemId = null)
     {
-        if(enable)
-        {   
-            enable = false;
-            Debug.Log("Jogador recebeu um efeito magico unico!");
-        }
-    }
-    private void GiveItem()
-    {
-        if(enable)
+       
+        if (playerInventory.GetItem() && playerInventory.GetItem().id == itemId)
         {
-            enable = false;
-            Debug.Log("Jogador recebeu um presente misterioso!");
+            playerInventory.RemoveItem();
+            return true;
+
         }
+        else
+        {
+            playerMovement.ToggleMovement(true);
+            Debug.Log("Você não tem o item necessário para iniciar o minigame.");
+            return false;
+        }
+        
     }
+
 }

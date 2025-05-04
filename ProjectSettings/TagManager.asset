@@ -7,6 +7,8 @@ TagManager:
   - MangoPlayer
   - MangoGround
   - Jogador
+  - Ration
+  - Bowl
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - (Debug)Health
   - (Debug)Stamina
   - (Debug)Happyness
-  - 
+  - UIParticle
   - 
   - 
   - 
