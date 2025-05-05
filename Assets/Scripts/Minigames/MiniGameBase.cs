@@ -7,7 +7,7 @@ public abstract class MiniGameBase : MonoBehaviour
     public static Action OnMiniGameStart;
     public static Action OnMiniGameEnd;
     public static Action OnMinigameInteract;
-    [SerializeField] private TMP_Text tipText;
+    [SerializeField] protected TMP_Text tipText;
     [SerializeField] private float tipDelay = 5f; // Time in seconds before showing the tip
 
     private float timeSinceLastClick;
