@@ -80,9 +80,17 @@ public abstract class MiniGameBase : MonoBehaviour
 
     public virtual void EndMiniGame()
     {
+        gameObject.SetActive(false);
+
         isMiniGameActive = false;
         isMiniGameComplete = false;
         firstActionTriggered = false;
+
+        OnMiniGameEnd -= EndMiniGame;
+        OnMinigameInteract -= RegisterPlayerClick;
+        OnMiniGameStart -= StartMiniGame;
+
+        
     }
 
 }

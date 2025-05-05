@@ -29,11 +29,6 @@ public class MangoCatchMinigame : MiniGameBase
         playerControl = GetComponent<MangoPlayerControl>();
     }
 
-    private void OnEnable()
-    {
-        StartMiniGame();
-    }
-
     void Update()
     {
         TipCheck();
@@ -65,8 +60,6 @@ public class MangoCatchMinigame : MiniGameBase
 
     public override void EndMiniGame()
     {
-        gameObject.SetActive(false);
-
         if (isMiniGameComplete) objectivePlayerCheck.CompleteTask();
         else objectivePlayerCheck.CloseTask();
 

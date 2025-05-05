@@ -6,26 +6,24 @@ public class CleanMinigame : MiniGameBase
 {
     [Header("Rules")]
     [Range(0, 1)] [SerializeField] private float cleanSpeed;
-    [SerializeField] private int trashAmout = 5;
+    [SerializeField] private int trashAmount = 5;
     private int trashBagRemaining;
+    private int trashRemaining;
 
     [Header("Components")]
-    private string originalTipText;
     [SerializeField] private RectTransform spawnArea;
     [SerializeField] private Sprite trashBagSprite;
     [SerializeField] private Sprite trashSprite;
     [SerializeField] private RectTransform trashCan;
-    [HideInInspector] public PetInteract petInteract;
+    [HideInInspector] public ObjectiveInteract objectiveInteract;
     [SerializeField] private Texture2D broomCursorTexture;
     [SerializeField] private Texture2D handCursorTexture;
+    private string originalTipText;
 
     void Awake()
     {
         originalTipText = tipText.text;
-    }
-    void OnEnable()
-    {
-        StartMiniGame();
+
     }
 
     void Update()
@@ -33,6 +31,12 @@ public class CleanMinigame : MiniGameBase
         TipCheck();
     }
 
+    public void SetMiniGameRules(float cleanSpeed, int trashAmount)
+    {
+        this.cleanSpeed = cleanSpeed;
+        this.trashAmount = trashAmount;
+    }
+    
     public override void StartMiniGame()
     {
         base.StartMiniGame();
@@ -41,9 +45,11 @@ public class CleanMinigame : MiniGameBase
 
         trashCan.gameObject.SetActive(false);
 
+        trashRemaining = trashAmount;
+
         tipText.text = originalTipText;
 
-        for (int i = 0; i < trashAmout; i++)
+        for (int i = 0; i < trashAmount; i++)
         {
             SpawnTrash();
         }
@@ -51,13 +57,25 @@ public class CleanMinigame : MiniGameBase
 
     public override void EndMiniGame()
     {
-        if (isMiniGameComplete) petInteract.CompleteTask(1);
-        else petInteract.CancelTask();
-;
-        isMiniGameActive = false;
-        isMiniGameComplete = false;
+        if (isMiniGameComplete) objectiveInteract.CompleteTask();
+        else objectiveInteract.CloseTask();
+
+        ResetMiniGame();
+        base.EndMiniGame();
     }
 
+    public void ResetMiniGame()
+    {
+        foreach (Transform child in spawnArea)
+        {
+            Destroy(child.gameObject);
+        }
+
+        trashBagRemaining = 0;
+        isMiniGameComplete = false;
+        trashCan.gameObject.SetActive(false);
+        tipText.text = originalTipText;
+    }
     public void SpawnTrash()
     {
         GameObject trash = new GameObject("Trash");
@@ -80,11 +98,11 @@ public class CleanMinigame : MiniGameBase
 
     public void ReduceTrashAmount()
     {
-        trashAmout--;
+        trashRemaining--;
         trashBagRemaining++;
         AudioManager.Instance.PlayRandomPitchSFXSound(2);
 
-        if (trashAmout <= 0)
+        if (trashRemaining <= 0)
         {
             trashCan.gameObject.SetActive(true);
             tipText.text = "Agora leve o lixo até a lixeira!";

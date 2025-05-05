@@ -49,8 +49,11 @@ public class TasksMenu : MonoBehaviour
         // Add cloned items to the content
         foreach (GameObject item in items)
         {
-            GameObject newItem = Instantiate(item, content.transform, false);
-            newItem.transform.SetParent(content.transform, false);
+            if (item.activeSelf)
+            {
+                GameObject newItem = Instantiate(item, content.transform, false);
+                newItem.transform.SetParent(content.transform, false);
+            }
         }
     }
 

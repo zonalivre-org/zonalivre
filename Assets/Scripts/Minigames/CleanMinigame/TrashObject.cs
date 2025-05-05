@@ -15,6 +15,7 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
     private bool turnedIntoTrashBag = false;
     private Texture2D broomCursorTexture;
     private Texture2D handCursorTexture;
+
     void Start()
     {
         trashImage = GetComponent<Image>();
@@ -60,7 +61,7 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
             RectTransformUtility.ScreenPointToLocalPointInRectangle(trashCan, mousePosition, eventData.pressEventCamera, out Vector2 localPoint);
             transform.position = trashCan.TransformPoint(localPoint);
 
-            if (RectTransformUtility.RectangleContainsScreenPoint(trashCan, Input.mousePosition, eventData.pressEventCamera))
+            if (trashCan.gameObject.activeSelf && RectTransformUtility.RectangleContainsScreenPoint(trashCan, Input.mousePosition, eventData.pressEventCamera))
             {
                 trashCan.GetComponent<Outline>().enabled = true;
             }
@@ -76,7 +77,7 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
     {
         GetComponent<Outline>().enabled = false;
 
-            if (RectTransformUtility.RectangleContainsScreenPoint(trashCan, Input.mousePosition, eventData.pressEventCamera))
+            if (trashCan.gameObject.activeSelf && RectTransformUtility.RectangleContainsScreenPoint(trashCan, Input.mousePosition, eventData.pressEventCamera))
             {
                 cleanMinigame.ReduceTrashBagAmount();
                 trashCan.GetComponent<Outline>().enabled = false;

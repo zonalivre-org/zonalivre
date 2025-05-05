@@ -52,6 +52,11 @@ public class TaskManager : MonoBehaviour
 
             task.taskItem = newTask.GetComponent<TaskItem>();
 
+            if (task.gameObject.activeSelf == false)
+            {
+                newTask.SetActive(false);
+            }
+
             taskList.Add(newTask.GetComponent<TaskItem>());
         }
 

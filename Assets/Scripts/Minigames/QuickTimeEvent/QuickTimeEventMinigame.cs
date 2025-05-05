@@ -38,7 +38,6 @@ public class QuickTimeEventMinigame : MiniGameBase
     private void OnEnable()
     {
         ResetPoints();
-        StartMiniGame();
     }
 
     private void Update()
@@ -47,7 +46,6 @@ public class QuickTimeEventMinigame : MiniGameBase
         {
             MovePointer();
         }
-
     }
 
     public override void StartMiniGame()
@@ -67,8 +65,6 @@ public class QuickTimeEventMinigame : MiniGameBase
         else objectivePlayerCheck.CloseTask();
 
         base.EndMiniGame();
-
-        gameObject.SetActive(false);
     }
 
     public void SetMiniGameRules(int goal, float moveSpeed, float safeZoneSizePercentage)

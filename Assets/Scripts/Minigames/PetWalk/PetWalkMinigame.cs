@@ -39,6 +39,12 @@ public class PetWalkMinigame : MiniGameBase
     {
         tipText.text = $"Levando o pet ao veterinário. Aguarde <color=yellow>{Math.Round(arrivalTime - walkSlider.value)}</color> segundos.";
     }
+
+    public void RestartMiniGame()
+    {
+        walkSlider.value = 0f;
+        isMiniGameComplete = false;
+    }
     
     public override void StartMiniGame()
     {
@@ -53,13 +59,10 @@ public class PetWalkMinigame : MiniGameBase
 
     public override void EndMiniGame()
     {
-        if (isMiniGameComplete) petInteract.CompleteTask(1);
+        if (isMiniGameComplete) petInteract.CompleteTask(0);
         else petInteract.CancelTask();
 
-        isMiniGameActive = false;
-        isMiniGameComplete = false;
-
-        OnMiniGameEnd -= EndMiniGame;
-        OnMinigameInteract -= RegisterPlayerClick;
+        RestartMiniGame();
+        base.EndMiniGame();
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1091819450973838026}
   - component: {fileID: 6533705466893352499}
   m_Layer: 3
-  m_Name: ObjectiveProp
+  m_Name: MangoTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

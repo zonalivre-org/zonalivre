@@ -7,6 +7,7 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private float detectionDelay = 0.5f;
     [SerializeField] private int scoreValue = 1;
     [SerializeField] private float cooldown = 0f;
+
     [Header("Elements")]
     public string objectiveDescription; 
     public float averageTimeToComplete;
@@ -16,21 +17,23 @@ public class ObjectiveInteract : MonoBehaviour
     public Sprite taskIcon;
     [SerializeField] private Sprite objectiveCompleteSprite;
     [SerializeField] private SpriteRenderer spriteRenderer;
-
     [SerializeField] private LayerMask clicklableLayers;
+
     [Header("If object opens a minigame")]
     [SerializeField] private bool hasMinigame = false;
     [SerializeField] private GameObject minigame;
+
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
     public enum MiniGames
     {
         MangoCatch,
         QuickTimeEvent,
-        FillTheBowl,
+        CleanMinigame,
     }
 
     #region Objective properties
+
     [Header("If object requires an item")] // not implemented yet!
     [SerializeField] private bool needsItem = false;
     [SerializeField] private int idCheck;
@@ -38,6 +41,9 @@ public class ObjectiveInteract : MonoBehaviour
     [Header("If object gives an item to the player")] // not implemented yet!
     [SerializeField] private bool givesItem = false;
     [SerializeField] private int idGive; // placeholderline!
+
+    [Header("If object activates another object")]
+    [SerializeField] private GameObject objectToActivate;
 
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
@@ -47,7 +53,12 @@ public class ObjectiveInteract : MonoBehaviour
     [Header("Quick Time Event")]
     [SerializeField] private int QTEGoal;
     [SerializeField] private float QTEMoveSpeed;
-    [SerializeField] private float QTESafeZoneSizePercentage; 
+    [SerializeField] private float QTESafeZoneSizePercentage;
+
+    [Header("Clean Minigame")]
+    [Range(0,1)] [SerializeField] private float cleanSpeed;
+    [SerializeField] private int trashAmount = 5;
+
     #endregion
 
     private bool enable = false, interactable = true;
@@ -119,6 +130,13 @@ public class ObjectiveInteract : MonoBehaviour
         inGameProgress.AddScore(scoreValue);
 
         Debug.Log("Tarefa completa!");
+
+        if (objectToActivate != null)
+        {
+            objectToActivate.SetActive(true);
+            objectToActivate.GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(true);
+            Debug.Log("Ativou o objeto: " + objectToActivate.name);
+        }
     }
 
     public void CloseTask()
@@ -126,6 +144,7 @@ public class ObjectiveInteract : MonoBehaviour
         playerMovement.ToggleMovement(true);
         Debug.Log("Tarefa fechada!");
     }
+    
     private void StartMinigame()
     {
         if(enable)
@@ -139,6 +158,7 @@ public class ObjectiveInteract : MonoBehaviour
                     minigame.GetComponent<MangoCatchMinigame>().objectivePlayerCheck = this;
                     minigame.GetComponent<MangoCatchMinigame>().StartMiniGame();
                     break;
+
                 case MiniGames.QuickTimeEvent:
                     if (!CheckIfCanStartMinigame("Tela"))
                     {
@@ -148,6 +168,12 @@ public class ObjectiveInteract : MonoBehaviour
                     minigame.GetComponent<QuickTimeEventMinigame>().objectivePlayerCheck = this;
                     minigame.GetComponent<QuickTimeEventMinigame>().StartMiniGame();
                     break;
+
+                case MiniGames.CleanMinigame:
+                    minigame.GetComponent<CleanMinigame>().SetMiniGameRules(cleanSpeed, trashAmount);
+                    minigame.GetComponent<CleanMinigame>().objectiveInteract = this;
+                    minigame.GetComponent<CleanMinigame>().StartMiniGame();
+                break;
             }
             Debug.Log("Iniciar Minigame!");
         }
@@ -160,7 +186,6 @@ public class ObjectiveInteract : MonoBehaviour
         {
             playerInventory.RemoveItem();
             return true;
-
         }
         else
         {

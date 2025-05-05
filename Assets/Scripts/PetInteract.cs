@@ -9,9 +9,11 @@ public class PetInteract : MonoBehaviour
     [SerializeField] private int healthGain = 50;
     [SerializeField] private int staminaGain = 60;
     [SerializeField] private int happynessGain = 20;
+
     [Header("Movement Elements")]
     [SerializeField] private DogMovement dogMovement;
     [SerializeField] private PlayerController playerMovement;
+
     [Header("UI Elements")]
     [SerializeField] private GameObject healthMinigameUI;
     [SerializeField] private GameObject staminaMinigameUI;
@@ -20,6 +22,7 @@ public class PetInteract : MonoBehaviour
     private bool enableMinigameStart = false, interactable = true;
     private PlayerInventory playerInventory;
     private int defineObjective = 2;
+    
     [Header("Place Holder Variables for Debugging Porpuses")]
     [SerializeField] private LayerMask healthLayer, staminaLayer, happynessLayer;
     private void Awake() {
