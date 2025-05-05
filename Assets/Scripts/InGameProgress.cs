@@ -39,7 +39,7 @@ public class InGameProgress : MonoBehaviour
     private int clockMultiplier = 1;
     private float sliderDelayTimer = 0f, clockDelayTimer = 0f;
     private int scoreProgress = 0;
-    private bool enablecountdown = true;
+    private bool enablecountdown = false;
     private int win = 0; // Player starts the game in a neutral state. +1 = they win. -1 = they lose.
     private void Awake()
     {
@@ -66,8 +66,12 @@ public class InGameProgress : MonoBehaviour
     void Start()
     {
         goal = TaskManager.Instance.objectives.Count;
+
+        Invoke(nameof(StartTimer), 3);
+
     }
-    private void LateUpdate()
+    
+    private void Update()
     {
         if(currentHealth <= 0|| currentStamina <= 0|| currentHappyness <= 0 || currentTime <= 0) win = -1;
 
@@ -103,6 +107,12 @@ public class InGameProgress : MonoBehaviour
         }
         UpdateUI();
     }
+
+    private void StartTimer()
+    {
+        enablecountdown = true;
+    }
+
     private void UpdateUI()
     {
         clockSlider.value = currentTime;
@@ -128,6 +138,7 @@ public class InGameProgress : MonoBehaviour
         happynessSlider.value = currentHappyness;
         happynessFillImage.fillAmount = happynessSlider.value / happynessSlider.maxValue;
     }
+
     private void ShowResultPanel(int state)
     {
         if (state != 0)
@@ -180,8 +191,9 @@ public class InGameProgress : MonoBehaviour
 
         UpdateUI();
     }
+
     private string ConvertTimeToString(float time)
-{
+    {
     int minutes = Mathf.FloorToInt(time / 60);
     int seconds = Mathf.FloorToInt(time % 60);
 
@@ -189,5 +201,5 @@ public class InGameProgress : MonoBehaviour
     minutes = Mathf.Min(minutes, 99);
 
     return string.Format("{0:00}:{1:00}", minutes, seconds);
-}
+    }
 }
