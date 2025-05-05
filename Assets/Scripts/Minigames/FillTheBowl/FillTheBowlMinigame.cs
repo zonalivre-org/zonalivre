@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FillTheBowl : MiniGameBase
+public class FillTheBowlMinigame : MiniGameBase
 {
     [Header("Rules")]
     [Range(0,1)] [SerializeField] private float fillSpeed;

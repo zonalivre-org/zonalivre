@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class MangoCatch : MiniGameBase
+public class MangoCatchMinigame : MiniGameBase
 {
     [Header("Rules Section")]
     [SerializeField] int goal;

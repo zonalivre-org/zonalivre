@@ -135,21 +135,18 @@ public class ObjectiveInteract : MonoBehaviour
             switch (miniGameType)
             {
                 case MiniGames.MangoCatch:
-                    minigame.GetComponent<MangoCatch>().SetMiniGameRules(mangoGoal, mangoFallSpeed, coolDownBetweenMangos);
-                    minigame.GetComponent<MangoCatch>().objectivePlayerCheck = this;
-                    minigame.GetComponent<MangoCatch>().StartMiniGame();
+                    minigame.GetComponent<MangoCatchMinigame>().SetMiniGameRules(mangoGoal, mangoFallSpeed, coolDownBetweenMangos);
+                    minigame.GetComponent<MangoCatchMinigame>().objectivePlayerCheck = this;
+                    minigame.GetComponent<MangoCatchMinigame>().StartMiniGame();
                     break;
                 case MiniGames.QuickTimeEvent:
                     if (!CheckIfCanStartMinigame("Tela"))
                     {
                         return;
                     }
-                    minigame.GetComponent<QuickTimeEvent>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);
-                    minigame.GetComponent<QuickTimeEvent>().objectivePlayerCheck = this;
-                    minigame.GetComponent<QuickTimeEvent>().StartMiniGame();
-                    break;
-                case MiniGames.FillTheBowl:
-
+                    minigame.GetComponent<QuickTimeEventMinigame>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);
+                    minigame.GetComponent<QuickTimeEventMinigame>().objectivePlayerCheck = this;
+                    minigame.GetComponent<QuickTimeEventMinigame>().StartMiniGame();
                     break;
             }
             Debug.Log("Iniciar Minigame!");

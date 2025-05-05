@@ -48,11 +48,7 @@ public class PetInteract : MonoBehaviour
             dogMovement.canAutoMove = false;
             dogMovement.SetAutonomousMovement(false);
             Invoke(nameof(StartMinigame), detectionDelay);
-
-
         }
-
-
     }
 
     private void OnTriggerExit(Collider other)
@@ -151,7 +147,7 @@ public class PetInteract : MonoBehaviour
     {
         playerMovement.ToggleMovement(false);
 
-        healthMinigameUI.GetComponent<HoldButton>().petInteract = this;
+        healthMinigameUI.GetComponent<PetWalkMinigame>().petInteract = this;
         healthMinigameUI.SetActive(true);
 
         enableMinigameStart = false;
@@ -161,7 +157,7 @@ public class PetInteract : MonoBehaviour
     {
         playerMovement.ToggleMovement(false);
 
-        staminaMinigameUI.GetComponent<FillTheBowl>().petInteract = this;
+        staminaMinigameUI.GetComponent<FillTheBowlMinigame>().petInteract = this;
         staminaMinigameUI.SetActive(true);
 
         enableMinigameStart = false;
@@ -171,7 +167,7 @@ public class PetInteract : MonoBehaviour
     {
         playerMovement.ToggleMovement(false);
 
-        happynessMinigameUI.GetComponent<HoldButton>().petInteract = this;
+        happynessMinigameUI.GetComponent<PetDogMinigame>().petInteract = this;
         happynessMinigameUI.SetActive(true);
 
         enableMinigameStart = false;

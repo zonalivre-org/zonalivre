@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Mango : MonoBehaviour
 {
-    [HideInInspector] public MangoCatch mangoCatch;
+    [HideInInspector] public MangoCatchMinigame mangoCatch;
     [HideInInspector] public float fallSpeed;
     private RectTransform rectTransform;
 

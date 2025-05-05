@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PetWalk : MiniGameBase
+public class PetWalkMinigame : MiniGameBase
 {
     [Header("Rules")]
     [SerializeField] private float arrivalTime;

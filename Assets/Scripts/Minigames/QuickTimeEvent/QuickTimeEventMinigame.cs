@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QuickTimeEvent : MiniGameBase
+public class QuickTimeEventMinigame : MiniGameBase
 {
     [Header("Rules")]
     [SerializeField][Range(1, 5)] private int goal;

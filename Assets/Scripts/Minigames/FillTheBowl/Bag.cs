@@ -6,7 +6,7 @@ public class Bag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragH
 {
     [SerializeField] private GameObject rationPrefab;
     [SerializeField] private Transform spawnPoint;
-    [SerializeField] private FillTheBowl fillTheBowl;
+    [SerializeField] private FillTheBowlMinigame fillTheBowl;
     RectTransform rectTransform;
     [SerializeField] private float rotationOnClick;
     [SerializeField] private RectTransform moveArea;
