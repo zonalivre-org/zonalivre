@@ -107,7 +107,7 @@ public class ObjectiveInteract : MonoBehaviour
     }
 
     private void StartMinigame() {
-        if (!enable) return;
+        if (!enable || isComplete) return;
 
         playerMovement.ToggleMovement(false);
         enable = false;
