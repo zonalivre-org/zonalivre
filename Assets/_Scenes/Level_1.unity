@@ -3351,6 +3351,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MangoTree (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5335297561532913243, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8954754393075309963, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
       propertyPath: minigame
@@ -3381,8 +3386,10 @@ PrefabInstance:
       propertyPath: coolDownBetweenMangos
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 7464214958299256903, guid: c12e41d12d0271f48a91f4f73e7fb00f, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 6519586772146219156, guid: c12e41d12d0271f48a91f4f73e7fb00f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9152493385670463514, guid: c12e41d12d0271f48a91f4f73e7fb00f,
