@@ -90,8 +90,7 @@ public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IPointerDownHandl
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("Pointer Down");
-        isHolding = true;
+        
     }
 
     void OnDisable()
