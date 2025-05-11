@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7150128092923358027}
   - component: {fileID: 1091819450973838026}
   - component: {fileID: 6533705466893352499}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: MangoTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +33,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2264137503721982347}
   - {fileID: 3294039871949936851}
   - {fileID: 52014004743121982}
   m_Father: {fileID: 0}
@@ -70,12 +69,15 @@ MonoBehaviour:
   idCheck: 0
   givesItem: 0
   idGive: 0
+  objectToActivate: {fileID: 0}
   mangoGoal: 3
   mangoFallSpeed: 275
   coolDownBetweenMangos: 1
   QTEGoal: 0
   QTEMoveSpeed: 0
   QTESafeZoneSizePercentage: 0
+  cleanSpeed: 0
+  trashAmount: 5
   isComplete: 0
 --- !u!65 &7150128092923358027
 BoxCollider:
@@ -144,76 +146,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!1 &6519586772146219156
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2264137503721982347}
-  - component: {fileID: 4954398216393983529}
-  - component: {fileID: 7464214958299256903}
-  m_Layer: 6
-  m_Name: ObjectColliders
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2264137503721982347
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6519586772146219156}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3248739765597737770}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4954398216393983529
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6519586772146219156}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5, y: 5, z: 5}
-  m_Center: {x: 0, y: 2.5, z: 0}
---- !u!208 &7464214958299256903
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6519586772146219156}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 2, y: 2, z: 2}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 2, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &9152493385670463514
 GameObject:
   m_ObjectHideFlags: 0

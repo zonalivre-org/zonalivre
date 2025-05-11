@@ -25,22 +25,17 @@ public class ObjectiveInteract : MonoBehaviour
 
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
-    public enum MiniGames
-    {
-        MangoCatch,
-        QuickTimeEvent,
-        CleanMinigame,
-    }
+    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame }
 
-    #region Objective properties
+    #region Objective Properties
 
-    [Header("If object requires an item")] // not implemented yet!
+    [Header("If object requires an item")]
     [SerializeField] private bool needsItem = false;
     [SerializeField] private int idCheck;
 
-    [Header("If object gives an item to the player")] // not implemented yet!
+    [Header("If object gives an item to the player")]
     [SerializeField] private bool givesItem = false;
-    [SerializeField] private int idGive; // placeholderline!
+    [SerializeField] private int idGive;
 
     [Header("If object activates another object")]
     [SerializeField] private GameObject objectToActivate;
@@ -66,119 +61,83 @@ public class ObjectiveInteract : MonoBehaviour
     [HideInInspector] public bool isComplete = false;
     private InGameProgress inGameProgress;
     private PlayerInventory playerInventory;
-    private void Awake()
-    {
+
+    private void Awake() { InitializeComponents(); }
+    private void LateUpdate() { HandleInteraction(); }
+    private void OnTriggerStay(Collider other) { if(enable && other.CompareTag("Player")) Invoke("StartMinigame", detectionDelay); }
+
+    private void InitializeComponents() {
         inGameProgress = FindObjectOfType<InGameProgress>();
         playerMovement = FindObjectOfType<PlayerController>();
         playerInventory = FindObjectOfType<PlayerInventory>();
         cooldownTimer = cooldown;
     }
-    private void LateUpdate()
-    {
-        if(interactable && Input.GetMouseButtonDown(0)) SelectObjective();
-        if(!interactable)
-        {
-            if(cooldown > 0f)
-            {
-                cooldownTimer -= Time.deltaTime;
-                if(cooldownTimer <= 0f)
-                {
-                    interactable = true;
-                    cooldownTimer = cooldown;
-                }
-            }
-        }
+
+    private void HandleInteraction() {
+        if (interactable && Input.GetMouseButtonDown(0)) SelectObjective();
+        if (!interactable) ManageCooldown();
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(enable && other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Entrou na area de um Objetivo!");
-                    Invoke("StartMinigame", detectionDelay);
-          
-        }
+
+    private void ManageCooldown() {
+        if (cooldown > 0f) cooldownTimer -= Time.deltaTime;
+        if (cooldownTimer <= 0f) { interactable = true; cooldownTimer = cooldown; }
     }
-    private void SelectObjective()
-    {
-        RaycastHit hit;
-        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
-        {
-            enable = true;
-            Debug.Log("Indo fazer esta tarefa!");
-        }
-        else if(enable)
-        {
-            enable = false;
-            Debug.Log("Cancelou a tarefa!");
-        }
+
+    private void SelectObjective() {
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, clicklableLayers)) { enable = true; } else if (enable) enable = false;
     }
-    public void CompleteTask()
-    {
-        if (spriteRenderer != null && objectiveCompleteSprite != null)
-        {
-            spriteRenderer.sprite = objectiveCompleteSprite;
-        }
+
+
+    public void CloseTask(){
+        playerMovement.ToggleMovement(true);
+    }
+    public void CompleteTask() {
+        if (spriteRenderer && objectiveCompleteSprite) spriteRenderer.sprite = objectiveCompleteSprite;
 
         playerMovement.ToggleMovement(true);
         taskItem.MarkAsComplete();
-
         interactable = false;
         isComplete = true;
         indicator.SetActive(false);
-        
+
         playerInventory.RemoveItem();
         inGameProgress.AddScore(scoreValue);
 
-        Debug.Log("Tarefa completa!");
+        if (objectToActivate) objectToActivate.SetActive(true);
+    }
 
-        if (objectToActivate != null)
-        {
-            objectToActivate.SetActive(true);
-            objectToActivate.GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(true);
-            Debug.Log("Ativou o objeto: " + objectToActivate.name);
+    private void StartMinigame() {
+        if (!enable || isComplete) return;
+
+        playerMovement.ToggleMovement(false);
+        enable = false;
+
+        switch (miniGameType) {
+            case MiniGames.MangoCatch: StartMangoCatch(); break;
+            case MiniGames.QuickTimeEvent: StartQuickTimeEvent(); break;
+            case MiniGames.CleanMinigame: StartCleanMinigame(); break;
         }
     }
 
-    public void CloseTask()
-    {
-        playerMovement.ToggleMovement(true);
-        Debug.Log("Tarefa fechada!");
-    }
-    
-    private void StartMinigame()
-    {
-        if(enable)
-        {
-            playerMovement.ToggleMovement(false);
-            enable = false;
-            switch (miniGameType)
-            {
-                case MiniGames.MangoCatch:
-                    minigame.GetComponent<MangoCatchMinigame>().SetMiniGameRules(mangoGoal, mangoFallSpeed, coolDownBetweenMangos);
+    private void StartMangoCatch() { 
+         minigame.GetComponent<MangoCatchMinigame>().SetMiniGameRules(mangoGoal, mangoFallSpeed, coolDownBetweenMangos);
                     minigame.GetComponent<MangoCatchMinigame>().objectivePlayerCheck = this;
                     minigame.GetComponent<MangoCatchMinigame>().StartMiniGame();
-                    break;
+    }
+    private void StartQuickTimeEvent() {
+        if (!CheckIfCanStartMinigame("Tela")) return;
 
-                case MiniGames.QuickTimeEvent:
-                    if (!CheckIfCanStartMinigame("Tela"))
-                    {
-                        return;
-                    }
                     minigame.GetComponent<QuickTimeEventMinigame>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);
                     minigame.GetComponent<QuickTimeEventMinigame>().objectivePlayerCheck = this;
                     minigame.GetComponent<QuickTimeEventMinigame>().StartMiniGame();
-                    break;
-
-                case MiniGames.CleanMinigame:
-                    minigame.GetComponent<CleanMinigame>().SetMiniGameRules(cleanSpeed, trashAmount);
-                    minigame.GetComponent<CleanMinigame>().objectiveInteract = this;
-                    minigame.GetComponent<CleanMinigame>().StartMiniGame();
-                break;
-            }
-            Debug.Log("Iniciar Minigame!");
-        }
+                   
     }
 
+    private void StartCleanMinigame() {
+minigame.GetComponent<CleanMinigame>().SetMiniGameRules(cleanSpeed, trashAmount);
+                    minigame.GetComponent<CleanMinigame>().objectiveInteract = this;
+                    minigame.GetComponent<CleanMinigame>().StartMiniGame();
+    }
     private bool CheckIfCanStartMinigame(string itemId = null)
     {
        

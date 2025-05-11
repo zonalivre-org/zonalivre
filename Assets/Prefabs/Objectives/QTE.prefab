@@ -108,7 +108,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8310322585232584384}
   - component: {fileID: 1389300933348405591}
-  - component: {fileID: 6362940390529226485}
   m_Layer: 6
   m_Name: ObjectColliders
   m_TagString: Untagged
@@ -152,22 +151,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 2.5, z: 0}
---- !u!208 &6362940390529226485
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4402955078423502100}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 2, y: 2, z: 2}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 2, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &8530999463294988104
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +205,6 @@ MonoBehaviour:
   cooldown: 0
   objectiveDescription: Faz o Quick Time
   averageTimeToComplete: 0
-  playerMovement: {fileID: 0}
   indicator: {fileID: 5021909201980745173}
   taskItem: {fileID: 0}
   taskIcon: {fileID: -1856619939, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
@@ -239,12 +221,15 @@ MonoBehaviour:
   idCheck: 0
   givesItem: 0
   idGive: 0
+  objectToActivate: {fileID: 0}
   mangoGoal: 3
   mangoFallSpeed: 275
   coolDownBetweenMangos: 1
   QTEGoal: 2
   QTEMoveSpeed: 600
   QTESafeZoneSizePercentage: 0.26
+  cleanSpeed: 0
+  trashAmount: 5
   isComplete: 0
 --- !u!65 &477808666999227252
 BoxCollider:
