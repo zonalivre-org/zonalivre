@@ -8,7 +8,6 @@ public class TaskManager : MonoBehaviour
 
     [HideInInspector] public List<ObjectiveInteract> objectives;
     [SerializeField] private GameObject objectivesParent;
-
     [SerializeField] private GameObject taskPrefab;
     [SerializeField] private List<TaskItem> taskList;
     
