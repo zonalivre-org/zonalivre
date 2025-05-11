@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QuickTimeEvent : MonoBehaviour
+public class QuickTimeEvent : MiniGameBase
 {
     [Header("Rules")]
     [SerializeField][Range(1, 5)] private int goal;
@@ -18,57 +18,57 @@ public class QuickTimeEvent : MonoBehaviour
     private bool canRun = true;
 
     [Header("Components")]
-    [SerializeField] private RectTransform panel;
+    [SerializeField] private RectTransform moveArea;
     [SerializeField] private RectTransform safeZone;
     [SerializeField] private RectTransform pointer;
     [SerializeField] private GameObject[] points;
-    [SerializeField] private GameObject miniGameParent;
-    [SerializeField] private ObjectiveInteract objectivePlayerCheck;
+    [HideInInspector] public ObjectiveInteract objectivePlayerCheck;
     void Start()
     {
-        // Get the Canvas scale factor (if applicable)
-        Canvas canvas = panel.GetComponentInParent<Canvas>();
-        float scaleFactor = canvas != null ? canvas.scaleFactor : 1f;
+        // Set the panelWidth to the width of the MoveArea
+        panelWidth = moveArea.rect.width;
 
-        // Calculate the panel width adjusted for Canvas scale
-        panelWidth = panel.rect.width * scaleFactor;
-        leftEdge = -panelWidth / 2f;  // Left edge in local coordinates (center is 0)
-        rightEdge = panelWidth / 2f;  // Right edge in local coordinates
+        leftEdge = -panelWidth / 2;  // Left edge in local coordinates (center is 0)
+        rightEdge = panelWidth / 2;  // Right edge in local coordinates
 
         // Set the initial pointer position at the left edge (local coordinates)
         pointer.localPosition = new Vector3(leftEdge, pointer.localPosition.y, pointer.localPosition.z);
+    }
 
+    private void OnEnable()
+    {
         ResetPoints();
-
-        SetSafeZone();
+        StartMiniGame();
     }
 
     private void Update()
     {
         if (canRun)
         {
-            // Calculate the target position based on direction (local coordinates)
-            float targetX = direction > 0 ? rightEdge : leftEdge;
-            Vector3 targetPosition = new Vector3(targetX, pointer.localPosition.y, pointer.localPosition.z);
-
-            // Move the pointer towards the target edge
-            pointer.localPosition = Vector3.MoveTowards(
-                pointer.localPosition,
-                targetPosition,
-                moveSpeed * Time.deltaTime
-            );
-
-            // Reverse direction when reaching an edge
-            if (Mathf.Abs(pointer.localPosition.x - rightEdge) < 0.1f)
-            {
-                direction = -1f;
-            }
-            else if (Mathf.Abs(pointer.localPosition.x - leftEdge) < 0.1f)
-            {
-                direction = 1f;
-            }
-
+            MovePointer();
         }
+
+    }
+
+    public override void StartMiniGame()
+    {
+        base.StartMiniGame();
+        
+        canRun = true;
+        ResetPoints();
+        SetSafeZone();
+    }
+
+    public override void EndMiniGame()
+    {
+        canRun = false;
+
+        if (isMiniGameComplete) objectivePlayerCheck.CompleteTask();
+        else objectivePlayerCheck.CloseTask();
+
+        base.EndMiniGame();
+
+        gameObject.SetActive(false);
     }
 
     public void SetMiniGameRules(int goal, float moveSpeed, float safeZoneSizePercentage)
@@ -78,15 +78,27 @@ public class QuickTimeEvent : MonoBehaviour
         this.safeZoneSizePercentage = safeZoneSizePercentage;
     }
 
-    public void StartQTEGame()
+    private void MovePointer()
     {
-        ResetPoints();
-        SetSafeZone();
-        canRun = true;
+        float targetX = direction > 0 ? rightEdge : leftEdge;
+        pointer.localPosition = Vector3.MoveTowards(pointer.localPosition, new Vector3(targetX, pointer.localPosition.y, pointer.localPosition.z), moveSpeed * Time.deltaTime);
+
+        // Clamp the pointer's position to ensure it stays within the moveArea
+        pointer.localPosition = new Vector3(
+            Mathf.Clamp(pointer.localPosition.x, leftEdge, rightEdge),
+            pointer.localPosition.y,
+            pointer.localPosition.z
+        );
+
+        if (Mathf.Abs(pointer.localPosition.x - rightEdge) < 0.1f) direction = -1f;
+        else if (Mathf.Abs(pointer.localPosition.x - leftEdge) < 0.1f) direction = 1f;
     }
 
     private void SetSafeZone()
     {
+        // Ensure panelWidth is up-to-date
+        panelWidth = moveArea.rect.width;
+
         // Calculate and set the safe zone size based on the percentage of the panel width
         float safeZoneWidth = panelWidth * safeZoneSizePercentage;
         safeZone.sizeDelta = new Vector2(safeZoneWidth, safeZone.sizeDelta.y);
@@ -109,9 +121,9 @@ public class QuickTimeEvent : MonoBehaviour
 
             if (current >= goal)
             {
-
+                isMiniGameComplete = true;
+                EndMiniGame();
             }
-
         }
         else
         {
@@ -128,14 +140,11 @@ public class QuickTimeEvent : MonoBehaviour
         {
             current++;
 
+            AudioManager.Instance.PlayRandomPitchSFXSound(1);
+
             for (int i = 0; i < current; i++)
             {
                 points[i].GetComponent<Image>().color = Color.green;
-            }
-
-            if (current >= goal)
-            {
-                EndMiniGame();
             }
         }
     }
@@ -144,18 +153,17 @@ public class QuickTimeEvent : MonoBehaviour
     {
         current = 0;
 
+        // Hide all points and set their color to red
+        for (int i = 0; i < points.Length; i++)
+        {
+            points[i].GetComponent<Image>().color = Color.red;
+            points[i].SetActive(false);
+        }
+
+        // Active the points up to the goal
         for (int i = 0; i < goal; i++)
         {
             points[i].SetActive(true);
-            points[i].GetComponent<Image>().color = Color.red;
         }
-    }
-
-    public void EndMiniGame()
-    {
-        canRun = false;
-        miniGameParent.SetActive(false);
-        objectivePlayerCheck.CompleteTask();
-        
     }
 }

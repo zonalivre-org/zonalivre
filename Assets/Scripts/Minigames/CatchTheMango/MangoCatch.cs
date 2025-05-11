@@ -21,8 +21,13 @@ public class MangoCatch : MiniGameBase
     [Header("Variables")]
     private float actualTime, nextTime;
     [SerializeField] private bool canGenerate;
-    [SerializeField] private Vector2 playerInitialPosition;
     private List<GameObject> spawnedMangos = new List<GameObject>();
+    private MangoPlayerControl playerControl;
+
+    void Start()
+    {
+        playerControl = GetComponent<MangoPlayerControl>();
+    }
 
     private void OnEnable()
     {
@@ -49,7 +54,7 @@ public class MangoCatch : MiniGameBase
 
     public override void StartMiniGame()
     {
-        gameObject.SetActive(true);
+        base.StartMiniGame();
 
         OnStart();
 
@@ -60,12 +65,14 @@ public class MangoCatch : MiniGameBase
 
     public override void EndMiniGame()
     {
+        gameObject.SetActive(false);
+
         if (isMiniGameComplete) objectivePlayerCheck.CompleteTask();
         else objectivePlayerCheck.CloseTask();
 
         MiniGameReset();
-
-        gameObject.SetActive(false);
+        base.EndMiniGame();
+        
         //OnMiniGameEnd?.Invoke();
     }
 
@@ -84,11 +91,9 @@ public class MangoCatch : MiniGameBase
 
         spawnedMangos.Clear();
 
+        Vector2 playerInitialPosition = new Vector2(0, 100);
+        playerControl.destination = playerInitialPosition;
         player.GetComponent<RectTransform>().anchoredPosition = playerInitialPosition;
-
-        isMiniGameActive = false;
-        isMiniGameComplete = false;
-        firstActionTriggered = false;
 
     }
     
@@ -128,6 +133,7 @@ public class MangoCatch : MiniGameBase
     public void AddPoint(int amount)
     {
         currentPoints += amount;
+        AudioManager.Instance.PlayRandomPitchSFXSound(1);
         UpdateScore();
     }
 

@@ -1,7 +1,5 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour
 {
@@ -9,17 +7,17 @@ public class ChangeScene : MonoBehaviour
 
     public void PlaySceneMusic(int index)
     {
-        SoundManager.Instance.PlayMusicWithFade(index, 2f);
+        AudioManager.Instance.PlayMusicWithFade(index, 2f);
     }
 
     public void ChangeToSceneMusic(int index)
     {
-        SoundManager.Instance.ChangeMusicWithFade(index, 0.5f);
+        AudioManager.Instance.ChangeMusicWithFade(index, 0.5f);
     }
 
     public void StopSceneMusic()
     {
-        SoundManager.Instance.StopMusicWithFade(1.25f);
+        AudioManager.Instance.StopMusicWithFade(1.25f);
     }
 
     public void LoadSceneDelay(int index)

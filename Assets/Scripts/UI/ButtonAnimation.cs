@@ -18,8 +18,7 @@ public class ButtonAnimation : EventTrigger
     public override void OnPointerEnter(PointerEventData eventData)
     {
         PlaySFX(0);
-        transform.DOScale(1.2f, 0.2f).SetEase(Ease.OutBack).SetUpdate(true);
-
+        transform.DOScale(scaleFactor, 0.2f).SetEase(Ease.OutBack).SetUpdate(true);
     }
 
     public override void OnPointerExit(PointerEventData eventData)
@@ -29,19 +28,27 @@ public class ButtonAnimation : EventTrigger
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        PlaySFX(clickSoundEffectIndex);
         transform.localScale = originalScale;
+        transform.DOKill(true);
+        PlaySFX(clickSoundEffectIndex);
+    }
+
+    void OnDisable()
+    {
+        transform.localScale = originalScale;
+        transform.DOKill(true);
     }
 
     private void PlaySFX(int index)
     {
         if (randomPitch)
         {
-            SoundManager.Instance.PlayRandomPitchUISFXSound(index);
+            AudioManager.Instance.PlayRandomPitchUISFXSound(index);
         }
         else
         {
-            SoundManager.Instance.PlayUISound(index);
+            AudioManager.Instance.PlayUISound(index);
         }
     }
+
 }

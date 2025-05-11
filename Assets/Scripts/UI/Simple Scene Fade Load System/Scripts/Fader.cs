@@ -59,57 +59,48 @@ public class Fader : MonoBehaviour
 
     IEnumerator FadeIt()
     {
-
         while (!start)
         {
-            //waiting to start
             yield return null;
         }
-        lastTime = Time.time;
-        float coDelta = lastTime;
+
+        float fadeDuration = 1f / fadeDamp; // Calculate fade duration based on fadeDamp
+        float elapsedTime = 0f;
         bool hasFadedIn = false;
 
         while (!hasFadedIn)
         {
-            coDelta = Time.time - lastTime;
+            elapsedTime += Time.unscaledDeltaTime; // Use unscaled time to make it independent of Time.deltaTime
+
             if (!isFadeIn)
             {
-                //Fade in
-                alpha = newAlpha(coDelta, 1, alpha);
+                // Fade in
+                alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
                 if (alpha == 1 && !startedLoading)
                 {
                     startedLoading = true;
-
                     DOTween.KillAll();
                     SceneManager.LoadScene(fadeScene);
                 }
-
             }
             else
             {
-                //Fade out
-                alpha = newAlpha(coDelta, 0, alpha);
+                // Fade out
+                alpha = Mathf.Clamp01(1 - (elapsedTime / fadeDuration));
                 if (alpha == 0)
                 {
                     hasFadedIn = true;
                 }
-
-
             }
-            lastTime = Time.time;
+
             myCanvas.alpha = alpha;
             yield return null;
         }
 
         Initiate.DoneFading();
-
-        Debug.Log("Your scene has been loaded , and fading in has just ended");
-
+        Debug.Log("Your scene has been loaded, and fading in has just ended");
         Destroy(gameObject);
-
-        yield return null;
     }
-
 
     float newAlpha(float delta, int to, float currAlpha)
     {
