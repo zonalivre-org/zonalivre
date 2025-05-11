@@ -20,7 +20,6 @@ public class PetInteract : MonoBehaviour
     [SerializeField] private GameObject happynessMinigameUI;
     private bool enableMinigameStart = false, interactable = true;
     private PlayerInventory playerInventory;
-    private int defineObjective = 2;
 
     [Header("Place Holder Variables for Debugging Porpuses")]
     [SerializeField] private LayerMask healthLayer, staminaLayer, happynessLayer;

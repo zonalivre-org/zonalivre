@@ -20,7 +20,6 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private LayerMask clicklableLayers;
 
     [Header("If object opens a minigame")]
-    [SerializeField] private bool hasMinigame = false;
     [SerializeField] private GameObject minigame;
 
     [Header("Minigames List")]
@@ -30,11 +29,9 @@ public class ObjectiveInteract : MonoBehaviour
     #region Objective Properties
 
     [Header("If object requires an item")]
-    [SerializeField] private bool needsItem = false;
     [SerializeField] private int idCheck;
 
     [Header("If object gives an item to the player")]
-    [SerializeField] private bool givesItem = false;
     [SerializeField] private int idGive;
 
     [Header("If object activates another object")]
@@ -56,7 +53,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     #endregion
 
-    private bool enable = false, interactable = true, startedMinigame = false;
+    private bool enable = false, interactable = true;
     private float cooldownTimer;
     [HideInInspector] public bool isComplete = false;
     private PlayerInventory playerInventory;
@@ -93,7 +90,6 @@ public class ObjectiveInteract : MonoBehaviour
     public void CloseTask()
     {
         playerMovement.ToggleMovement(true);
-        startedMinigame = false;
     }
 
     public void CompleteTask()
