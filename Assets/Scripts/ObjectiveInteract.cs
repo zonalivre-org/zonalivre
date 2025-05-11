@@ -70,16 +70,7 @@ public class ObjectiveInteract : MonoBehaviour
         playerMovement = FindObjectOfType<PlayerController>();
         playerInventory = FindObjectOfType<PlayerInventory>();
 
-        MiniGameBase.OnMiniGameStart += StopPlayerMovement;
-        MiniGameBase.OnMiniGameEnd += EnablePlayerMovement;
-
         cooldownTimer = cooldown;
-    }
-
-    private void OnDestroy()
-    {
-        MiniGameBase.OnMiniGameStart -= StopPlayerMovement;
-        MiniGameBase.OnMiniGameEnd -= EnablePlayerMovement;
     }
 
     private void HandleInteraction()
@@ -101,7 +92,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     public void CloseTask()
     {
-        // playerMovement.ToggleMovement(true);
+        playerMovement.ToggleMovement(true);
         startedMinigame = false;
     }
 
@@ -109,7 +100,7 @@ public class ObjectiveInteract : MonoBehaviour
     {
         if (spriteRenderer && objectiveCompleteSprite) spriteRenderer.sprite = objectiveCompleteSprite;
 
-        // playerMovement.ToggleMovement(true);
+        playerMovement.ToggleMovement(true);
         taskItem.MarkAsComplete();
         interactable = false;
         isComplete = true;
@@ -178,15 +169,4 @@ public class ObjectiveInteract : MonoBehaviour
         }
 
     }
-
-    private void StopPlayerMovement()
-    {
-        playerMovement.ToggleMovement(false);
-    }
-
-    private void EnablePlayerMovement()
-    {
-        playerMovement.ToggleMovement(true);
-    }
-
 }
