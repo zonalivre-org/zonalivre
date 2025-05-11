@@ -30,6 +30,7 @@ public class TaskItem : MonoBehaviour
 
     public void MarkAsComplete()
     {
+        gameObject.SetActive(true);
         checkIcon.color = Color.green;
         stroke.SetActive(true);
     }

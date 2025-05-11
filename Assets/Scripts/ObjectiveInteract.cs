@@ -109,18 +109,22 @@ public class ObjectiveInteract : MonoBehaviour
         playerInventory.RemoveItem();
         GameManager.Instance.AddScore(scoreValue);
 
-        if (objectToActivate) objectToActivate.SetActive(true);
+        if (objectToActivate) 
+        {
+            objectToActivate.SetActive(true);
+            objectToActivate.GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(true);
+        }
     }
 
     private void StartMinigame()
     {
+        if (GameManager.Instance.isMinigameActive) return;
+
         if (!enable || isComplete) return;
 
         playerMovement.ToggleMovement(false);
         enable = false;
-
-        GameManager.Instance.isMinigameActive = true;
-
+        
         switch (miniGameType)
         {
             case MiniGames.MangoCatch: StartMangoCatch(); break;
@@ -128,7 +132,7 @@ public class ObjectiveInteract : MonoBehaviour
             case MiniGames.CleanMinigame: StartCleanMinigame(); break;
         }
 
-        startedMinigame = true;
+        GameManager.Instance.isMinigameActive = true;
     }
 
     private void StartMangoCatch()

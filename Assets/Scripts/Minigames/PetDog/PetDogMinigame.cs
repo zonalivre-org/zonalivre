@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Rules")]
     [Range(0, 3)][SerializeField] private float fillSpeed;
@@ -45,20 +45,6 @@ public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IDragHandler, IPo
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        isHolding = false;
-
-        backgroundImage.GetComponent<Animator>().Play("RedDefault");
-        fill.GetComponent<Animator>().Play("GreenDefault");
-
-        if (progress < 1)
-        {
-            fill.fillAmount = 0;
-            progress = 0;
-        }
-    }
-
     public override void StartMiniGame()
     {
         gameObject.SetActive(true);
@@ -91,6 +77,21 @@ public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IDragHandler, IPo
 
         fill.fillAmount += fillSpeed * Time.deltaTime;
         progress = fill.fillAmount;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Debug.Log("Pointer Up");
+        isHolding = false;
+
+        backgroundImage.GetComponent<Animator>().Play("RedDefault");
+        fill.GetComponent<Animator>().Play("GreenDefault");
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log("Pointer Down");
+        isHolding = true;
     }
 
     void OnDisable()
