@@ -15,13 +15,16 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
     private bool turnedIntoTrashBag = false;
     private Texture2D broomCursorTexture;
     private Texture2D handCursorTexture;
+    private RectTransform dragArea;
 
     void Start()
     {
         trashImage = GetComponent<Image>();
     }
-    public void SetTrashProperties(float cleanSpeed, CleanMinigame cleanMinigame, Sprite trashBagSprite, RectTransform trashCan, Texture2D broomCursorTexture, Texture2D handCursorTexture)
+    public void SetTrashProperties(float cleanSpeed, CleanMinigame cleanMinigame, Sprite trashBagSprite, RectTransform trashCan, Texture2D broomCursorTexture, Texture2D handCursorTexture, RectTransform dragArea)
     {
+        this.dragArea = dragArea;
+        
         this.cleanSpeed = cleanSpeed;
 
         this.cleanMinigame = cleanMinigame;
@@ -38,9 +41,9 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (turnedIntoTrashBag == false){
+        if (!turnedIntoTrashBag)
+        {
             trashImage.fillAmount -= cleanSpeed * Time.deltaTime;
-
             cleanMinigame.RegisterPlayerClick();
 
             if (trashImage.fillAmount <= 0f)
@@ -53,14 +56,24 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
                 GetComponent<Outline>().enabled = true;
             }
         }
-
         else
         {
             cleanMinigame.RegisterPlayerClick();
-            Vector2 mousePosition = Input.mousePosition;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(trashCan, mousePosition, eventData.pressEventCamera, out Vector2 localPoint);
-            transform.position = trashCan.TransformPoint(localPoint);
 
+            // Get the mouse position in local space relative to the dragArea
+            Vector2 mousePosition = Input.mousePosition;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(dragArea, mousePosition, eventData.pressEventCamera, out Vector2 localPoint);
+
+            // Clamp the local position within the bounds of the dragArea
+            Vector2 clampedPosition = new Vector2(
+                Mathf.Clamp(localPoint.x, dragArea.rect.xMin, dragArea.rect.xMax),
+                Mathf.Clamp(localPoint.y, dragArea.rect.yMin, dragArea.rect.yMax)
+            );
+
+            // Convert the clamped local position back to world space and set the object's position
+            transform.position = dragArea.TransformPoint(clampedPosition);
+
+            // Highlight the trashCan if the object is over it
             if (trashCan.gameObject.activeSelf && RectTransformUtility.RectangleContainsScreenPoint(trashCan, Input.mousePosition, eventData.pressEventCamera))
             {
                 trashCan.GetComponent<Outline>().enabled = true;

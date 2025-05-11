@@ -12,6 +12,7 @@ public class CleanMinigame : MiniGameBase
 
     [Header("Components")]
     [SerializeField] private RectTransform spawnArea;
+    [SerializeField] private RectTransform dragArea;
     [SerializeField] private Sprite trashBagSprite;
     [SerializeField] private Sprite trashSprite;
     [SerializeField] private RectTransform trashCan;
@@ -93,7 +94,7 @@ public class CleanMinigame : MiniGameBase
         trash.GetComponent<RectTransform>().anchoredPosition = new Vector2(Random.Range(-spawnArea.rect.width / 2, spawnArea.rect.width / 2), Random.Range(-spawnArea.rect.height / 2, spawnArea.rect.height / 2));
         
         trash.AddComponent<TrashObject>();
-        trash.GetComponent<TrashObject>().SetTrashProperties(cleanSpeed, this, trashBagSprite, trashCan, broomCursorTexture, handCursorTexture);
+        trash.GetComponent<TrashObject>().SetTrashProperties(cleanSpeed, this, trashBagSprite, trashCan, broomCursorTexture, handCursorTexture, dragArea);
     }
 
     public void ReduceTrashAmount()

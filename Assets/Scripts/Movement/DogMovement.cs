@@ -143,7 +143,7 @@ public class DogMovement : MonoBehaviour
     private void UpdateCurrentStateLogic()
     {
         // Checagem prioritária: se não pode se mover autonomamente, força o Idle
-        if (!canAutoMove && currentState != DogState.Idle)
+        if (!canAutoMove && currentState != DogState.Idle && Time.timeScale != 0)
         {
             ChangeState(DogState.Idle);
             return; // Sai do Update após forçar o Idle
