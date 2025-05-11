@@ -59,7 +59,6 @@ public class ObjectiveInteract : MonoBehaviour
     private bool enable = false, interactable = true, startedMinigame = false;
     private float cooldownTimer;
     [HideInInspector] public bool isComplete = false;
-    private InGameProgress inGameProgress;
     private PlayerInventory playerInventory;
 
     private void Awake() { InitializeComponents(); }
@@ -68,7 +67,6 @@ public class ObjectiveInteract : MonoBehaviour
 
     private void InitializeComponents()
     {
-        inGameProgress = FindObjectOfType<InGameProgress>();
         playerMovement = FindObjectOfType<PlayerController>();
         playerInventory = FindObjectOfType<PlayerInventory>();
         cooldownTimer = cooldown;
@@ -91,12 +89,12 @@ public class ObjectiveInteract : MonoBehaviour
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, clicklableLayers)) { enable = true; } else if (enable) enable = false;
     }
 
-
     public void CloseTask()
     {
         playerMovement.ToggleMovement(true);
         startedMinigame = false;
     }
+
     public void CompleteTask()
     {
         if (spriteRenderer && objectiveCompleteSprite) spriteRenderer.sprite = objectiveCompleteSprite;
@@ -108,7 +106,7 @@ public class ObjectiveInteract : MonoBehaviour
         indicator.SetActive(false);
 
         playerInventory.RemoveItem();
-        inGameProgress.AddScore(scoreValue);
+        GameManager.Instance.AddScore(scoreValue);
 
         if (objectToActivate) objectToActivate.SetActive(true);
     }
@@ -120,7 +118,7 @@ public class ObjectiveInteract : MonoBehaviour
         playerMovement.ToggleMovement(false);
         enable = false;
 
-        if (startedMinigame) return;
+        GameManager.Instance.isMinigameActive = true;
 
         switch (miniGameType)
         {

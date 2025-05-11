@@ -84,8 +84,7 @@ public class PetDogMinigame : MiniGameBase, IPointerDownHandler, IPointerUpHandl
 
         progress = 0;
         fill.fillAmount = 0;
-        isMiniGameActive = false;
-        gameObject.SetActive(false);
+        base.EndMiniGame();
     }
 
     public void OnDrag(PointerEventData eventData)

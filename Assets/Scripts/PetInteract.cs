@@ -18,16 +18,15 @@ public class PetInteract : MonoBehaviour
     [SerializeField] private GameObject healthMinigameUI;
     [SerializeField] private GameObject staminaMinigameUI;
     [SerializeField] private GameObject happynessMinigameUI;
-    private InGameProgress inGameProgress;
     private bool enableMinigameStart = false, interactable = true;
     private PlayerInventory playerInventory;
     private int defineObjective = 2;
-    
+
     [Header("Place Holder Variables for Debugging Porpuses")]
     [SerializeField] private LayerMask healthLayer, staminaLayer, happynessLayer;
-    private void Awake() {
-    inGameProgress = FindObjectOfType<InGameProgress>();
-    playerInventory = FindObjectOfType<PlayerInventory>();
+    private void Awake()
+    {
+        playerInventory = FindObjectOfType<PlayerInventory>();
     }
     private void LateUpdate()
     {
@@ -99,17 +98,17 @@ public class PetInteract : MonoBehaviour
     {
         if (whichTask == 0)
         {
-            inGameProgress.AddSliderValue(healthGain, whichTask);
+            GameManager.Instance.AddSliderValue(healthGain, whichTask);
             Debug.Log("Vida do pet tratada!");
         }
         else if (whichTask == 1)
         {
-            inGameProgress.AddSliderValue(staminaGain, whichTask);
+            GameManager.Instance.AddSliderValue(staminaGain, whichTask);
             Debug.Log("Fome do pet saciada");
         }
         else if (whichTask == 2)
         {
-            inGameProgress.AddSliderValue(happynessGain, whichTask);
+            GameManager.Instance.AddSliderValue(happynessGain, whichTask);
             Debug.Log("Pet parece estar mais feliz!");
         }
         else Debug.Log(whichTask + " is not a valid Pet task number!");
@@ -134,13 +133,16 @@ public class PetInteract : MonoBehaviour
         if (enableMinigameStart)
         {
 
-            if (playerInventory.GetItem() && playerInventory.GetItem().id == "Coleira"){
+            if (playerInventory.GetItem() && playerInventory.GetItem().id == "Coleira")
+            {
                 StartHealthMinigame();
             }
-            else if (playerInventory.GetItem() && playerInventory.GetItem().id == "Racao"){
+            else if (playerInventory.GetItem() && playerInventory.GetItem().id == "Racao")
+            {
                 StartStaminaMinigame();
             }
-            else{
+            else
+            {
                 StartHappynessMinigame();
             }
         }

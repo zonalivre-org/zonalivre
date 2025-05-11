@@ -32,7 +32,6 @@ public class TaskItem : MonoBehaviour
     {
         checkIcon.color = Color.green;
         stroke.SetActive(true);
-        stroke.GetComponent<Animator>().Play("Chalk stroke");
     }
 
     public void SetIcon(Sprite iconSprite)
