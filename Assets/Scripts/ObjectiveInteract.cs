@@ -132,7 +132,6 @@ public class ObjectiveInteract : MonoBehaviour
             case MiniGames.CleanMinigame: StartCleanMinigame(); break;
         }
 
-        GameManager.Instance.isMinigameActive = true;
     }
 
     private void StartMangoCatch()
@@ -140,6 +139,7 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<MangoCatchMinigame>().SetMiniGameRules(mangoGoal, mangoFallSpeed, coolDownBetweenMangos);
         minigame.GetComponent<MangoCatchMinigame>().objectivePlayerCheck = this;
         minigame.GetComponent<MangoCatchMinigame>().StartMiniGame();
+        GameManager.Instance.isMinigameActive = true;
     }
     private void StartQuickTimeEvent()
     {
@@ -148,7 +148,7 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<QuickTimeEventMinigame>().SetMiniGameRules(QTEGoal, QTEMoveSpeed, QTESafeZoneSizePercentage);
         minigame.GetComponent<QuickTimeEventMinigame>().objectivePlayerCheck = this;
         minigame.GetComponent<QuickTimeEventMinigame>().StartMiniGame();
-
+        GameManager.Instance.isMinigameActive = true;
     }
 
     private void StartCleanMinigame()
@@ -156,6 +156,7 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<CleanMinigame>().SetMiniGameRules(cleanSpeed, trashAmount);
         minigame.GetComponent<CleanMinigame>().objectiveInteract = this;
         minigame.GetComponent<CleanMinigame>().StartMiniGame();
+        GameManager.Instance.isMinigameActive = true;
     }
     private bool CheckIfCanStartMinigame(string itemId = null)
     {
@@ -167,8 +168,10 @@ public class ObjectiveInteract : MonoBehaviour
         }
         else
         {
-            // playerMovement.ToggleMovement(true);
+            playerMovement.ToggleMovement(true);
+
             Debug.Log("Você não tem o item necessário para iniciar o minigame.");
+            // playerMovement.ToggleMovement(true);
             return false;
         }
 

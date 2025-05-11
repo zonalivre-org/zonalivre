@@ -2,13 +2,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Rules")]
     [Range(0, 3)][SerializeField] private float fillSpeed;
 
     [Header("Variables")]
-    private bool isHolding = false;
     public float progress;
 
     [Header("Components")]
@@ -31,12 +30,6 @@ public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IPointerDownHandl
     void LateUpdate()
     {
         TipCheck();
-
-        if (isHolding)
-        {
-            fill.fillAmount += fillSpeed * Time.deltaTime;
-            progress = fill.fillAmount;
-        }
 
         if (progress >= 1)
         {
@@ -63,13 +56,11 @@ public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IPointerDownHandl
 
         progress = 0;
         fill.fillAmount = 0;
-        isHolding = false;
         base.EndMiniGame();
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        isHolding = true;
         OnMinigameInteract.Invoke();
 
         fill.GetComponent<Animator>().Play("DogPetGreen");
@@ -81,16 +72,13 @@ public class PetDogMinigame : MiniGameBase, IPointerUpHandler, IPointerDownHandl
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("Pointer Up");
-        isHolding = false;
-
         backgroundImage.GetComponent<Animator>().Play("RedDefault");
         fill.GetComponent<Animator>().Play("GreenDefault");
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        
+
     }
 
     void OnDisable()
