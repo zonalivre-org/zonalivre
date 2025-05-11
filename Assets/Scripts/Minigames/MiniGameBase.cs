@@ -68,6 +68,7 @@ public abstract class MiniGameBase : MonoBehaviour
     public virtual void StartMiniGame()
     {
         gameObject.SetActive(true);
+        GameManager.Instance.isMinigameActive = true;
 
         isMiniGameActive = true;
         isMiniGameComplete = false;
@@ -78,19 +79,16 @@ public abstract class MiniGameBase : MonoBehaviour
         if (tipText != null) tipText.gameObject.SetActive(true);
     }
 
+
     public virtual void EndMiniGame()
     {
+        GameManager.Instance.isMinigameActive = false;
         gameObject.SetActive(false);
 
+
+        gameObject.SetActive(false);
         isMiniGameActive = false;
         isMiniGameComplete = false;
         firstActionTriggered = false;
-
-        OnMiniGameEnd -= EndMiniGame;
-        OnMinigameInteract -= RegisterPlayerClick;
-        OnMiniGameStart -= StartMiniGame;
-
-        
     }
-
 }

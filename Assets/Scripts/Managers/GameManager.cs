@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class InGameProgress : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [Header("Time")]
     [SerializeField] private int levelTime;
@@ -30,19 +30,25 @@ public class InGameProgress : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private TMP_Text loseText;
     [SerializeField] private GameObject nextLevelButton;
+
     [Header("References")]
+    public static GameManager Instance;
     [SerializeField] private PlayerController playerMovement;
     [SerializeField] private DogMovement petMovement;
 
-    // Constant Values
+    [Header("Constants and Variables")]
     private float currentTime, currentHealth, currentStamina, currentHappyness, wishHealthMultiplier, wishStaminaMultiplier, wishHappynessMultiplier;
     private int clockMultiplier = 1;
     private float sliderDelayTimer = 0f, clockDelayTimer = 0f;
     private int scoreProgress = 0;
     private bool enablecountdown = false;
     private int win = 0; // Player starts the game in a neutral state. +1 = they win. -1 = they lose.
+    public bool isMinigameActive = false;
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+
         //Setup Timer
         currentTime = levelTime;
         clockSlider.maxValue = levelTime;
@@ -68,14 +74,13 @@ public class InGameProgress : MonoBehaviour
         goal = TaskManager.Instance.objectives.Count;
 
         Invoke(nameof(StartTimer), 3);
-
     }
-    
+
     private void Update()
     {
-        if(currentHealth <= 0|| currentStamina <= 0|| currentHappyness <= 0 || currentTime <= 0) win = -1;
+        if (currentHealth <= 0 || currentStamina <= 0 || currentHappyness <= 0 || currentTime <= 0) win = -1;
 
-        if(enablecountdown)
+        if (enablecountdown)
         {
             currentTime -= Time.deltaTime * clockMultiplier;
 
@@ -83,10 +88,10 @@ public class InGameProgress : MonoBehaviour
             currentStamina -= Time.deltaTime * wishStaminaMultiplier;
             currentHappyness -= Time.deltaTime * wishHappynessMultiplier;
 
-            if(wishHealthMultiplier <= 0|| wishStaminaMultiplier <= 0|| wishHappynessMultiplier <= 0)
+            if (wishHealthMultiplier <= 0 || wishStaminaMultiplier <= 0 || wishHappynessMultiplier <= 0)
             {
                 sliderDelayTimer += Time.deltaTime;
-                if(sliderDelayTimer >= 1.5f)
+                if (sliderDelayTimer >= 1.5f)
                 {
                     wishHealthMultiplier = healthMultiplier;
                     wishStaminaMultiplier = staminaMultiplier;
@@ -95,10 +100,10 @@ public class InGameProgress : MonoBehaviour
                 }
             }
 
-            if(clockMultiplier <= 0)
+            if (clockMultiplier <= 0)
             {
                 clockDelayTimer += Time.deltaTime;
-                if(clockDelayTimer >= 0.7f)
+                if (clockDelayTimer >= 0.7f)
                 {
                     clockMultiplier = 1;
                     clockDelayTimer = 0f;
@@ -120,14 +125,14 @@ public class InGameProgress : MonoBehaviour
 
         UpdateDogStatsUI();
 
-        if(win != 0) ShowResultPanel(win);
+        if (win != 0) ShowResultPanel(win);
     }
 
     private void UpdateDogStatsUI()
     {
-        currentHealth = Mathf.Clamp(currentHealth,0,100);
-        currentHappyness = Mathf.Clamp(currentHappyness,0,100);
-        currentStamina = Mathf.Clamp(currentStamina,0,100);
+        currentHealth = Mathf.Clamp(currentHealth, 0, 100);
+        currentHappyness = Mathf.Clamp(currentHappyness, 0, 100);
+        currentStamina = Mathf.Clamp(currentStamina, 0, 100);
 
         healthSlider.value = currentHealth;
         healthFillImage.fillAmount = healthSlider.value / healthSlider.maxValue;
@@ -152,7 +157,7 @@ public class InGameProgress : MonoBehaviour
 
         if (state > 0) resultText.text = "Parabéns! Você venceu!";
 
-        else if(state < 0) 
+        else if (state < 0)
         {
             nextLevelButton.SetActive(false);
             loseText.gameObject.SetActive(true);
@@ -163,26 +168,28 @@ public class InGameProgress : MonoBehaviour
             else if (clockSlider.value <= 0.0001) loseText.text = "Tempo zerado!";
             else loseText.text = "Motivo não listado! Vai resolver >:(";
         }
-    } 
+    }
+
     public void AddScore(int score)
     {
         scoreProgress += score;
-        if(score > 0) clockMultiplier = 0;
-        if(scoreProgress >= goal) win = 1;
+        if (score > 0) clockMultiplier = 0;
+        if (scoreProgress >= goal) win = 1;
     }
+
     public void AddSliderValue(int amount, int which)
     {
-        if(which == 0)
+        if (which == 0)
         {
             wishHealthMultiplier = 0f;
             currentHealth += amount;
         }
-        else if(which == 1)
+        else if (which == 1)
         {
             wishStaminaMultiplier = 0f;
             currentStamina += amount;
         }
-        else if(which == 2) 
+        else if (which == 2)
         {
             wishHappynessMultiplier = 0f;
             currentHappyness += amount;
@@ -194,12 +201,12 @@ public class InGameProgress : MonoBehaviour
 
     private string ConvertTimeToString(float time)
     {
-    int minutes = Mathf.FloorToInt(time / 60);
-    int seconds = Mathf.FloorToInt(time % 60);
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
 
-    // Clamp minutes to a maximum of 99
-    minutes = Mathf.Min(minutes, 99);
+        // Clamp minutes to a maximum of 99
+        minutes = Mathf.Min(minutes, 99);
 
-    return string.Format("{0:00}:{1:00}", minutes, seconds);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

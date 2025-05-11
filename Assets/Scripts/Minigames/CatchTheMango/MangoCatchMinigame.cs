@@ -66,7 +66,6 @@ public class MangoCatchMinigame : MiniGameBase
         MiniGameReset();
         base.EndMiniGame();
         
-        //OnMiniGameEnd?.Invoke();
     }
 
     public void MiniGameReset()
