@@ -61,6 +61,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-1834958552726339540
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Videos
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 91904702ae9013243aa7c34806458382
+  m_Children: []
+  m_Volume: 31a1382ac7f6ed944b5d3a21cde6b1ab
+  m_Pitch: 3e8a5cd58df44ef4784ae02ef5f1f940
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 5700792273588963211}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -83,12 +102,15 @@ AudioMixerController:
     name: SFXVolume
   - guid: 10c89ee86b1544b49ad3d1a53b200c01
     name: UISFXVolume
+  - guid: 31a1382ac7f6ed944b5d3a21cde6b1ab
+    name: VideoVolume
   m_AudioMixerGroupViews:
   - guids:
     - bf5ece0061cb23b43a569bd061747cb7
     - 356014a4bf170b74fb8c979c6eab7d06
     - a98058a117376b546b0a6c11f047f294
     - 560d0edd8cc59734fb823a809e99a6cf
+    - 91904702ae9013243aa7c34806458382
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -105,6 +127,7 @@ AudioMixerGroupController:
   - {fileID: -9060180830504942694}
   - {fileID: 5502794349309353533}
   - {fileID: 2542126964118487166}
+  - {fileID: -1834958552726339540}
   m_Volume: 8bd5b18eac29e4f4c82f875bc7597476
   m_Pitch: 39159ae9dbbb70a4596cc4cea5b29e5c
   m_Send: 00000000000000000000000000000000
@@ -177,3 +200,17 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &5700792273588963211
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: ba0aed44393966b4fb217ed5758e5d92
+  m_EffectName: Attenuation
+  m_MixLevel: 79c455c90b3c84f49813f911f71ca897
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0

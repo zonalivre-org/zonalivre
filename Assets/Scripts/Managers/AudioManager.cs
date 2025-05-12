@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("SFXVolume") && PlayerPrefs.HasKey("MusicVolume") && PlayerPrefs.HasKey("UISFXVolume"))
+        if (PlayerPrefs.HasKey("SFXVolume") && PlayerPrefs.HasKey("MusicVolume") && PlayerPrefs.HasKey("UISFXVolume") && PlayerPrefs.HasKey("VideoVolume"))
         {
             Debug.Log("Volume settings found, loading values.");
             LoadVolumeSettings();
@@ -40,12 +40,16 @@ public class AudioManager : MonoBehaviour
         else 
         {
             Debug.Log("No volume settings found, setting to default values.");
+
             SetMusicVolume(0.5f);
             SetSFXVolume(0.5f);
             SetUISFXVolume(0.5f);
+            SetVideoVolume(0.5f);
+            
             SaveVolumeSetting("MusicVolume", 0.5f);
             SaveVolumeSetting("SFXVolume", 0.5f);
             SaveVolumeSetting("UISFXVolume", 0.5f);
+            SaveVolumeSetting("VideoVolume", 0.5f);
         }
     }
 
@@ -77,6 +81,16 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat("UISFXVolume", normalizedValue); // Save normalized value
         PlayerPrefs.Save();
     }
+
+    public void SetVideoVolume(float normalizedValue)
+    {
+        Debug.Log("Setting Video Volume: " + normalizedValue);
+        float dB = ConvertToLog10(Mathf.Clamp(normalizedValue, 0.0001f, 1f)); // Convert normalized value to dB
+        audioMixer.SetFloat("VideoVolume", dB);
+        PlayerPrefs.SetFloat("VideoVolume", normalizedValue); // Save normalized value
+        PlayerPrefs.Save();
+    }
+
     private void SaveVolumeSetting(string key, float value)
     {
         PlayerPrefs.SetFloat(key, value);
@@ -88,10 +102,12 @@ public class AudioManager : MonoBehaviour
         float sfxVolume = ConvertToLog10(PlayerPrefs.GetFloat("SFXVolume"));
         float musicVolume = ConvertToLog10(PlayerPrefs.GetFloat("MusicVolume"));
         float uISFXVolume = ConvertToLog10(PlayerPrefs.GetFloat("UISFXVolume"));
+        float videoVolume = ConvertToLog10(PlayerPrefs.GetFloat("VideoVolume"));
 
         audioMixer.SetFloat("SFXVolume", sfxVolume);
         audioMixer.SetFloat("MusicVolume", musicVolume);
         audioMixer.SetFloat("UISFXVolume", uISFXVolume);
+        audioMixer.SetFloat("VideoVolume", videoVolume);
     }
 
     private float ConvertToLog10(float value)
