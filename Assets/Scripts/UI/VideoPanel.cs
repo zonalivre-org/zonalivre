@@ -15,6 +15,10 @@ public class VideoPanel : MonoBehaviour
     public Slider videoDuration, videoVolume;
     public bool trigger;
 
+    void Awake()
+    {
+        player.SetTargetAudioSource(0, AudioManager.Instance.videoAudioSource);
+    }
     private void OnEnable()
     {
         AudioManager.Instance.PauseMusic();

@@ -52,6 +52,7 @@ MonoBehaviour:
   sFXAudioSource: {fileID: 6005267261590438658}
   uISFXAudioSource: {fileID: 4985588588622409319}
   musicAudioSource: {fileID: 7064341544790471303}
+  videoAudioSource: {fileID: 1146740138580202815}
   uIClips:
   - {fileID: 8300000, guid: ffa157280d01ff54cb53741b5abdc48b, type: 3}
   - {fileID: 8300000, guid: dedf6da4f7f254742bc14096cb7e1281, type: 3}

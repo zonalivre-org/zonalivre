@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource sFXAudioSource;
     public AudioSource uISFXAudioSource;
     public AudioSource musicAudioSource;
+    public AudioSource videoAudioSource;
 
     [Header("Audio Clips")]
     public AudioClip[] uIClips;
