@@ -146,6 +146,7 @@ public class GameManager : MonoBehaviour
 
     private void ShowResultPanel(int state)
     {
+        Time.timeScale = 0f;
         if (state != 0)
         {
             enablecountdown = false;
