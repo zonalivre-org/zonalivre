@@ -2862,6 +2862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1030654407}
   - component: {fileID: 1030654408}
+  - component: {fileID: 1030654409}
   m_Layer: 5
   m_Name: VIdeoPlayer
   m_TagString: Untagged
@@ -2906,8 +2907,8 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
-  m_TimeUpdateMode: 1
+  m_DataSource: 1
+  m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
   m_TargetAudioSources:
@@ -2918,12 +2919,27 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 0
   m_Looping: 1
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &1030654409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030654406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a2d45d64b96c9448524e2fb7773925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  clipName: BackgroundVideo.mp4
+  renderTexture: {fileID: 0}
 --- !u!1001 &1078895485
 PrefabInstance:
   m_ObjectHideFlags: 0
