@@ -88,6 +88,7 @@ public class DogMovement : MonoBehaviour
     {
         // Lógica que roda continuamente para cada estado
         UpdateCurrentStateLogic();
+        UpdateAnimations();
     }
 
     // --- Gerenciamento de Transição de Estado ---
@@ -443,17 +444,57 @@ public class DogMovement : MonoBehaviour
         // (continuar seguindo, voltar a perambular, etc.)
     }
 
-    // --- Animação (Placeholder) ---
     private void UpdateAnimations()
     {
-        // ... (Lógica de animação como no exemplo anterior) ...
-        // Você pode basear a animação em 'currentState' e 'agent.velocity.magnitude'
         if (animator == null || agent == null) return;
 
+        // 1. Verificar se o agente está se movendo
         float speed = agent.velocity.magnitude;
-        animator.SetFloat("Speed", speed); // Exemplo: Assumindo um parâmetro Speed no Animator
+        bool isMoving = speed > 0.1f;
 
-        // Adicione lógica para Idle_Left/Right, Walking_Left/Right baseada na direção
+        // (Opcional) Se tiver o parâmetro IsMoving:
+        // animator.SetBool(IS_MOVING_PARAM, isMoving);
+
+        bool isWalkingLeft = false;
+        bool isWalkingRight = false;
+
+        // 2. Se estiver se movendo, determinar a direção relativa
+        if (isMoving)
+        {
+            // Direção que o agente está se movendo
+            Vector3 velocity = agent.velocity;
+            // Direção para a qual o agente está virado
+            Vector3 forward = transform.forward;
+
+            // Calcula o ângulo entre a direção de movimento e a direção que está virado
+            // Usando Vector3.up como eixo (plano horizontal XZ)
+            float angle = Vector3.SignedAngle(forward, velocity, Vector3.up);
+
+            // Se o ângulo é positivo, está movendo para a direita relativa
+            if (angle > 0)
+            {
+                isWalkingRight = true;
+            }
+            // Se o ângulo é negativo (ou zero), está movendo para a esquerda relativa (ou reto)
+            else // angle <= 0
+            {
+                isWalkingLeft = true;
+            }
+        }
+        else{
+            animator.SetBool("Idle", true);
+        }
+        // else: Não está se movendo, ambos os booleanos permanecem false,
+        //       o Animator deve transicionar para Idle (se configurado corretamente).
+
+        // 3. Atualizar os parâmetros do Animator
+        animator.SetBool("IsWalkingLeft", isWalkingLeft);
+        animator.SetBool("IsWalkingRight", isWalkingRight);
+
+        // Debug (opcional):
+      
     }
+
+
 
 }
