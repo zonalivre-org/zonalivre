@@ -8,7 +8,6 @@ public class TaskManager : MonoBehaviour
 
     [HideInInspector] public List<ObjectiveInteract> objectives;
     [SerializeField] private GameObject objectivesParent;
-
     [SerializeField] private GameObject taskPrefab;
     [SerializeField] private List<TaskItem> taskList;
     
@@ -51,6 +50,11 @@ public class TaskManager : MonoBehaviour
             newTask.GetComponent<RectTransform>().localRotation = Quaternion.identity;
 
             task.taskItem = newTask.GetComponent<TaskItem>();
+
+            if (task.gameObject.activeSelf == false)
+            {
+                newTask.SetActive(false);
+            }
 
             taskList.Add(newTask.GetComponent<TaskItem>());
         }

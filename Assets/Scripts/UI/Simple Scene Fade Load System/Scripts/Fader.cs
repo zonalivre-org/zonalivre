@@ -20,7 +20,6 @@ public class Fader : MonoBehaviour
     public bool isFadeIn = false;
     CanvasGroup myCanvas;
     Image bg;
-    float lastTime = 0;
     bool startedLoading = false;
     //Set callback
     void OnEnable()

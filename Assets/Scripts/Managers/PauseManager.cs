@@ -23,11 +23,10 @@ public class PauseMenu : MonoBehaviour
         gameObject.SetActive(true);
         Time.timeScale = 0f;
 
-        player.ToggleMovement(false);
-        pet.SetAutonomousMovement(false);
+        //player.ToggleMovement(false);
+        //pet.SetAutonomousMovement(false);
 
         PauseIn();
-
     }
 
     public async void ResumeGame()
@@ -38,8 +37,8 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 1f;
 
-        player.ToggleMovement(true);
-        pet.SetAutonomousMovement(true);  
+        //player.ToggleMovement(true);
+        //pet.SetAutonomousMovement(true);  
     }
 
     private void PauseIn()
@@ -79,5 +78,4 @@ public class PauseMenu : MonoBehaviour
             button.SetActive(false);
         }
     }
-
 }
