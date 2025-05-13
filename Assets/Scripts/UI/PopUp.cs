@@ -62,7 +62,8 @@ public class PopUp : MonoBehaviour
     public void SetVideoPlayer(string fileName)
     {
         videoPlayer.targetTexture.Release();
-        string pathToVideo = System.IO.Path.Combine(Application.streamingAssetsPath, fileName);;
+        string pathToVideo = System.IO.Path.Combine(Application.streamingAssetsPath, fileName);
+        Debug.Log(pathToVideo);
         videoPlayer.url = pathToVideo;
         videoPlayer.Play();
     }
