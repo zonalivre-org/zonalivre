@@ -1,0 +1,191 @@
+using System.Diagnostics;
+using UnityEngine;
+using System.Collections;
+
+public class TutorialManager : MonoBehaviour
+{
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private PopUp popUp;
+    [SerializeField] private GameObject[] minigameBlock;
+    [SerializeField] private GameObject taskButton;
+
+    #region Tutorial Variables
+    [SerializeField] private int currentStep = 0;
+    [SerializeField] private int timesMoved = 0;
+    [SerializeField] private int popUpsClosed = 0;
+    [SerializeField] private int minigameCompleted = 0;
+    [SerializeField] private int itensCollected = 0;
+    [SerializeField] private int petItensCollected = 0;
+    #endregion
+
+    void Start()
+    {
+        gameManager.rules = false;
+        gameManager.currentHappyness = gameManager.happyness / 2;
+        gameManager.currentStamina = gameManager.stamina / 2;
+        gameManager.currentHealth = gameManager.health / 2;
+        taskButton.gameObject.SetActive(false);
+
+        // Subscribe to the OnDestinationReached Action
+        playerController.OnDestinationReached += OnDestinationReached;
+
+        // Subscribe to the OnPopUpClosed Action
+        popUp.OnPopUpClosed += OnPopUpClosed;
+
+        // Subscribe to the OnMinigameCompleted Action
+        MiniGameBase.OnMiniGameComplete += OnMinigameCompleted;
+
+        playerInventory.OnItemChanged += OnItemCollected;
+    }
+
+    void Update()
+    {
+        switch (currentStep)
+        {
+            case 0:
+                popUp.SetPopUp("Tutorial", "Bem vindo ao Tutorial! Aqui você vai aprender como se joga o jogo. Você pode rever a ultima lição clicando no botão <sprite=20> no canto superior direito da tela. Clique no <sprite=19> para continuar.");
+                popUp.SetVideoPlayer("TutorialButton.mp4");
+                currentStep++;
+                break;
+
+            case 1:
+                if (popUpsClosed >= 1)
+                {
+                    currentStep++;
+                    popUp.SetPopUp(
+                        "Tempo",
+                        "O jogo se baseia em realizar tarefas em um determinado tempo, indicado pelo <sprite=16> no topo da tela. Se o tempo acabar, você perde o jogo. Mas não se preocupe, pois no tutorial o tempo não abaixa."
+                    );
+                    popUp.SetVideoPlayer("TimeRunning.mp4");
+                }
+                break;
+
+            case 2:
+                if (popUpsClosed >= 2)
+                {
+                    ShowInitialPopUp();
+                    minigameBlock[0].GetComponent<BoxCollider>().enabled = false; // Disable the mango minigame collision
+                    minigameBlock[3].GetComponent<BoxCollider>().enabled = true; // Disable the window minigame collision
+                    minigameBlock[5].GetComponent<CapsuleCollider>().enabled = false; // Disable the pet collider object
+                    currentStep++;
+                    popUp.SetPopUp(
+                        "Como se movimentar",
+                        "Ótimo! Agora que você já sabe como o tempo funciona, vamos aprender a se movimentar. Para conseguir se movimentar pelo mapa, basta tocar/clicar em algum lugar do mapa. Feche essa janela e tente se movimentar 3 vezes."
+                    );
+                    popUp.SetVideoPlayer("WalkingVideo.mp4");
+                }
+                break;
+
+            case 3:
+                if (timesMoved >= 4)
+                {
+                    currentStep++;
+                    minigameBlock[0].GetComponent<BoxCollider>().enabled = true; // Enable the mango minigame collision
+                    minigameBlock[1].GetComponent<BoxCollider>().enabled = false; // Disable the leaves minigame collision
+                    minigameBlock[2].SetActive(false); // Disable the Leaves indicator
+                    popUp.SetPopUp(
+                        "Interação com tarefas",
+                        "Muito bem! Seu objetivo é realizar tarefas pelo mapa. Para iniciar uma tarefa, basta andar até ela. Tente colher algumas mangas naquele pé de manga."
+                    );
+                }
+                break;
+
+            case 4:
+                if (minigameCompleted >= 1)
+                {
+                    currentStep++;
+                    minigameBlock[3].SetActive(true); // Activate the Moskito Screen object
+                    popUp.SetPopUp(
+                        "Interação com tarefas usando itens",
+                        "Ótimo! Agora você já sabe como interagir com as tarefas. No entanto, algumas tarefas necessitam de itens para serem feitas. Colete o item TELA <Icone da tela> no mapa. Basta encostar nele."
+                    );
+                }
+                break;
+
+            case 5:
+                if (itensCollected >= 1)
+                {
+                    currentStep++;
+                    minigameBlock[4].GetComponent<BoxCollider>().enabled = true; // Activate the Window collider object
+                    popUp.SetPopUp(
+                        "Interação com tarefas usando itens",
+                        "Excelente! Agora que você coletou o item TELA <Icone da tela>, leve-o para o OBJETIVO JANELA <Icone da janela> para aplicar a TELA."
+                    );
+                }
+                break;
+
+            case 6:
+                if (minigameCompleted >= 2)
+                {
+                    currentStep++;
+                    popUp.SetPopUp(
+                        "Cuidando do seu pet",
+                        "Muito bem! Entendido como os objetivos funcionam. Agora, vamos cuidar do seu pet! "
+                        + "Ele possui três necessidades: Saúde <sprite=10>, Fome <sprite=5> e Felicidade <sprite=3>. Você pode ver essas informações na parte superior esquerda da tela."
+                    );
+                }
+                break;
+
+            case 7:
+                if (popUpsClosed >= 7)
+                {
+                    currentStep++;
+                    popUp.SetPopUp(
+                        "Cuidando do seu pet",
+                        "Cuidado! Fora do tutorial, essas necessidades diminuem com o tempo. Então você precisa tirar tempo para cuidar das necessidades do seu pet. Caso uma delas chegue a zero, você perde o jogo."
+                    );
+                }
+                break;
+
+            case 8:
+                if (popUpsClosed >= 8)
+                {
+                    currentStep++;
+                    minigameBlock[5].GetComponent<CapsuleCollider>().enabled = true; // Activate the pet collider object
+                    popUp.SetPopUp(
+                        "Cuidando do seu pet",
+                        "Vamos começar cuidando da felicidade dele. Encoste nele para fazer carinho"
+                    );
+                }
+                break;
+
+        }
+    }
+
+    private void ShowInitialPopUp()
+    {
+        popUp.SetPopUp(
+            "Como se movimentar",
+            "Bem vindo ao Tutorial! Para conseguir se movimentar pelo mapa, basta tocar/clicar em algum lugar do mapa. Feche essa janela e tente se movimentar 3 vezes."
+        );
+    }
+
+    private void OnDestinationReached()
+    {
+        timesMoved++;
+    }
+
+    private void OnPopUpClosed()
+    {
+        popUpsClosed++;
+    }
+
+    private void OnMinigameCompleted()
+    {
+        minigameCompleted++;
+    }
+
+    private void OnItemCollected(ItemData item)
+    {
+        itensCollected++;
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from the events to avoid memory leaks
+        playerController.OnDestinationReached -= OnDestinationReached;
+        popUp.OnPopUpClosed -= OnPopUpClosed;
+    }
+}

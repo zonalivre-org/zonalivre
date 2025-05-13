@@ -10,11 +10,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int goal;
 
     [Header("Pet Sliders")]
-    [SerializeField] private int health = 100;
+    public int health = 100;
     [SerializeField] private float healthMultiplier = 1;
-    [SerializeField] private int stamina = 100;
+    public int stamina = 100;
     [SerializeField] private float staminaMultiplier = 1;
-    [SerializeField] private int happyness = 100;
+    public int happyness = 100;
     [SerializeField] private float happynessMultiplier = 1;
 
     [Header("UI components")]
@@ -37,13 +37,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DogMovement petMovement;
 
     [Header("Constants and Variables")]
-    private float currentTime, currentHealth, currentStamina, currentHappyness, wishHealthMultiplier, wishStaminaMultiplier, wishHappynessMultiplier;
+    public float currentTime, currentHealth, currentStamina, currentHappyness, wishHealthMultiplier, wishStaminaMultiplier, wishHappynessMultiplier;
     private int clockMultiplier = 1;
     private float sliderDelayTimer = 0f, clockDelayTimer = 0f;
     private int scoreProgress = 0;
     private bool enablecountdown = false;
     private int win = 0; // Player starts the game in a neutral state. +1 = they win. -1 = they lose.
     public bool isMinigameActive = false;
+    [HideInInspector] public bool rules = true;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -78,38 +79,41 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (currentHealth <= 0 || currentStamina <= 0 || currentHappyness <= 0 || currentTime <= 0) win = -1;
-
-        if (enablecountdown)
+        if (rules)
         {
-            currentTime -= Time.deltaTime * clockMultiplier;
-
-            currentHealth -= Time.deltaTime * wishHealthMultiplier;
-            currentStamina -= Time.deltaTime * wishStaminaMultiplier;
-            currentHappyness -= Time.deltaTime * wishHappynessMultiplier;
-
-            if (wishHealthMultiplier <= 0 || wishStaminaMultiplier <= 0 || wishHappynessMultiplier <= 0)
+            if (currentHealth <= 0 || currentStamina <= 0 || currentHappyness <= 0 || currentTime <= 0) win = -1;
+            if (enablecountdown)
             {
-                sliderDelayTimer += Time.deltaTime;
-                if (sliderDelayTimer >= 1.5f)
+                currentTime -= Time.deltaTime * clockMultiplier;
+
+                currentHealth -= Time.deltaTime * wishHealthMultiplier;
+                currentStamina -= Time.deltaTime * wishStaminaMultiplier;
+                currentHappyness -= Time.deltaTime * wishHappynessMultiplier;
+
+                if (wishHealthMultiplier <= 0 || wishStaminaMultiplier <= 0 || wishHappynessMultiplier <= 0)
                 {
-                    wishHealthMultiplier = healthMultiplier;
-                    wishStaminaMultiplier = staminaMultiplier;
-                    wishHappynessMultiplier = happynessMultiplier;
-                    sliderDelayTimer = 0f;
+                    sliderDelayTimer += Time.deltaTime;
+                    if (sliderDelayTimer >= 1.5f)
+                    {
+                        wishHealthMultiplier = healthMultiplier;
+                        wishStaminaMultiplier = staminaMultiplier;
+                        wishHappynessMultiplier = happynessMultiplier;
+                        sliderDelayTimer = 0f;
+                    }
                 }
-            }
 
-            if (clockMultiplier <= 0)
-            {
-                clockDelayTimer += Time.deltaTime;
-                if (clockDelayTimer >= 0.7f)
+                if (clockMultiplier <= 0)
                 {
-                    clockMultiplier = 1;
-                    clockDelayTimer = 0f;
+                    clockDelayTimer += Time.deltaTime;
+                    if (clockDelayTimer >= 0.7f)
+                    {
+                        clockMultiplier = 1;
+                        clockDelayTimer = 0f;
+                    }
                 }
             }
         }
+
         UpdateUI();
     }
 

@@ -26,6 +26,7 @@ public class PlayerInventory : MonoBehaviour
         if (_heldItem != null)
         {
             Debug.Log($"Item definido: {_heldItem.displayName}. Substituiu: {previousItem?.displayName ?? "Nada"}"); // Para Debug
+            OnItemChanged?.Invoke(_heldItem);
         }
         else
         {
@@ -33,7 +34,7 @@ public class PlayerInventory : MonoBehaviour
         }
 
         // Dispara o evento para notificar outros componentes (como o UI Indicator)
-        OnItemChanged?.Invoke(_heldItem);
+        
     }
 
     public ItemData GetItem()

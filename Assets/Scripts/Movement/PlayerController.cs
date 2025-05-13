@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 public class PlayerController : MonoBehaviour
 {
     const string IDLE = "Idle";
@@ -10,10 +11,16 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public bool canMove = true;
     private float agentOriginalSpeed;
+
     [Header("Movement")]
     [SerializeField] private ParticleSystem clickEffect;
     [SerializeField] private LayerMask clicklableLayers;
     [SerializeField] private float lookRotationSpeed = 8f;
+
+    [Header("Actions")]
+    public Action OnDestinationReached; // Action triggered when the player reaches the destination
+
+    private bool hasReachedDestination = false; // Flag to track if the destination has been reached
 
     private void Awake()
     {
@@ -30,6 +37,7 @@ public class PlayerController : MonoBehaviour
     void LateUpdate()
     {
         SetAnimations();
+        CheckIfDestinationReached();
     }
 
     void AssignInputs()
@@ -45,10 +53,30 @@ public class PlayerController : MonoBehaviour
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
             {
                 agent.SetDestination(hit.point);
-                // animator.SetTrigger(WALK); // This will be needed when we have a walk animation
-                ParticleSystem clickEffectInstance = (Instantiate(clickEffect, hit.point + Vector3.up * 0.1f, clickEffect.transform.rotation));
+
+                // Play click effect
+                ParticleSystem clickEffectInstance = Instantiate(clickEffect, hit.point + Vector3.up * 0.1f, clickEffect.transform.rotation);
                 Destroy(clickEffectInstance.gameObject, 1f);
             }
+        }
+    }
+
+    void CheckIfDestinationReached()
+    {
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+            {
+                if (!hasReachedDestination) // Only invoke the action if the destination hasn't been reached yet
+                {
+                    hasReachedDestination = true;
+                    OnDestinationReached?.Invoke(); // Trigger the action when the destination is reached
+                }
+            }
+        }
+        else
+        {
+            hasReachedDestination = false; // Reset the flag if the player starts moving again
         }
     }
 
