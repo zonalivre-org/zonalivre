@@ -30,9 +30,9 @@ public class TaskItem : MonoBehaviour
 
     public void MarkAsComplete()
     {
+        gameObject.SetActive(true);
         checkIcon.color = Color.green;
         stroke.SetActive(true);
-        stroke.GetComponent<Animator>().Play("Chalk stroke");
     }
 
     public void SetIcon(Sprite iconSprite)

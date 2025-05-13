@@ -10,7 +10,8 @@ public class VolumeSlider : EventTrigger
     {
         SFX,
         Music,
-        UISFX
+        UISFX,
+        Video
     }
 
     [SerializeField] private VolumeType volumeType;
@@ -30,6 +31,9 @@ public class VolumeSlider : EventTrigger
                 break;
             case VolumeType.UISFX:
                 slider.value = PlayerPrefs.GetFloat("UISFXVolume");
+                break;
+            case VolumeType.Video:
+                slider.value = PlayerPrefs.GetFloat("VideoVolume");
                 break;
         }
     }
@@ -62,7 +66,6 @@ public class VolumeSlider : EventTrigger
 
     public override void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Its me");
         switch (volumeType)
         {
             case VolumeType.SFX:
@@ -73,6 +76,9 @@ public class VolumeSlider : EventTrigger
                 break;
             case VolumeType.Music:
                 AudioManager.Instance.SetMusicVolume(slider.value);
+                break;
+            case VolumeType.Video:
+                AudioManager.Instance.SetVideoVolume(slider.value);
                 break;
         }
     }

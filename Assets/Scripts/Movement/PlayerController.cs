@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     void ClickToMove()
     {
-        if (canMove)
+        if (canMove && Time.timeScale != 0)
         {
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))

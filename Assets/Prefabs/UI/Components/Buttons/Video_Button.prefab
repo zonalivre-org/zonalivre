@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4755411758210750808}
   - component: {fileID: 9059709727915699721}
   - component: {fileID: 5237257733294750710}
+  - component: {fileID: 7965980709648269061}
   m_Layer: 5
   m_Name: Video_Button
   m_TagString: Untagged
@@ -138,10 +139,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
+      - m_Target: {fileID: 7965980709648269061}
+        m_TargetAssemblyTypeName: VideoButton, Assembly-CSharp
+        m_MethodName: OpenAndPlay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -149,18 +150,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &9059709727915699721
 MonoBehaviour:
@@ -191,3 +180,17 @@ MonoBehaviour:
   scaleFactor: 1.2
   clickSoundEffectIndex: 2
   randomPitch: 1
+--- !u!114 &7965980709648269061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189234375894565027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec0a6fbd9297504699556c3466a0367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 32900000, guid: 579502524fbe6664c97c485f47f4f62d, type: 3}
+  videoPanel: {fileID: 0}

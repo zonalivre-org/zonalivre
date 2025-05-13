@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bowl : MonoBehaviour
 {
-    [SerializeField] private FillTheBowl fillTheBowl;
+    [SerializeField] private FillTheBowlMinigame fillTheBowl;
 
     void OnTriggerEnter(Collider other)
     {

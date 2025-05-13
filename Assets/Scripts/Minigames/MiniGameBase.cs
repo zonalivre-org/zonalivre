@@ -7,7 +7,7 @@ public abstract class MiniGameBase : MonoBehaviour
     public static Action OnMiniGameStart;
     public static Action OnMiniGameEnd;
     public static Action OnMinigameInteract;
-    [SerializeField] private TMP_Text tipText;
+    [SerializeField] protected TMP_Text tipText;
     [SerializeField] private float tipDelay = 5f; // Time in seconds before showing the tip
 
     private float timeSinceLastClick;
@@ -68,6 +68,7 @@ public abstract class MiniGameBase : MonoBehaviour
     public virtual void StartMiniGame()
     {
         gameObject.SetActive(true);
+        GameManager.Instance.isMinigameActive = true;
 
         isMiniGameActive = true;
         isMiniGameComplete = false;
@@ -78,11 +79,16 @@ public abstract class MiniGameBase : MonoBehaviour
         if (tipText != null) tipText.gameObject.SetActive(true);
     }
 
+
     public virtual void EndMiniGame()
     {
+        GameManager.Instance.isMinigameActive = false;
+        gameObject.SetActive(false);
+
+
+        gameObject.SetActive(false);
         isMiniGameActive = false;
         isMiniGameComplete = false;
         firstActionTriggered = false;
     }
-
 }
