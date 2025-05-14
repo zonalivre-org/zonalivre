@@ -5157,6 +5157,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676737842}
   m_CullTransparentMesh: 1
+--- !u!1 &1708876678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 849480909563321500, guid: 980a831af79d4ef42b897d5aac82d238,
+    type: 3}
+  m_PrefabInstance: {fileID: 542012702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724110620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5682,6 +5688,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 77da5529be801934ea0f6a7baec9d33f,
     type: 3}
   m_PrefabInstance: {fileID: 1767025405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1779425321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1473423026801855526, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 2496538277273570598}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1787970244
 GameObject:
@@ -6399,12 +6411,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!1 &2133550307 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5959183398115387133, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 2496538277273570598}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1014428311318274669 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3843743458508152543, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
@@ -7123,6 +7129,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6436419854034322361, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: HUDButtons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436419854034322361, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: HUDButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1708876678}
+    - target: {fileID: 6436419854034322361, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: HUDButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1180630755}
+    - target: {fileID: 6436419854034322361, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: HUDButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1779425321}
     - target: {fileID: 6552998362939539512, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -7646,7 +7672,7 @@ PrefabInstance:
         type: 3}
       propertyPath: minigame
       value: 
-      objectReference: {fileID: 2133550307}
+      objectReference: {fileID: 0}
     - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: taskIcon
