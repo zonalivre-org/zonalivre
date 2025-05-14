@@ -103,9 +103,11 @@ public class CleanMinigame : MiniGameBase
         trashBagRemaining++;
         AudioManager.Instance.PlayRandomPitchSFXSound(2);
 
+        trashCan.gameObject.SetActive(true);
+
         if (trashRemaining <= 0)
         {
-            trashCan.gameObject.SetActive(true);
+            
             tipText.text = "Agora leve o lixo até a lixeira!";
         }
     }
@@ -115,7 +117,7 @@ public class CleanMinigame : MiniGameBase
         trashBagRemaining--;
         AudioManager.Instance.PlayRandomPitchSFXSound(2);
 
-        if (trashBagRemaining <= 0)
+        if (trashBagRemaining <= 0 && trashRemaining <= 0)
         {
             isMiniGameComplete = true;
             EndMiniGame();
