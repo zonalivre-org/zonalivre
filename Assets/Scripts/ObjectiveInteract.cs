@@ -24,7 +24,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
-    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame }
+    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame, WhackAMole }
 
     #region Objective Properties
 
@@ -50,6 +50,10 @@ public class ObjectiveInteract : MonoBehaviour
     [Header("Clean Minigame")]
     [Range(0, 1)][SerializeField] private float cleanSpeed;
     [SerializeField] private int trashAmount = 5;
+
+    [Header("Whack A Mole")]
+    [Range(1, 5)] [SerializeField] private int scoreToWin = 3;
+    [SerializeField] private float spawnInterval = 1.0f;
 
     #endregion
 
@@ -126,6 +130,7 @@ public class ObjectiveInteract : MonoBehaviour
             case MiniGames.MangoCatch: StartMangoCatch(); break;
             case MiniGames.QuickTimeEvent: StartQuickTimeEvent(); break;
             case MiniGames.CleanMinigame: StartCleanMinigame(); break;
+            case MiniGames.WhackAMole: StartWhackAMoleMinigame(); break;
         }
 
     }
@@ -152,6 +157,14 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<CleanMinigame>().SetMiniGameRules(cleanSpeed, trashAmount);
         minigame.GetComponent<CleanMinigame>().objectiveInteract = this;
         minigame.GetComponent<CleanMinigame>().StartMiniGame();
+        GameManager.Instance.isMinigameActive = true;
+    }
+
+    private void StartWhackAMoleMinigame()
+    {
+        minigame.GetComponent<WhackAMole>().SetMinigameRules(scoreToWin, spawnInterval);
+        minigame.GetComponent<WhackAMole>().objectiveInteract = this;
+        minigame.GetComponent<WhackAMole>().StartMiniGame();
         GameManager.Instance.isMinigameActive = true;
     }
     private bool CheckIfCanStartMinigame(string itemId = null)

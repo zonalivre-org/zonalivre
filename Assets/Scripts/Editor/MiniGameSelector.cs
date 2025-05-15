@@ -17,7 +17,9 @@ public class MiniGameSelector : Editor
         serializedObject.Update();
 
         // Draw all properties except the ones you want to customize
-        DrawPropertiesExcluding(serializedObject, "miniGameType", "mangoGoal", "mangoFallSpeed", "coolDownBetweenMangos", "QTEGoal", "QTEMoveSpeed", "QTESafeZoneSizePercentage", "cleanSpeed", "trashAmount");
+        DrawPropertiesExcluding(serializedObject, "miniGameType", "mangoGoal", "mangoFallSpeed", "coolDownBetweenMangos",
+         "QTEGoal", "QTEMoveSpeed", "QTESafeZoneSizePercentage", "cleanSpeed", "trashAmount",
+         "scoreToWin", "spawnInterval");
 
         // Draw the custom property field for miniGameType
         EditorGUILayout.PropertyField(miniGameType);
@@ -42,6 +44,12 @@ public class MiniGameSelector : Editor
             EditorGUILayout.LabelField("Clean Minigame Settings", EditorStyles.boldLabel);
             EditorGUILayout.PropertyField(serializedObject.FindProperty("cleanSpeed"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("trashAmount"));
+        }
+        else if (miniGameType.enumValueIndex == 3) // Whack A Mole
+        {
+            EditorGUILayout.LabelField("Whack A Mole Settings", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("scoreToWin"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("spawnInterval"));
         }
 
         // Apply any modified properties

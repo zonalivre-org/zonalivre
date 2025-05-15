@@ -68,7 +68,7 @@ public abstract class MiniGameBase : MonoBehaviour
     public virtual void StartMiniGame()
     {
         gameObject.SetActive(true);
-        GameManager.Instance.isMinigameActive = true;
+        //GameManager.Instance.isMinigameActive = true;
 
         isMiniGameActive = true;
         isMiniGameComplete = false;
