@@ -15,7 +15,7 @@ public class ItemSpawner : MonoBehaviour
 
     // Usaremos a Layer do próprio GameObject para o Raycast
     private LayerMask thisObjectLayerMask; // NOVO: LayerMask gerada a partir da layer deste objeto.
-
+    private DogMovement dogMovement;
 
     void Awake() // Use Awake para garantir que a layer seja obtida antes de Start de outros scripts
     {
@@ -25,6 +25,8 @@ public class ItemSpawner : MonoBehaviour
         // Converte o índice da layer para uma LayerMask
         // Uma LayerMask é um bitmask. O bit correspondente à layer é 1.
         thisObjectLayerMask = 1 << thisLayerIndex;
+        dogMovement = FindObjectOfType<DogMovement>();
+
 
 
     }
@@ -52,6 +54,12 @@ public class ItemSpawner : MonoBehaviour
             if (playerInventory != null)
             {
                 playerInventory.SetItem(itemToGive);
+                if (itemToGive.id == "Racao"){
+                    dogMovement.RequestFollowPlayer();
+                }
+                else if (itemToGive.id == "Coleira"){
+                    dogMovement.RequestFlee();
+                }
             }
             else
             {
