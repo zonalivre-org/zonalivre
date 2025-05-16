@@ -51,6 +51,7 @@ public class ItemIndicatorUI : MonoBehaviour
 
         if (newItem != null)
         {
+            Debug.Log("Item removido do inventário. Limpando o indicador.");
             spriteRenderer.sprite = newItem.icon;
             spriteRenderer.enabled = true; // Mostra o sprite
             // TODO: Opcional: Adicionar uma pequena animação de popup/fade aqui

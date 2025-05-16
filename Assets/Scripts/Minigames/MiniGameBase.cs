@@ -19,6 +19,7 @@ public abstract class MiniGameBase : MonoBehaviour
 
     void Start() 
     {
+
         OnStart(); // You will need to call this OnStart method in every child class, because Unity is Unity :D 
     }
 
@@ -33,6 +34,7 @@ public abstract class MiniGameBase : MonoBehaviour
         firstActionTriggered = false;
 
         isMiniGameActive = true;
+
     }
     void Update()
     {
@@ -96,5 +98,6 @@ public abstract class MiniGameBase : MonoBehaviour
         isMiniGameActive = false;
         isMiniGameComplete = false;
         firstActionTriggered = false;
+
     }
 }
