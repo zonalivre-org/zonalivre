@@ -24,7 +24,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
-    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame, WhackAMole }
+    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame, WhackAMole, PlantTheCitronela }
 
     #region Objective Properties
 
@@ -54,6 +54,9 @@ public class ObjectiveInteract : MonoBehaviour
     [Header("Whack A Mole")]
     [Range(1, 5)] [SerializeField] private int scoreToWin = 3;
     [SerializeField] private float spawnInterval = 1.0f;
+
+    [Header("Plant The Citronela")]
+    [Range(0, 5)] [SerializeField] private float growthSpeed = 3f;
 
     #endregion
 
@@ -124,13 +127,14 @@ public class ObjectiveInteract : MonoBehaviour
 
         playerMovement.ToggleMovement(false);
         enable = false;
-        
+
         switch (miniGameType)
         {
             case MiniGames.MangoCatch: StartMangoCatch(); break;
             case MiniGames.QuickTimeEvent: StartQuickTimeEvent(); break;
             case MiniGames.CleanMinigame: StartCleanMinigame(); break;
             case MiniGames.WhackAMole: StartWhackAMoleMinigame(); break;
+            case MiniGames.PlantTheCitronela: StartPlantTheCitronelaMinigame(); break;
         }
 
     }
@@ -165,6 +169,14 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<WhackAMole>().SetMinigameRules(scoreToWin, spawnInterval);
         minigame.GetComponent<WhackAMole>().objectiveInteract = this;
         minigame.GetComponent<WhackAMole>().StartMiniGame();
+        GameManager.Instance.isMinigameActive = true;
+    }
+
+    private void StartPlantTheCitronelaMinigame()
+    {
+        minigame.GetComponent<PlantTheCitronela>().SetMinigameRules(growthSpeed);
+        minigame.GetComponent<PlantTheCitronela>().objectiveInteract = this;
+        minigame.GetComponent<PlantTheCitronela>().StartMiniGame();
         GameManager.Instance.isMinigameActive = true;
     }
     private bool CheckIfCanStartMinigame(string itemId = null)

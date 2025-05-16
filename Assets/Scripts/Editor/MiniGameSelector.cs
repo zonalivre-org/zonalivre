@@ -19,7 +19,7 @@ public class MiniGameSelector : Editor
         // Draw all properties except the ones you want to customize
         DrawPropertiesExcluding(serializedObject, "miniGameType", "mangoGoal", "mangoFallSpeed", "coolDownBetweenMangos",
          "QTEGoal", "QTEMoveSpeed", "QTESafeZoneSizePercentage", "cleanSpeed", "trashAmount",
-         "scoreToWin", "spawnInterval");
+         "scoreToWin", "spawnInterval", "growthSpeed");
 
         // Draw the custom property field for miniGameType
         EditorGUILayout.PropertyField(miniGameType);
@@ -50,6 +50,11 @@ public class MiniGameSelector : Editor
             EditorGUILayout.LabelField("Whack A Mole Settings", EditorStyles.boldLabel);
             EditorGUILayout.PropertyField(serializedObject.FindProperty("scoreToWin"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("spawnInterval"));
+        }
+        else if (miniGameType.enumValueIndex == 4) // Plant The Citronela
+        {
+            EditorGUILayout.LabelField("Plant The Citronela Settings", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("growthSpeed"));
         }
 
         // Apply any modified properties

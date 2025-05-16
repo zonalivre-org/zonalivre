@@ -1,12 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections;
 
-public class Bag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class WaterCan : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
-    [SerializeField] private GameObject rationPrefab;
+    [SerializeField] private GameObject waterPrefab;
     [SerializeField] private Transform spawnPoint;
-    [SerializeField] private FillTheBowlMinigame fillTheBowl;
+    [SerializeField] private PlantTheCitronela plantTheCitronela;
     RectTransform rectTransform;
     [SerializeField] private float rotationOnClick;
     [SerializeField] private RectTransform moveArea;
@@ -37,7 +38,7 @@ public class Bag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragH
     {
         isHolding = true;
         rectTransform.localRotation = Quaternion.Euler(0, 0, rotationOnClick);
-        StartCoroutine(SpawnRationWithCooldown()); // Start spawning rations
+        StartCoroutine(SpawnWaterWithCooldown()); // Start spawning rations
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -46,13 +47,13 @@ public class Bag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragH
         rectTransform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 
-    private IEnumerator SpawnRationWithCooldown()
+    private IEnumerator SpawnWaterWithCooldown()
     {
         while (isHolding) // Keep spawning while the player is holding
         {
             if (canSpawn)
             {
-                SpawnRation();
+                SpawnWater();
                 canSpawn = false; // Prevent immediate re-spawning
                 yield return new WaitForSeconds(spawnCooldown); // Wait for the cooldown
                 canSpawn = true; // Allow spawning again
@@ -61,9 +62,9 @@ public class Bag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragH
         }
     }
 
-    private void SpawnRation()
+    private void SpawnWater()
     {
-        GameObject ration = Instantiate(rationPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject ration = Instantiate(waterPrefab, spawnPoint.position, Quaternion.identity);
 
         //SoundManager.Instance.PlayRandomPitchSFXSound(3);
 
@@ -88,5 +89,4 @@ public class Bag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragH
             transform.position = Input.mousePosition;
         }
     }
-
 }
