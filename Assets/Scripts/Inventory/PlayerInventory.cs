@@ -54,6 +54,14 @@ public class PlayerInventory : MonoBehaviour
         }
         return null;
     }
+    public string GetItemID()
+    {
+        if (_heldItem != null)
+        {
+            return _heldItem.id;
+        }
+        return null;
+    }
 
     /// <summary>
     /// Remove o item atual do inventário.

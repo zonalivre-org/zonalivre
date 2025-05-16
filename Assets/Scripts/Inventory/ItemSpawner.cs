@@ -51,7 +51,8 @@ public class ItemSpawner : MonoBehaviour
 
             PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
 
-            if (playerInventory != null)
+   
+            if(itemToGive.id != playerInventory.GetItemID())
             {
                 playerInventory.SetItem(itemToGive);
                 if (itemToGive.id == "Racao"){
@@ -63,8 +64,10 @@ public class ItemSpawner : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Objeto com tag 'Player' não tem PlayerInventory!", other.gameObject);
+                playerInventory.RemoveItem();
             }
+      
+  
         }
     }
 
