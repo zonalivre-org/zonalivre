@@ -35,6 +35,9 @@ public class PetInteract : MonoBehaviour
     {
         if (enableMinigameStart && other.gameObject.CompareTag("Player"))
         {
+            if (playerInventory.GetItem() != null){
+                return;
+            }
             dogMovement.canAutoMove = false;
             dogMovement.SetAutonomousMovement(false);
             Debug.Log("Entrou na area do pet!");

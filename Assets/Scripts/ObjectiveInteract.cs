@@ -57,7 +57,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     #endregion
 
-    private bool enable = false, interactable = true;
+    public bool enable = false, interactable = true;
     private float cooldownTimer;
     [HideInInspector] public bool isComplete = false;
     private PlayerInventory playerInventory;
@@ -73,6 +73,14 @@ public class ObjectiveInteract : MonoBehaviour
 
         cooldownTimer = cooldown;
     }
+    void OnEnable()
+    {
+        MiniGameBase.OnMiniGameEnd += TurnOffEnable;
+    }
+    void OnDisable()
+    {
+        MiniGameBase.OnMiniGameEnd -= TurnOffEnable;
+    }
 
     private void HandleInteraction()
     {
@@ -86,9 +94,37 @@ public class ObjectiveInteract : MonoBehaviour
         if (cooldownTimer <= 0f) { interactable = true; cooldownTimer = cooldown; }
     }
 
-    private void SelectObjective()
+ private void SelectObjective()
     {
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, clicklableLayers)) { enable = true; } else if (enable) enable = false;
+        RaycastHit hit;
+        // Lança um raio a partir da posição do mouse nas camadas clicklableLayers.
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
+        {
+            // *** CORREÇÃO: Verificar se o objeto clicado É este GameObject ***
+            if (hit.collider.gameObject == this.gameObject)
+            {
+                // Se clicou NESTE objetivo e ele está interagível (não completo e não em cooldown), HABILITA o trigger check.
+                // A flag 'interactable' já garante que não está completo ou em cooldown.
+                if (interactable)
+                {
+                    enable = true; // Habilita a flag para que OnTriggerStay possa iniciar o minigame
+                    // Debug.Log($"Objetivo {gameObject.name} selecionado por clique. Trigger habilitado!"); // Para Debug
+                    // TODO: Opcional: Mostrar feedback visual de seleção
+                }
+                 // else { Debug.Log($"Objetivo {gameObject.name} clicado, mas não interagível."); } // Feedback se clicou mas não interagiu
+            }
+            else if (enable)
+            {
+                // Se clicou em outro objeto nas camadas clicklableLayers ENQUANTO este objetivo estava 'enable', CANCELA.
+                // Isso impede que um clique em outro objetivo dispare o minigame deste.
+                enable = false; // Desabilita a flag 'enable'
+                // Debug.Log($"Seleção de {gameObject.name} cancelada (clicou em outro lugar)."); // Para Debug
+                 CancelInvoke(nameof(StartMinigame)); // Cancela qualquer agendamento pendente
+                // A lógica de cancelamento de minigame em execução deve ser chamada externamente
+                // pelo sistema que gerencia minigames (ex: um GameManager).
+            }
+        }
+        // Se clicou FORA das clicklableLayers, o Raycast falha e 'enable' permanece como estava.
     }
 
     public void CloseTask()
@@ -183,6 +219,10 @@ public class ObjectiveInteract : MonoBehaviour
             // playerMovement.ToggleMovement(true);
             return false;
         }
+    }
 
+    private void TurnOffEnable()
+    {
+        enable = false;
     }
 }

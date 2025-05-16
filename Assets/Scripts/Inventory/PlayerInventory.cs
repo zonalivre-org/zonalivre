@@ -6,7 +6,7 @@ public class PlayerInventory : MonoBehaviour
     // Evento que outros scripts podem ouvir quando o item no inventário muda
     public event Action<ItemData> OnItemChanged;
 
-    private ItemData _heldItem; // O item que o jogador está segurando atualmente
+    public ItemData _heldItem; // O item que o jogador está segurando atualmente
 
     // --- Propriedades ---
     public ItemData HeldItem => _heldItem;
