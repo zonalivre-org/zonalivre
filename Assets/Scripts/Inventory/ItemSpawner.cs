@@ -11,11 +11,12 @@ public class ItemSpawner : MonoBehaviour
 
     // --- Controle de Interação (Baseado em Clique) ---
     [Tooltip("Indica se a interação por trigger está habilitada (ativada por clique).")]
-    public bool enable = false; // Flag: Habilita o trigger check em OnTriggerEnter após clique.
+    public bool enable = false, isPlayerInsideTrigger = false; // Flag: Habilita o trigger check em OnTriggerEnter após clique.
 
     // Usaremos a Layer do próprio GameObject para o Raycast
     private LayerMask thisObjectLayerMask; // NOVO: LayerMask gerada a partir da layer deste objeto.
     private DogMovement dogMovement;
+    private PlayerInventory playerInventory;
 
     void Awake() // Use Awake para garantir que a layer seja obtida antes de Start de outros scripts
     {
@@ -27,38 +28,39 @@ public class ItemSpawner : MonoBehaviour
         thisObjectLayerMask = 1 << thisLayerIndex;
         dogMovement = FindObjectOfType<DogMovement>();
 
-
+        playerInventory = FindObjectOfType<PlayerInventory>();
 
     }
 
     void Update()
     {
 
-      if (Input.GetMouseButtonDown(0))
-      {
-        SelectObjective(); 
-      }
+        if (Input.GetMouseButtonDown(0))
+        {
+            SelectObjective();
+        }
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
 
-        if (enable && other.CompareTag("Player")) 
+        if (enable && other.CompareTag("Player"))
         {
 
-            enable = false; 
+            enable = false;
+            isPlayerInsideTrigger = true; // Define a flag para indicar que o player está dentro do trigger
 
-            PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
 
-   
-            if(itemToGive.id != playerInventory.GetItemID())
+            if (itemToGive.id != playerInventory.GetItemID())
             {
                 playerInventory.SetItem(itemToGive);
-                if (itemToGive.id == "Racao"){
+                if (itemToGive.id == "Racao")
+                {
                     dogMovement.RequestFollowPlayer();
                 }
-                else if (itemToGive.id == "Coleira"){
+                else if (itemToGive.id == "Coleira")
+                {
                     dogMovement.RequestFlee();
                 }
             }
@@ -66,11 +68,17 @@ public class ItemSpawner : MonoBehaviour
             {
                 playerInventory.RemoveItem();
             }
-      
-  
+
+
         }
     }
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInsideTrigger = false; // Reseta a flag quando o player sai do trigger
+        }
+    }
     private void SelectObjective()
     {
         RaycastHit hit;
@@ -80,12 +88,26 @@ public class ItemSpawner : MonoBehaviour
 
             if (hit.collider.gameObject == gameObject)
             {
-                enable = true;
+                enable = true; // Habilita a flag para que OnTriggerEnter possa iniciar o minigame
+
+                if (isPlayerInsideTrigger) // Verifica a nova flag
+                {
+                    CheckAndRemoveItem();
+                }
+
 
             }
+
 
         }
 
     }
 
+    private void CheckAndRemoveItem()
+    {
+        if (playerInventory.GetItem() != null && playerInventory.GetItem().id == itemToGive.id)
+        {
+            playerInventory.RemoveItem();
+        }
+    }
 }
