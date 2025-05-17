@@ -112,6 +112,7 @@ public class TutorialManager : MonoBehaviour
                         "Interação com tarefas",
                         "Muito bem! Seu objetivo é realizar tarefas pelo mapa. Para iniciar uma tarefa, basta andar até ela. Tente colher algumas mangas naquele pé de manga."
                     );
+                    popUp.SetVideoPlayer("WalkingMangoTree.mp4");
                 }
                 break;
 
@@ -125,6 +126,7 @@ public class TutorialManager : MonoBehaviour
                         "Interação com tarefas usando itens",
                         "Ótimo! Agora você já sabe como interagir com as tarefas. No entanto, algumas tarefas necessitam de itens para serem feitas. Colete o item TELA <Icone da tela> no mapa. Basta encostar nele."
                     );
+                    popUp.SetVideoPlayer("WalkingScreen.mp4");
                 }
                 break;
 
@@ -139,6 +141,7 @@ public class TutorialManager : MonoBehaviour
                         "Interação com tarefas usando itens",
                         "Excelente! Agora que você coletou o item TELA <Icone da tela>, leve-o para o OBJETIVO JANELA <Icone da janela> para aplicar a TELA."
                     );
+                    popUp.SetVideoPlayer("WalkingWindow.mp4");
                 }
                 break;
 
@@ -152,6 +155,7 @@ public class TutorialManager : MonoBehaviour
                         "Muito bem! Entendido como os objetivos funcionam. Agora, vamos cuidar do seu pet! "
                         + "Ele possui três necessidades: Saúde <sprite=10>, Fome <sprite=5> e Felicidade <sprite=3>. Você pode ver essas informações na parte superior esquerda da tela."
                     );
+                    popUp.SetVideoPlayer("StatusBar.mp4");
                 }
                 break;
 
@@ -163,6 +167,7 @@ public class TutorialManager : MonoBehaviour
                         "Cuidando do seu pet",
                         "Cuidado! Fora do tutorial, essas necessidades diminuem com o tempo. Então você precisa tirar tempo para cuidar das necessidades do seu pet. Caso uma delas chegue a zero, você perde o jogo."
                     );
+                    popUp.SetVideoPlayer("StatusBar.mp4");
                 }
                 break;
 
@@ -178,6 +183,7 @@ public class TutorialManager : MonoBehaviour
                         "Cuidando do seu pet",
                         "Vamos começar levando ele ao veterinário. A saúde é representada pelo ícone <Icone da Saude>. Para aumentar ela, colete a coleira <Icone da coleira> no mapa e vá até o pet."
                     );
+                    popUp.SetVideoPlayer("DogCollar.mp4");
                     statusIcons[0].SetActive(true);
                     petInteract.canHeal = true;
                 }
@@ -187,15 +193,15 @@ public class TutorialManager : MonoBehaviour
                 if (petMinigamesCompleted >= 1)
                 {
                     currentStep++;
-                    //minigameBlock[5].GetComponent<CapsuleCollider>().enabled = false; // Disable the pet collider object
                     petItems[1].SetActive(true);
                     minigameIndicators[5].SetActive(false); // Disable the Coleira indicator
                     minigameIndicators[6].SetActive(true); // Activate the Ration Bag indicator
                     popUp.SetPopUp(
                         "Cuidando do seu pet",
                         "Ótimo! É sempre importante levar seu pet ao veterinário. Agora, vamos alimentá-lo. A fome é representada pelo ícone <Icone da comida>. "
-                        + "Para isso, colete o saco de ração <Icone da comida> no mapa e vá até o pet."
+                        + "Para alimentar ele, colete o saco de ração <Icone da comida> no mapa e vá até o pet."
                     );
+                    popUp.SetVideoPlayer("DogRation.mp4");
                     statusIcons[1].SetActive(true);
                     petInteract.canFeed = true;
                     petInteract.canHeal = false;
@@ -210,6 +216,7 @@ public class TutorialManager : MonoBehaviour
                         "Cuidando do seu pet",
                         "Excelente! Agora que ele está alimentado e saudável, faça carinho nele. A felicidade é representada pelo ícone <Icone da felicidade>. Para aumentar ela, basta ir até ele sem carregar nenhum item."
                     );
+                    popUp.SetVideoPlayer("DogPet.mp4");
                     statusIcons[2].SetActive(true);
                     petInteract.canPet = true;
                     petInteract.canFeed = false;
@@ -224,6 +231,7 @@ public class TutorialManager : MonoBehaviour
                         "Mexendo com itens",
                         "Se precisar largar um item da mão, existem duas formas: 1. Você pode devolver o item para o mesmo lugar que você pegou. 2. Ao concluir ou fechar um objetivo."
                     );
+                    popUp.SetVideoPlayer("DropItem.mp4");
                 }
                 break;
 
@@ -233,8 +241,9 @@ public class TutorialManager : MonoBehaviour
                     currentStep++;
                     popUp.SetPopUp(
                         "Mão na massa",
-                        "Muito Bem! Agora, para finalizar, complete as tarefas restantes para acabarmos as lições. "
+                        "Muito Bem! Agora, para finalizar, complete as tarefas restantes para acabar as lições. "
                     );
+                    popUp.SetVideoPlayer("TaskButton.mp4");
                     minigames[1].GetComponent<BoxCollider>().enabled = true; // Activate the leaves minigame collision
                     minigameIndicators[1].SetActive(true); // Activate the Leaves indicator
                     minigameIndicators[4].SetActive(true); // Activate the Moskito Screen indicator
@@ -254,6 +263,7 @@ public class TutorialManager : MonoBehaviour
                         "Tarefas",
                         "Você pode checar todas as tarefas da fase no botão <Icone do botão>. "
                     );
+                    popUp.SetVideoPlayer("TaskButton.mp4");
                 }
                 break;
             case 14:
