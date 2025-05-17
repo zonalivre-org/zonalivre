@@ -7,8 +7,10 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private PetInteract petInteract;
     [SerializeField] private PopUp popUp;
     [SerializeField] private GameObject[] minigameBlock;
+    [SerializeField] private GameObject[] petItems;
     [SerializeField] private GameObject taskButton;
 
     #region Tutorial Variables
@@ -16,6 +18,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private int timesMoved = 0;
     [SerializeField] private int popUpsClosed = 0;
     [SerializeField] private int minigameCompleted = 0;
+    [SerializeField] private int petMinigamesCompleted = 0;
     [SerializeField] private int itensCollected = 0;
     [SerializeField] private int petItensCollected = 0;
     #endregion
@@ -26,6 +29,11 @@ public class TutorialManager : MonoBehaviour
         gameManager.currentHappyness = gameManager.happyness / 2;
         gameManager.currentStamina = gameManager.stamina / 2;
         gameManager.currentHealth = gameManager.health / 2;
+
+        petInteract.canHeal = false;
+        petInteract.canFeed = false;
+        petInteract.canPet = false;
+
         taskButton.gameObject.SetActive(false);
 
         // Subscribe to the OnDestinationReached Action
@@ -38,6 +46,8 @@ public class TutorialManager : MonoBehaviour
         MiniGameBase.OnMiniGameComplete += OnMinigameCompleted;
 
         playerInventory.OnItemChanged += OnItemCollected;
+
+        petInteract.OnMinigameComplete += OnPetMinigameCompleted;
     }
 
     void Update()
@@ -105,7 +115,7 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case 5:
-                if (itensCollected >= 1)
+                if (itensCollected >= 1 && playerInventory.GetItemID() == "Tela")
                 {
                     currentStep++;
                     minigameBlock[4].GetComponent<BoxCollider>().enabled = true; // Activate the Window collider object
@@ -144,10 +154,41 @@ public class TutorialManager : MonoBehaviour
                 {
                     currentStep++;
                     minigameBlock[5].GetComponent<CapsuleCollider>().enabled = true; // Activate the pet collider object
+                    petItems[0].SetActive(true);
                     popUp.SetPopUp(
                         "Cuidando do seu pet",
-                        "Vamos começar cuidando da felicidade dele. Encoste nele para fazer carinho"
+                        "Vamos começar levando ele ao veterinário. A saúde é representada pelo ícone <Icone da Saude>. Para isso, colete a coleira <Icone da coleira> no mapa e vá até o pet."
                     );
+                    petInteract.canHeal = true;
+                }
+                break;
+
+            case 9:
+                if (petMinigamesCompleted >= 1)
+                {
+                    currentStep++;
+                    //minigameBlock[5].GetComponent<CapsuleCollider>().enabled = false; // Disable the pet collider object
+                    petItems[1].SetActive(true);
+                    popUp.SetPopUp(
+                        "Cuidando do seu pet",
+                        "Ótimo! É sempre importante levar seu pet ao veterinário. Agora, vamos alimentá-lo. A fome é representada pelo ícone <Icone da comida>. "
+                        + "Para isso, colete o saco de ração <Icone da comida> no mapa e vá até o pet."
+                    );
+                    petInteract.canFeed = true;
+                    petInteract.canHeal = false;
+                }
+                break;
+            case 10:
+                if (petMinigamesCompleted >= 2)
+                {
+                    currentStep++;
+                    //minigameBlock[5].GetComponent<CapsuleCollider>().enabled = false; // Disable the pet collider object
+                    popUp.SetPopUp(
+                        "Cuidando do seu pet",
+                        "Excelente! Agora que ele está alimentado e saudável, faça carinho nele. A felicidade é representada pelo ícone <Icoen da felicidade>. Para isso, basta ir até ele sem carregar nenhum item."
+                    );
+                    petInteract.canPet = true;
+                    petInteract.canFeed = false;
                 }
                 break;
 
@@ -180,6 +221,11 @@ public class TutorialManager : MonoBehaviour
     private void OnItemCollected(ItemData item)
     {
         itensCollected++;
+    }
+
+    private void OnPetMinigameCompleted()
+    {
+        petMinigamesCompleted++;
     }
 
     private void OnDestroy()

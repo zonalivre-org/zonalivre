@@ -20,9 +20,12 @@ public class PetInteract : MonoBehaviour
     [SerializeField] private GameObject happynessMinigameUI;
     private bool enableMinigameStart = false, interactable = true;
     private PlayerInventory playerInventory;
+    public Action OnMinigameComplete;
+    public bool canHeal = true, canFeed = true, canPet = true;
 
     [Header("Place Holder Variables for Debugging Porpuses")]
     [SerializeField] private LayerMask healthLayer, staminaLayer, happynessLayer;
+
     private void Awake()
     {
         playerInventory = FindObjectOfType<PlayerInventory>();
@@ -119,6 +122,7 @@ public class PetInteract : MonoBehaviour
         dogMovement.SetAutonomousMovement(true);
         dogMovement.canAutoMove = true;
         interactable = true;
+        OnMinigameComplete?.Invoke();
     }
 
     public void CancelTask() // receives a value from another script to cancel the minigame and return to the game.
@@ -135,15 +139,15 @@ public class PetInteract : MonoBehaviour
         if (enableMinigameStart)
         {
 
-            if (playerInventory.GetItem() && playerInventory.GetItem().id == "Coleira")
+            if (playerInventory.GetItem() && playerInventory.GetItem().id == "Coleira" && canHeal)
             {
                 StartHealthMinigame();
             }
-            else if (playerInventory.GetItem() && playerInventory.GetItem().id == "Racao")
+            else if (playerInventory.GetItem() && playerInventory.GetItem().id == "Racao" && canFeed)
             {
                 StartStaminaMinigame();
             }
-            else
+            else if (canPet)
             {
                 StartHappynessMinigame();
             }

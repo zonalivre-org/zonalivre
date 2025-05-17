@@ -455,6 +455,12 @@ VideoPlayer:
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!1 &154225995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5335297561532913243, guid: eee9d11de3f06844282df4bb07a6f62b,
+    type: 3}
+  m_PrefabInstance: {fileID: 208025118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &159477271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3066,6 +3072,7 @@ MonoBehaviour:
   gameManager: {fileID: 1478815602}
   playerController: {fileID: 2249948526550260760}
   playerInventory: {fileID: 2249948526550260762}
+  petInteract: {fileID: 1209141997}
   popUp: {fileID: 1302973198}
   minigameBlock:
   - {fileID: 571676508}
@@ -3074,11 +3081,15 @@ MonoBehaviour:
   - {fileID: 394515989}
   - {fileID: 1320578165}
   - {fileID: 1209141996}
+  petItems:
+  - {fileID: 154225995}
+  - {fileID: 1929278173}
   taskButton: {fileID: 1180630755}
   currentStep: 0
   timesMoved: 0
   popUpsClosed: 0
   minigameCompleted: 0
+  petMinigamesCompleted: 0
   itensCollected: 0
   petItensCollected: 0
 --- !u!4 &1178560553 stripped
@@ -3284,6 +3295,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 159477271}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1209141997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
+    type: 3}
+  m_PrefabInstance: {fileID: 159477271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209141996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d8df7da8922ac4b88244d6e54f0cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1236062863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5163,6 +5186,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 542012702}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1712153920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9200413843154070304, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 2496538277273570598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724110620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,6 +5864,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1 &1929278173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5335297561532913243, guid: 3f1ddf6eb3986064bb9d12829525140c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1634922571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1947055152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c48906eea617eba4b9ee025beccc61be,
@@ -7672,7 +7707,7 @@ PrefabInstance:
         type: 3}
       propertyPath: minigame
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1712153920}
     - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: taskIcon
