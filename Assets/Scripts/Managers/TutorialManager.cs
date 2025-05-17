@@ -87,7 +87,6 @@ public class TutorialManager : MonoBehaviour
             case 2:
                 if (popUpsClosed >= 2)
                 {
-                    ShowInitialPopUp();
                     minigames[0].GetComponent<BoxCollider>().enabled = false; // Disable the mango minigame collision
                     petInteract.gameObject.GetComponent<CapsuleCollider>().enabled = false; // Disable the pet collider object
                     currentStep++;
@@ -274,6 +273,7 @@ public class TutorialManager : MonoBehaviour
                         "Finalmente acabou!",
                         "Parabéns! Agora que você viu como o jogo funciona, você pode começar a jogar de verdade. Sempre que quiser, o tutorial poderá ser repetido na seleção de níveis. Feche essa janela para começar a jogar."
                     );
+                    popUp.SetVideoPlayer("HappyDog.mp4");
 
                 }
                 break;
@@ -286,14 +286,6 @@ public class TutorialManager : MonoBehaviour
                 break;
         }
 
-    }
-
-    private void ShowInitialPopUp()
-    {
-        popUp.SetPopUp(
-            "Como se movimentar",
-            "Bem vindo ao Tutorial! Para conseguir se movimentar pelo mapa, basta tocar/clicar em algum lugar do mapa. Feche essa janela e tente se movimentar 3 vezes."
-        );
     }
 
     private void OnDestinationReached()
