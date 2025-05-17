@@ -301,12 +301,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8690417497009972960}
+  - {fileID: 6575928548362800119}
   - {fileID: 7776334965891526948}
   - {fileID: 6259530398151441315}
   - {fileID: 1635906307338887488}
   - {fileID: 6014068010787327972}
   - {fileID: 637260381629696085}
-  - {fileID: 6575928548362800119}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
