@@ -111,6 +111,7 @@ public class ItemSpawner : MonoBehaviour
         }
         else
         {
+            Debug.Log("Item não encontrado ou não é o mesmo que o spawner.");
             playerInventory.SetItem(itemToGive);
             if (itemToGive.id == "Racao")
             {
