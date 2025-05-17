@@ -3214,6 +3214,7 @@ MonoBehaviour:
   playerController: {fileID: 2249948526550260760}
   playerInventory: {fileID: 2249948526550260762}
   petInteract: {fileID: 1209141997}
+  taskManager: {fileID: 432439609}
   changeScene: {fileID: 1989455485}
   popUp: {fileID: 1302973198}
   minigames:
@@ -3237,7 +3238,6 @@ MonoBehaviour:
   - {fileID: 101409127}
   - {fileID: 620194549}
   - {fileID: 832152350}
-  taskButton: {fileID: 1180630755}
   currentStep: 0
   timesMoved: 0
   popUpsClosed: 0

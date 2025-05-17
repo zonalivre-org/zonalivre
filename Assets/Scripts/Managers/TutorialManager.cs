@@ -8,6 +8,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private PlayerController playerController;
     [SerializeField] private PlayerInventory playerInventory;
     [SerializeField] private PetInteract petInteract;
+    [SerializeField] private TaskManager taskManager;
     [SerializeField] private ChangeScene changeScene;
     [SerializeField] private PopUp popUp;
     [SerializeField] private GameObject[] minigames;
@@ -23,6 +24,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private int petMinigamesCompleted = 0;
     [SerializeField] private int itensCollected = 0;
     [SerializeField] private int petItensCollected = 0;
+
     #endregion
 
     void Start()
@@ -255,7 +257,7 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case 14:
-                if (minigameCompleted >= 5)
+                if (CheckCompleteMinigames())
                 {
                     currentStep++;
                     popUp.SetPopUp(
@@ -267,7 +269,6 @@ public class TutorialManager : MonoBehaviour
                 break;
             case 15:
                 if (popUpsClosed >= 15)
-                
                 {
                     changeScene.ChangeToSceneMusic(1);
                     changeScene.LoadSceneDelay(1);
@@ -308,6 +309,27 @@ public class TutorialManager : MonoBehaviour
     private void OnPetMinigameCompleted()
     {
         petMinigamesCompleted++;
+    }
+
+    private bool CheckCompleteMinigames()
+    {
+        int minigameCount = 0;
+        foreach (GameObject item in taskManager.GetTaskListItems())
+        {
+            if (item.GetComponent<TaskItem>().isComplete)
+            {
+                minigameCount++;
+            }
+        }
+
+        if (minigameCount == taskManager.GetTaskListItems().Count)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void OnDestroy()
