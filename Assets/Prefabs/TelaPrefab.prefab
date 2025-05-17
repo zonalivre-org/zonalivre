@@ -57,8 +57,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 2, z: 10}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 5.38, y: 2, z: 12.12}
+  m_Center: {x: 0, y: 1, z: 4.18}
 --- !u!54 &1091819450973838026
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToGive: {fileID: 11400000, guid: f789c7116ecb5b7169b2222dbb14dd12, type: 2}
+  enable: 0
+  isPlayerInsideTrigger: 0
 --- !u!1 &7053057815086466252
 GameObject:
   m_ObjectHideFlags: 0

@@ -150,29 +150,33 @@ public class GameManager : MonoBehaviour
 
     private void ShowResultPanel(int state)
     {
-        Time.timeScale = 0f;
-        if (state != 0)
+        if (resultUI != null)
         {
-            enablecountdown = false;
-            playerMovement.ToggleMovement(false);
-            petMovement.SetAutonomousMovement(false);
-            resultUI.SetActive(true);
-        }
-        else Debug.Log("The results panel was called but the players hasn't won or lost yet!");
+            Time.timeScale = 0f;
+            if (state != 0)
+            {
+                enablecountdown = false;
+                playerMovement.ToggleMovement(false);
+                petMovement.SetAutonomousMovement(false);
+                resultUI.SetActive(true);
+            }
+            else Debug.Log("The results panel was called but the players hasn't won or lost yet!");
 
-        if (state > 0) resultText.text = "Parabéns! Você venceu!";
+            if (state > 0) resultText.text = "Parabéns! Você venceu!";
 
-        else if (state < 0)
-        {
-            nextLevelButton.SetActive(false);
-            loseText.gameObject.SetActive(true);
-            resultText.text = "Oh não! Voce perdeu!";
-            if (healthSlider.value <= 0.0001) loseText.text = "Saúde do Pet zerada!";
-            else if (staminaSlider.value <= 0.0001) loseText.text = "Fome do Pet zerada!";
-            else if (happynessSlider.value <= 0.0001) loseText.text = "Felicidade do Pet zerada!";
-            else if (clockSlider.value <= 0.0001) loseText.text = "Tempo zerado!";
-            else loseText.text = "Motivo não listado! Vai resolver >:(";
+            else if (state < 0)
+            {
+                nextLevelButton.SetActive(false);
+                loseText.gameObject.SetActive(true);
+                resultText.text = "Oh não! Voce perdeu!";
+                if (healthSlider.value <= 0.0001) loseText.text = "Saúde do Pet zerada!";
+                else if (staminaSlider.value <= 0.0001) loseText.text = "Fome do Pet zerada!";
+                else if (happynessSlider.value <= 0.0001) loseText.text = "Felicidade do Pet zerada!";
+                else if (clockSlider.value <= 0.0001) loseText.text = "Tempo zerado!";
+                else loseText.text = "Motivo não listado! Vai resolver >:(";
+            }
         }
+
     }
 
     public void AddScore(int score)

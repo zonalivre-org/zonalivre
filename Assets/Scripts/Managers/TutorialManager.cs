@@ -8,10 +8,12 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private PlayerController playerController;
     [SerializeField] private PlayerInventory playerInventory;
     [SerializeField] private PetInteract petInteract;
+    [SerializeField] private ChangeScene changeScene;
     [SerializeField] private PopUp popUp;
-    [SerializeField] private GameObject[] minigameBlock;
+    [SerializeField] private GameObject[] minigames;
+    [SerializeField] private GameObject[] minigameIndicators;
     [SerializeField] private GameObject[] petItems;
-    [SerializeField] private GameObject taskButton;
+    [SerializeField] private GameObject[] statusIcons;
 
     #region Tutorial Variables
     [SerializeField] private int currentStep = 0;
@@ -34,7 +36,15 @@ public class TutorialManager : MonoBehaviour
         petInteract.canFeed = false;
         petInteract.canPet = false;
 
-        taskButton.gameObject.SetActive(false);
+        for (int i = 0; i < statusIcons.Length; i++)
+        {
+            statusIcons[i].SetActive(false);
+        }
+
+        for (int i = 0; i < minigameIndicators.Length; i++)
+        {
+            minigameIndicators[i].SetActive(false);
+        }
 
         // Subscribe to the OnDestinationReached Action
         playerController.OnDestinationReached += OnDestinationReached;
@@ -76,9 +86,8 @@ public class TutorialManager : MonoBehaviour
                 if (popUpsClosed >= 2)
                 {
                     ShowInitialPopUp();
-                    minigameBlock[0].GetComponent<BoxCollider>().enabled = false; // Disable the mango minigame collision
-                    minigameBlock[3].GetComponent<BoxCollider>().enabled = true; // Disable the window minigame collision
-                    minigameBlock[5].GetComponent<CapsuleCollider>().enabled = false; // Disable the pet collider object
+                    minigames[0].GetComponent<BoxCollider>().enabled = false; // Disable the mango minigame collision
+                    petInteract.gameObject.GetComponent<CapsuleCollider>().enabled = false; // Disable the pet collider object
                     currentStep++;
                     popUp.SetPopUp(
                         "Como se movimentar",
@@ -92,9 +101,11 @@ public class TutorialManager : MonoBehaviour
                 if (timesMoved >= 4)
                 {
                     currentStep++;
-                    minigameBlock[0].GetComponent<BoxCollider>().enabled = true; // Enable the mango minigame collision
-                    minigameBlock[1].GetComponent<BoxCollider>().enabled = false; // Disable the leaves minigame collision
-                    minigameBlock[2].SetActive(false); // Disable the Leaves indicator
+                    minigames[0].GetComponent<BoxCollider>().enabled = true; // Enable the mango minigame collision
+                    minigames[1].GetComponent<BoxCollider>().enabled = false; // Disable the leaves minigame collision
+                    minigames[1].GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(false); // Disable the leaves minigame task
+                    minigameIndicators[0].SetActive(true); // Activate the Mango indicator
+                    minigameIndicators[1].SetActive(false); // Disable the Leaves indicator
                     popUp.SetPopUp(
                         "Interação com tarefas",
                         "Muito bem! Seu objetivo é realizar tarefas pelo mapa. Para iniciar uma tarefa, basta andar até ela. Tente colher algumas mangas naquele pé de manga."
@@ -106,7 +117,8 @@ public class TutorialManager : MonoBehaviour
                 if (minigameCompleted >= 1)
                 {
                     currentStep++;
-                    minigameBlock[3].SetActive(true); // Activate the Moskito Screen object
+                    minigames[2].SetActive(true); // Activate the Moskito Screen object
+                    minigameIndicators[4].SetActive(true); // Activate the Moskito Screen indicator
                     popUp.SetPopUp(
                         "Interação com tarefas usando itens",
                         "Ótimo! Agora você já sabe como interagir com as tarefas. No entanto, algumas tarefas necessitam de itens para serem feitas. Colete o item TELA <Icone da tela> no mapa. Basta encostar nele."
@@ -118,7 +130,9 @@ public class TutorialManager : MonoBehaviour
                 if (itensCollected >= 1 && playerInventory.GetItemID() == "Tela")
                 {
                     currentStep++;
-                    minigameBlock[4].GetComponent<BoxCollider>().enabled = true; // Activate the Window collider object
+                    minigameIndicators[2].SetActive(true); // Activate the Window indicator
+                    minigameIndicators[4].SetActive(false); // Disable the Moskito Screen indicator
+                    minigames[4].GetComponent<BoxCollider>().enabled = true; // Activate the Window collider object
                     popUp.SetPopUp(
                         "Interação com tarefas usando itens",
                         "Excelente! Agora que você coletou o item TELA <Icone da tela>, leve-o para o OBJETIVO JANELA <Icone da janela> para aplicar a TELA."
@@ -130,6 +144,7 @@ public class TutorialManager : MonoBehaviour
                 if (minigameCompleted >= 2)
                 {
                     currentStep++;
+                    minigameIndicators[4].SetActive(false); // Disable the Moskito Screen indicator
                     popUp.SetPopUp(
                         "Cuidando do seu pet",
                         "Muito bem! Entendido como os objetivos funcionam. Agora, vamos cuidar do seu pet! "
@@ -153,12 +168,15 @@ public class TutorialManager : MonoBehaviour
                 if (popUpsClosed >= 8)
                 {
                     currentStep++;
-                    minigameBlock[5].GetComponent<CapsuleCollider>().enabled = true; // Activate the pet collider object
+                    petInteract.gameObject.GetComponent<CapsuleCollider>().enabled = true; // Activate the pet collider object
+                    minigameIndicators[3].SetActive(true); // Activate the Pet indicator
+                    minigameIndicators[5].SetActive(true); // Activate the Coleira indicator
                     petItems[0].SetActive(true);
                     popUp.SetPopUp(
                         "Cuidando do seu pet",
                         "Vamos começar levando ele ao veterinário. A saúde é representada pelo ícone <Icone da Saude>. Para isso, colete a coleira <Icone da coleira> no mapa e vá até o pet."
                     );
+                    statusIcons[0].SetActive(true);
                     petInteract.canHeal = true;
                 }
                 break;
@@ -169,11 +187,14 @@ public class TutorialManager : MonoBehaviour
                     currentStep++;
                     //minigameBlock[5].GetComponent<CapsuleCollider>().enabled = false; // Disable the pet collider object
                     petItems[1].SetActive(true);
+                    minigameIndicators[5].SetActive(false); // Disable the Coleira indicator
+                    minigameIndicators[6].SetActive(true); // Activate the Ration Bag indicator
                     popUp.SetPopUp(
                         "Cuidando do seu pet",
                         "Ótimo! É sempre importante levar seu pet ao veterinário. Agora, vamos alimentá-lo. A fome é representada pelo ícone <Icone da comida>. "
                         + "Para isso, colete o saco de ração <Icone da comida> no mapa e vá até o pet."
                     );
+                    statusIcons[1].SetActive(true);
                     petInteract.canFeed = true;
                     petInteract.canHeal = false;
                 }
@@ -182,17 +203,78 @@ public class TutorialManager : MonoBehaviour
                 if (petMinigamesCompleted >= 2)
                 {
                     currentStep++;
-                    //minigameBlock[5].GetComponent<CapsuleCollider>().enabled = false; // Disable the pet collider object
+                    minigameIndicators[6].SetActive(false); // Disable the Ration Bag indicator
                     popUp.SetPopUp(
                         "Cuidando do seu pet",
-                        "Excelente! Agora que ele está alimentado e saudável, faça carinho nele. A felicidade é representada pelo ícone <Icoen da felicidade>. Para isso, basta ir até ele sem carregar nenhum item."
+                        "Excelente! Agora que ele está alimentado e saudável, faça carinho nele. A felicidade é representada pelo ícone <Icone da felicidade>. Para isso, basta ir até ele sem carregar nenhum item."
                     );
+                    statusIcons[2].SetActive(true);
                     petInteract.canPet = true;
                     petInteract.canFeed = false;
                 }
                 break;
 
+            case 11:
+                if (popUpsClosed >= 11)
+                {
+                    currentStep++;
+                    popUp.SetPopUp(
+                        "Mexendo com itens",
+                        "Se precisar largar um item da mão, existem duas formas: 1. Você pode devolver o item para o mesmo lugar que você pegou. 2. Ao concluir ou fechar um objetivo."
+                    );
+                }
+                break;
+
+            case 12:
+                if (petMinigamesCompleted >= 3)
+                {
+                    currentStep++;
+                    popUp.SetPopUp(
+                        "Mão na massa",
+                        "Muito Bem! Agora, para finalizar, complete as tarefas restantes para acabarmos as lições. "
+                    );
+                    minigames[1].GetComponent<BoxCollider>().enabled = true; // Activate the leaves minigame collision
+                    minigameIndicators[1].SetActive(true); // Activate the Leaves indicator
+                    minigameIndicators[4].SetActive(true); // Activate the Moskito Screen indicator
+
+                    minigames[4].SetActive(true); // Activate the Window Screen object
+                    minigames[4].GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(true); // Activate the Window Screen task
+                    minigames[1].GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(true); // Activate the leaves minigame task
+
+                }
+                break;
+
+            case 13:
+                if (popUpsClosed >= 13)
+                {
+                    currentStep++;
+                    popUp.SetPopUp(
+                        "Tarefas",
+                        "Você pode checar todas as tarefas da fase no botão <Icone do botão>. "
+                    );
+                }
+                break;
+            case 14:
+                if (minigameCompleted >= 5)
+                {
+                    currentStep++;
+                    popUp.SetPopUp(
+                        "Finalmente acabou!",
+                        "Parabéns! Agora que você viu como o jogo funciona, você pode começar a jogar de verdade. Sempre que quiser, o tutorial poderá ser repetido na seleção de níveis. Feche essa janela para começar a jogar"
+                    );
+
+                }
+                break;
+            case 15:
+                if (popUpsClosed >= 15)
+                
+                {
+                    changeScene.ChangeToSceneMusic(1);
+                    changeScene.LoadSceneDelay(1);
+                }
+                break;
         }
+
     }
 
     private void ShowInitialPopUp()
