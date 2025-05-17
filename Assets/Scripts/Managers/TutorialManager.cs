@@ -176,7 +176,7 @@ public class TutorialManager : MonoBehaviour
                     petItems[0].SetActive(true);
                     popUp.SetPopUp(
                         "Cuidando do seu pet",
-                        "Vamos começar levando ele ao veterinário. A saúde é representada pelo ícone <Icone da Saude>. Para isso, colete a coleira <Icone da coleira> no mapa e vá até o pet."
+                        "Vamos começar levando ele ao veterinário. A saúde é representada pelo ícone <Icone da Saude>. Para aumentar ela, colete a coleira <Icone da coleira> no mapa e vá até o pet."
                     );
                     statusIcons[0].SetActive(true);
                     petInteract.canHeal = true;
@@ -208,7 +208,7 @@ public class TutorialManager : MonoBehaviour
                     minigameIndicators[6].SetActive(false); // Disable the Ration Bag indicator
                     popUp.SetPopUp(
                         "Cuidando do seu pet",
-                        "Excelente! Agora que ele está alimentado e saudável, faça carinho nele. A felicidade é representada pelo ícone <Icone da felicidade>. Para isso, basta ir até ele sem carregar nenhum item."
+                        "Excelente! Agora que ele está alimentado e saudável, faça carinho nele. A felicidade é representada pelo ícone <Icone da felicidade>. Para aumentar ela, basta ir até ele sem carregar nenhum item."
                     );
                     statusIcons[2].SetActive(true);
                     petInteract.canPet = true;
@@ -262,7 +262,7 @@ public class TutorialManager : MonoBehaviour
                     currentStep++;
                     popUp.SetPopUp(
                         "Finalmente acabou!",
-                        "Parabéns! Agora que você viu como o jogo funciona, você pode começar a jogar de verdade. Sempre que quiser, o tutorial poderá ser repetido na seleção de níveis. Feche essa janela para começar a jogar"
+                        "Parabéns! Agora que você viu como o jogo funciona, você pode começar a jogar de verdade. Sempre que quiser, o tutorial poderá ser repetido na seleção de níveis. Feche essa janela para começar a jogar."
                     );
 
                 }
