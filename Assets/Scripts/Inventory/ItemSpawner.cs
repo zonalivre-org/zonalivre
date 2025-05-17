@@ -109,5 +109,17 @@ public class ItemSpawner : MonoBehaviour
         {
             playerInventory.RemoveItem();
         }
+        else
+        {
+            playerInventory.SetItem(itemToGive);
+            if (itemToGive.id == "Racao")
+            {
+                dogMovement.RequestFollowPlayer();
+            }
+            else if (itemToGive.id == "Coleira")
+            {
+                dogMovement.RequestFlee();
+            }
+        }
     }
 }
