@@ -220,10 +220,10 @@ TextureImporter:
       name: MosquitoNet
       rect:
         serializedVersion: 2
-        x: 1758
-        y: 2354
-        width: 357
-        height: 592
+        x: 1550
+        y: 2409
+        width: 372
+        height: 619
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +241,8 @@ TextureImporter:
       name: Mango
       rect:
         serializedVersion: 2
-        x: 2374
-        y: 2411
+        x: 2028
+        y: 2507
         width: 350
         height: 469
       alignment: 0
@@ -262,10 +262,10 @@ TextureImporter:
       name: Treats
       rect:
         serializedVersion: 2
-        x: 2703
-        y: 1876
-        width: 359
-        height: 575
+        x: 2468
+        y: 2402
+        width: 361
+        height: 593
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +304,10 @@ TextureImporter:
       name: Skep
       rect:
         serializedVersion: 2
-        x: 1726
-        y: 1958
-        width: 693
-        height: 344
+        x: 2415
+        y: 1689
+        width: 712
+        height: 370
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,10 +346,10 @@ TextureImporter:
       name: JarWithWater
       rect:
         serializedVersion: 2
-        x: 1723
-        y: 1553
-        width: 422
-        height: 267
+        x: 1745
+        y: 1193
+        width: 425
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,9 +367,9 @@ TextureImporter:
       name: JarWithoutWater
       rect:
         serializedVersion: 2
-        x: 2286
-        y: 1553
-        width: 423
+        x: 2210
+        y: 1201
+        width: 431
         height: 267
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -430,10 +430,10 @@ TextureImporter:
       name: JarWithFood
       rect:
         serializedVersion: 2
-        x: 1723
-        y: 1177
-        width: 419
-        height: 265
+        x: 1639
+        y: 766
+        width: 442
+        height: 279
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -451,10 +451,10 @@ TextureImporter:
       name: JarWithoutFood
       rect:
         serializedVersion: 2
-        x: 2289
-        y: 1177
-        width: 421
-        height: 265
+        x: 2111
+        y: 768
+        width: 442
+        height: 275
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,10 +472,10 @@ TextureImporter:
       name: PileofLeaves
       rect:
         serializedVersion: 2
-        x: 1121
-        y: 121
-        width: 810
-        height: 679
+        x: 936
+        y: 0
+        width: 826
+        height: 692
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -493,10 +493,10 @@ TextureImporter:
       name: TreatsPackage
       rect:
         serializedVersion: 2
-        x: 2204
-        y: 288
-        width: 549
-        height: 703
+        x: 1697
+        y: 1603
+        width: 566
+        height: 721
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -506,6 +506,69 @@ TextureImporter:
       bones: []
       spriteID: 49c4094ea67f6aa43a63845ab5413637
       internalID: 1717815786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trash_Can
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 22
+        width: 552
+        height: 662
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33dc9357b4034524792fbbe85739e3fd
+      internalID: -2130961398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full_Trash_Can
+      rect:
+        serializedVersion: 2
+        x: 2513
+        y: 29
+        width: 563
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c443461147209438a248ee58192542
+      internalID: 383130306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trash
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 753
+        width: 450
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88867eff1099f9419a6dbbc64a484c5
+      internalID: 1529949989
       vertices: []
       indices: 
       edges: []
@@ -524,6 +587,7 @@ TextureImporter:
       Assets01_7: 642847770
       Broom: 1696733685
       ChickenHouse: 140729347
+      Full_Trash_Can: 383130306
       JarWithFood: 1727125690
       JarWithWater: -1063171409
       JarWithoutFood: -835165015
@@ -533,6 +597,8 @@ TextureImporter:
       PileofLeaves: -742629689
       RepellentCollar: 767691523
       Skep: 1455022255
+      Trash: 1529949989
+      Trash_Can: -2130961398
       Treats: -62257791
       TreatsPackage: 1717815786
       WalkingCollar: 1118193411
