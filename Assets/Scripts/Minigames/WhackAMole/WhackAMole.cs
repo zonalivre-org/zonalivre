@@ -27,10 +27,6 @@ public class WhackAMole : MiniGameBase, IPointerDownHandler
         StartMiniGame();
     }
 
-    void OnDisable()
-    {
-        EndMiniGame();
-    }
     private void SpawnTarget()
     {
         Destroy(lastTarget);
@@ -96,15 +92,15 @@ public class WhackAMole : MiniGameBase, IPointerDownHandler
     public override void EndMiniGame()
     {
         if (isMiniGameComplete) objectiveInteract.CompleteTask();
-        else objectiveInteract.CloseTask(); 
-
-        base.EndMiniGame();
+        else objectiveInteract.CloseTask();
 
         CancelInvoke(nameof(SpawnTarget));
 
         Destroy(lastTarget);
 
         lastTarget = null;
+        
+        base.EndMiniGame();
     }
 
     public void SetMinigameRules(int scoreToWin, float spawnInterval)

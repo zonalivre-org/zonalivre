@@ -40,11 +40,11 @@ public class GameManager : MonoBehaviour
     public float currentTime, currentHealth, currentStamina, currentHappyness, wishHealthMultiplier, wishStaminaMultiplier, wishHappynessMultiplier;
     private int clockMultiplier = 1;
     private float sliderDelayTimer = 0f, clockDelayTimer = 0f;
-    private int scoreProgress = 0;
+    [SerializeField] private int scoreProgress = 0;
     private bool enablecountdown = false;
     private int win = 0; // Player starts the game in a neutral state. +1 = they win. -1 = they lose.
     public bool isMinigameActive = false;
-    [HideInInspector] public bool rules = true;
+    [HideInInspector] public bool timeCount = true;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (rules)
+        if (timeCount)
         {
             if (currentHealth <= 0 || currentStamina <= 0 || currentHappyness <= 0 || currentTime <= 0) win = -1;
             if (enablecountdown)

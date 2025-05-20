@@ -1333,8 +1333,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1650452573, guid: b9d767696c3a9f74faa1d0507d4f5588,
-        type: 3}
+      objectReference: {fileID: 7344885, guid: 31637d5a2ee7d9c4d97f026f77ecf1de, type: 3}
     - target: {fileID: 849480909563321500, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Name
@@ -1787,7 +1786,7 @@ MonoBehaviour:
   m_Viewport: {fileID: 1867650044}
   m_HorizontalScrollbar: {fileID: 1617149692}
   m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 1
+  m_HorizontalScrollbarVisibility: 0
   m_VerticalScrollbarVisibility: 0
   m_HorizontalScrollbarSpacing: 0
   m_VerticalScrollbarSpacing: 0
@@ -2876,6 +2875,11 @@ MonoBehaviour:
   videoDuration: {fileID: 1610522868}
   videoVolume: {fileID: 1961034877}
   trigger: 1
+  pausedButtonSprite: {fileID: -891564222, guid: 31637d5a2ee7d9c4d97f026f77ecf1de,
+    type: 3}
+  playButtonSprite: {fileID: -1679034076, guid: 31637d5a2ee7d9c4d97f026f77ecf1de,
+    type: 3}
+  playButtonImage: {fileID: 2041579485}
 --- !u!224 &1183915545 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5575464527289216388, guid: ca698facba4542243ab0a33edef21bd0,
@@ -3850,7 +3854,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 465064948}
   m_FillRect: {fileID: 34777944}
   m_HandleRect: {fileID: 465064947}
@@ -5340,6 +5344,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Delegates: []
   volumeType: 3
+--- !u!114 &2041579485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
+    type: 3}
+  m_PrefabInstance: {fileID: 560880594}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2113674748 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6038472984607575048, guid: ca698facba4542243ab0a33edef21bd0,

@@ -14,6 +14,8 @@ public class VideoPanel : MonoBehaviour
     public RenderTexture renderTexture;
     public Slider videoDuration, videoVolume;
     public bool trigger;
+    public Sprite pausedButtonSprite, playButtonSprite;
+    public Image playButtonImage;
 
     void Awake()
     {
@@ -64,10 +66,12 @@ public class VideoPanel : MonoBehaviour
         if (player.isPlaying)
         {
             player.Pause();
+            playButtonImage.sprite = pausedButtonSprite;
         }
         else
         {
             player.Play();
+            playButtonImage.sprite = playButtonSprite;
         }
     }
 

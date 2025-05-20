@@ -7,7 +7,6 @@ public class ButtonAnimation : EventTrigger
     [SerializeField] private float scaleFactor = 1.2f;
     private Vector3 originalScale;
     [SerializeField] private int clickSoundEffectIndex = 0;
-
     [SerializeField] private bool randomPitch = false;
 
     void Start()

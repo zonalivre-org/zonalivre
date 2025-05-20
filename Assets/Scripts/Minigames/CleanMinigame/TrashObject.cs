@@ -10,6 +10,7 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
     [Header("Components")]
     private Sprite trashBagSprite;
+    private Sprite trashFullImage;
     private Image trashImage;
     private RectTransform trashCan;
     private bool turnedIntoTrashBag = false;
@@ -21,7 +22,7 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
     {
         trashImage = GetComponent<Image>();
     }
-    public void SetTrashProperties(float cleanSpeed, CleanMinigame cleanMinigame, Sprite trashBagSprite, RectTransform trashCan, Texture2D broomCursorTexture, Texture2D handCursorTexture, RectTransform dragArea)
+    public void SetTrashProperties(float cleanSpeed, CleanMinigame cleanMinigame, Sprite trashBagSprite, Sprite trashFullSprite, RectTransform trashCan, Texture2D broomCursorTexture, Texture2D handCursorTexture, RectTransform dragArea)
     {
         this.dragArea = dragArea;
         
@@ -30,6 +31,8 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
         this.cleanMinigame = cleanMinigame;
 
         this.trashBagSprite = trashBagSprite;
+
+        this.trashFullImage = trashFullSprite;
 
         this.trashCan = trashCan;
 
@@ -46,7 +49,7 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
             trashImage.fillAmount -= cleanSpeed * Time.deltaTime;
             cleanMinigame.RegisterPlayerClick();
 
-            if (trashImage.fillAmount <= 0f)
+            if (trashImage.fillAmount <= 0.15f)
             {
                 trashImage.sprite = trashBagSprite;
                 cleanMinigame.ReduceTrashAmount();
@@ -94,6 +97,7 @@ public class TrashObject : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
             {
                 cleanMinigame.ReduceTrashBagAmount();
                 trashCan.GetComponent<Outline>().enabled = false;
+                trashCan.GetComponent<Image>().sprite = trashFullImage;
                 Destroy(gameObject);
             }
     }

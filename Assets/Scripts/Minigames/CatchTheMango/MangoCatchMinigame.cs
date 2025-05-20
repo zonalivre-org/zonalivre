@@ -131,7 +131,7 @@ public class MangoCatchMinigame : MiniGameBase
 
     private void UpdateScore()
     {
-        string formattedText = $"<sprite=12> {currentPoints} / {goal}";
+        string formattedText = $"{currentPoints} / {goal}";
         scoreText.text = formattedText;
 
         if (currentPoints >= goal)

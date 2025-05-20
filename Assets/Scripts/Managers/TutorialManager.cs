@@ -29,7 +29,7 @@ public class TutorialManager : MonoBehaviour
 
     void Start()
     {
-        gameManager.rules = false;
+        gameManager.timeCount = false;
         gameManager.currentHappyness = gameManager.happyness / 2;
         gameManager.currentStamina = gameManager.stamina / 2;
         gameManager.currentHealth = gameManager.health / 2;
