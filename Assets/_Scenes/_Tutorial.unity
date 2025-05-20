@@ -599,7 +599,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthMinigameUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2496538277273570600}
     - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
       propertyPath: staminaMinigameUI
@@ -7781,6 +7781,12 @@ PrefabInstance:
 --- !u!224 &2496538277273570599 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4900944219730965718, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 2496538277273570598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2496538277273570600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6109295384953879574, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
     type: 3}
   m_PrefabInstance: {fileID: 2496538277273570598}
   m_PrefabAsset: {fileID: 0}

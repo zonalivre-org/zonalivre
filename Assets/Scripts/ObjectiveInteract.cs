@@ -7,6 +7,7 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private float detectionDelay = 0.5f;
     [SerializeField] private int scoreValue = 1;
     [SerializeField] private float cooldown = 0f;
+    public bool enable = false, interactable = true;
 
     [Header("Elements")]
     public string objectiveDescription;
@@ -19,14 +20,13 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private LayerMask clicklableLayers;
 
-    [Header("If object opens a minigame")]
-    [SerializeField] private GameObject minigame;
-
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
     public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame, WhackAMole, PlantTheCitronela }
 
     #region Objective Properties
+    [Header("If object opens a minigame")]
+    [SerializeField] private GameObject minigame;
 
     [Header("If object requires an item")]
     [SerializeField] private int idCheck;
@@ -36,6 +36,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     [Header("If object activates another object")]
     [SerializeField] private GameObject objectToActivate;
+    [SerializeField] private bool deactivateItself = false;
 
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
@@ -60,7 +61,6 @@ public class ObjectiveInteract : MonoBehaviour
 
     #endregion
 
-    public bool enable = false, interactable = true;
     private float cooldownTimer;
     [HideInInspector] public bool isComplete = false;
     private PlayerInventory playerInventory;
@@ -97,7 +97,7 @@ public class ObjectiveInteract : MonoBehaviour
         if (cooldownTimer <= 0f) { interactable = true; cooldownTimer = cooldown; }
     }
 
- private void SelectObjective()
+    private void SelectObjective()
     {
         RaycastHit hit;
         // Lança um raio a partir da posição do mouse nas camadas clicklableLayers.
@@ -148,11 +148,12 @@ public class ObjectiveInteract : MonoBehaviour
         playerInventory.RemoveItem();
         GameManager.Instance.AddScore(scoreValue);
 
-        if (objectToActivate) 
+        if (objectToActivate)
         {
             objectToActivate.SetActive(true);
             objectToActivate.GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(true);
         }
+        if (deactivateItself) gameObject.SetActive(false);
     }
 
     private void StartMinigame()
