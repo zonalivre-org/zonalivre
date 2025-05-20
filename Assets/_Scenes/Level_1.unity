@@ -415,7 +415,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthMinigameUI
       value: 
-      objectReference: {fileID: 1578502498}
+      objectReference: {fileID: 0}
     - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
       propertyPath: staminaMinigameUI
@@ -4782,8 +4782,9 @@ MonoBehaviour:
   wishHealthMultiplier: 0
   wishStaminaMultiplier: 0
   wishHappynessMultiplier: 0
+  scoreProgress: 0
   isMinigameActive: 0
-  rules: 1
+  timeCount: 1
 --- !u!4 &1478919788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 77da5529be801934ea0f6a7baec9d33f,
@@ -4952,12 +4953,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3248739765597737770, guid: c12e41d12d0271f48a91f4f73e7fb00f,
     type: 3}
   m_PrefabInstance: {fileID: 8250920302909340264}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1578502498 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2276166236110477264, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 2496538277273570598}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1594027692
 PrefabInstance:
@@ -5578,6 +5573,80 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7863170533825609376, guid: 5502942ce864fa0019fc63f5d9ca4139,
     type: 3}
   m_PrefabInstance: {fileID: 1759830958}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1766364882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2006656360}
+    m_Modifications:
+    - target: {fileID: 341391503597444303, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_Name
+      value: FPSManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8fc8ac866ef60ee4caccfc584d4df5e5, type: 3}
+--- !u!4 &1766364883 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1766364882}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1767025405
 PrefabInstance:
@@ -6385,6 +6454,7 @@ Transform:
   - {fileID: 1478815601}
   - {fileID: 900453328}
   - {fileID: 432439608}
+  - {fileID: 1766364883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2040788597

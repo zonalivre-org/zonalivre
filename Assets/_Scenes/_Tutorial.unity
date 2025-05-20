@@ -599,7 +599,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthMinigameUI
       value: 
-      objectReference: {fileID: 1578502498}
+      objectReference: {fileID: 0}
     - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
       propertyPath: staminaMinigameUI
@@ -3160,6 +3160,80 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4157570335990668423}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1127267431
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2006656360}
+    m_Modifications:
+    - target: {fileID: 341391503597444303, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_Name
+      value: FPSManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8fc8ac866ef60ee4caccfc584d4df5e5, type: 3}
+--- !u!4 &1127267432 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5745991813166140908, guid: 8fc8ac866ef60ee4caccfc584d4df5e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1127267431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1135373784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5723805137986427324, guid: c12e41d12d0271f48a91f4f73e7fb00f,
@@ -4581,8 +4655,9 @@ MonoBehaviour:
   wishHealthMultiplier: 0
   wishStaminaMultiplier: 0
   wishHappynessMultiplier: 0
+  scoreProgress: 0
   isMinigameActive: 0
-  rules: 1
+  timeCount: 1
 --- !u!1001 &1502021268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4978,12 +5053,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1578502498 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2276166236110477264, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 2496538277273570598}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1579464950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2429756684001679300, guid: 91006cddf4c71a2159e66e38aeb02b91,
@@ -6438,6 +6507,7 @@ Transform:
   - {fileID: 900453328}
   - {fileID: 432439608}
   - {fileID: 1171154541}
+  - {fileID: 1127267432}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2040788597
