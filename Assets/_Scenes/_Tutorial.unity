@@ -1300,7 +1300,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -764279891, guid: 31637d5a2ee7d9c4d97f026f77ecf1de,
+      objectReference: {fileID: 1928945865, guid: 31637d5a2ee7d9c4d97f026f77ecf1de,
         type: 3}
     - target: {fileID: 849480909563321500, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -1513,6 +1513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616230584354372652, guid: 980a831af79d4ef42b897d5aac82d238,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1826,7 +1831,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 11400000, guid: 953f9e67ce7dd3d4d8da35a7d3121796, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: eb3a8cbc4d6e73a44ba1004709fdeed1, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -1834,10 +1839,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 48.75
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3322,13 +3327,14 @@ MonoBehaviour:
   tutorialPopUps:
   - title: Tutorial
     description: "Bem vindo ao Tutorial! Aqui voc\xEA vai aprender como se joga o
-      jogo. Voc\xEA pode rever a ultima li\xE7\xE3o clicando no bot\xE3o <sprite=20>
-      no canto superior direito da tela. Clique no <sprite=19> para continuar."
+      jogo. Para come\xE7ar, voc\xEA pode rever as ultimas li\xE7\xF5es no bot\xE3o
+      <sprite name=Help> no canto superior direito da tela. Clique no <sprite name=Close>
+      para continuar."
     videoFileName: TutorialButton.mp4
   - title: Tempo
     description: "O jogo se baseia em realizar tarefas em um determinado tempo, indicado
-      pelo <sprite=16> no topo da tela. Se o tempo acabar, voc\xEA perde o jogo.
-      Mas n\xE3o se preocupe, pois no tutorial o tempo n\xE3o abaixa."
+      pelo REL\xD3GIO <sprite name=Time> no topo da tela. Se o tempo acabar, voc\xEA
+      perde o jogo. Mas n\xE3o se preocupe, pois no tutorial o tempo n\xE3o abaixa."
     videoFileName: TimeRunning.mp4
   - title: Como se movimentar
     description: "\xD3timo! Agora que voc\xEA j\xE1 sabe como o tempo funciona, vamos
@@ -3338,22 +3344,22 @@ MonoBehaviour:
   - title: "Intera\xE7\xE3o com tarefas"
     description: "Muito bem! Seu objetivo \xE9 realizar tarefas pelo mapa. Para iniciar
       uma tarefa, basta andar at\xE9 ela. Tente colher algumas mangas naquele p\xE9
-      de manga."
+      de manga <sprite name=Tree>."
     videoFileName: WalkingMangoTree.mp4
   - title: "Intera\xE7\xE3o com tarefas usando itens"
     description: "\xD3timo! Agora voc\xEA j\xE1 sabe como interagir com as tarefas.
       No entanto, algumas tarefas necessitam de itens para serem feitas. Colete o
-      item TELA <Icone da tela> no mapa. Basta encostar nele."
+      item TELA <sprite name=Screen> no mapa. Basta encostar nele."
     videoFileName: WalkingScreen.mp4
   - title: "Intera\xE7\xE3o com tarefas usando itens"
-    description: "Excelente! Agora que voc\xEA coletou o item TELA <Icone da tela>,
-      leve-o para o OBJETIVO JANELA <Icone da janela> para aplicar a TELA."
+    description: "Excelente! Agora que voc\xEA coletou o item TELA <sprite name=Screen>,
+      leve-o para o OBJETIVO JANELA <sprite name=Window> para aplicar a TELA."
     videoFileName: WalkingWindow.mp4
   - title: Cuidando do seu pet
     description: "\"Muito bem! Entendido como os objetivos funcionam. Agora, vamos
-      cuidar do seu pet! Ele possui tr\xEAs necessidades: Sa\xFAde <sprite=10>, Fome
-      <sprite=5> e Felicidade <sprite=3>. Voc\xEA pode ver essas informa\xE7\xF5es
-      na parte superior esquerda da tela."
+      cuidar do seu pet! Ele possui tr\xEAs necessidades: SA\xDADE <sprite name=Health>,
+      FOME <sprite name=Food> e FELICIDADE <sprite name=Happy>. Voc\xEA pode ver
+      essas informa\xE7\xF5es na parte superior esquerda da tela."
     videoFileName: StatusBar.mp4
   - title: Cuidando do seu pet
     description: "Cuidado! Fora do tutorial, essas necessidades diminuem com o tempo.
@@ -3361,19 +3367,19 @@ MonoBehaviour:
       Caso uma delas chegue a zero, voc\xEA perde o jogo."
     videoFileName: StatusBar.mp4
   - title: Cuidando do seu pet
-    description: "Vamos come\xE7ar levando ele ao veterin\xE1rio. A sa\xFAde \xE9
-      representada pelo \xEDcone <Icone da Saude>. Para aumentar ela, colete a coleira
-      <Icone da coleira> no mapa e v\xE1 at\xE9 o pet."
+    description: "Vamos come\xE7ar levando ele ao veterin\xE1rio. A SA\xDADE \xE9
+      representada pelo \xEDcone <sprite name=Health>. Para aumentar ela, colete
+      a COLEIRA <sprite name=Collar> no mapa e v\xE1 at\xE9 o pet."
     videoFileName: DogCollar.mp4
   - title: Cuidando do seu pet
     description: "\xD3timo! \xC9 sempre importante levar seu pet ao veterin\xE1rio.
-      Agora, vamos aliment\xE1-lo. A fome \xE9 representada pelo \xEDcone <Icone
-      da comida>. Para alimentar ele, colete o saco de ra\xE7\xE3o <Icone da comida>
+      Agora, vamos aliment\xE1-lo. A FOME \xE9 representada pelo \xEDcone <sprite
+      name=Food>. Para alimentar ele, colete o SACO DE RA\xC7\xC3O <sprite name=Bag>
       no mapa e v\xE1 at\xE9 o pet."
     videoFileName: DogRation.mp4
   - title: Cuidando do seu pet
     description: "Excelente! Agora que ele est\xE1 alimentado e saud\xE1vel, fa\xE7a
-      carinho nele. A felicidade \xE9 representada pelo \xEDcone <Icone da felicidade>.
+      carinho nele. A FELICIDADE \xE9 representada pelo \xEDcone <sprite name=Happy>.
       Para aumentar ela, basta ir at\xE9 ele sem carregar nenhum item."
     videoFileName: DogPet.mp4
   - title: Mexendo com itens
@@ -3386,8 +3392,8 @@ MonoBehaviour:
       para acabar as li\xE7\xF5es."
     videoFileName: TaskButton.mp4
   - title: Tarefas
-    description: "Voc\xEA pode checar todas as tarefas da fase no bot\xE3o <Icone
-      do bot\xE3o>."
+    description: "Voc\xEA pode checar todas as tarefas da fase no bot\xE3o <sprite
+      name=Tasks>."
     videoFileName: TaskButton.mp4
   - title: Finalmente acabou!
     description: "Parab\xE9ns! Agora que voc\xEA viu como o jogo funciona, voc\xEA
@@ -6999,6 +7005,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 944923658227944461, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 944923658227944461, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 944923658227944461, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 944923658227944461, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 944923658227944461, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 944923658227944461, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1052400248020233403, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -7047,6 +7083,51 @@ PrefabInstance:
     - target: {fileID: 1188918146292186302, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437852220121625395, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437852220121625395, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437852220121625395, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437852220121625395, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437852220121625395, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437852220121625395, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724036783216411088, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724036783216411088, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000108819215
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785124403717188767, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168741323550495464, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
@@ -7109,6 +7190,56 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2344320723665966008, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344320723665966008, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344320723665966008, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567702047909983090, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567702047909983090, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567702047909983090, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567702047909983090, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567702047909983090, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567702047909983090, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189430879353971416, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3283230273772031115, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -7168,6 +7299,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -326.6381
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947417192638699002, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947417192638699002, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947417192638699002, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947417192638699002, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947417192638699002, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947417192638699002, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3992328001780873460, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
@@ -7459,6 +7620,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6227158874532180999, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227158874532180999, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227158874532180999, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227158874532180999, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6326823193377841023, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -7515,6 +7696,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6337460782159438887, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394343303007530063, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394343303007530063, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394343303007530063, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394343303007530063, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394343303007530063, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394343303007530063, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -7699,6 +7910,46 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7028296321702986005, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028296321702986005, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028296321702986005, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028296321702986005, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029381331438496759, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029381331438496759, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029381331438496759, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029381331438496759, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7060199368606947812, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -7739,6 +7990,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1989455485}
+    - target: {fileID: 7393673059164074974, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7414925459723861020, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -7773,6 +8029,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903122831902425244, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903122831902425244, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903122831902425244, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903122831902425244, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7963943700975373432, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
@@ -7842,6 +8118,21 @@ PrefabInstance:
     - target: {fileID: 9108691152025934047, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208300480591668913, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208300480591668913, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208300480591668913, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
