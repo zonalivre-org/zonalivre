@@ -3355,7 +3355,7 @@ MonoBehaviour:
       leve-o para o OBJETIVO JANELA <sprite name=Window> para aplicar a TELA."
     videoFileName: WalkingWindow.mp4
   - title: Cuidando do seu pet
-    description: "\"Muito bem! Entendido como os objetivos funcionam. Agora, vamos
+    description: "Muito bem! Entendido como os objetivos funcionam. Agora, vamos
       cuidar do seu pet! Ele possui tr\xEAs necessidades: SA\xDADE <sprite name=Health>,
       FOME <sprite name=Food> e FELICIDADE <sprite name=Happy>. Voc\xEA pode ver
       essas informa\xE7\xF5es na parte superior esquerda da tela."
@@ -4754,7 +4754,6 @@ MonoBehaviour:
   resultUI: {fileID: 0}
   resultText: {fileID: 6584764719198270787}
   loseText: {fileID: 838776599}
-  nextLevelButton: {fileID: 2087235406}
   playerMovement: {fileID: 2249948526550260760}
   petMovement: {fileID: 835940385}
   currentTime: 0
@@ -6776,12 +6775,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3313199477008688381, guid: 658737c4525f8631298f1ec7a2476f01,
     type: 3}
   m_PrefabInstance: {fileID: 2085406092}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2087235406 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 509869277289799414, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 2496538277273570598}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2100206575 stripped
 GameObject:
