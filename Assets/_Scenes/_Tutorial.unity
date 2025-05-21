@@ -1326,7 +1326,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1302973198}
+      objectReference: {fileID: 1171154542}
     - target: {fileID: 4304601357135870622, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -1347,7 +1347,7 @@ PrefabInstance:
     - target: {fileID: 4304601357135870622, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReopenPopUp
+      value: ReplayPopUps
       objectReference: {fileID: 0}
     - target: {fileID: 4304601357135870622, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -1362,7 +1362,7 @@ PrefabInstance:
     - target: {fileID: 4304601357135870622, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PopUp, Assembly-CSharp
+      value: TutorialManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4304601357135870622, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -3319,6 +3319,88 @@ MonoBehaviour:
   petMinigamesCompleted: 0
   itensCollected: 0
   petItensCollected: 0
+  tutorialPopUps:
+  - title: Tutorial
+    description: "Bem vindo ao Tutorial! Aqui voc\xEA vai aprender como se joga o
+      jogo. Voc\xEA pode rever a ultima li\xE7\xE3o clicando no bot\xE3o <sprite=20>
+      no canto superior direito da tela. Clique no <sprite=19> para continuar."
+    videoFileName: TutorialButton.mp4
+  - title: Tempo
+    description: "O jogo se baseia em realizar tarefas em um determinado tempo, indicado
+      pelo <sprite=16> no topo da tela. Se o tempo acabar, voc\xEA perde o jogo.
+      Mas n\xE3o se preocupe, pois no tutorial o tempo n\xE3o abaixa."
+    videoFileName: TimeRunning.mp4
+  - title: Como se movimentar
+    description: "\xD3timo! Agora que voc\xEA j\xE1 sabe como o tempo funciona, vamos
+      aprender a se movimentar. Para conseguir se movimentar pelo mapa, basta tocar/clicar
+      em algum lugar do mapa. Feche essa janela e tente se movimentar 3 vezes."
+    videoFileName: WalkingVideo.mp4
+  - title: "Intera\xE7\xE3o com tarefas"
+    description: "Muito bem! Seu objetivo \xE9 realizar tarefas pelo mapa. Para iniciar
+      uma tarefa, basta andar at\xE9 ela. Tente colher algumas mangas naquele p\xE9
+      de manga."
+    videoFileName: WalkingMangoTree.mp4
+  - title: "Intera\xE7\xE3o com tarefas usando itens"
+    description: "\xD3timo! Agora voc\xEA j\xE1 sabe como interagir com as tarefas.
+      No entanto, algumas tarefas necessitam de itens para serem feitas. Colete o
+      item TELA <Icone da tela> no mapa. Basta encostar nele."
+    videoFileName: WalkingScreen.mp4
+  - title: "Intera\xE7\xE3o com tarefas usando itens"
+    description: "Excelente! Agora que voc\xEA coletou o item TELA <Icone da tela>,
+      leve-o para o OBJETIVO JANELA <Icone da janela> para aplicar a TELA."
+    videoFileName: WalkingWindow.mp4
+  - title: Cuidando do seu pet
+    description: "\"Muito bem! Entendido como os objetivos funcionam. Agora, vamos
+      cuidar do seu pet! Ele possui tr\xEAs necessidades: Sa\xFAde <sprite=10>, Fome
+      <sprite=5> e Felicidade <sprite=3>. Voc\xEA pode ver essas informa\xE7\xF5es
+      na parte superior esquerda da tela."
+    videoFileName: StatusBar.mp4
+  - title: Cuidando do seu pet
+    description: "Cuidado! Fora do tutorial, essas necessidades diminuem com o tempo.
+      Ent\xE3o voc\xEA precisa tirar tempo para cuidar das necessidades do seu pet.
+      Caso uma delas chegue a zero, voc\xEA perde o jogo."
+    videoFileName: StatusBar.mp4
+  - title: Cuidando do seu pet
+    description: "Vamos come\xE7ar levando ele ao veterin\xE1rio. A sa\xFAde \xE9
+      representada pelo \xEDcone <Icone da Saude>. Para aumentar ela, colete a coleira
+      <Icone da coleira> no mapa e v\xE1 at\xE9 o pet."
+    videoFileName: DogCollar.mp4
+  - title: Cuidando do seu pet
+    description: "\xD3timo! \xC9 sempre importante levar seu pet ao veterin\xE1rio.
+      Agora, vamos aliment\xE1-lo. A fome \xE9 representada pelo \xEDcone <Icone
+      da comida>. Para alimentar ele, colete o saco de ra\xE7\xE3o <Icone da comida>
+      no mapa e v\xE1 at\xE9 o pet."
+    videoFileName: DogRation.mp4
+  - title: Cuidando do seu pet
+    description: "Excelente! Agora que ele est\xE1 alimentado e saud\xE1vel, fa\xE7a
+      carinho nele. A felicidade \xE9 representada pelo \xEDcone <Icone da felicidade>.
+      Para aumentar ela, basta ir at\xE9 ele sem carregar nenhum item."
+    videoFileName: DogPet.mp4
+  - title: Mexendo com itens
+    description: "Se precisar largar um item da m\xE3o, existem duas formas: 1. Voc\xEA
+      pode devolver o item para o mesmo lugar que voc\xEA pegou. 2. Ao concluir ou
+      fechar um objetivo."
+    videoFileName: DropItem.mp4
+  - title: "M\xE3o na massa"
+    description: "Muito Bem! Agora, para finalizar, complete as tarefas restantes
+      para acabar as li\xE7\xF5es."
+    videoFileName: TaskButton.mp4
+  - title: Tarefas
+    description: "Voc\xEA pode checar todas as tarefas da fase no bot\xE3o <Icone
+      do bot\xE3o>."
+    videoFileName: TaskButton.mp4
+  - title: Finalmente acabou!
+    description: "Parab\xE9ns! Agora que voc\xEA viu como o jogo funciona, voc\xEA
+      pode come\xE7ar a jogar de verdade. Sempre que quiser, o tutorial poder\xE1
+      ser repetido na sele\xE7\xE3o de n\xEDveis. Feche essa janela para come\xE7ar
+      a jogar."
+    videoFileName: HappyDog.mp4
+  - title: 15 Close the tutorial
+    description: 
+    videoFileName: 
+  replayIndex: 0
+  replayEndIndex: 0
+  isReplaying: 0
 --- !u!4 &1178560553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1856765457208144513, guid: 10a2d03414f8e0ab89eab431a6528bd8,
@@ -3881,6 +3963,7 @@ MonoBehaviour:
   background: {fileID: 1574307461}
   videoPlayer: {fileID: 143844178}
   reopened: 0
+  popUpsArray: []
 --- !u!114 &1302973199
 MonoBehaviour:
   m_ObjectHideFlags: 0

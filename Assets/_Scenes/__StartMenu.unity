@@ -3331,12 +3331,12 @@ PrefabInstance:
     - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
         type: 3}
       propertyPath: m_text
-      value: "Op\xE7\xF5es"
+      value: "Configura\xE7\xF5es"
       objectReference: {fileID: 0}
     - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
         type: 3}
       propertyPath: m_fontSize
-      value: 70
+      value: 62.1
       objectReference: {fileID: 0}
     - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
         type: 3}
@@ -3352,7 +3352,7 @@ PrefabInstance:
     - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
         type: 3}
       propertyPath: m_fontSizeMax
-      value: 92.7
+      value: 62.1
       objectReference: {fileID: 0}
     - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
         type: 3}
@@ -3368,7 +3368,7 @@ PrefabInstance:
     - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
         type: 3}
       propertyPath: m_enableAutoSizing
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
         type: 3}
@@ -6687,7 +6687,7 @@ PrefabInstance:
     - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
         type: 3}
       propertyPath: m_text
-      value: Sobre
+      value: Projeto
       objectReference: {fileID: 0}
     - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
         type: 3}
