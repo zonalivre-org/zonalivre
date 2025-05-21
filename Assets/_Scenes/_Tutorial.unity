@@ -269,7 +269,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2550435}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2f242628a6bb09e4b9f44c39278310b7, type: 2}
   m_CullingMode: 0
@@ -1768,8 +1768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 899.0654, y: -97.86638}
-  m_SizeDelta: {x: 1738.1309, y: 155.73276}
+  m_AnchoredPosition: {x: 960, y: -210.59393}
+  m_SizeDelta: {x: 1738.1309, y: 381.18787}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726798053
 MonoBehaviour:
@@ -2116,8 +2116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 899.0654, y: -561.22003}
-  m_SizeDelta: {x: 1798.1309, y: 751.5799}
+  m_AnchoredPosition: {x: 960, y: -602.577}
+  m_SizeDelta: {x: 1920, y: 954.84576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834091808
 MonoBehaviour:
@@ -2185,8 +2185,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 674dd575d57df7c48a101d869b86815d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3327,10 +3327,9 @@ MonoBehaviour:
   tutorialPopUps:
   - title: Tutorial
     description: "Bem vindo ao Tutorial! Aqui voc\xEA vai aprender como se joga o
-      jogo. Para come\xE7ar, voc\xEA pode rever as ultimas li\xE7\xF5es no bot\xE3o
-      <sprite name=Help> no canto superior direito da tela. Clique no <sprite name=Close>
-      para continuar."
-    videoFileName: TutorialButton.mp4
+      jogo. Voc\xEA pode rever as ultimas li\xE7\xF5es no bot\xE3o <sprite name=Help>
+      no canto superior direito da tela. Clique no <sprite name=Close> para continuar."
+    videoFileName: HelpButton.mp4
   - title: Tempo
     description: "O jogo se baseia em realizar tarefas em um determinado tempo, indicado
       pelo REL\xD3GIO <sprite name=Time> no topo da tela. Se o tempo acabar, voc\xEA
@@ -3476,22 +3475,22 @@ PrefabInstance:
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -3541,12 +3540,12 @@ PrefabInstance:
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 797
+      value: 1840
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 16.46302
+      value: -62.577076
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -3596,7 +3595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreLayout: 1
+  m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
@@ -3924,6 +3923,7 @@ GameObject:
   - component: {fileID: 1302973200}
   - component: {fileID: 1302973199}
   - component: {fileID: 1302973198}
+  - component: {fileID: 1302973202}
   m_Layer: 5
   m_Name: PopUp
   m_TagString: Untagged
@@ -3950,7 +3950,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -121.8691, y: -142.99}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302973198
 MonoBehaviour:
@@ -4009,15 +4009,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.013216423, g: 0.5949605, b: 0.9339623, a: 1}
+  m_Color: {r: 0.07863116, g: 0.58505845, b: 0.8773585, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b8811689c1d79b4681f88874c92aa0b, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 674dd575d57df7c48a101d869b86815d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4034,6 +4034,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302973196}
   m_CullTransparentMesh: 1
+--- !u!114 &1302973202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302973196}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0.4901961, b: 0, a: 0.5803922}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1320578165 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
@@ -4052,6 +4067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014935953783716670, guid: e669611f3285292418e6fe5abe70020e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5758080355459277615, guid: e669611f3285292418e6fe5abe70020e,
         type: 3}
@@ -4973,7 +4993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 899.0654, y: -92.71505}
+  m_AnchoredPosition: {x: 960.00006, y: -62.577076}
   m_SizeDelta: {x: 1106.9154, y: 109.782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1524364854
@@ -5547,8 +5567,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 448.19846, y: -267.92355}
-  m_SizeDelta: {x: 876.3969, y: 515.8471}
+  m_AnchoredPosition: {x: 448.19846, y: -256.82895}
+  m_SizeDelta: {x: 876.3969, y: 493.6579}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724110622
 MonoBehaviour:
@@ -5659,8 +5679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 899.0654, y: -453.6563}
-  m_SizeDelta: {x: 896.3969, y: 535.8471}
+  m_AnchoredPosition: {x: 960, y: -668.01685}
+  m_SizeDelta: {x: 896.3969, y: 513.6579}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753781058
 MonoBehaviour:
@@ -5678,7 +5698,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 910.8
+  m_PreferredHeight: 401.4
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -6460,8 +6480,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 899.0654, y: -92.71505}
-  m_SizeDelta: {x: 1798.1309, y: 185.4301}
+  m_AnchoredPosition: {x: 960, y: -62.577076}
+  m_SizeDelta: {x: 1920, y: 125.15415}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991767601
 MonoBehaviour:
@@ -6476,11 +6496,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
+    m_Left: 130
+    m_Right: 30
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 5
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -6505,7 +6525,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 213.3
+  m_PreferredHeight: 125.93
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -6529,8 +6549,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b8811689c1d79b4681f88874c92aa0b, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 674dd575d57df7c48a101d869b86815d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

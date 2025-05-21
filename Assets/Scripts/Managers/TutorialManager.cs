@@ -36,6 +36,7 @@ public class TutorialManager : MonoBehaviour
     #endregion
 
     #region Unity Methods
+
     void Start()
     {
         InitializeGameState();
@@ -62,7 +63,7 @@ public class TutorialManager : MonoBehaviour
         switch (currentStep)
         {
             case 0:
-                ShowPopUp(0);
+                Invoke(nameof(ShowFirstPopUp), 3f);
                 currentStep++;
                 break;
             case 1:
@@ -227,6 +228,11 @@ public class TutorialManager : MonoBehaviour
             popUp.SetPopUp(data.title, data.description);
             popUp.SetVideoPlayer(data.videoFileName);
         }
+    }
+
+    private void ShowFirstPopUp()
+    {
+        ShowPopUp(0);
     }
     #endregion
 

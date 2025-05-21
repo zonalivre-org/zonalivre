@@ -19,15 +19,16 @@ public class PopUp : MonoBehaviour
 
     public void SetPopUp(string title, string description)
     {
+        Time.timeScale = 0f;
+        
         background.SetActive(true);
         background.GetComponent<Image>().DOFade(0.5f, 0.5f).SetUpdate(true);
         popUpTille.text = title;
         popUpDescription.text = description;
 
-        Time.timeScale = 0f;
-
         gameObject.SetActive(true);
 
+        transform.localScale = Vector3.zero;
         transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);
     }
 
