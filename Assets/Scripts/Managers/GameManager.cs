@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject resultUI;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private TMP_Text loseText;
-    [SerializeField] private GameObject nextLevelButton;
 
     [Header("References")]
     public static GameManager Instance;
@@ -166,7 +165,6 @@ public class GameManager : MonoBehaviour
 
             else if (state < 0)
             {
-                nextLevelButton.SetActive(false);
                 loseText.gameObject.SetActive(true);
                 resultText.text = "Oh não! Voce perdeu!";
                 if (healthSlider.value <= 0.0001) loseText.text = "Saúde do Pet zerada!";
