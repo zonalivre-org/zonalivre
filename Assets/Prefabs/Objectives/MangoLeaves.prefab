@@ -52,6 +52,8 @@ MonoBehaviour:
   detectionDelay: 0.5
   scoreValue: 1
   cooldown: 0
+  enable: 0
+  interactable: 1
   objectiveDescription: Limpe as folhas
   averageTimeToComplete: 6
   indicator: {fileID: 1043541624071630750}
@@ -63,11 +65,12 @@ MonoBehaviour:
   clicklableLayers:
     serializedVersion: 2
     m_Bits: 64
-  minigame: {fileID: 0}
   miniGameType: 2
+  minigame: {fileID: 0}
   idCheck: 0
   idGive: 0
   objectToActivate: {fileID: 0}
+  deactivateItself: 1
   mangoGoal: 4
   mangoFallSpeed: 275
   coolDownBetweenMangos: 1
@@ -76,6 +79,9 @@ MonoBehaviour:
   QTESafeZoneSizePercentage: 0
   cleanSpeed: 0.509
   trashAmount: 3
+  scoreToWin: 3
+  spawnInterval: 1
+  growthSpeed: 3
   isComplete: 0
 --- !u!65 &2263432244350926536
 BoxCollider:

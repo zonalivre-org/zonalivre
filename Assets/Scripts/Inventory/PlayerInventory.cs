@@ -6,11 +6,20 @@ public class PlayerInventory : MonoBehaviour
     // Evento que outros scripts podem ouvir quando o item no inventário muda
     public event Action<ItemData> OnItemChanged;
 
-    private ItemData _heldItem; // O item que o jogador está segurando atualmente
+    public ItemData _heldItem; // O item que o jogador está segurando atualmente
 
     // --- Propriedades ---
     public ItemData HeldItem => _heldItem;
     public bool HasItem => _heldItem != null;
+
+    private void OnEnable()
+    {
+        MiniGameBase.OnMiniGameEnd += RemoveItem; // Adiciona o evento de remoção de item quando o minigame termina
+    }
+    private void OnDisable()
+    {
+        MiniGameBase.OnMiniGameEnd -= RemoveItem; // Remove o evento de remoção de item quando o minigame termina
+    }
 
     // --- Métodos de Inventário ---
 
@@ -31,9 +40,10 @@ public class PlayerInventory : MonoBehaviour
         {
             Debug.Log($"Item removido. Anterior: {previousItem?.displayName ?? "Nada"}"); // Para Debug
         }
+        OnItemChanged?.Invoke(_heldItem);
 
         // Dispara o evento para notificar outros componentes (como o UI Indicator)
-        OnItemChanged?.Invoke(_heldItem);
+        
     }
 
     public ItemData GetItem()
@@ -44,6 +54,14 @@ public class PlayerInventory : MonoBehaviour
         }
         return null;
     }
+    public string GetItemID()
+    {
+        if (_heldItem != null)
+        {
+            return _heldItem.id;
+        }
+        return null;
+    }
 
     /// <summary>
     /// Remove o item atual do inventário.
@@ -51,6 +69,7 @@ public class PlayerInventory : MonoBehaviour
     public void RemoveItem()
     {
         SetItem(null); // Definir para null remove o item
+
     }
 
     // --- Métodos de Controle (Chamados por outros componentes) ---

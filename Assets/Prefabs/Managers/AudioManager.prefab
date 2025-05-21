@@ -63,9 +63,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b6654c873d80c284b91a1224e119b82c, type: 3}
   - {fileID: 8300000, guid: 4c228402dc3f51246a047649644d70df, type: 3}
   - {fileID: 8300000, guid: cbec962553abf1f43a052e0df43e78e7, type: 3}
+  - {fileID: 8300000, guid: ac82b7d1430155740ba154c5a29f74cf, type: 3}
+  - {fileID: 8300000, guid: 3d3539cc3ebe7bc469001591f643d58c, type: 3}
+  - {fileID: 8300000, guid: 79793e2a53dc74b499433191ec02e6c9, type: 3}
   musicClips:
   - {fileID: 8300000, guid: 27238c9a93f476b4ca5c7b91c4aba7dd, type: 3}
   - {fileID: 8300000, guid: b20bc104bb775af4e901c0a7e7b150fd, type: 3}
+  - {fileID: 8300000, guid: 88945d46fe326b3458f589866cc92e8e, type: 3}
   - {fileID: 8300000, guid: bbbb3eab53f93c34ea29c51b156a81c8, type: 3}
 --- !u!1 &4132279277130069870
 GameObject:

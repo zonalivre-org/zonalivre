@@ -220,10 +220,10 @@ TextureImporter:
       name: Guide01
       rect:
         serializedVersion: 2
-        x: 1216
-        y: 3234
-        width: 382
-        height: 355
+        x: 1137
+        y: 3135
+        width: 394
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,48 +233,6 @@ TextureImporter:
       bones: []
       spriteID: 33e2ddeb9fcd6ff458b735c1f3e621b0
       internalID: 786662088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guide02
-      rect:
-        serializedVersion: 2
-        x: 1630
-        y: 3234
-        width: 393
-        height: 355
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 971b18f540c969848ad62a3731281177
-      internalID: 1171596754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guide03
-      rect:
-        serializedVersion: 2
-        x: 2078
-        y: 3234
-        width: 474
-        height: 355
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 219f444d8f6adf04ab094f321270dc14
-      internalID: 556303921
       vertices: []
       indices: 
       edges: []
@@ -317,69 +275,6 @@ TextureImporter:
       bones: []
       spriteID: 4f92ca3a3c9b2cb4bae87f33d95f9ac5
       internalID: 1745684365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guide04
-      rect:
-        serializedVersion: 2
-        x: 1047
-        y: 2635
-        width: 530
-        height: 355
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ed73cea67094e74394b89d54e368027
-      internalID: -1547505888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guide05
-      rect:
-        serializedVersion: 2
-        x: 1652
-        y: 2622
-        width: 446
-        height: 464
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfd88970c18a6cd4ab5c1e56cbd4429e
-      internalID: 681964702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guide06
-      rect:
-        serializedVersion: 2
-        x: 2197
-        y: 2608
-        width: 393
-        height: 564
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30e554b916188cc4cb8ba99680aa97ad
-      internalID: -793924606
       vertices: []
       indices: 
       edges: []
@@ -494,7 +389,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1518
-        y: 2088
+        y: 2089
         width: 366
         height: 366
       alignment: 0
@@ -535,10 +430,10 @@ TextureImporter:
       name: Next_Button
       rect:
         serializedVersion: 2
-        x: 1123
+        x: 1121
         y: 1665
         width: 366
-        height: 367
+        height: 366
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -556,10 +451,10 @@ TextureImporter:
       name: Replay_Button
       rect:
         serializedVersion: 2
-        x: 1520
-        y: 1663
+        x: 1518
+        y: 1665
         width: 366
-        height: 367
+        height: 366
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -577,10 +472,10 @@ TextureImporter:
       name: Cancel_Button
       rect:
         serializedVersion: 2
-        x: 1922
+        x: 1923
         y: 1665
         width: 366
-        height: 367
+        height: 366
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -767,9 +662,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2314
-        y: 2088
-        width: 370
-        height: 370
+        y: 2089
+        width: 366
+        height: 366
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -779,6 +674,90 @@ TextureImporter:
       bones: []
       spriteID: d51a9232bf04a214589b723b35cf8539
       internalID: 1981014784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Replay_Tutorial
+      rect:
+        serializedVersion: 2
+        x: 2314
+        y: 1665
+        width: 366
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2bd0029fd1227147894af324fc2a42f
+      internalID: -1363260994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Audio_Button
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 2492
+        width: 366
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13bf2627011f714cbcb2612cf8d20fc
+      internalID: 7344885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paused_Button
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 2492
+        width: 366
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67618a91151e904e92897a9a5d150c9
+      internalID: -891564222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Empty_Button
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 2492
+        width: 366
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f059b812f38b2b44b66aac6bd211e4a
+      internalID: 1323763021
       vertices: []
       indices: 
       edges: []
@@ -794,6 +773,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Audio_Button: 7344885
       Cancel_Button: 1647731571
       CaressGreen01: 1097525298
       CaressGreen02: -1477849352
@@ -807,6 +787,7 @@ TextureImporter:
       EmptyHappy: -581968270
       EmptyHungry: 1745684365
       EmptyLife: 887588456
+      Empty_Button: 1323763021
       FullHappy: 22821539
       FullHungry: -819896619
       FullLife: -1557894170
@@ -819,8 +800,10 @@ TextureImporter:
       Menu_Button: 1153151865
       Next_Button: 1846007716
       Pause_Button: -23294444
+      Paused_Button: -891564222
       Play_Button: -1679034076
       Replay_Button: -764279891
+      Replay_Tutorial: -1363260994
       TimerGreen: -1017487557
       TimerRed: -1660045822
   mipmapLimitGroupName: 

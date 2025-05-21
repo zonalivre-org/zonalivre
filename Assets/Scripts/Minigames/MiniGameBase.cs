@@ -6,6 +6,8 @@ public abstract class MiniGameBase : MonoBehaviour
 {
     public static Action OnMiniGameStart;
     public static Action OnMiniGameEnd;
+    public static Action OnMiniGameComplete;
+
     public static Action OnMinigameInteract;
     [SerializeField] protected TMP_Text tipText;
     [SerializeField] private float tipDelay = 5f; // Time in seconds before showing the tip
@@ -17,6 +19,7 @@ public abstract class MiniGameBase : MonoBehaviour
 
     void Start() 
     {
+
         OnStart(); // You will need to call this OnStart method in every child class, because Unity is Unity :D 
     }
 
@@ -24,8 +27,6 @@ public abstract class MiniGameBase : MonoBehaviour
     {
         tipText.gameObject.SetActive(true);
 
-        OnMiniGameStart += StartMiniGame;
-        OnMiniGameEnd += EndMiniGame;
         OnMinigameInteract += RegisterPlayerClick;
 
         isMiniGameComplete = false;
@@ -33,6 +34,7 @@ public abstract class MiniGameBase : MonoBehaviour
         firstActionTriggered = false;
 
         isMiniGameActive = true;
+
     }
     void Update()
     {
@@ -68,7 +70,7 @@ public abstract class MiniGameBase : MonoBehaviour
     public virtual void StartMiniGame()
     {
         gameObject.SetActive(true);
-        GameManager.Instance.isMinigameActive = true;
+        //GameManager.Instance.isMinigameActive = true;
 
         isMiniGameActive = true;
         isMiniGameComplete = false;
@@ -77,18 +79,25 @@ public abstract class MiniGameBase : MonoBehaviour
         timeSinceLastClick = 0f;
 
         if (tipText != null) tipText.gameObject.SetActive(true);
+
+        OnMiniGameStart?.Invoke();
     }
 
 
     public virtual void EndMiniGame()
     {
+        OnMiniGameEnd?.Invoke();
+
+        if (isMiniGameComplete)
+        {
+            OnMiniGameComplete?.Invoke();
+        }
+        
         GameManager.Instance.isMinigameActive = false;
-        gameObject.SetActive(false);
-
-
         gameObject.SetActive(false);
         isMiniGameActive = false;
         isMiniGameComplete = false;
         firstActionTriggered = false;
+
     }
 }

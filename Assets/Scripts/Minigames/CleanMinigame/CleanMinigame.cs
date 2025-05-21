@@ -15,6 +15,8 @@ public class CleanMinigame : MiniGameBase
     [SerializeField] private RectTransform dragArea;
     [SerializeField] private Sprite trashBagSprite;
     [SerializeField] private Sprite trashSprite;
+    [SerializeField] private Sprite trashCanSpriteEmpty;
+    [SerializeField] private Sprite trashCanSpriteFull;
     [SerializeField] private RectTransform trashCan;
     [HideInInspector] public ObjectiveInteract objectiveInteract;
     [SerializeField] private Texture2D broomCursorTexture;
@@ -45,6 +47,8 @@ public class CleanMinigame : MiniGameBase
         OnStart();
 
         trashCan.gameObject.SetActive(false);
+
+        trashCan.GetComponent<Image>().sprite = trashCanSpriteEmpty;
 
         trashRemaining = trashAmount;
 
@@ -94,7 +98,7 @@ public class CleanMinigame : MiniGameBase
         trash.GetComponent<RectTransform>().anchoredPosition = new Vector2(Random.Range(-spawnArea.rect.width / 2, spawnArea.rect.width / 2), Random.Range(-spawnArea.rect.height / 2, spawnArea.rect.height / 2));
         
         trash.AddComponent<TrashObject>();
-        trash.GetComponent<TrashObject>().SetTrashProperties(cleanSpeed, this, trashBagSprite, trashCan, broomCursorTexture, handCursorTexture, dragArea);
+        trash.GetComponent<TrashObject>().SetTrashProperties(cleanSpeed, this, trashBagSprite, trashCanSpriteFull, trashCan, broomCursorTexture, handCursorTexture, dragArea);
     }
 
     public void ReduceTrashAmount()
@@ -103,9 +107,11 @@ public class CleanMinigame : MiniGameBase
         trashBagRemaining++;
         AudioManager.Instance.PlayRandomPitchSFXSound(2);
 
+        trashCan.gameObject.SetActive(true);
+
         if (trashRemaining <= 0)
         {
-            trashCan.gameObject.SetActive(true);
+            
             tipText.text = "Agora leve o lixo até a lixeira!";
         }
     }
@@ -115,7 +121,7 @@ public class CleanMinigame : MiniGameBase
         trashBagRemaining--;
         AudioManager.Instance.PlayRandomPitchSFXSound(2);
 
-        if (trashBagRemaining <= 0)
+        if (trashBagRemaining <= 0 && trashRemaining <= 0)
         {
             isMiniGameComplete = true;
             EndMiniGame();

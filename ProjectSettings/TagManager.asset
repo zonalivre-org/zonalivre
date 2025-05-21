@@ -9,6 +9,7 @@ TagManager:
   - Jogador
   - Ration
   - Bowl
+  - Water
   layers:
   - Default
   - TransparentFX

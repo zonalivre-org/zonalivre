@@ -7,6 +7,7 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private float detectionDelay = 0.5f;
     [SerializeField] private int scoreValue = 1;
     [SerializeField] private float cooldown = 0f;
+    public bool enable = false, interactable = true;
 
     [Header("Elements")]
     public string objectiveDescription;
@@ -19,14 +20,13 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private LayerMask clicklableLayers;
 
-    [Header("If object opens a minigame")]
-    [SerializeField] private GameObject minigame;
-
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
-    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame }
+    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame, WhackAMole, PlantTheCitronela }
 
     #region Objective Properties
+    [Header("If object opens a minigame")]
+    [SerializeField] private GameObject minigame;
 
     [Header("If object requires an item")]
     [SerializeField] private int idCheck;
@@ -36,6 +36,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     [Header("If object activates another object")]
     [SerializeField] private GameObject objectToActivate;
+    [SerializeField] private bool deactivateItself = false;
 
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
@@ -51,9 +52,15 @@ public class ObjectiveInteract : MonoBehaviour
     [Range(0, 1)][SerializeField] private float cleanSpeed;
     [SerializeField] private int trashAmount = 5;
 
+    [Header("Whack A Mole")]
+    [Range(1, 5)] [SerializeField] private int scoreToWin = 3;
+    [SerializeField] private float spawnInterval = 1.0f;
+
+    [Header("Plant The Citronela")]
+    [Range(0, 5)] [SerializeField] private float growthSpeed = 3f;
+
     #endregion
 
-    private bool enable = false, interactable = true;
     private float cooldownTimer;
     [HideInInspector] public bool isComplete = false;
     private PlayerInventory playerInventory;
@@ -68,6 +75,14 @@ public class ObjectiveInteract : MonoBehaviour
         playerInventory = FindObjectOfType<PlayerInventory>();
 
         cooldownTimer = cooldown;
+    }
+    void OnEnable()
+    {
+        MiniGameBase.OnMiniGameEnd += TurnOffEnable;
+    }
+    void OnDisable()
+    {
+        MiniGameBase.OnMiniGameEnd -= TurnOffEnable;
     }
 
     private void HandleInteraction()
@@ -84,7 +99,35 @@ public class ObjectiveInteract : MonoBehaviour
 
     private void SelectObjective()
     {
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, clicklableLayers)) { enable = true; } else if (enable) enable = false;
+        RaycastHit hit;
+        // Lança um raio a partir da posição do mouse nas camadas clicklableLayers.
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
+        {
+            // *** CORREÇÃO: Verificar se o objeto clicado É este GameObject ***
+            if (hit.collider.gameObject == this.gameObject)
+            {
+                // Se clicou NESTE objetivo e ele está interagível (não completo e não em cooldown), HABILITA o trigger check.
+                // A flag 'interactable' já garante que não está completo ou em cooldown.
+                if (interactable)
+                {
+                    enable = true; // Habilita a flag para que OnTriggerStay possa iniciar o minigame
+                    // Debug.Log($"Objetivo {gameObject.name} selecionado por clique. Trigger habilitado!"); // Para Debug
+                    // TODO: Opcional: Mostrar feedback visual de seleção
+                }
+                 // else { Debug.Log($"Objetivo {gameObject.name} clicado, mas não interagível."); } // Feedback se clicou mas não interagiu
+            }
+            else if (enable)
+            {
+                // Se clicou em outro objeto nas camadas clicklableLayers ENQUANTO este objetivo estava 'enable', CANCELA.
+                // Isso impede que um clique em outro objetivo dispare o minigame deste.
+                enable = false; // Desabilita a flag 'enable'
+                // Debug.Log($"Seleção de {gameObject.name} cancelada (clicou em outro lugar)."); // Para Debug
+                 CancelInvoke(nameof(StartMinigame)); // Cancela qualquer agendamento pendente
+                // A lógica de cancelamento de minigame em execução deve ser chamada externamente
+                // pelo sistema que gerencia minigames (ex: um GameManager).
+            }
+        }
+        // Se clicou FORA das clicklableLayers, o Raycast falha e 'enable' permanece como estava.
     }
 
     public void CloseTask()
@@ -105,11 +148,12 @@ public class ObjectiveInteract : MonoBehaviour
         playerInventory.RemoveItem();
         GameManager.Instance.AddScore(scoreValue);
 
-        if (objectToActivate) 
+        if (objectToActivate)
         {
             objectToActivate.SetActive(true);
             objectToActivate.GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(true);
         }
+        if (deactivateItself) gameObject.SetActive(false);
     }
 
     private void StartMinigame()
@@ -120,12 +164,14 @@ public class ObjectiveInteract : MonoBehaviour
 
         playerMovement.ToggleMovement(false);
         enable = false;
-        
+
         switch (miniGameType)
         {
             case MiniGames.MangoCatch: StartMangoCatch(); break;
             case MiniGames.QuickTimeEvent: StartQuickTimeEvent(); break;
             case MiniGames.CleanMinigame: StartCleanMinigame(); break;
+            case MiniGames.WhackAMole: StartWhackAMoleMinigame(); break;
+            case MiniGames.PlantTheCitronela: StartPlantTheCitronelaMinigame(); break;
         }
 
     }
@@ -154,6 +200,22 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<CleanMinigame>().StartMiniGame();
         GameManager.Instance.isMinigameActive = true;
     }
+
+    private void StartWhackAMoleMinigame()
+    {
+        minigame.GetComponent<WhackAMole>().SetMinigameRules(scoreToWin, spawnInterval);
+        minigame.GetComponent<WhackAMole>().objectiveInteract = this;
+        minigame.GetComponent<WhackAMole>().StartMiniGame();
+        GameManager.Instance.isMinigameActive = true;
+    }
+
+    private void StartPlantTheCitronelaMinigame()
+    {
+        minigame.GetComponent<PlantTheCitronela>().SetMinigameRules(growthSpeed);
+        minigame.GetComponent<PlantTheCitronela>().objectiveInteract = this;
+        minigame.GetComponent<PlantTheCitronela>().StartMiniGame();
+        GameManager.Instance.isMinigameActive = true;
+    }
     private bool CheckIfCanStartMinigame(string itemId = null)
     {
 
@@ -170,6 +232,10 @@ public class ObjectiveInteract : MonoBehaviour
             // playerMovement.ToggleMovement(true);
             return false;
         }
+    }
 
+    private void TurnOffEnable()
+    {
+        enable = false;
     }
 }

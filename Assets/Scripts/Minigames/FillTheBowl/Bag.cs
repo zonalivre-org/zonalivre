@@ -83,31 +83,10 @@ public class Bag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragH
 
     public void OnDrag(PointerEventData eventData)
     {
-        // Calculate the new position based on the drag delta
-        Vector2 newPosition = rectTransform.anchoredPosition + new Vector2(eventData.delta.x, eventData.delta.y);
-
-        // Get the bottom-left and top-right corners of the moveArea in local space
-        Vector2 minBounds = moveArea.rect.min + (Vector2)moveArea.anchoredPosition;
-        Vector2 maxBounds = moveArea.rect.max + (Vector2)moveArea.anchoredPosition;
-
-        // Get the size of the object (/2 because the pivot is in the center)
-        Vector2 objectSize = rectTransform.rect.size / 2;
-
-        // Clamp the new position's X-axis only if the cursor is inside the moveArea
         if (RectTransformUtility.RectangleContainsScreenPoint(moveArea, eventData.position, eventData.pressEventCamera))
         {
-            newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x + objectSize.x, maxBounds.x - objectSize.x);
+            transform.position = Input.mousePosition;
         }
-        else
-        {
-            newPosition.x = rectTransform.anchoredPosition.x; // Keep the X position unchanged
-        }
-
-        // Clamp the new position's Y-axis within the moveArea
-        newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y + objectSize.y, maxBounds.y - objectSize.y);
-
-        // Update the object's position
-        rectTransform.anchoredPosition = newPosition;
     }
 
 }
