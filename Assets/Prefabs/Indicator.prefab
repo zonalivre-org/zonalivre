@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3589370232137959794}
   - component: {fileID: 3872955715322994447}
-  - component: {fileID: 4309151851779775125}
   - component: {fileID: 720373701803123463}
   m_Layer: 9
   m_Name: Indicator
@@ -87,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4309151851779775125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081439590564396272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c57138503099aa4d8c4b3d65c3cf351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offSet: 5
-  floatDistance: 0.5
-  floatDuration: 1
 --- !u!95 &720373701803123463
 Animator:
   serializedVersion: 5

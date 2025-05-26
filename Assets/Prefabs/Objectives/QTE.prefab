@@ -149,6 +149,8 @@ MonoBehaviour:
   detectionDelay: 0.5
   scoreValue: 1
   cooldown: 0
+  enable: 0
+  interactable: 1
   objectiveDescription: Faz o Quick Time
   averageTimeToComplete: 0
   indicator: {fileID: 5021909201980745173}
@@ -160,14 +162,12 @@ MonoBehaviour:
   clicklableLayers:
     serializedVersion: 2
     m_Bits: 64
-  hasMinigame: 1
-  minigame: {fileID: 0}
   miniGameType: 1
-  needsItem: 0
+  minigame: {fileID: 0}
   idCheck: 0
-  givesItem: 0
   idGive: 0
   objectToActivate: {fileID: 0}
+  deactivateItself: 0
   mangoGoal: 3
   mangoFallSpeed: 275
   coolDownBetweenMangos: 1
@@ -176,6 +176,9 @@ MonoBehaviour:
   QTESafeZoneSizePercentage: 0.26
   cleanSpeed: 0
   trashAmount: 5
+  scoreToWin: 3
+  spawnInterval: 1
+  growthSpeed: 3
   isComplete: 0
 --- !u!65 &477808666999227252
 BoxCollider:
@@ -275,12 +278,12 @@ PrefabInstance:
     - target: {fileID: 3589370232137959794, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.3
+      value: 7.73
       objectReference: {fileID: 0}
     - target: {fileID: 3589370232137959794, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3.94
       objectReference: {fileID: 0}
     - target: {fileID: 3589370232137959794, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
@@ -337,6 +340,16 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.013602972
       objectReference: {fileID: 0}
+    - target: {fileID: 3872955715322994447, guid: 87efd9fad480bea4bb223a1d2f506b07,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872955715322994447, guid: 87efd9fad480bea4bb223a1d2f506b07,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4309151851779775125, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
       propertyPath: offSet
@@ -352,7 +365,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Indicator
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4309151851779775125, guid: 87efd9fad480bea4bb223a1d2f506b07, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
