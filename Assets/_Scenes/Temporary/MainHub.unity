@@ -21487,6 +21487,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceTile
       objectReference: {fileID: 0}
+    - target: {fileID: 8397699886120639360, guid: fa40b12e2ae2ade4b809e94492926335,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21519,7 +21524,7 @@ PrefabInstance:
     - target: {fileID: 2186362192300501411, guid: a34a15568408c8b40b88ad6c032eeb3f,
         type: 3}
       propertyPath: m_Acceleration
-      value: 28
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2186362192300501411, guid: a34a15568408c8b40b88ad6c032eeb3f,
         type: 3}
@@ -21674,7 +21679,7 @@ PrefabInstance:
     - target: {fileID: 2403178717503206865, guid: 3129abaeaf1e8d64eaee278c7b6fe8ac,
         type: 3}
       propertyPath: m_Acceleration
-      value: 26
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2403178717503206865, guid: 3129abaeaf1e8d64eaee278c7b6fe8ac,
         type: 3}
@@ -21684,7 +21689,7 @@ PrefabInstance:
     - target: {fileID: 2403178717503206865, guid: 3129abaeaf1e8d64eaee278c7b6fe8ac,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4358857608223591077, guid: 3129abaeaf1e8d64eaee278c7b6fe8ac,
         type: 3}
