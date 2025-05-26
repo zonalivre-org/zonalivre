@@ -36,9 +36,11 @@ public class PetInteract : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        
         if (enableMinigameStart && other.gameObject.CompareTag("Player"))
         {
-            if (playerInventory.GetItem() != null){
+            if (playerInventory.GetItem() != null)
+            {
                 return;
             }
             dogMovement.canAutoMove = false;
