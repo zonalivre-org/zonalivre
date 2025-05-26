@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Toque na sujeira para limp\xE1-la"
+  m_text: "Toque/clique na sujeira para limp\xE1-la"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8df45a845750504d8a2795fbd22b608, type: 2}
   m_sharedMaterial: {fileID: -7351501579672171409, guid: c8df45a845750504d8a2795fbd22b608,
@@ -1207,7 +1207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.3
+  m_fontSize: 49.5
   m_fontSizeBase: 84.66
   m_fontWeight: 400
   m_enableAutoSizing: 1

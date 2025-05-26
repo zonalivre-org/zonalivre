@@ -74,7 +74,7 @@ public class PlantTheCitronela : MiniGameBase
 
     public void TransformSeedIntoSappling()
     {
-        tipText.text = "Use o regador para regar a planta";
+        tipText.text = "Arraste o regador para regar a planta";
         waterCan.gameObject.SetActive(true);
         isPlanted = true;
         seed.gameObject.SetActive(false);
