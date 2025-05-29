@@ -472,12 +472,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 138667009}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &154517122 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5335297561532913243, guid: c5d89845df7a65f409018b593cb2015a,
-    type: 3}
-  m_PrefabInstance: {fileID: 897096122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &159477271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4032,14 +4026,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb29e68ffb2d7ef0a803f18ca7c6cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startObject: {fileID: 154517122}
-  endObject: {fileID: 1399197195}
-  arrowObject: {fileID: 8984356496619422666, guid: ed610c30aa376a9ba96b83729d1d27c5,
-    type: 3}
+  startPoint: {fileID: 624465979}
+  endPoint: {fileID: 5242443997539656842}
   startOffset: {x: 0.2, y: 0, z: 3.9}
   endOffset: {x: -4.28, y: 6.74, z: -3.1}
-  arrowOffset: {x: 0, y: 0, z: 0}
-  arrowYRotationAdjust: -90
+  arrowRenderer: {fileID: 2829944663484701596, guid: ed610c30aa376a9ba96b83729d1d27c5,
+    type: 3}
+  arrowRotationOffsetY: {x: 0, y: 0, z: 0}
+  lineRenderer: {fileID: 1285238270}
+  animationDuration: 1
+  displayDuration: 2
 --- !u!120 &1285238270
 LineRenderer:
   serializedVersion: 2
@@ -4061,7 +4057,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 918c5852a0944b8438c371dd6436ebbf, type: 2}
+  - {fileID: 2100000, guid: 1e8099bacb448a14bb2853031df79eed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4447,12 +4443,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c48906eea617eba4b9ee025beccc61be,
     type: 3}
   m_PrefabInstance: {fileID: 1380128908}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1399197195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
-    type: 3}
-  m_PrefabInstance: {fileID: 6661625888262804081}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1401230550
 PrefabInstance:
@@ -7023,6 +7013,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArrowIndication
       objectReference: {fileID: 0}
+    - target: {fileID: 8984356496619422666, guid: ed610c30aa376a9ba96b83729d1d27c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8083,6 +8078,11 @@ PrefabInstance:
       propertyPath: averageTimeToComplete
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: objectConnectionVisualizer
+      value: 
+      objectReference: {fileID: 1285238269}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name

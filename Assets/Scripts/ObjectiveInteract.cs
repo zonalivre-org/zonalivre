@@ -231,7 +231,7 @@ public class ObjectiveInteract : MonoBehaviour
             // Checa se tem o script ObjectConnecionVisualizer
             if (objectConnectionVisualizer)
             {
-                objectConnectionVisualizer.ShowConnection();
+                objectConnectionVisualizer.ShowConnector();
                 Debug.Log("Você não tem o item necessário para iniciar o minigame.");
             }
        
