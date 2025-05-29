@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
+    [Header("Save System")]
+    [SerializeField] private int levelIndex;
+    [SerializeField] private int cutSceneToUnlock;
     [Header("Time")]
     [SerializeField] private int levelTime;
 
@@ -162,7 +165,20 @@ public class GameManager : MonoBehaviour
             }
             else Debug.Log("The results panel was called but the players hasn't won or lost yet!");
 
-            if (state > 0) resultText.text = "Parabéns! Você venceu!";
+            if (state > 0)
+            {
+                resultText.text = "Parabéns! Você venceu!";
+
+                if (SaveManager.Instance != null)
+                {
+                    SaveManager.Instance.SetLevelCompletion(levelIndex, true);
+                    SaveManager.Instance.SetCutSceneLock(cutSceneToUnlock, true);
+                }
+                else
+                {
+                    Debug.LogWarning("SaveManager is not present in the scene, cannot save game progress.");
+                }
+            }
 
             else if (state < 0)
             {
@@ -218,4 +234,13 @@ public class GameManager : MonoBehaviour
 
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    #region CHEATS
+    public void CompleteLevel()
+    {
+        win = 1;
+        ShowResultPanel(win);
+    }
+
+    #endregion
 }
