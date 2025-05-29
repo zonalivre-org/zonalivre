@@ -54,6 +54,23 @@ public class ObjectConnectionVisualizer : MonoBehaviour
         }
     }
 
+    public void ShowConnection()
+    {
+        gameObject.SetActive(true); // Garante que o GameObject esteja ativo
+        Invoke(nameof(HideConnection), 1f); // Chama HideConnection após um pequeno delay para evitar problemas de atualização
+
+  
+            Debug.Log("ShowConnection called. Activating visualizer...");
+            this.enabled = true; // Ativa este script para que o Update funcione
+            lineRenderer.enabled = true; // Mostra a linha
+            if (arrowObject != null) arrowObject.SetActive(true); // Mostra a seta
+
+            // Atualiza a conexão imediatamente
+            UpdateConnection();
+
+        
+    }
+
     /// <summary>
     /// Define os objetos a serem conectados e mostra o visualizador.
     /// </summary>
@@ -75,19 +92,15 @@ public class ObjectConnectionVisualizer : MonoBehaviour
         else
         {
             // Se algum objeto for nulo, esconde tudo
-            HideConnection();
         }
     }
-
-    /// <summary>
-    /// Esconde o visualizador de conexão.
-    /// </summary>
     public void HideConnection()
     {
-        startObject = null;
-        endObject = null;
-        this.enabled = false; // Desativa este script (para parar o Update)
+        Debug.Log("HideConnection called. Deactivating visualizer...");
+        // Desativa o visualizador
+        this.enabled = false; // Desativa este script para que o Update não funcione
         lineRenderer.enabled = false; // Esconde a linha
+        gameObject.SetActive(false); // Desativa o GameObject principal
         if (arrowObject != null) arrowObject.SetActive(false); // Esconde a seta
     }
 
@@ -101,7 +114,7 @@ public class ObjectConnectionVisualizer : MonoBehaviour
             return;
         }
 
-   
+
         // ... (checagens de null) ...
 
         // Calcula as posições dos pontos da linha no espaço do mundo, aplicando os offsets
@@ -123,16 +136,16 @@ public class ObjectConnectionVisualizer : MonoBehaviour
 
             if (direction.sqrMagnitude > 0.0001f) // Evita erro de LookRotation se os pontos forem muito próximos
             {
-                 // Cria uma rotação que olha na direção, mantendo o Up do mundo
-                 Quaternion lookRotation = Quaternion.LookRotation(direction, Vector3.up);
+                // Cria uma rotação que olha na direção, mantendo o Up do mundo
+                Quaternion lookRotation = Quaternion.LookRotation(direction, Vector3.up);
 
-                 // Aplica a rotação calculada
-                 arrowObject.transform.rotation = lookRotation;
+                // Aplica a rotação calculada
+                arrowObject.transform.rotation = lookRotation;
 
-                 // Aplica o ajuste de rotação Y se necessário (para corrigir a orientação padrão do seu modelo de seta)
-                 arrowObject.transform.Rotate(Vector3.up, arrowYRotationAdjust);
+                // Aplica o ajuste de rotação Y se necessário (para corrigir a orientação padrão do seu modelo de seta)
+                arrowObject.transform.Rotate(Vector3.up, arrowYRotationAdjust);
             }
-             // else { seta fica na rotação padrão ou última conhecida }
+            // else { seta fica na rotação padrão ou última conhecida }
         }
     }
 }
