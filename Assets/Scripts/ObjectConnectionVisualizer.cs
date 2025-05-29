@@ -34,7 +34,7 @@ public class ObjectConnectionVisualizer : MonoBehaviour
         // Garante que a seta esteja desativada no início se existir
         if (arrowObject != null)
         {
-            arrowObject.SetActive(false);
+            // arrowObject.SetActive(false);
         }
     }
 
@@ -101,11 +101,14 @@ public class ObjectConnectionVisualizer : MonoBehaviour
             return;
         }
 
-        // Calcula as posições dos pontos da linha no espaço do mundo, aplicando os offsets
-        Vector3 startPointWorld = startObject.transform.position + startOffset;
-        Vector3 endPointWorld = endObject.transform.position + endOffset;
+   
+        // ... (checagens de null) ...
 
-        // Define os pontos da linha
+        // Calcula as posições dos pontos da linha no espaço do mundo, aplicando os offsets
+        Vector3 startPointWorld = startObject.transform.position + startOffset; // <-- startOffset aplicado AQUI
+        Vector3 endPointWorld = endObject.transform.position + endOffset;     // <-- endOffset aplicado AQUI
+
+        // Define os pontos da linha,
         lineRenderer.SetPosition(0, startPointWorld);
         lineRenderer.SetPosition(1, endPointWorld);
 
