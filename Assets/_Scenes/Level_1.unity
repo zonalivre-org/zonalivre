@@ -4903,6 +4903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65729d1ffdd0285458e23b0bd87e8929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelIndex: 1
+  cutSceneToUnlock: 2
   levelTime: 300
   goal: 4
   health: 100

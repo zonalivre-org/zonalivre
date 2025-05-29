@@ -3406,6 +3406,12 @@ MonoBehaviour:
   replayIndex: 0
   replayEndIndex: 0
   isReplaying: 0
+--- !u!1 &1176440310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5400176761819116397, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 2496538277273570598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1178560553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1856765457208144513, guid: 10a2d03414f8e0ab89eab431a6528bd8,
@@ -4735,6 +4741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65729d1ffdd0285458e23b0bd87e8929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelIndex: 0
+  cutSceneToUnlock: 1
   levelTime: 120
   goal: 4
   health: 100
@@ -4751,7 +4759,7 @@ MonoBehaviour:
   staminaFillImage: {fileID: 1014428311318274669}
   happynessSlider: {fileID: 8609196952459259760}
   happynessFillImage: {fileID: 6780863035480173686}
-  resultUI: {fileID: 0}
+  resultUI: {fileID: 1176440310}
   resultText: {fileID: 6584764719198270787}
   loseText: {fileID: 838776599}
   playerMovement: {fileID: 2249948526550260760}
@@ -7631,6 +7639,36 @@ PrefabInstance:
     - target: {fileID: 5758321003921360457, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035603796718587594, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035603796718587594, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035603796718587594, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035603796718587594, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035603796718587594, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035603796718587594, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6227158874532180999, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
