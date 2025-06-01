@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1368338818043158837}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.4, z: -3.99}
+  m_LocalPosition: {x: -0.17, y: 0.4, z: -1.95}
   m_LocalScale: {x: 11.77, y: 11.77, z: 11.77}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -107,7 +107,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6637255382023324315}
   - component: {fileID: 627017234475511237}
-  - component: {fileID: 8571274598186501258}
   - component: {fileID: 3854317375226708372}
   m_Layer: 9
   m_Name: Indicator
@@ -184,20 +183,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8571274598186501258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2626652663503232751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c57138503099aa4d8c4b3d65c3cf351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 4006353459139132032}
-  offSet: 8
 --- !u!95 &3854317375226708372
 Animator:
   serializedVersion: 5
@@ -272,6 +257,8 @@ MonoBehaviour:
   detectionDelay: 0.5
   scoreValue: 1
   cooldown: 0
+  enable: 0
+  interactable: 1
   objectiveDescription: Limpe o Galinheiro
   averageTimeToComplete: 10
   indicator: {fileID: 2626652663503232751}
@@ -282,11 +269,12 @@ MonoBehaviour:
   clicklableLayers:
     serializedVersion: 2
     m_Bits: 64
-  minigame: {fileID: 0}
   miniGameType: 3
+  minigame: {fileID: 0}
   idCheck: 0
   idGive: 0
   objectToActivate: {fileID: 0}
+  deactivateItself: 0
   mangoGoal: 6
   mangoFallSpeed: 400
   coolDownBetweenMangos: 0.75
@@ -295,8 +283,9 @@ MonoBehaviour:
   QTESafeZoneSizePercentage: 0
   cleanSpeed: 0
   trashAmount: 5
-  scoreToWin: 3
+  scoreToWin: 5
   spawnInterval: 1
+  growthSpeed: 3
   isComplete: 0
 --- !u!65 &4909151310741113057
 BoxCollider:
@@ -393,7 +382,7 @@ Transform:
   m_GameObject: {fileID: 4006353459139132032}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 3.8, z: -2.14}
+  m_LocalPosition: {x: 0, y: -0.48, z: -2.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

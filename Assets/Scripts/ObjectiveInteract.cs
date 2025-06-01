@@ -64,6 +64,7 @@ public class ObjectiveInteract : MonoBehaviour
     private float cooldownTimer;
     [HideInInspector] public bool isComplete = false;
     private PlayerInventory playerInventory;
+    [SerializeField] private ObjectConnectionVisualizer objectConnectionVisualizer;
 
     private void Awake() { InitializeComponents(); }
     private void LateUpdate() { HandleInteraction(); }
@@ -227,8 +228,13 @@ public class ObjectiveInteract : MonoBehaviour
         else
         {
             playerMovement.ToggleMovement(true);
-
-            Debug.Log("Você não tem o item necessário para iniciar o minigame.");
+            // Checa se tem o script ObjectConnecionVisualizer
+            if (objectConnectionVisualizer)
+            {
+                objectConnectionVisualizer.ShowConnector();
+                Debug.Log("Você não tem o item necessário para iniciar o minigame.");
+            }
+       
             // playerMovement.ToggleMovement(true);
             return false;
         }
