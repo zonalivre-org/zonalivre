@@ -56,7 +56,7 @@ public class PauseMenu : MonoBehaviour
         await pauseMenuUI.DOScale(Vector3.zero, animationDuration).SetEase(Ease.InBack).SetUpdate(true).AsyncWaitForCompletion();
     }
 
-    public void ShowButtons()
+    private void ShowButtons()
     {
         Sequence sequence = DOTween.Sequence();
 
@@ -71,11 +71,12 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void HideButtons()
+    private void HideButtons()
     {
         foreach (GameObject button in HUDButtons)
         {
             button.SetActive(false);
         }
     }
+
 }

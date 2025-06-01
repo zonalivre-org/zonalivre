@@ -47,6 +47,21 @@ public class SaveManager : MonoBehaviour
         saveFile.cutScenesUnlocked[cutSceneIndex] = isUnlocked;
         SaveGame(saveFile);
     }
+
+    public void SetSpawnPosition(Vector3 position)
+    {
+        SaveFile saveFile = LoadGame() ?? new SaveFile();
+        saveFile.spawnPosition = position;
+        SaveGame(saveFile);
+    }
+
+    public void ToggleFirstTime(bool isFirstTime)
+    {
+        SaveFile saveFile = LoadGame() ?? new SaveFile();
+        saveFile.firstTime = isFirstTime;
+        SaveGame(saveFile);
+    }
+
     #endregion
 
     #region Save and Load Methods
@@ -78,8 +93,12 @@ public class SaveManager : MonoBehaviour
     {
         SaveFile newSaveFile = new SaveFile();
         newSaveFile.cutScenesUnlocked[0] = true; // Unlock the first cutscene by default
+        newSaveFile.levelsUnlocked[0] = true; // Unlock the first level by default
+        newSaveFile.firstTime = true; // Indicate that this is the first time playing
+        newSaveFile.spawnPosition = new Vector3(-350, 0, 6.75f);
         SaveGame(newSaveFile);
         return newSaveFile;
     }
+
     #endregion
 }

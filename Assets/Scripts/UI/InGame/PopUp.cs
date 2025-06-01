@@ -29,7 +29,7 @@ public class PopUp : MonoBehaviour
         gameObject.SetActive(true);
 
         transform.localScale = Vector3.zero;
-        transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);
+        transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutCubic).SetUpdate(true);
     }
 
     public void ReopenPopUp()
@@ -40,7 +40,7 @@ public class PopUp : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);
+        transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutCubic).SetUpdate(true);
     }
 
     public void ClosePopUp()

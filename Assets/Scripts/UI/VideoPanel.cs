@@ -12,7 +12,6 @@ public class VideoPanel : MonoBehaviour
     [HideInInspector] public int cutSceneIndex;
     [HideInInspector] public int levelToUnlock;
     [HideInInspector] public string clipPath;
-    [HideInInspector] public LevelSelection levelSelection;
     public HorizontalLayoutGroup horizontalLayoutGroup;
     public TMP_Text videoTitle;
     public VideoPlayer player;
@@ -21,18 +20,24 @@ public class VideoPanel : MonoBehaviour
     public Sprite pausedButtonSprite, playButtonSprite;
     public Image playButtonImage;
     public bool ended;
+    private SaveFile saveFile;
 
     void Awake()
     {
         player.SetTargetAudioSource(0, AudioManager.Instance.videoAudioSource);
     }
+
+    void Start()
+    {
+        saveFile = SaveManager.Instance.LoadGame();
+    }
+
     private void OnEnable()
     {
         AudioManager.Instance.PauseMusic();
         videoVolume.gameObject.SetActive(false);
         ShowPanel();
         InvokeRepeating("SyncSlider", 0.5f, 0.1f);
-
     }
 
     public void SyncSlider()
@@ -45,7 +50,6 @@ public class VideoPanel : MonoBehaviour
                 ended = true;
                 SaveManager.Instance.SetCutSceneCompletion(cutSceneIndex, true);
                 SaveManager.Instance.SetLevelLock(levelToUnlock, true);
-                levelSelection.ShowUnlockedLevels();
 
                 closeButton.GetComponent<ButtonAnimation>().SetClickable(true);
             }
@@ -54,13 +58,22 @@ public class VideoPanel : MonoBehaviour
 
     private void ShowPanel()
     {
+        transform.localScale = Vector3.zero;
         transform.DOScale(1, 0.2f).SetEase(Ease.OutBack).SetUpdate(true);
     }
 
-    public void SetVideoClip(string clipPath)
+    public void SetVideoClip(string clipName)
     {
-        this.clipPath = clipPath;
-        player.url = this.clipPath;
+        if (clipName != String.Empty)
+        {
+            clipPath = System.IO.Path.Combine(Application.streamingAssetsPath, clipName);
+        }
+        else
+        {
+            Debug.LogError("Tá sem nome de video aí rapaz");
+        }
+
+        player.url = clipPath;
         Debug.Log("Caminho do arquivo: " + clipPath);
     }
 

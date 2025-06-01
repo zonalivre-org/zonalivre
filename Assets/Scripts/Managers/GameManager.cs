@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Save System")]
     [SerializeField] private int levelIndex;
-    [SerializeField] private int cutSceneToUnlock;
+    [SerializeField] private int levelToUnlock;
     [Header("Time")]
     [SerializeField] private int levelTime;
 
@@ -171,7 +171,8 @@ public class GameManager : MonoBehaviour
                 if (SaveManager.Instance != null)
                 {
                     SaveManager.Instance.SetLevelCompletion(levelIndex, true);
-                    SaveManager.Instance.SetCutSceneLock(cutSceneToUnlock, true);
+                    SaveManager.Instance.SetCutSceneLock(levelToUnlock, true);
+                    SaveManager.Instance.SetLevelLock(levelToUnlock, true);
                 }
                 else
                 {
