@@ -5,26 +5,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
+[System.Serializable]
 public class PopUp : MonoBehaviour
 {
+    [TextArea(3, 10)]
     public TMP_Text popUpTille;
     public TMP_Text popUpDescription;
     public GameObject background;
     public Action OnPopUpClosed;
     [SerializeField] private VideoPlayer videoPlayer;
     public bool reopened = false;
+    public PopUp[] popUpsArray;
 
     public void SetPopUp(string title, string description)
     {
+        Time.timeScale = 0f;
+        
         background.SetActive(true);
         background.GetComponent<Image>().DOFade(0.5f, 0.5f).SetUpdate(true);
         popUpTille.text = title;
         popUpDescription.text = description;
 
-        Time.timeScale = 0f;
-
         gameObject.SetActive(true);
 
+        transform.localScale = Vector3.zero;
         transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);
     }
 

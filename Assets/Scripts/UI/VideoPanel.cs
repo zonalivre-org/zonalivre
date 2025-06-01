@@ -8,14 +8,19 @@ using UnityEngine.Video;
 
 public class VideoPanel : MonoBehaviour
 {
-    public string clipPath;
+    public GameObject closeButton;
+    [HideInInspector] public int cutSceneIndex;
+    [HideInInspector] public int levelToUnlock;
+    [HideInInspector] public string clipPath;
+    [HideInInspector] public LevelSelection levelSelection;
+    public HorizontalLayoutGroup horizontalLayoutGroup;
     public TMP_Text videoTitle;
     public VideoPlayer player;
     public RenderTexture renderTexture;
     public Slider videoDuration, videoVolume;
-    public bool trigger;
     public Sprite pausedButtonSprite, playButtonSprite;
     public Image playButtonImage;
+    public bool ended;
 
     void Awake()
     {
@@ -27,6 +32,7 @@ public class VideoPanel : MonoBehaviour
         videoVolume.gameObject.SetActive(false);
         ShowPanel();
         InvokeRepeating("SyncSlider", 0.5f, 0.1f);
+
     }
 
     public void SyncSlider()
@@ -34,6 +40,15 @@ public class VideoPanel : MonoBehaviour
         if (player.isPlaying)
         {
             videoDuration.value = (float)(player.time / player.length);
+            if (videoDuration.value >= 0.9f && ended == false)
+            {
+                ended = true;
+                SaveManager.Instance.SetCutSceneCompletion(cutSceneIndex, true);
+                SaveManager.Instance.SetLevelLock(levelToUnlock, true);
+                levelSelection.ShowUnlockedLevels();
+
+                closeButton.GetComponent<ButtonAnimation>().SetClickable(true);
+            }
         }
     }
 
@@ -86,9 +101,14 @@ public class VideoPanel : MonoBehaviour
             videoVolume.gameObject.SetActive(true);
         }
     }
+
     public void ClosePanel()
     {
         player.url = null;
+
+        videoDuration.value = 0;
+
+        ended = false;
 
         renderTexture.Release();
 

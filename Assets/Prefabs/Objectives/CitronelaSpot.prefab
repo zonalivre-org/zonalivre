@@ -53,22 +53,25 @@ MonoBehaviour:
   detectionDelay: 0.5
   scoreValue: 1
   cooldown: 0
+  enable: 0
+  interactable: 1
   objectiveDescription: Plante uma citronela
   averageTimeToComplete: 6
   indicator: {fileID: 1975840968416943267}
   taskItem: {fileID: 0}
   taskIcon: {fileID: 1455022255, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
-  objectiveCompleteSprite: {fileID: 21300000, guid: bf4d3b9a7be8e79408993f31467a92e2,
+  objectiveCompleteSprite: {fileID: 430503522, guid: 105003ccb35f73b44b04936a311fca82,
     type: 3}
   spriteRenderer: {fileID: 6390559477364978399}
   clicklableLayers:
     serializedVersion: 2
     m_Bits: 64
-  minigame: {fileID: 0}
   miniGameType: 4
+  minigame: {fileID: 0}
   idCheck: 0
   idGive: 0
   objectToActivate: {fileID: 0}
+  deactivateItself: 0
   mangoGoal: 6
   mangoFallSpeed: 400
   coolDownBetweenMangos: 0.75
@@ -100,7 +103,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 2, z: 10}
+  m_Size: {x: 5.07, y: 2, z: 10}
   m_Center: {x: 0, y: 1, z: -4}
 --- !u!54 &2340306736705041553
 Rigidbody:
@@ -176,9 +179,9 @@ Transform:
   m_GameObject: {fileID: 1008130794818732495}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 0.76, z: -2.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: -1.81}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2988591163980516266}
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
@@ -223,7 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1455022255, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: 89161652, guid: 105003ccb35f73b44b04936a311fca82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,7 +236,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &1018679418961829919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +271,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8578510907890223578}
   - component: {fileID: 141675740342272780}
-  - component: {fileID: 4650417442491713876}
   - component: {fileID: 6888648583820030399}
   m_Layer: 9
   m_Name: Indicator
@@ -286,7 +288,7 @@ Transform:
   m_GameObject: {fileID: 1975840968416943267}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.67, z: 0}
+  m_LocalPosition: {x: 0, y: 5.64, z: 0}
   m_LocalScale: {x: 3.17, y: 3.17, z: 3.17}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -345,20 +347,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4650417442491713876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975840968416943267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c57138503099aa4d8c4b3d65c3cf351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1008130794818732495}
-  offSet: 8
 --- !u!95 &6888648583820030399
 Animator:
   serializedVersion: 5
@@ -407,8 +395,8 @@ Transform:
   m_GameObject: {fileID: 6081556961882570014}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.4, z: -3.99}
-  m_LocalScale: {x: 7.6, y: 7.6, z: 7.6}
+  m_LocalPosition: {x: -0, y: 0.4, z: -2.01}
+  m_LocalScale: {x: 4.77, y: 4.77, z: 4.77}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2988591163980516266}

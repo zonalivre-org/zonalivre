@@ -762,6 +762,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Help_Button
+      rect:
+        serializedVersion: 2
+        x: 2314
+        y: 2492
+        width: 366
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef6ad87ce9b8b4428d24ce6c99d3a0d
+      internalID: 1928945865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -797,6 +818,7 @@ TextureImporter:
       Guide04: -1547505888
       Guide05: 681964702
       Guide06: -793924606
+      Help_Button: 1928945865
       Menu_Button: 1153151865
       Next_Button: 1846007716
       Pause_Button: -23294444

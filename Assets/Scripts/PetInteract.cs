@@ -138,9 +138,8 @@ public class PetInteract : MonoBehaviour
 
     private void StartMinigame() // receives a value from within this script between 0 and 2 then activate the minigame corresponding to whatever pet slider value is to be changed.
     {
-        if (enableMinigameStart)
+        if (enableMinigameStart && GameManager.Instance.isMinigameActive == false)
         {
-
             if (playerInventory.GetItem() && playerInventory.GetItem().id == "Coleira" && canHeal)
             {
                 StartHealthMinigame();
@@ -153,6 +152,7 @@ public class PetInteract : MonoBehaviour
             {
                 StartHappynessMinigame();
             }
+            GameManager.Instance.isMinigameActive = true;
         }
     }
 

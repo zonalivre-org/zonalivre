@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
+    [Header("Save System")]
+    [SerializeField] private int levelIndex;
+    [SerializeField] private int cutSceneToUnlock;
     [Header("Time")]
     [SerializeField] private int levelTime;
 
@@ -29,7 +32,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject resultUI;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private TMP_Text loseText;
-    [SerializeField] private GameObject nextLevelButton;
 
     [Header("References")]
     public static GameManager Instance;
@@ -112,9 +114,9 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
-        }
 
-        UpdateUI();
+            UpdateUI();
+        }
     }
 
     private void StartTimer()
@@ -162,11 +164,23 @@ public class GameManager : MonoBehaviour
             }
             else Debug.Log("The results panel was called but the players hasn't won or lost yet!");
 
-            if (state > 0) resultText.text = "Parabéns! Você venceu!";
+            if (state > 0)
+            {
+                resultText.text = "Parabéns! Você venceu!";
+
+                if (SaveManager.Instance != null)
+                {
+                    SaveManager.Instance.SetLevelCompletion(levelIndex, true);
+                    SaveManager.Instance.SetCutSceneLock(cutSceneToUnlock, true);
+                }
+                else
+                {
+                    Debug.LogWarning("SaveManager is not present in the scene, cannot save game progress.");
+                }
+            }
 
             else if (state < 0)
             {
-                nextLevelButton.SetActive(false);
                 loseText.gameObject.SetActive(true);
                 resultText.text = "Oh não! Voce perdeu!";
                 if (healthSlider.value <= 0.0001) loseText.text = "Saúde do Pet zerada!";
@@ -218,4 +232,14 @@ public class GameManager : MonoBehaviour
 
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    #region CHEATS
+    public void CompleteLevel()
+    {
+        win = 1;
+        ShowResultPanel(win);
+        timeCount = false;
+    }
+
+    #endregion
 }

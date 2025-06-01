@@ -1,9 +1,12 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ButtonAnimation : EventTrigger
 {
+    [SerializeField] private bool isClickable = true;
+    [SerializeField] private GameObject buttonLock;
     [SerializeField] private float scaleFactor = 1.2f;
     private Vector3 originalScale;
     [SerializeField] private int clickSoundEffectIndex = 0;
@@ -11,6 +14,14 @@ public class ButtonAnimation : EventTrigger
 
     void Start()
     {
+        if (isClickable)
+        {
+            GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            GetComponent<Button>().interactable = false;
+        }
         originalScale = transform.localScale;
     }
 
@@ -50,4 +61,17 @@ public class ButtonAnimation : EventTrigger
         }
     }
 
+    public void SetClickable(bool clickable)
+    {
+        isClickable = clickable;
+        GetComponent<Button>().interactable = clickable;
+        if (clickable)
+        {
+            buttonLock.SetActive(false);
+        }
+        else
+        {
+            buttonLock.SetActive(true);
+        }
+    }
 }
