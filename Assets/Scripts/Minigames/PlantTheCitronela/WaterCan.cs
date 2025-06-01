@@ -70,9 +70,9 @@ public class WaterCan : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
         Destroy(ration, 3f); 
 
-        float randomRotation = Random.Range(0, 360);
+        // float randomRotation = Random.Range(0, 360);
 
-        ration.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0, 0, randomRotation);
+        // ration.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0, 0, randomRotation);
 
         Vector3 forceDirection = spawnPoint.up * startSpeed;
 

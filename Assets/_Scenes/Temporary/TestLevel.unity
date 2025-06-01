@@ -261,27 +261,24 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!95 &2550440
-Animator:
-  serializedVersion: 5
+--- !u!114 &2550440
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2550435}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f242628a6bb09e4b9f44c39278310b7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53351f496b0af7346832e4aef667fbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrthographicSize: 28
+  baseCameraY: 45
+  baseCameraYStartPosition: 80
+  fallDuration: 3
+  fadeImage: {fileID: 1632153798}
+  fadeCanvas: {fileID: 1844963931}
 --- !u!1 &8414564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6489740290230214119, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
@@ -4854,6 +4851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65729d1ffdd0285458e23b0bd87e8929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelIndex: 0
+  cutSceneToUnlock: 0
   levelTime: 300
   goal: 4
   health: 100
@@ -9049,6 +9048,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770191483688655291, guid: 8e37e1da068e9314899d60acb63802bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896606491882001471, guid: 8e37e1da068e9314899d60acb63802bd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390559477364978399, guid: 8e37e1da068e9314899d60acb63802bd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 89161652, guid: 105003ccb35f73b44b04936a311fca82,
+        type: 3}
+    - target: {fileID: 6390559477364978399, guid: 8e37e1da068e9314899d60acb63802bd,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
