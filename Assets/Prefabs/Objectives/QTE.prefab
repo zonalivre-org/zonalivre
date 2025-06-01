@@ -180,6 +180,7 @@ MonoBehaviour:
   spawnInterval: 1
   growthSpeed: 3
   isComplete: 0
+  objectConnectionVisualizer: {fileID: 0}
 --- !u!65 &477808666999227252
 BoxCollider:
   m_ObjectHideFlags: 0
