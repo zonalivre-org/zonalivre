@@ -21,6 +21,8 @@ public class VideoButton : MonoBehaviour
         bool[] cutScenesWatched = SaveManager.Instance.LoadGame().cutScenesWatched;
 
         videoPanel.levelSelection = levelSelection;
+        videoPanel.cutSceneIndex = cutSceneIndex;
+        videoPanel.ended = false;
 
         if (cutScenesWatched[cutSceneIndex])
         {
