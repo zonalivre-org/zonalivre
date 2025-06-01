@@ -5195,7 +5195,7 @@ GameObject:
   - component: {fileID: 1447430485}
   - component: {fileID: 1447430484}
   m_Layer: 3
-  m_Name: GroundLevel1
+  m_Name: GroundLevel3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5230,7 +5230,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 423112293f0372f7a95bfa5015581706, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: fe59ab5574b11214591386c2e2749669, type: 2}
   m_BuildHeightMesh: 0
 --- !u!64 &1447430485
 MeshCollider:
