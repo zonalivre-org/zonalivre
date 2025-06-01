@@ -25,6 +25,7 @@ public class ObjectConnectionVisualizer : MonoBehaviour
 
     public void ShowConnector()
     {
+        gameObject.SetActive(true);
         Vector3 worldStart = startPoint.position + startOffset;
         Vector3 worldEnd = endPoint.position + endOffset;
 
