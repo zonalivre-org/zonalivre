@@ -8555,6 +8555,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: House
       objectReference: {fileID: 0}
+    - target: {fileID: 8158994104286677519, guid: 91006cddf4c71a2159e66e38aeb02b91,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 2.635
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
