@@ -3,6 +3,7 @@ using UnityEngine.Video;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.UI;
 
 public class VideoButton : MonoBehaviour
 {
@@ -24,12 +25,14 @@ public class VideoButton : MonoBehaviour
         if (cutScenesWatched[cutSceneIndex])
         {
             Debug.Log("Custscene already watched.");
-            videoPanel.closeButton.SetActive(true);
+            videoPanel.closeButton.GetComponent<ButtonAnimation>().SetClickable(true);
+
         }
         else
         {
             Debug.Log("First time watching this cutscene.");
-            videoPanel.closeButton.SetActive(false);
+            videoPanel.closeButton.GetComponent<ButtonAnimation>().SetClickable(false);
+
             videoPanel.levelToUnlock = levelToUnlock;
         }
 

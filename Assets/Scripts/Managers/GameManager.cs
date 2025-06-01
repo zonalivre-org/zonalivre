@@ -114,9 +114,9 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
-        }
 
-        UpdateUI();
+            UpdateUI();
+        }
     }
 
     private void StartTimer()
@@ -238,6 +238,7 @@ public class GameManager : MonoBehaviour
     {
         win = 1;
         ShowResultPanel(win);
+        timeCount = false;
     }
 
     #endregion

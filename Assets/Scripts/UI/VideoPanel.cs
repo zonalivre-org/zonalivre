@@ -13,6 +13,7 @@ public class VideoPanel : MonoBehaviour
     [HideInInspector] public int levelToUnlock;
     [HideInInspector] public string clipPath;
     [HideInInspector] public LevelSelection levelSelection;
+    public HorizontalLayoutGroup horizontalLayoutGroup;
     public TMP_Text videoTitle;
     public VideoPlayer player;
     public RenderTexture renderTexture;
@@ -31,6 +32,7 @@ public class VideoPanel : MonoBehaviour
         videoVolume.gameObject.SetActive(false);
         ShowPanel();
         InvokeRepeating("SyncSlider", 0.5f, 0.1f);
+
     }
 
     public void SyncSlider()
@@ -44,7 +46,8 @@ public class VideoPanel : MonoBehaviour
                 SaveManager.Instance.SetCutSceneCompletion(cutSceneIndex, true);
                 SaveManager.Instance.SetLevelLock(levelToUnlock, true);
                 levelSelection.ShowUnlockedLevels();
-                closeButton.SetActive(true);
+
+                closeButton.GetComponent<ButtonAnimation>().SetClickable(true);
             }
         }
     }

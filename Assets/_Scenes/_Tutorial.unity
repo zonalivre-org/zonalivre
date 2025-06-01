@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 2550436}
   - component: {fileID: 2550439}
   - component: {fileID: 2550440}
+  - component: {fileID: 2550441}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -282,6 +283,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2550441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2550435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53351f496b0af7346832e4aef667fbba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseOrthographicSize: 28
+  baseCameraY: 45
+  baseCameraYStartPosition: 80
+  fallDuration: 3
+  fadeImage: {fileID: 1632153798}
+  fadeCanvas: {fileID: 1844963931}
 --- !u!1 &8414564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6489740290230214119, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
