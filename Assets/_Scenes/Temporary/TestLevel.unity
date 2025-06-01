@@ -564,6 +564,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 196454619}
     m_Modifications:
+    - target: {fileID: 1925711726217929197, guid: eee9d11de3f06844282df4bb07a6f62b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.35
+      objectReference: {fileID: 0}
     - target: {fileID: 3248739765597737770, guid: eee9d11de3f06844282df4bb07a6f62b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -613,6 +618,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294039871949936851, guid: eee9d11de3f06844282df4bb07a6f62b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032718004271547964, guid: eee9d11de3f06844282df4bb07a6f62b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: eee9d11de3f06844282df4bb07a6f62b,
         type: 3}
@@ -2216,6 +2231,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7874718
       objectReference: {fileID: 0}
+    - target: {fileID: 2901863374313479577, guid: c5d89845df7a65f409018b593cb2015a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.91
+      objectReference: {fileID: 0}
     - target: {fileID: 3248739765597737770, guid: c5d89845df7a65f409018b593cb2015a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2265,6 +2285,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294039871949936851, guid: c5d89845df7a65f409018b593cb2015a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032718004271547964, guid: c5d89845df7a65f409018b593cb2015a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: c5d89845df7a65f409018b593cb2015a,
         type: 3}
@@ -3611,11 +3641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MangoLeaves (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5564739639126446988, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
+    - target: {fileID: 226166083410671620, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
         type: 3}
-      propertyPath: minigame
-      value: 
-      objectReference: {fileID: 649071972}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3665,26 +3695,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8813342980770570031, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 8813342980770570031, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 8813342980770570031, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 8813342980770570031, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4908,16 +4918,6 @@ PrefabInstance:
       propertyPath: minigame
       value: 
       objectReference: {fileID: 1386751402}
-    - target: {fileID: 6527961468720219864, guid: 66284f7fe76415f43849e34ef749a435,
-        type: 3}
-      propertyPath: scoreToWin
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6527961468720219864, guid: 66284f7fe76415f43849e34ef749a435,
-        type: 3}
-      propertyPath: spawnInterval
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8094892872188300386, guid: 66284f7fe76415f43849e34ef749a435,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5372,6 +5372,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294039871949936851, guid: 3f1ddf6eb3986064bb9d12829525140c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467721092999558056, guid: 3f1ddf6eb3986064bb9d12829525140c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032718004271547964, guid: 3f1ddf6eb3986064bb9d12829525140c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: 3f1ddf6eb3986064bb9d12829525140c,
         type: 3}
@@ -8623,6 +8638,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MangoLeaves
       objectReference: {fileID: 0}
+    - target: {fileID: 226166083410671620, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5564739639126446988, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
         type: 3}
       propertyPath: minigame
@@ -9048,27 +9068,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4770191483688655291, guid: 8e37e1da068e9314899d60acb63802bd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4896606491882001471, guid: 8e37e1da068e9314899d60acb63802bd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6390559477364978399, guid: 8e37e1da068e9314899d60acb63802bd,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 89161652, guid: 105003ccb35f73b44b04936a311fca82,
-        type: 3}
-    - target: {fileID: 6390559477364978399, guid: 8e37e1da068e9314899d60acb63802bd,
-        type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
