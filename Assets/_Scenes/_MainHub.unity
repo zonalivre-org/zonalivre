@@ -7236,7 +7236,7 @@ PrefabInstance:
     - target: {fileID: 7522931927494844353, guid: 806dcbe868aa11248940056c1b14cfe0,
         type: 3}
       propertyPath: cutSceneName
-      value: Cutscene Tutorial
+      value: "Quadrinho Edi\xE7\xE3o 1"
       objectReference: {fileID: 0}
     - target: {fileID: 7522931927494844353, guid: 806dcbe868aa11248940056c1b14cfe0,
         type: 3}
@@ -7246,7 +7246,7 @@ PrefabInstance:
     - target: {fileID: 7522931927494844353, guid: 806dcbe868aa11248940056c1b14cfe0,
         type: 3}
       propertyPath: cutSceneClipName
-      value: BackgroundVideo.mp4
+      value: TutorialVideo.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 7522931927494844353, guid: 806dcbe868aa11248940056c1b14cfe0,
         type: 3}
