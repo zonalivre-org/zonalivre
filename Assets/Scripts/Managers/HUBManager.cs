@@ -36,6 +36,12 @@ public class HUBManager : MonoBehaviour
 
     void Start()
     {
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(0f, 1f).SetEase(Ease.InOutQuad).OnComplete(() =>
+        {
+            fadeImage.gameObject.SetActive(false);
+        }).SetUpdate(true);
+
         saveFile = SaveManager.Instance.LoadGame();
 
         if (saveFile.firstTime)

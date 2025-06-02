@@ -18,8 +18,9 @@ public class NPCInteract : MonoBehaviour
     private void Interact()
     {
         HUBManager.Instance.StartLevelSelection(levelIndex, cutSceneClipName, cutSceneName);
-        
+
         SaveManager.Instance.SetSpawnPosition(spawnPoint.transform.position);
+        Debug.Log("Spawn position set to: " + spawnPoint.transform.position);
     }
 
     private void OnTriggerEnter(Collider other)
