@@ -4,8 +4,8 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [Header("Save System")]
-    [SerializeField] private int levelIndex;
-    [SerializeField] private int levelToUnlock;
+    public int levelIndex;
+    public int levelToUnlock;
     [Header("Time")]
     [SerializeField] private int levelTime;
 
