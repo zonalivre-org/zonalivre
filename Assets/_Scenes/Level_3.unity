@@ -5463,7 +5463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelIndex: 0
-  cutSceneToUnlock: 0
+  levelToUnlock: 4
   levelTime: 300
   goal: 4
   health: 100
