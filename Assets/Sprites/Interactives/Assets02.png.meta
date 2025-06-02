@@ -342,6 +342,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Citronela
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 1903
+        width: 903
+        height: 1237
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e426ffb85b6d049bfc6ce46d3d2036
+      internalID: -1523157651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -353,7 +374,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Assets02_0: 1112716787
       Assets02_10: -953681304
       Assets02_12: -1389259561
       Assets02_13: 1781697780
@@ -366,6 +386,7 @@ TextureImporter:
       Assets02_8: 1366534428
       Assets02_9: -644797181
       Chiken: -1951174790
+      Citronela: 1112716787
       Feather: -1572534904
       Hole: -19374348
       PlantVase: 430503522
