@@ -728,47 +728,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlanTheCitronela
       objectReference: {fileID: 0}
-    - target: {fileID: 4347671663963134946, guid: 6bb86dbc641b6c0468403b8d6d32823b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4347671663963134946, guid: 6bb86dbc641b6c0468403b8d6d32823b,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4347671663963134946, guid: 6bb86dbc641b6c0468403b8d6d32823b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348094901322489377, guid: 6bb86dbc641b6c0468403b8d6d32823b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348094901322489377, guid: 6bb86dbc641b6c0468403b8d6d32823b,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348094901322489377, guid: 6bb86dbc641b6c0468403b8d6d32823b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348094901322489377, guid: 6bb86dbc641b6c0468403b8d6d32823b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8417765749431345053, guid: 6bb86dbc641b6c0468403b8d6d32823b,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1523157651, guid: 105003ccb35f73b44b04936a311fca82,
-        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
