@@ -13,6 +13,7 @@ public class AnalyticsTest : MonoBehaviour
     public static AnalyticsTest Instance { get; private set; }
     void Awake()
     {
+        Instance = this;
     }
 
     void Update()
@@ -26,19 +27,21 @@ public class AnalyticsTest : MonoBehaviour
 
     }
 
-    private void AddAnalytics(string sender, string track, string value)
+    public void AddAnalytics(string sender, string track, string value)
     {
-        AnalyticsData data = new AnalyticsData(Time.time, sender, track, value);
-        Debug.Log("Send: " + data.sender + ", Track: " + data.track + ", Value: " + data.value);
+        AnalyticsData d = new AnalyticsData(Time.time, sender, track, value);
+        data.Add(d);
+
+        Debug.Log("Send: " + d.sender + ", Track: " + d.track + ", Value: " + d.value);
     }
 
-    private void Save()
+    public void Save()
     {
         AnalyticsFile analyticsFile = new AnalyticsFile();
         analyticsFile.data = data.ToArray();
         string json = JsonUtility.ToJson(analyticsFile, true);
         SaveFile(json);
-        SendEmail(json);
+        //SendEmail(json);
 
     }
 
@@ -49,6 +52,7 @@ public class AnalyticsTest : MonoBehaviour
         File.WriteAllText(path, text);
     }
 
+    /*
     void SendEmail(string text)
     {
         var client = new SmtpClient("smtp.gmail.com", 587)
@@ -59,6 +63,7 @@ public class AnalyticsTest : MonoBehaviour
         client.Send("remetente@gmail.com", "destinatario@gmail.com", "Assunto", text);
         Debug.Log("text");
     }
+    */
     
 
 

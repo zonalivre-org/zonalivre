@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using System;
+using UnityEngine.Analytics;
 public class PlayerController : MonoBehaviour
 {
     const string IDLE = "Idle";
@@ -12,10 +13,14 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
     private float agentOriginalSpeed;
 
+    public AnalyticsTest analyticsTest;
+
     [Header("Movement")]
     [SerializeField] private ParticleSystem clickEffect;
     [SerializeField] private LayerMask clicklableLayers;
     [SerializeField] private float lookRotationSpeed = 8f;
+
+    private int clicks = 0;
 
     [Header("Actions")]
     public Action OnDestinationReached; // Action triggered when the player reaches the destination
@@ -32,6 +37,8 @@ public class PlayerController : MonoBehaviour
         agentOriginalSpeed = agent.speed;
 
         agent.updateRotation = false; // Disable automatic rotation
+
+        AnalyticsTest.Instance.AddAnalytics("Game", "Start", DateTime.Now.ToString("d/M/y hh:mm"));
     }
 
     void LateUpdate()
@@ -52,6 +59,13 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
             {
+                clicks++;
+
+                if (clicks >= 5) {
+                    analyticsTest.Save();
+                }
+                analyticsTest.AddAnalytics("Player", "Click", clicks.ToString());
+
                 agent.SetDestination(hit.point);
 
                 // Play click effect
