@@ -50,6 +50,7 @@ public class HUBManager : MonoBehaviour
     public void StartLevelSelection(int levelIndex, string cutSceneClipName, string cutSceneName)
     {
         saveFile = SaveManager.Instance.LoadGame();
+        Debug.Log("Index do nível: " + levelIndex);
         if (saveFile.levelsUnlocked[levelIndex])
         {
             Debug.Log("Level " + levelIndex + " is unlocked.");
