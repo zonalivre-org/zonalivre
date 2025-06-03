@@ -900,11 +900,11 @@ PrefabInstance:
       propertyPath: QTESafeZoneSizePercentage
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
-      propertyPath: objectConnectionVisualizer
+      propertyPath: startPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 624465979}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -920,8 +920,10 @@ PrefabInstance:
       propertyPath: startPoint
       value: 
       objectReference: {fileID: 624465979}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 8860113627281676813, guid: ec3d649e4c6334f4aa004f734b5dc576, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 4482067046648608532, guid: ec3d649e4c6334f4aa004f734b5dc576, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3d649e4c6334f4aa004f734b5dc576, type: 3}
@@ -4774,6 +4776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65729d1ffdd0285458e23b0bd87e8929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelIndex: 0
+  levelToUnlock: 0
   levelTime: 300
   goal: 4
   health: 100
@@ -4793,7 +4797,6 @@ MonoBehaviour:
   resultUI: {fileID: 1364008961430942945}
   resultText: {fileID: 6584764719198270787}
   loseText: {fileID: 838776599}
-  nextLevelButton: {fileID: 2087235406}
   playerMovement: {fileID: 2249948526550260760}
   petMovement: {fileID: 835940385}
   currentTime: 0
@@ -6654,12 +6657,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 77da5529be801934ea0f6a7baec9d33f,
     type: 3}
   m_PrefabInstance: {fileID: 2041682980}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2087235406 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 509869277289799414, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 2496538277273570598}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2100206575 stripped
 GameObject:
