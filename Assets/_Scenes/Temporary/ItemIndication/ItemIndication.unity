@@ -915,6 +915,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8622836445015752935, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8860113627281676813, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: startPoint
@@ -7822,6 +7827,11 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 2249948526550260760}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 624465979}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -7832,6 +7842,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8622836445015752935, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8860113627281676813, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: startPoint
@@ -7840,6 +7855,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4402955078423502100, guid: ec3d649e4c6334f4aa004f734b5dc576, type: 3}
+    - {fileID: 4482067046648608532, guid: ec3d649e4c6334f4aa004f734b5dc576, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3d649e4c6334f4aa004f734b5dc576, type: 3}
