@@ -17,9 +17,10 @@ public abstract class MiniGameBase : MonoBehaviour
     protected bool firstActionTriggered = false;
     protected bool isMiniGameComplete = false;
 
-    void Start() 
-    {
+    private int elapsedTime = 0;
 
+    void Start()
+    {
         OnStart(); // You will need to call this OnStart method in every child class, because Unity is Unity :D 
     }
 
@@ -45,6 +46,8 @@ public abstract class MiniGameBase : MonoBehaviour
     {
         if (isMiniGameActive)
         {
+            elapsedTime += (int)Time.deltaTime;
+
             timeSinceLastClick += Time.deltaTime;
 
             // Show the tipText if the delay is exceeded
@@ -52,6 +55,8 @@ public abstract class MiniGameBase : MonoBehaviour
             {
                 tipText.gameObject.SetActive(true);
             }
+
+
         }
     }
 
@@ -69,6 +74,10 @@ public abstract class MiniGameBase : MonoBehaviour
 
     public virtual void StartMiniGame()
     {
+        elapsedTime = 0;
+
+        InvokeRepeating(nameof(CountElapsedTime), 0f, 1f); // Start counting elapsed time every second
+
         gameObject.SetActive(true);
         //GameManager.Instance.isMinigameActive = true;
 
@@ -83,7 +92,6 @@ public abstract class MiniGameBase : MonoBehaviour
         OnMiniGameStart?.Invoke();
     }
 
-
     public virtual void EndMiniGame()
     {
         OnMiniGameEnd?.Invoke();
@@ -92,12 +100,21 @@ public abstract class MiniGameBase : MonoBehaviour
         {
             OnMiniGameComplete?.Invoke();
         }
-        
+
         GameManager.Instance.isMinigameActive = false;
         gameObject.SetActive(false);
         isMiniGameActive = false;
         isMiniGameComplete = false;
         firstActionTriggered = false;
 
+        CancelInvoke(nameof(CountElapsedTime)); // Stop counting elapsed time
+        Analytics.Instance.AddAnalytics(Time.time, gameObject.name, "Time to finish: ", elapsedTime.ToString());
+
+    }
+
+    private void CountElapsedTime()
+    {
+        elapsedTime += 1;
+        Debug.Log("Elapsed time: " + elapsedTime + " seconds");
     }
 }

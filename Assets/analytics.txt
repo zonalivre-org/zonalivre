@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "time": 7.503129959106445,
+            "sender": "QuickTimeEventMinigame",
+            "track": "Time to finish: ",
+            "value": "4"
+        },
+        {
+            "time": 17.059999465942384,
+            "sender": "PlanTheCitronela",
+            "track": "Time to finish: ",
+            "value": "16"
+        },
+        {
+            "time": 30.937910079956056,
+            "sender": "WhackAMoleMinigame",
+            "track": "Time to finish: ",
+            "value": "20"
+        }
+    ]
+}
