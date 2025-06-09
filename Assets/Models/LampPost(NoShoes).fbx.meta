@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 801c6b7905b3ec3438040b6040b6de8b
+guid: 7d09e756fdabecc40ab74e60c12bd845
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: HubMat
-    second: {fileID: 2100000, guid: fb0c3773550599c46a091f70f92da88c, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
