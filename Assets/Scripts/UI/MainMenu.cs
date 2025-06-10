@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject exitButton;
     [SerializeField] private GameObject[] mainButtons;
     [SerializeField] private ChangeScene changeScene;
+    [SerializeField] private VideoPanel videoPanel;
     private SaveFile saveFile;
 
     private void Awake()
@@ -31,16 +32,8 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        if (saveFile.firstTime)
-        {
-            changeScene.ChangeToSceneMusic(2);
-            changeScene.LoadSceneByIndex(2);
-        }
-        else
-        {
-            changeScene.ChangeToSceneMusic(1);
-            changeScene.LoadSceneByIndex(1);
-        }
+        changeScene.ChangeToSceneMusic(1);
+        changeScene.LoadSceneByIndex(1);
     }
 
     #region controllers

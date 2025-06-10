@@ -11,6 +11,7 @@ public class HUBManager : MonoBehaviour
     [SerializeField] Image fadeImage;
     [SerializeField] ChangeScene changeScene;
     [SerializeField] SaveFile saveFile;
+    [SerializeField] PopUp popUp;
 
     [Header("Level Selection")]
     [SerializeField] RectTransform levelPanel;
@@ -37,7 +38,7 @@ public class HUBManager : MonoBehaviour
     void Start()
     {
         fadeImage.gameObject.SetActive(true);
-        fadeImage.DOFade(0f, 1f).SetEase(Ease.InOutQuad).OnComplete(() =>
+        fadeImage.DOFade(0f, 2f).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
             fadeImage.gameObject.SetActive(false);
         }).SetUpdate(true);
@@ -46,8 +47,11 @@ public class HUBManager : MonoBehaviour
 
         if (saveFile.firstTime)
         {
+            popUp.SetVideoPlayer("WalkingVet.mp4");
+            popUp.SetPopUp("Bem Vindo!", "Você se econtra na cidade onde mora Pedrinho. Toque/clique no veterinário para iniciar o tutorial.");
             SaveManager.Instance.ToggleFirstTime(false);
         }
+        
         changeScene.ChangeToSceneMusic(1);
 
         player.transform.position = saveFile.spawnPosition;

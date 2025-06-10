@@ -591,6 +591,11 @@ PrefabInstance:
       propertyPath: averageTimeToComplete
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 624465979}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -3895,6 +3900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1478815602}
+  pauseMenu: {fileID: 1360116831}
+  taskButton: {fileID: 1180630755}
   playerController: {fileID: 2249948526550260760}
   playerInventory: {fileID: 2249948526550260762}
   petInteract: {fileID: 1209141997}
@@ -5153,6 +5160,18 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &1360116831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6436419854034322361, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 2496538277273570598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f12dc143cf4ddc69ad34f82783e9ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1380128908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8450,6 +8469,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2044533701308576400, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2168741323550495464, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -9083,7 +9107,7 @@ PrefabInstance:
     - target: {fileID: 6436419854034322361, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: HUDButtons.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6436419854034322361, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
@@ -9094,7 +9118,7 @@ PrefabInstance:
         type: 3}
       propertyPath: HUDButtons.Array.data[1]
       value: 
-      objectReference: {fileID: 1180630755}
+      objectReference: {fileID: 1779425321}
     - target: {fileID: 6436419854034322361, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: HUDButtons.Array.data[2]
@@ -9203,32 +9227,32 @@ PrefabInstance:
     - target: {fileID: 6908009452129819281, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6908009452129819281, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6908009452129819281, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 6908009452129819281, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 6908009452129819281, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 300.73633
       objectReference: {fileID: 0}
     - target: {fileID: 6908009452129819281, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 6979637191825766611, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
@@ -9630,6 +9654,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603030001}
     m_Modifications:
+    - target: {fileID: 386943798922082720, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5065730365246612623, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9706,6 +9735,11 @@ PrefabInstance:
       propertyPath: averageTimeToComplete
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 624465979}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
