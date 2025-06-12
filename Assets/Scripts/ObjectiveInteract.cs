@@ -22,7 +22,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
-    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame, WhackAMole, PlantTheCitronela }
+    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame, WhackAMole, PlantTheCitronela, DogClean }
 
     #region Objective Properties
     [Header("If object opens a minigame")]
@@ -59,6 +59,10 @@ public class ObjectiveInteract : MonoBehaviour
     [Header("Plant The Citronela")]
     [Range(0, 5)] [SerializeField] private float growthSpeed = 3f;
 
+    [Header("Dog Clean")]
+    [Range(1, 7)][SerializeField] private int maxDirtCount = 4; // Maximum number of dirt spots
+    [Range(0f, 1f)][SerializeField] private float dogCleanSpeed = 0.5f;
+
     #endregion
 
     private float cooldownTimer;
@@ -81,6 +85,7 @@ public class ObjectiveInteract : MonoBehaviour
     {
         MiniGameBase.OnMiniGameEnd += TurnOffEnable;
     }
+
     void OnDisable()
     {
         MiniGameBase.OnMiniGameEnd -= TurnOffEnable;
@@ -173,6 +178,7 @@ public class ObjectiveInteract : MonoBehaviour
             case MiniGames.CleanMinigame: StartCleanMinigame(); break;
             case MiniGames.WhackAMole: StartWhackAMoleMinigame(); break;
             case MiniGames.PlantTheCitronela: StartPlantTheCitronelaMinigame(); break;
+            case MiniGames.DogClean: StartDogCleanMinigame(); break;
         }
 
     }
@@ -217,6 +223,17 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<PlantTheCitronela>().StartMiniGame();
         GameManager.Instance.isMinigameActive = true;
     }
+    
+    private void StartDogCleanMinigame()
+    {
+        //if (!CheckIfCanStartMinigame("Sabao")) return;
+
+        minigame.GetComponent<DogCleanMiniGame>().SetMiniGameRules(maxDirtCount, dogCleanSpeed);
+        minigame.GetComponent<DogCleanMiniGame>().objectiveInteract = this;
+        minigame.GetComponent<DogCleanMiniGame>().StartMiniGame();
+        GameManager.Instance.isMinigameActive = true;
+    }
+    
     private bool CheckIfCanStartMinigame(string itemId = null)
     {
 
@@ -234,7 +251,7 @@ public class ObjectiveInteract : MonoBehaviour
                 objectConnectionVisualizer.ShowConnector();
                 Debug.Log("Você não tem o item necessário para iniciar o minigame.");
             }
-       
+
             // playerMovement.ToggleMovement(true);
             return false;
         }

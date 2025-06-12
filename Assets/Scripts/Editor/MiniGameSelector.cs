@@ -56,6 +56,12 @@ public class MiniGameSelector : Editor
             EditorGUILayout.LabelField("Plant The Citronela Settings", EditorStyles.boldLabel);
             EditorGUILayout.PropertyField(serializedObject.FindProperty("growthSpeed"));
         }
+        else if (miniGameType.enumValueIndex == 5) // Dog Clean MiniGame
+        {
+            EditorGUILayout.LabelField("Dog Clean MiniGame Settings", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("maxDirtCount"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("cleanSpeed"));
+        }
 
         // Apply any modified properties
         serializedObject.ApplyModifiedProperties();
