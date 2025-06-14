@@ -13,6 +13,7 @@ public class Soap : MonoBehaviour, IDragHandler, IEndDragHandler
         {
             transform.position = Input.mousePosition;
             isDragging = true;
+            dogCleanMiniGame.RegisterPlayerClick();
         }
     }
 
