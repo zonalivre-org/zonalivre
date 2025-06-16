@@ -1,6 +1,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class HUBManager : MonoBehaviour
@@ -23,6 +24,8 @@ public class HUBManager : MonoBehaviour
     private int currentLevelIndex;
     private string currentCutSceneClipName;
     private string currentCutSceneName;
+
+    [SerializeField] private GameObject map;
     private void Awake()
     {
         if (Instance == null)
@@ -54,7 +57,23 @@ public class HUBManager : MonoBehaviour
         
         changeScene.ChangeToSceneMusic(1);
 
+        NavMeshAgent ag = GetComponent<NavMeshAgent>();
+
+        ag.enabled = false;
+
         player.transform.position = saveFile.spawnPosition;
+
+        ag.enabled = true;
+
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Save File Spawn Point: " + saveFile.spawnPosition);
+            Debug.Log("Player POS: " + player.transform.position);
+        }
     }
 
     public void StartLevelSelection(int levelIndex, string cutSceneClipName, string cutSceneName)
