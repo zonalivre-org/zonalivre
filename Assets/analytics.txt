@@ -1,22 +1,39 @@
 {
     "data": [
         {
-            "time": 7.503129959106445,
-            "sender": "QuickTimeEventMinigame",
-            "track": "Time to finish: ",
-            "value": "4"
-        },
-        {
-            "time": 17.059999465942384,
-            "sender": "PlanTheCitronela",
-            "track": "Time to finish: ",
-            "value": "16"
-        },
-        {
-            "time": 30.937910079956056,
+            "time": 9.889963150024414,
+            "sceneIndex": 7,
             "sender": "WhackAMoleMinigame",
             "track": "Time to finish: ",
-            "value": "20"
+            "value": "14"
+        },
+        {
+            "time": 196.94000244140626,
+            "sceneIndex": 7,
+            "sender": "PlanTheCitronela",
+            "track": "Time to finish: ",
+            "value": "110"
+        },
+        {
+            "time": 219.6599884033203,
+            "sceneIndex": 7,
+            "sender": "PlanTheCitronela",
+            "track": "Time to finish: ",
+            "value": "22"
+        },
+        {
+            "time": 237.94210815429688,
+            "sceneIndex": 7,
+            "sender": "WhackAMoleMinigame",
+            "track": "Time to finish: ",
+            "value": "28"
+        },
+        {
+            "time": 251.47608947753907,
+            "sceneIndex": 7,
+            "sender": "PetWalkMinigame",
+            "track": "Time to finish: ",
+            "value": "7"
         }
     ]
 }

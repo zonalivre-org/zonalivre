@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class MiniGameBase : MonoBehaviour
 {
@@ -108,7 +109,7 @@ public abstract class MiniGameBase : MonoBehaviour
         firstActionTriggered = false;
 
         CancelInvoke(nameof(CountElapsedTime)); // Stop counting elapsed time
-        Analytics.Instance.AddAnalytics(Time.time, gameObject.name, "Time to finish: ", elapsedTime.ToString());
+        Analytics.Instance.AddAnalytics(Time.time, gameObject.name, "Time to finish: ", elapsedTime.ToString(), SceneManager.GetActiveScene().buildIndex);
 
     }
 
