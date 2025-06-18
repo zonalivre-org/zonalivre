@@ -57,7 +57,7 @@ public class HUBManager : MonoBehaviour
         
         changeScene.ChangeToSceneMusic(1);
 
-        NavMeshAgent ag = GetComponent<NavMeshAgent>();
+        NavMeshAgent ag = player.GetComponent<NavMeshAgent>();
 
         ag.enabled = false;
 
