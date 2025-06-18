@@ -10,6 +10,7 @@ TagManager:
   - Ration
   - Bowl
   - Water
+  - DogDirt
   layers:
   - Default
   - TransparentFX

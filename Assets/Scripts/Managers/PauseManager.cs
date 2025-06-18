@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private RectTransform pauseMenuUI;
     [SerializeField] private CanvasGroup backgroundCanvasGroup;
     [SerializeField] float animationDuration = 0.5f;
-    [SerializeField] private GameObject[] HUDButtons;
+    public List<GameObject> HUDButtons;
     private void Awake()
     {
         Time.timeScale = 1;
@@ -56,7 +57,7 @@ public class PauseMenu : MonoBehaviour
         await pauseMenuUI.DOScale(Vector3.zero, animationDuration).SetEase(Ease.InBack).SetUpdate(true).AsyncWaitForCompletion();
     }
 
-    private void ShowButtons()
+    public void ShowButtons()
     {
         Sequence sequence = DOTween.Sequence();
 

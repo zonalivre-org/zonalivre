@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/_Scenes/__StartMenu.unity
     guid: 7eaf4a47c55bbdf4cba4c2104076138a
   - enabled: 1
-    path: Assets/_Scenes/_MainHub.unity
-    guid: 6aec8d4b2cbcb604385a2ad9f88ab75b
+    path: Assets/_Scenes/_MainHubGabriel2.unity
+    guid: 2b711fd6c065c3d4bb3b2c00de3b1058
   - enabled: 1
     path: Assets/_Scenes/_Tutorial.unity
     guid: b25ebe3baf7223f409194e8edadcc6f8

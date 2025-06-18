@@ -627,7 +627,7 @@ MonoBehaviour:
   seed: {fileID: 5644270569630676621}
   objectiveInteract: {fileID: 0}
   seedStartPos: {x: 0, y: 0}
-  waterCanEndPos: {x: 0, y: 0}
+  waterCanStartPos: {x: 0, y: 0}
   isPlanted: 0
 --- !u!1 &5220386780871955264
 GameObject:
@@ -1001,7 +1001,6 @@ GameObject:
   - component: {fileID: 6348094901322489377}
   - component: {fileID: 7957954123268961765}
   - component: {fileID: 3458501589516462487}
-  - component: {fileID: 5076895393028974144}
   - component: {fileID: 5215648435901997076}
   - component: {fileID: 530759531652118902}
   m_Layer: 5
@@ -1068,21 +1067,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.5
---- !u!114 &5076895393028974144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7487829046321366713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &5215648435901997076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,8 +1111,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FillTheBowl, Assembly-CSharp
+      - m_Target: {fileID: 7839335975348873091}
+        m_TargetAssemblyTypeName: PlantTheCitronela, Assembly-CSharp
         m_MethodName: EndMiniGame
         m_Mode: 1
         m_Arguments:

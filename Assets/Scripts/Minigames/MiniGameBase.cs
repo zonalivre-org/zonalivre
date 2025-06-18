@@ -57,7 +57,6 @@ public abstract class MiniGameBase : MonoBehaviour
                 tipText.gameObject.SetActive(true);
             }
 
-
         }
     }
 
@@ -116,6 +115,5 @@ public abstract class MiniGameBase : MonoBehaviour
     private void CountElapsedTime()
     {
         elapsedTime += 1;
-        Debug.Log("Elapsed time: " + elapsedTime + " seconds");
     }
 }
