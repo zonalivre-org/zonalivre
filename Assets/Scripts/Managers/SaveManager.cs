@@ -55,6 +55,13 @@ public class SaveManager : MonoBehaviour
         SaveGame(saveFile);
     }
 
+    public void SetPlayerName(string name)
+    {
+        SaveFile saveFile = LoadGame() ?? new SaveFile();
+        saveFile.playerName = name;
+        SaveGame(saveFile);
+    }
+
     public void ToggleFirstTime(bool isFirstTime)
     {
         SaveFile saveFile = LoadGame() ?? new SaveFile();

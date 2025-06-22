@@ -54,7 +54,7 @@ public class HUBManager : MonoBehaviour
             popUp.SetPopUp("Bem Vindo!", "Você se econtra na cidade onde mora Pedrinho. Toque/clique no veterinário para iniciar o tutorial.");
             SaveManager.Instance.ToggleFirstTime(false);
         }
-        
+
         changeScene.ChangeToSceneMusic(1);
 
         NavMeshAgent ag = player.GetComponent<NavMeshAgent>();
@@ -130,7 +130,7 @@ public class HUBManager : MonoBehaviour
         videoPanel.GetComponent<VideoPanel>().closeButton.GetComponent<ButtonAnimation>().SetClickable(true);
         videoPanel.GetComponent<VideoPanel>().SetVideoClip(currentCutSceneClipName);
         videoPanel.GetComponent<VideoPanel>().PlayVideoClip();
-        
+
     }
 
     public void OpenLevelSelection()
@@ -187,5 +187,10 @@ public class HUBManager : MonoBehaviour
                 button.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack)
             );
         }
+    }
+
+    public void SendInfo()
+    {
+        Analytics.Instance.SendMail();
     }
 }
