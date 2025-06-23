@@ -14949,6 +14949,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -17636,6 +17641,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -20338,6 +20348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -20586,6 +20601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -22399,6 +22419,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -23710,6 +23735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -25993,6 +26023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -30309,6 +30344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -40303,6 +40343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -42317,6 +42362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -49938,6 +49988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -51127,6 +51182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -51763,6 +51823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -58758,7 +58823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1620351210
 Transform:
   m_ObjectHideFlags: 0
@@ -59301,6 +59366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -59561,6 +59631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -63291,6 +63366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -66056,6 +66136,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -72563,6 +72648,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
@@ -81991,6 +82081,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -82071,6 +82166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TreeMangoTile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337392016931891259, guid: ae2841a3fe9901e4bb6bb766dd1cd753,
         type: 3}
