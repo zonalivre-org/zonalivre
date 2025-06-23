@@ -3338,7 +3338,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 1
+  m_DataSource: 0
   m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
@@ -3369,7 +3369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  clipName: BackgroundVideo.mp4
+  clipName: BackgroundVideo
   renderTexture: {fileID: 0}
 --- !u!1001 &1045365036
 PrefabInstance:
@@ -7770,6 +7770,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603030001}
     m_Modifications:
+    - target: {fileID: 4482067046648608532, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5065730365246612623, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7825,6 +7830,11 @@ PrefabInstance:
       propertyPath: minigame
       value: 
       objectReference: {fileID: 788938857}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 624465979}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
