@@ -1,0 +1,686 @@
+fileFormatVersion: 2
+guid: 2f7fe810de4ff274cb235cd7654c6c35
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 4747
+        width: 650
+        height: 1482
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc23485646740d428d80ec4e000887c
+      internalID: 550274459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_1
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 4747
+        width: 651
+        height: 1482
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ab859e32598e846a638cae6321a608
+      internalID: 1635072612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_2
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 4747
+        width: 648
+        height: 1472
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb0a0fe45880354094e13beeb91bd6c
+      internalID: 1327301431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_3
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 4744
+        width: 648
+        height: 1466
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83911540d6222c146b0d192fdeb85e88
+      internalID: -1422927818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_4
+      rect:
+        serializedVersion: 2
+        x: 2682
+        y: 4741
+        width: 648
+        height: 1478
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df22b8f653978b441b5b12fec872459f
+      internalID: -2084760731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_5
+      rect:
+        serializedVersion: 2
+        x: 3348
+        y: 4753
+        width: 663
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bb3cf7d10b53b4f912e317ab3c993b
+      internalID: -789596580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_6
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 3152
+        width: 629
+        height: 1467
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8027d4e9a26eef541ac53f5940e5ebde
+      internalID: -1972643525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_7
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 3152
+        width: 632
+        height: 1467
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e6efd8f137afd44a5dd1d95bc72a61
+      internalID: -1504884150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_8
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 3165
+        width: 669
+        height: 1445
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30f0e56189ff6541b189e3ecb62a443
+      internalID: -480708663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_9
+      rect:
+        serializedVersion: 2
+        x: 2071
+        y: 3192
+        width: 660
+        height: 1421
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ff299ce1bf5b944b33d2df64c51a77
+      internalID: -1717091390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_10
+      rect:
+        serializedVersion: 2
+        x: 2774
+        y: 3192
+        width: 657
+        height: 1408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dbb7b50e87ef3942b6c527519fcea99
+      internalID: -916701663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_11
+      rect:
+        serializedVersion: 2
+        x: 3495
+        y: 3192
+        width: 623
+        height: 1411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c920a4c230ac7a349bb0a65c74a031c3
+      internalID: -1493350891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_12
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 3162
+        width: 9
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc38a6b93b5ee604f9086d96123326ec
+      internalID: 2091331117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_13
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1604
+        width: 657
+        height: 1463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6dfcb3ed06e627468a93e6bfa508f5b
+      internalID: -298450113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_14
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1604
+        width: 657
+        height: 1460
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2520bb22e40f6140bbd1a2cd60beb49
+      internalID: 62233470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_15
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1604
+        width: 657
+        height: 1460
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1d795b0a2dd414fb0146c493cf3e92
+      internalID: 1384283653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_16
+      rect:
+        serializedVersion: 2
+        x: 2093
+        y: 1604
+        width: 657
+        height: 1454
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f7d3a9f4b647a42a93fb847464595e
+      internalID: 1456646241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_17
+      rect:
+        serializedVersion: 2
+        x: 2777
+        y: 1604
+        width: 657
+        height: 1460
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391ae1035b570f8479458c7dc129b1e2
+      internalID: 335341301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_18
+      rect:
+        serializedVersion: 2
+        x: 3477
+        y: 1598
+        width: 663
+        height: 1484
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f095e952b4a0bcd45ae4d9edf4db35b8
+      internalID: -727978842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_19
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 18
+        width: 666
+        height: 1479
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0693eb49fd7f8fe4bb521768381c50b4
+      internalID: -1260693525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_20
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 24
+        width: 718
+        height: 1464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3881a8a9fbf3e489b3f80fed588261
+      internalID: -794569270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_21
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 43
+        width: 718
+        height: 1435
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b308be8ce1af940af69c103f62ed5e
+      internalID: -1571134079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_22
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 43
+        width: 718
+        height: 1439
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba889bd4588f6004ebacf72592fc4a6c
+      internalID: 1636181573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_23
+      rect:
+        serializedVersion: 2
+        x: 2933
+        y: 58
+        width: 727
+        height: 1420
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc31719f0057bcf4fa6c354db5ef1697
+      internalID: 1226952169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_24
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 40
+        width: 13
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743049ef93e2ede458015aa56bb5f769
+      internalID: 1568371461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PedrinSprites_WalkFront_25
+      rect:
+        serializedVersion: 2
+        x: 2759
+        y: 40
+        width: 9
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39f34a7ed3bbe94cb0de1c7c13873b7
+      internalID: -1049814611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 215101646b3bc5145b20e0c6c86bb0eb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PedrinSprites_WalkFront_0: 550274459
+      PedrinSprites_WalkFront_1: 1635072612
+      PedrinSprites_WalkFront_10: -916701663
+      PedrinSprites_WalkFront_11: -1493350891
+      PedrinSprites_WalkFront_12: 2091331117
+      PedrinSprites_WalkFront_13: -298450113
+      PedrinSprites_WalkFront_14: 62233470
+      PedrinSprites_WalkFront_15: 1384283653
+      PedrinSprites_WalkFront_16: 1456646241
+      PedrinSprites_WalkFront_17: 335341301
+      PedrinSprites_WalkFront_18: -727978842
+      PedrinSprites_WalkFront_19: -1260693525
+      PedrinSprites_WalkFront_2: 1327301431
+      PedrinSprites_WalkFront_20: -794569270
+      PedrinSprites_WalkFront_21: -1571134079
+      PedrinSprites_WalkFront_22: 1636181573
+      PedrinSprites_WalkFront_23: 1226952169
+      PedrinSprites_WalkFront_24: 1568371461
+      PedrinSprites_WalkFront_25: -1049814611
+      PedrinSprites_WalkFront_3: -1422927818
+      PedrinSprites_WalkFront_4: -2084760731
+      PedrinSprites_WalkFront_5: -789596580
+      PedrinSprites_WalkFront_6: -1972643525
+      PedrinSprites_WalkFront_7: -1504884150
+      PedrinSprites_WalkFront_8: -480708663
+      PedrinSprites_WalkFront_9: -1717091390
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
