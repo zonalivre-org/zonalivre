@@ -1,0 +1,880 @@
+fileFormatVersion: 2
+guid: b5e3ecb98809a084aa3717ff6fae2187
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pena1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 4935
+        width: 872
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eec8cdc6fc2ef64582176e8d6cab984
+      internalID: 439498257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pena2
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 4935
+        width: 868
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e282af67d2b0fdc4ea730199d13b38ba
+      internalID: 348350528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pena3
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 4935
+        width: 871
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fedf44a7417eec4eaffba576d4ae43c
+      internalID: 1789472909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VasoPlanta1
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 3404
+        width: 877
+        height: 1820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2810b203b69ff84989e2788b4c8dfb2
+      internalID: -553167510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VasoPlanta2
+      rect:
+        serializedVersion: 2
+        x: 3882
+        y: 3404
+        width: 878
+        height: 1820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f16bf52e56e9d84fbb24dd8bb5472f0
+      internalID: -810998318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VasoPlanta3
+      rect:
+        serializedVersion: 2
+        x: 4797
+        y: 3404
+        width: 874
+        height: 1820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da782a300be5777418f44c75bc16b739
+      internalID: 424339359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vaso1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 3894
+        width: 806
+        height: 774
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ce2e6fc801e1d47bf6140654e59f5d
+      internalID: -1985994393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vaso2
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 3894
+        width: 803
+        height: 774
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3211825c3a666614f937ab1ccfbc95fe
+      internalID: -1092880909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vaso3
+      rect:
+        serializedVersion: 2
+        x: 1961
+        y: 3894
+        width: 803
+        height: 774
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000f2bf2a872e0a468e3c2f43bdda2a8
+      internalID: -1813372409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planta1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 2538
+        width: 857
+        height: 1218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a5cb26a1a20604dbdd11a24c213cc1
+      internalID: -1657898039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planta2
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 2538
+        width: 857
+        height: 1218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0b346e2e484e847a65ccea28f07f58
+      internalID: 1995337145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planta3
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 2538
+        width: 857
+        height: 1218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e8068753bb8e848ba222a3cc09dd65
+      internalID: 128748938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabonete1
+      rect:
+        serializedVersion: 2
+        x: 3197
+        y: 2730
+        width: 674
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41c3cb27b13c104aad0f81cb1145f4b
+      internalID: -1395704403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabonete2
+      rect:
+        serializedVersion: 2
+        x: 3917
+        y: 2730
+        width: 676
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc6128932e721d42b528a33e5b48188
+      internalID: -562344995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sabonete3
+      rect:
+        serializedVersion: 2
+        x: 4610
+        y: 2730
+        width: 677
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4a62faf51048041a2b7de6f8442902
+      internalID: 2054619733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arvore1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 723
+        width: 1436
+        height: 1737
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2cc64462caf124d8e1e04449580f05
+      internalID: -770469393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arvore2
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 723
+        width: 1436
+        height: 1737
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90b9f53794faf345a646fba37458514
+      internalID: -2053886613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arvore3
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 723
+        width: 1437
+        height: 1737
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f82307f89b3d1458e2ab2bedabbf09
+      internalID: -763804220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raquete
+      rect:
+        serializedVersion: 2
+        x: 4954
+        y: 1537
+        width: 431
+        height: 938
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898faabb0d984e940ad588bcb6a7ecdd
+      internalID: -1530546269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RaqueteClique
+      rect:
+        serializedVersion: 2
+        x: 4555
+        y: 890
+        width: 1208
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c23fa6ada1908340a97b16145c79235
+      internalID: 9905217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosquito1
+      rect:
+        serializedVersion: 2
+        x: 3745
+        y: 419
+        width: 295
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86877f4e3fa015245861bfd65565c60f
+      internalID: 1561838951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosquito3
+      rect:
+        serializedVersion: 2
+        x: 4063
+        y: 419
+        width: 292
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1ce92519caf05409687c94e704b67d
+      internalID: -2073003532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosquito5
+      rect:
+        serializedVersion: 2
+        x: 4364
+        y: 419
+        width: 292
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466ab89408e9acd4586b08d8ff5d23eb
+      internalID: 3258994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Fuma\xE7a1"
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 181
+        width: 324
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d29b74f253bb540bb404c0d5684d1d
+      internalID: -298595214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosquito2
+      rect:
+        serializedVersion: 2
+        x: 3770
+        y: 69
+        width: 227
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0afd99765b7a443a7b12eca09f449a
+      internalID: -1874940769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosquito4
+      rect:
+        serializedVersion: 2
+        x: 4086
+        y: 69
+        width: 226
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52f695116454e74fa98ccaf7d9cb060
+      internalID: -1364835914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosquito6
+      rect:
+        serializedVersion: 2
+        x: 4387
+        y: 69
+        width: 226
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14c530efb7c430459f20ed600aa1605
+      internalID: 371947568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Fuma\xE7a2"
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 142
+        width: 376
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 461426ffbd5b98c4e9ca152a93967e72
+      internalID: -92456896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Fuma\xE7a3"
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 124
+        width: 425
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3803a60cb42a146bf4fc59bae0437d
+      internalID: -850342083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Fuma\xE7a4"
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 110
+        width: 456
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee457b0d44b5274290a540806a6686d
+      internalID: -605478296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Fuma\xE7a5"
+      rect:
+        serializedVersion: 2
+        x: 2465
+        y: 91
+        width: 509
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8add88ab9b236ba42854602535e24a45
+      internalID: -1612563040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 82d19bdcc81f2724db7e44605bb8d8fb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Arvore1: -770469393
+      Arvore2: -2053886613
+      Arvore3: -763804220
+      AssetsSpriteSheet_02_100: 317360620
+      AssetsSpriteSheet_02_101: 1310010519
+      AssetsSpriteSheet_02_102: -1425855616
+      AssetsSpriteSheet_02_103: 1125064943
+      AssetsSpriteSheet_02_104: -1395549869
+      AssetsSpriteSheet_02_105: -696748517
+      AssetsSpriteSheet_02_106: -302320816
+      AssetsSpriteSheet_02_107: 1176847340
+      AssetsSpriteSheet_02_108: -1985002749
+      AssetsSpriteSheet_02_109: 1748017609
+      AssetsSpriteSheet_02_110: 622216955
+      AssetsSpriteSheet_02_111: -1605024556
+      AssetsSpriteSheet_02_112: 1606335141
+      AssetsSpriteSheet_02_113: -721584379
+      AssetsSpriteSheet_02_114: -1490431952
+      AssetsSpriteSheet_02_24: -898818082
+      AssetsSpriteSheet_02_25: 1605602791
+      AssetsSpriteSheet_02_29: 417703697
+      AssetsSpriteSheet_02_30: 702835332
+      AssetsSpriteSheet_02_31: 1827707367
+      AssetsSpriteSheet_02_32: 1786874343
+      AssetsSpriteSheet_02_34: -39633149
+      AssetsSpriteSheet_02_35: 1505816734
+      AssetsSpriteSheet_02_36: -594735193
+      AssetsSpriteSheet_02_37: 1427791725
+      AssetsSpriteSheet_02_38: 1899807911
+      AssetsSpriteSheet_02_39: -1915401399
+      AssetsSpriteSheet_02_40: -585253739
+      AssetsSpriteSheet_02_41: -1226611054
+      AssetsSpriteSheet_02_42: 1846128789
+      AssetsSpriteSheet_02_43: -1387169745
+      AssetsSpriteSheet_02_44: -1002150115
+      AssetsSpriteSheet_02_45: -2132644307
+      AssetsSpriteSheet_02_46: 565996434
+      AssetsSpriteSheet_02_47: 132280974
+      AssetsSpriteSheet_02_48: -354083750
+      AssetsSpriteSheet_02_49: 867938232
+      AssetsSpriteSheet_02_53: -2114097706
+      AssetsSpriteSheet_02_54: 412681600
+      AssetsSpriteSheet_02_55: 1952778553
+      AssetsSpriteSheet_02_56: 2100077241
+      AssetsSpriteSheet_02_57: -196183041
+      AssetsSpriteSheet_02_58: 1401866348
+      AssetsSpriteSheet_02_59: 26234821
+      AssetsSpriteSheet_02_60: 215182575
+      AssetsSpriteSheet_02_61: -568459893
+      AssetsSpriteSheet_02_62: 716819503
+      AssetsSpriteSheet_02_63: 2128399882
+      AssetsSpriteSheet_02_64: 1570814210
+      AssetsSpriteSheet_02_65: -356154702
+      AssetsSpriteSheet_02_66: 1064475292
+      AssetsSpriteSheet_02_67: -473103137
+      AssetsSpriteSheet_02_68: 2131550749
+      AssetsSpriteSheet_02_69: 1425523691
+      AssetsSpriteSheet_02_70: 878483938
+      AssetsSpriteSheet_02_71: 1454531036
+      AssetsSpriteSheet_02_72: -1520357490
+      AssetsSpriteSheet_02_73: -981994320
+      AssetsSpriteSheet_02_74: 340861429
+      AssetsSpriteSheet_02_75: 1565601494
+      AssetsSpriteSheet_02_76: 1864841714
+      AssetsSpriteSheet_02_77: 1661192629
+      AssetsSpriteSheet_02_78: -348807584
+      AssetsSpriteSheet_02_79: -145949144
+      AssetsSpriteSheet_02_80: -844203832
+      AssetsSpriteSheet_02_81: -1957967931
+      AssetsSpriteSheet_02_82: -2019709116
+      AssetsSpriteSheet_02_83: -1703509480
+      AssetsSpriteSheet_02_84: 1529175567
+      AssetsSpriteSheet_02_85: -528449623
+      AssetsSpriteSheet_02_86: 2052784252
+      AssetsSpriteSheet_02_87: 687070731
+      AssetsSpriteSheet_02_88: 912254433
+      AssetsSpriteSheet_02_89: -305861328
+      AssetsSpriteSheet_02_90: 896952045
+      AssetsSpriteSheet_02_91: -556829585
+      AssetsSpriteSheet_02_92: -1977418865
+      AssetsSpriteSheet_02_93: 943403377
+      AssetsSpriteSheet_02_94: 1635951790
+      AssetsSpriteSheet_02_95: -793245557
+      AssetsSpriteSheet_02_96: -952984568
+      AssetsSpriteSheet_02_97: -388119831
+      AssetsSpriteSheet_02_98: -34790863
+      AssetsSpriteSheet_02_99: 786939329
+      "Fuma\xE7a1": -298595214
+      "Fuma\xE7a2": -92456896
+      "Fuma\xE7a3": -850342083
+      "Fuma\xE7a4": -605478296
+      "Fuma\xE7a5": -1612563040
+      Mosquito1: 1561838951
+      Mosquito2: -1874940769
+      Mosquito3: -2073003532
+      Mosquito4: -1364835914
+      Mosquito5: 3258994
+      Mosquito6: 371947568
+      Pena1: 439498257
+      Pena2: 348350528
+      Pena3: 1789472909
+      Planta1: -1657898039
+      Planta2: 1995337145
+      Planta3: 128748938
+      Raquete: -1530546269
+      RaqueteClique: 9905217
+      Sabonete1: -1395704403
+      Sabonete2: -562344995
+      Sabonete3: 2054619733
+      Vaso1: -1985994393
+      Vaso2: -1092880909
+      Vaso3: -1813372409
+      VasoPlanta1: -553167510
+      VasoPlanta2: -810998318
+      VasoPlanta3: 424339359
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
