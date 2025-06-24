@@ -82,7 +82,13 @@ MonoBehaviour:
   scoreToWin: 3
   spawnInterval: 1
   growthSpeed: 3
+  maxDirtCount: 4
+  dogCleanSpeed: 0.5
+  moskitoGoal: 4
+  moskitoSpeed: 50
+  moskitoSpawnInterval: 1
   isComplete: 0
+  objectConnectionVisualizer: {fileID: 0}
 --- !u!65 &2263432244350926536
 BoxCollider:
   m_ObjectHideFlags: 0
