@@ -178,12 +178,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 4774
-        width: 878
-        height: 1508
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 4908
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_1
       rect:
         serializedVersion: 2
-        x: 975
-        y: 4802
-        width: 841
-        height: 1484
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1080
+        y: 4908
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +220,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_2
       rect:
         serializedVersion: 2
-        x: 1947
-        y: 4808
-        width: 766
-        height: 1481
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2160
+        y: 4908
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_3
       rect:
         serializedVersion: 2
-        x: 2757
-        y: 4821
-        width: 742
-        height: 1465
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3240
+        y: 4908
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,12 +262,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_4
       rect:
         serializedVersion: 2
-        x: 3580
-        y: 4796
-        width: 655
-        height: 1490
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 4320
+        y: 4908
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,12 +283,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_5
       rect:
         serializedVersion: 2
-        x: 4362
-        y: 4789
-        width: 581
-        height: 1509
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 5400
+        y: 4908
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -304,12 +304,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_6
       rect:
         serializedVersion: 2
-        x: 165
-        y: 3244
-        width: 571
-        height: 1502
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 3272
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_7
       rect:
         serializedVersion: 2
-        x: 792
-        y: 3247
-        width: 649
-        height: 1499
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1080
+        y: 3272
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -346,12 +346,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_8
       rect:
         serializedVersion: 2
-        x: 1515
-        y: 3244
-        width: 717
-        height: 1511
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2160
+        y: 3272
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,12 +367,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_9
       rect:
         serializedVersion: 2
-        x: 2310
-        y: 3228
-        width: 779
-        height: 1534
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3240
+        y: 3272
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -388,12 +388,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_10
       rect:
         serializedVersion: 2
-        x: 3151
-        y: 3234
-        width: 801
-        height: 1524
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 4320
+        y: 3272
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -409,12 +409,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_11
       rect:
         serializedVersion: 2
-        x: 3974
-        y: 3228
-        width: 869
-        height: 1518
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 5400
+        y: 3272
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -430,12 +430,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_12
       rect:
         serializedVersion: 2
-        x: 6
-        y: 1695
-        width: 882
-        height: 1483
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 1636
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -451,12 +451,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_13
       rect:
         serializedVersion: 2
-        x: 962
-        y: 1707
-        width: 842
-        height: 1475
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1080
+        y: 1636
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -472,12 +472,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_14
       rect:
         serializedVersion: 2
-        x: 1853
-        y: 1701
-        width: 767
-        height: 1484
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2160
+        y: 1636
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -493,12 +493,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_15
       rect:
         serializedVersion: 2
-        x: 2732
-        y: 1695
-        width: 692
-        height: 1483
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3240
+        y: 1636
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -514,12 +514,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_16
       rect:
         serializedVersion: 2
-        x: 3514
-        y: 1689
-        width: 581
-        height: 1493
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 4320
+        y: 1636
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -535,12 +535,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_17
       rect:
         serializedVersion: 2
-        x: 4216
-        y: 1682
-        width: 581
-        height: 1506
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 5400
+        y: 1636
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -556,12 +556,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_18
       rect:
         serializedVersion: 2
-        x: 118
-        y: 56
-        width: 649
-        height: 1505
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -577,12 +577,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_19
       rect:
         serializedVersion: 2
-        x: 813
-        y: 59
-        width: 718
-        height: 1499
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1080
+        y: 0
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -598,12 +598,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_20
       rect:
         serializedVersion: 2
-        x: 1636
-        y: 56
-        width: 779
-        height: 1512
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2160
+        y: 0
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -619,12 +619,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_21
       rect:
         serializedVersion: 2
-        x: 2481
-        y: 43
-        width: 785
-        height: 1528
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3240
+        y: 0
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -640,12 +640,12 @@ TextureImporter:
       name: PedrinSprites_WalkRight_22
       rect:
         serializedVersion: 2
-        x: 3294
-        y: 47
-        width: 872
-        height: 1521
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 4320
+        y: 0
+        width: 1080
+        height: 1636
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
