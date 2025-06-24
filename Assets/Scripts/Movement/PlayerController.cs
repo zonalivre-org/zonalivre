@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] private ParticleSystem clickEffect;
-    [SerializeField] private LayerMask clicklableLayers;
+    [SerializeField] private LayerMask clicklableLayers, vfxTargetLayers, vfxFallbackLayers;
     [SerializeField] private float lookRotationSpeed = 8f;
 
     [Header("Actions")]
@@ -45,22 +45,48 @@ public class PlayerController : MonoBehaviour
         input.Main.Move.performed += ctx => ClickToMove();
     }
 
-    void ClickToMove()
+ void ClickToMove()
     {
         if (canMove && Time.timeScale != 0)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, clicklableLayers))
-            {
-                agent.SetDestination(hit.point);
+            RaycastHit hitAgent;
+            RaycastHit hitVFX;
 
-                // Play click effect
-                ParticleSystem clickEffectInstance = Instantiate(clickEffect, hit.point + Vector3.up * 0.1f, clickEffect.transform.rotation);
+            Vector3 clickPosition; // Para armazenar a posição final onde o efeito e o destino serão definidos
+
+            // 1. Raycast para o NavMeshAgent (usa as clicklableLayers)
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitAgent, Mathf.Infinity, clicklableLayers))
+            {
+                agent.SetDestination(hitAgent.point);
+                clickPosition = hitAgent.point; // Define a posição para o VFX como a do agente por padrão
+
+                // 2. Raycast para o VFX
+                // Primeiro, tenta atingir as camadas específicas para o VFX (ex: Default)
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitVFX, Mathf.Infinity, vfxTargetLayers))
+                {
+                    // Se atingiu algo nas vfxTargetLayers, usa essa posição
+                    clickPosition = hitVFX.point;
+                }
+                else
+                {
+                    // Se não atingiu nas vfxTargetLayers, tenta atingir as vfxFallbackLayers
+                    // (que podem ser as clicklableLayers novamente, ou uma combinação delas)
+                    // Para o seu caso, se não atingiu Default, queremos atingir as clicklableLayers.
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitVFX, Mathf.Infinity, vfxFallbackLayers))
+                    {
+                        clickPosition = hitVFX.point;
+                    }
+                    // Se mesmo assim não atingiu nada (o que é improvável se vfxFallbackLayers é amplo),
+                    // a clickPosition já está definida como hitAgent.point.
+                }
+
+                // --- Instanciação do VFX ---
+                // Usa a clickPosition calculada
+                ParticleSystem clickEffectInstance = Instantiate(clickEffect, clickPosition + Vector3.up * 0.1f, Quaternion.identity);
                 Destroy(clickEffectInstance.gameObject, 1f);
             }
         }
     }
-
     void CheckIfDestinationReached()
     {
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
