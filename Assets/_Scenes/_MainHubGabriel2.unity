@@ -83641,8 +83641,18 @@ PrefabInstance:
       objectReference: {fileID: 1259817721}
     - target: {fileID: 637021592680714041, guid: a34a15568408c8b40b88ad6c032eeb3f,
         type: 3}
+      propertyPath: vfxTargetLayers.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 637021592680714041, guid: a34a15568408c8b40b88ad6c032eeb3f,
+        type: 3}
       propertyPath: clicklableLayers.m_Bits
-      value: 776
+      value: 777
+      objectReference: {fileID: 0}
+    - target: {fileID: 637021592680714041, guid: a34a15568408c8b40b88ad6c032eeb3f,
+        type: 3}
+      propertyPath: vfxFallbackLayers.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1447050963239202430, guid: a34a15568408c8b40b88ad6c032eeb3f,
         type: 3}
