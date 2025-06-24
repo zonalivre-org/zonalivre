@@ -22,7 +22,7 @@ public class ObjectiveInteract : MonoBehaviour
 
     [Header("Minigames List")]
     [SerializeField] private MiniGames miniGameType;
-    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame, WhackAMole, PlantTheCitronela }
+    public enum MiniGames { MangoCatch, QuickTimeEvent, CleanMinigame, WhackAMole, PlantTheCitronela, DogClean, MoskitoSlayer }
 
     #region Objective Properties
     [Header("If object opens a minigame")]
@@ -59,6 +59,15 @@ public class ObjectiveInteract : MonoBehaviour
     [Header("Plant The Citronela")]
     [Range(0, 5)] [SerializeField] private float growthSpeed = 3f;
 
+    [Header("Dog Clean")]
+    [Range(1, 7)][SerializeField] private int maxDirtCount = 4; // Maximum number of dirt spots
+    [Range(0f, 1f)][SerializeField] private float dogCleanSpeed = 0.5f;
+
+    [Header("Moskito Slayer")]
+    [SerializeField] private int moskitoGoal = 4; // Number of mosquitos to slay
+    [SerializeField] private float moskitoSpeed = 50f; // Speed of mosquitos
+    [SerializeField] private float moskitoSpawnInterval = 1f; // Time between mosquito spawns
+
     #endregion
 
     private float cooldownTimer;
@@ -81,6 +90,7 @@ public class ObjectiveInteract : MonoBehaviour
     {
         MiniGameBase.OnMiniGameEnd += TurnOffEnable;
     }
+
     void OnDisable()
     {
         MiniGameBase.OnMiniGameEnd -= TurnOffEnable;
@@ -157,6 +167,8 @@ public class ObjectiveInteract : MonoBehaviour
         if (deactivateItself) gameObject.SetActive(false);
     }
 
+    #region Start MiniGames
+
     private void StartMinigame()
     {
         if (GameManager.Instance.isMinigameActive) return;
@@ -173,6 +185,8 @@ public class ObjectiveInteract : MonoBehaviour
             case MiniGames.CleanMinigame: StartCleanMinigame(); break;
             case MiniGames.WhackAMole: StartWhackAMoleMinigame(); break;
             case MiniGames.PlantTheCitronela: StartPlantTheCitronelaMinigame(); break;
+            case MiniGames.DogClean: StartDogCleanMinigame(); break;
+            case MiniGames.MoskitoSlayer: StartMoskitoSlayerMinigame(); break;
         }
 
     }
@@ -217,6 +231,27 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<PlantTheCitronela>().StartMiniGame();
         GameManager.Instance.isMinigameActive = true;
     }
+    
+    private void StartDogCleanMinigame()
+    {
+        //if (!CheckIfCanStartMinigame("Sabao")) return;
+
+        minigame.GetComponent<DogCleanMiniGame>().SetMiniGameRules(maxDirtCount, dogCleanSpeed);
+        minigame.GetComponent<DogCleanMiniGame>().objectiveInteract = this;
+        minigame.GetComponent<DogCleanMiniGame>().StartMiniGame();
+        GameManager.Instance.isMinigameActive = true;
+    }
+
+    private void StartMoskitoSlayerMinigame()
+    {
+        //if (!CheckIfCanStartMinigame("Repelente")) return;
+
+        minigame.GetComponent<MoskitoSlayer>().SetMiniGameRules(moskitoGoal, moskitoSpeed, moskitoSpawnInterval);
+        minigame.GetComponent<MoskitoSlayer>().objectiveInteract = this;
+        minigame.GetComponent<MoskitoSlayer>().StartMiniGame();
+        GameManager.Instance.isMinigameActive = true;
+    }
+    
     private bool CheckIfCanStartMinigame(string itemId = null)
     {
 
@@ -234,12 +269,13 @@ public class ObjectiveInteract : MonoBehaviour
                 objectConnectionVisualizer.ShowConnector();
                 Debug.Log("Você não tem o item necessário para iniciar o minigame.");
             }
-       
+
             // playerMovement.ToggleMovement(true);
             return false;
         }
     }
 
+    #endregion
     private void TurnOffEnable()
     {
         enable = false;

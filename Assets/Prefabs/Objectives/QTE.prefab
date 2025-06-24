@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 477808666999227252}
   - component: {fileID: 8934597413103247862}
   - component: {fileID: 8154946889367093647}
+  - component: {fileID: 6335610618050940141}
   m_Layer: 6
   m_Name: QTE
   m_TagString: Untagged
@@ -348,8 +349,13 @@ MonoBehaviour:
   scoreToWin: 3
   spawnInterval: 1
   growthSpeed: 3
+  maxDirtCount: 4
+  dogCleanSpeed: 0.5
+  moskitoGoal: 4
+  moskitoSpeed: 50
+  moskitoSpawnInterval: 1
   isComplete: 0
-  objectConnectionVisualizer: {fileID: 8860113627281676813}
+  objectConnectionVisualizer: {fileID: 6335610618050940141}
 --- !u!65 &477808666999227252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -417,6 +423,28 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &6335610618050940141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530999463294988104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb29e68ffb2d7ef0a803f18ca7c6cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {fileID: 0}
+  endPoint: {fileID: 5065730365246612623}
+  startOffset: {x: 0.2, y: 0, z: 3.9}
+  endOffset: {x: -4.28, y: 6.74, z: -3.1}
+  arrowPrefab: {fileID: 8984356496619422666, guid: ed610c30aa376a9ba96b83729d1d27c5,
+    type: 3}
+  arrowRotationOffsetY: {x: 0, y: 0, z: 0}
+  lineRenderer: {fileID: 6121547642471221112}
+  animationDuration: 1
+  displayDuration: 2
 --- !u!1001 &4302810107920619813
 PrefabInstance:
   m_ObjectHideFlags: 0

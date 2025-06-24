@@ -5,6 +5,8 @@ public class TutorialManager : MonoBehaviour
 {
     #region References
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private GameObject taskButton;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private PlayerInventory playerInventory;
     [SerializeField] private PetInteract petInteract;
@@ -196,6 +198,8 @@ public class TutorialManager : MonoBehaviour
                 if (popUpsClosed >= 13)
                 {
                     currentStep++;
+                    pauseMenu.HUDButtons.Add(taskButton);
+                    pauseMenu.ShowButtons();
                     ShowPopUp(13);
                     SetPupUpReplay(12, 13);
                 }
@@ -206,6 +210,10 @@ public class TutorialManager : MonoBehaviour
                     currentStep++;
                     ShowPopUp(14);
                     SetPupUpReplay(13, 14);
+                    
+                    SaveManager.Instance.SetLevelCompletion(gameManager.levelIndex, true);
+                    SaveManager.Instance.SetCutSceneLock(gameManager.levelToUnlock, true);
+                    SaveManager.Instance.SetLevelLock(gameManager.levelToUnlock, true);
                 }
                 break;
             case 15: // Close tutorial

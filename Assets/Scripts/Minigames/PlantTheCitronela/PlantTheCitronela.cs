@@ -13,18 +13,13 @@ public class PlantTheCitronela : MiniGameBase
 
     [Header("Variables")]
     [SerializeField] private Vector2 seedStartPos;
-    [SerializeField] private Vector2 waterCanEndPos;
+    [SerializeField] private Vector2 waterCanStartPos;
     public bool isPlanted = false;
 
     void Awake()
     {
         seedStartPos = seed.anchoredPosition;
-        waterCanEndPos = waterCan.anchoredPosition;
-    }
-
-    void OnEnable()
-    {
-        StartMiniGame();
+        waterCanStartPos = waterCan.anchoredPosition;
     }
 
     void Update()
@@ -35,11 +30,11 @@ public class PlantTheCitronela : MiniGameBase
     public override void StartMiniGame()
     {
         base.StartMiniGame();
-        tipText.text = "Arraste a semente até o vaso para plantar";
+        tipText.text = "Arraste a semente atï¿½ o vaso para plantar";
         seed.gameObject.SetActive(true);
         waterCan.gameObject.SetActive(false);
         seed.anchoredPosition = seedStartPos;
-        waterCan.anchoredPosition = waterCanEndPos;
+        waterCan.anchoredPosition = waterCanStartPos;
         sappling.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         sappling.gameObject.SetActive(false);
     }

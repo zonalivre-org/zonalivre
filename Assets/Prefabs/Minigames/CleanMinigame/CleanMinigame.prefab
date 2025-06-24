@@ -555,7 +555,6 @@ GameObject:
   - component: {fileID: 3080457145219431042}
   - component: {fileID: 1654094737903469348}
   - component: {fileID: 2928830171702111802}
-  - component: {fileID: 3834075192622561267}
   - component: {fileID: 7537944144240147093}
   - component: {fileID: 8176678257525431422}
   m_Layer: 5
@@ -622,21 +621,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.5
---- !u!114 &3834075192622561267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3499039291909954752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &7537944144240147093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,8 +665,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MangoCatch, Assembly-CSharp
+      - m_Target: {fileID: 3070940945447794653}
+        m_TargetAssemblyTypeName: CleanMinigame, Assembly-CSharp
         m_MethodName: EndMiniGame
         m_Mode: 1
         m_Arguments:
@@ -706,6 +690,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+  isClickable: 1
+  buttonLock: {fileID: 0}
   scaleFactor: 1.2
   clickSoundEffectIndex: 3
   randomPitch: 0

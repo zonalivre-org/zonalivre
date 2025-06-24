@@ -979,7 +979,6 @@ GameObject:
   - component: {fileID: 7413691350811292087}
   - component: {fileID: 112134997837185574}
   - component: {fileID: 5413342736712302035}
-  - component: {fileID: 5134365547602689087}
   - component: {fileID: 8701984222763450789}
   - component: {fileID: 7398378220993066085}
   - component: {fileID: 9086281041153859276}
@@ -1047,21 +1046,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.5
---- !u!114 &5134365547602689087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7628240544518016646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &8701984222763450789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,6 +1115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+  isClickable: 1
+  buttonLock: {fileID: 0}
   scaleFactor: 1.2
   clickSoundEffectIndex: 3
   randomPitch: 0

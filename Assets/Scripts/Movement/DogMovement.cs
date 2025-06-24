@@ -67,6 +67,11 @@ public class DogMovement : MonoBehaviour
 
     private void Start()
     {
+        if (waypointsParent == null)
+        {
+            Debug.Log("Dog Waypoints Parent não está definido!", this);
+            return;
+        }
 
         foreach (Transform child in waypointsParent.transform)
         {

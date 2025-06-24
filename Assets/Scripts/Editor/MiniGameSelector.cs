@@ -19,7 +19,7 @@ public class MiniGameSelector : Editor
         // Draw all properties except the ones you want to customize
         DrawPropertiesExcluding(serializedObject, "miniGameType", "mangoGoal", "mangoFallSpeed", "coolDownBetweenMangos",
          "QTEGoal", "QTEMoveSpeed", "QTESafeZoneSizePercentage", "cleanSpeed", "trashAmount",
-         "scoreToWin", "spawnInterval", "growthSpeed");
+         "scoreToWin", "spawnInterval", "growthSpeed", "maxDirtCount", "dogCleanSpeed", "moskitoGoal", "moskitoSpeed", "moskitoSpawnInterval");
 
         // Draw the custom property field for miniGameType
         EditorGUILayout.PropertyField(miniGameType);
@@ -55,6 +55,19 @@ public class MiniGameSelector : Editor
         {
             EditorGUILayout.LabelField("Plant The Citronela Settings", EditorStyles.boldLabel);
             EditorGUILayout.PropertyField(serializedObject.FindProperty("growthSpeed"));
+        }
+        else if (miniGameType.enumValueIndex == 5) // Dog Clean MiniGame
+        {
+            EditorGUILayout.LabelField("Dog Clean MiniGame Settings", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("maxDirtCount"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("cleanSpeed"));
+        }
+        else if (miniGameType.enumValueIndex == 6) // Moskito Slayer
+        {
+            EditorGUILayout.LabelField("Moskito Slayer Settings", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("moskitoGoal"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("moskitoSpeed"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("moskitoSpawnInterval"));
         }
 
         // Apply any modified properties
