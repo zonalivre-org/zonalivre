@@ -178,12 +178,12 @@ TextureImporter:
       name: PedrinSprites_IdleFront_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 16
-        width: 660
-        height: 1512
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 1120
+        height: 1620
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: PedrinSprites_IdleFront_1
       rect:
         serializedVersion: 2
-        x: 694
-        y: 16
-        width: 660
-        height: 1512
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1120
+        y: 0
+        width: 1120
+        height: 1620
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +220,12 @@ TextureImporter:
       name: PedrinSprites_IdleFront_2
       rect:
         serializedVersion: 2
-        x: 1403
-        y: 16
-        width: 660
-        height: 1512
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2240
+        y: 0
+        width: 1120
+        height: 1620
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: PedrinSprites_IdleFront_3
       rect:
         serializedVersion: 2
-        x: 2091
-        y: 16
-        width: 660
-        height: 1512
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3360
+        y: 0
+        width: 1120
+        height: 1620
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,12 +262,12 @@ TextureImporter:
       name: PedrinSprites_IdleFront_4
       rect:
         serializedVersion: 2
-        x: 2796
-        y: 16
-        width: 660
-        height: 1512
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 4480
+        y: 0
+        width: 1120
+        height: 1620
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,18 +283,18 @@ TextureImporter:
       name: PedrinSprites_IdleFront_5
       rect:
         serializedVersion: 2
-        x: 3519
-        y: 16
-        width: 660
-        height: 1512
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 5600
+        y: 0
+        width: 1120
+        height: 1620
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 315b8f1dfe8feaa48b4e737cbf13fff6
+      spriteID: a072c7e52be9f4141b2b4114dae7e0ae
       internalID: -822126341
       vertices: []
       indices: 
