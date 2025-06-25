@@ -1,11 +1,11 @@
 {
     "data": [
         {
-            "time": 91.58431243896485,
-            "sceneIndex": 3,
-            "sender": "QuickTimeEventMinigame",
+            "time": 18.84000015258789,
+            "sceneIndex": 7,
+            "sender": "DogCleanMinigame",
             "track": "Time to finish: ",
-            "value": "3"
+            "value": "12"
         }
     ]
 }

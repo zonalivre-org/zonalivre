@@ -62,13 +62,13 @@ public class Analytics : MonoBehaviour
 
     }
 
-    private void OnApplicationQuit()
-    {
-        AnalyticsData.AnalyticsFile file = new AnalyticsData.AnalyticsFile();
-        file.data = data.ToArray();
+    // private void OnApplicationQuit()
+    // {
+    //     AnalyticsData.AnalyticsFile file = new AnalyticsData.AnalyticsFile();
+    //     file.data = data.ToArray();
 
-        string json = JsonUtility.ToJson(file, true);
+    //     string json = JsonUtility.ToJson(file, true);
 
-        SendToMail(json);
-    }
+    //     SendToMail(json);
+    // }
 }

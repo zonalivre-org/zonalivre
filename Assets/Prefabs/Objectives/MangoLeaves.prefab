@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7615854874139529981
 Transform:
   m_ObjectHideFlags: 0
@@ -59,8 +59,6 @@ MonoBehaviour:
   indicator: {fileID: 1043541624071630750}
   taskItem: {fileID: 0}
   taskIcon: {fileID: -742629689, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
-  objectiveCompleteSprite: {fileID: 21300000, guid: cf94b5ae9bca88f4a97ce96847235ba3,
-    type: 3}
   spriteRenderer: {fileID: 2108341724060719040}
   clicklableLayers:
     serializedVersion: 2
@@ -69,8 +67,11 @@ MonoBehaviour:
   minigame: {fileID: 0}
   idCheck: 0
   idGive: 0
-  objectToActivate: {fileID: 0}
+  objectToActivate:
+  - {fileID: 0}
   deactivateItself: 1
+  objectiveCompleteSprite: {fileID: 0}
+  objectiveToDeactivate: {fileID: 0}
   mangoGoal: 4
   mangoFallSpeed: 275
   coolDownBetweenMangos: 1
@@ -166,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8813342980770570031}
   - component: {fileID: 2108341724060719040}
-  - component: {fileID: 2831833148975392927}
+  - component: {fileID: 4291601324473245213}
   m_Layer: 0
   m_Name: SpriteModel
   m_TagString: Untagged
@@ -184,8 +185,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.46, y: 2.46, z: 2.46}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7615854874139529981}
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
@@ -230,7 +231,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -742629689, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: 605249518, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -241,18 +242,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2831833148975392927
+--- !u!114 &4291601324473245213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3606086305756465079}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e34ae7e4e8768bb459c99b77cf0e061d, type: 3}
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 605249518, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 446710927, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -816181965, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.28
+  onEnable: 0
+  usingSpriteRenderer: 1
+  usingImageComponent: 0
 --- !u!1001 &8105536657762931566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -334,12 +343,12 @@ PrefabInstance:
     - target: {fileID: 3872955715322994447, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.1537725
       objectReference: {fileID: 0}
     - target: {fileID: 3872955715322994447, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.013602972
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4309151851779775125, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
