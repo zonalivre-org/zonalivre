@@ -684,6 +684,7 @@ GameObject:
   - component: {fileID: 8462524218554802895}
   - component: {fileID: 1544524409686543274}
   - component: {fileID: 1896064513702895706}
+  - component: {fileID: 7262017520177521298}
   m_Layer: 5
   m_Name: PlayerMango
   m_TagString: MangoPlayer
@@ -707,7 +708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 85.99}
+  m_AnchoredPosition: {x: 0, y: 125.4}
   m_SizeDelta: {x: 226.7319, y: 171.9809}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5520542468724297867
@@ -738,7 +739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1455022255, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: 2047695559, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -784,6 +785,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 223.77, y: 117.7, z: 6.47}
   m_Center: {x: 0, y: 7.3696823, z: 0}
+--- !u!95 &7262017520177521298
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411688343186846611}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3e3d389966ad2c48b1a84bb218e6b56, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6850433473843914287
 GameObject:
   m_ObjectHideFlags: 0
