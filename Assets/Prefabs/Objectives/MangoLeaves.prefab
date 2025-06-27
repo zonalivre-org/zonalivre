@@ -258,7 +258,7 @@ MonoBehaviour:
   - {fileID: 605249518, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   - {fileID: 446710927, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   - {fileID: -816181965, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
-  frameRate: 0.28
+  frameRate: 0.1
   onEnable: 0
   usingSpriteRenderer: 1
   usingImageComponent: 0
