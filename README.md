@@ -54,12 +54,12 @@ Tudo isso de forma **interativa e acessível**, através de um sistema de gamepl
 
 ## 👥 Equipe
 
-Bernardo Bones Lataro
-Gabriel Logan Dias Porto
-Éric Catarina Parreiras
-Victor Araújo Diniz
-Caio de Freitas Ribeiro
-Gabriel Victor Chaves da Silva
+- Bernardo Bones Lataro
+- Gabriel Logan Dias Porto
+- Éric Catarina Parreiras
+- Victor Araújo Diniz
+- Caio de Freitas Ribeiro
+- Gabriel Victor Chaves da Silva
 
 
 ---
