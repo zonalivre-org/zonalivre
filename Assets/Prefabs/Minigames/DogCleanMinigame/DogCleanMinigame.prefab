@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 4728152393815034910}
   - component: {fileID: 6129535333413269855}
   - component: {fileID: 6148453862903932542}
+  - component: {fileID: 4958877477371719811}
   m_Layer: 5
   m_Name: DirtSpawnPoint
   m_TagString: DogDirt
@@ -619,14 +620,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -742629689, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -671,6 +672,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 70, y: 60, z: 6.42}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4958877477371719811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342159626803122301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: -749713193, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 724754010, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 262350367, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 274960120, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 1267216316, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &2791992261490325458
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +709,7 @@ GameObject:
   - component: {fileID: 3988805776329793625}
   - component: {fileID: 6302154025986001556}
   - component: {fileID: 2965797578766854011}
+  - component: {fileID: 6314553797712805138}
   m_Layer: 5
   m_Name: Soap
   m_TagString: Untagged
@@ -739,9 +764,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -472064842, guid: b9d767696c3a9f74faa1d0507d4f5588, type: 3}
+  m_Sprite: {fileID: 2054619733, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -811,6 +836,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6314553797712805138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2791992261490325458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1395704403, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: -562344995, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: 2054619733, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &2792432794170365559
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +944,7 @@ GameObject:
   - component: {fileID: 9051975229563125020}
   - component: {fileID: 1203039547897257678}
   - component: {fileID: 4769204956521930151}
+  - component: {fileID: 6880107058878793390}
   m_Layer: 5
   m_Name: DirtSpawnPoint (2)
   m_TagString: DogDirt
@@ -922,7 +968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 207.56, y: 70}
+  m_AnchoredPosition: {x: 7.1219, y: 13}
   m_SizeDelta: {x: -415.1227, y: -337.8123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5848213925815430814
@@ -946,14 +992,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -742629689, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -998,6 +1044,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 70, y: 60, z: 6.42}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6880107058878793390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956253108853539294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: -749713193, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 724754010, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 262350367, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 274960120, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 1267216316, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &3917461682943493752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1080,7 @@ GameObject:
   - component: {fileID: 7959402775694059482}
   - component: {fileID: 2600678356449242264}
   - component: {fileID: 7949375727214206844}
+  - component: {fileID: 1895816758206607628}
   m_Layer: 5
   m_Name: DirtSpawnPoint (1)
   m_TagString: DogDirt
@@ -1034,7 +1104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -103, y: -148}
+  m_AnchoredPosition: {x: -15.000015, y: 87.87799}
   m_SizeDelta: {x: -415.1227, y: -337.8123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8124834510777275222
@@ -1058,14 +1128,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -742629689, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1110,6 +1180,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 70, y: 60, z: 6.42}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1895816758206607628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3917461682943493752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: -749713193, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 724754010, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 262350367, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 274960120, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 1267216316, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &4523732377655291993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,6 +1216,7 @@ GameObject:
   - component: {fileID: 563247158566391840}
   - component: {fileID: 493292894192795468}
   - component: {fileID: 2249865148353129401}
+  - component: {fileID: 996955148921544330}
   m_Layer: 5
   m_Name: DirtSpawnPoint (3)
   m_TagString: DogDirt
@@ -1146,7 +1240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 152, y: -101}
+  m_AnchoredPosition: {x: -120, y: 168.91}
   m_SizeDelta: {x: -415.1227, y: -337.8123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2016849212083581938
@@ -1170,14 +1264,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -742629689, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1222,6 +1316,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 70, y: 60, z: 6.42}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &996955148921544330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523732377655291993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: -749713193, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 724754010, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 262350367, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 274960120, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 1267216316, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &4576464301482640870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1352,7 @@ GameObject:
   - component: {fileID: 1650624561614893278}
   - component: {fileID: 6975859872184775173}
   - component: {fileID: 4851679358758189535}
+  - component: {fileID: 5354378864819783608}
   m_Layer: 5
   m_Name: DirtSpawnPoint (5)
   m_TagString: DogDirt
@@ -1258,7 +1376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 86.878, y: 20}
+  m_AnchoredPosition: {x: 86.244, y: 42}
   m_SizeDelta: {x: -415.1227, y: -337.8123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5172221960619839315
@@ -1282,14 +1400,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -742629689, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1334,6 +1452,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 70, y: 60, z: 6.42}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5354378864819783608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576464301482640870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: -749713193, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 724754010, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 262350367, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 274960120, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 1267216316, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &6574835186980988332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,6 +1592,7 @@ GameObject:
   - component: {fileID: 9095177268244239838}
   - component: {fileID: 2680711759905980839}
   - component: {fileID: 4077467010435610957}
+  - component: {fileID: 282704996960759255}
   m_Layer: 5
   m_Name: DirtSpawnPoint (4)
   m_TagString: DogDirt
@@ -1474,7 +1616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -72, y: 48}
+  m_AnchoredPosition: {x: -85, y: 35}
   m_SizeDelta: {x: -415.1227, y: -337.8123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5471191701434940561
@@ -1498,14 +1640,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -742629689, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1550,6 +1692,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 70, y: 60, z: 6.42}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &282704996960759255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079353275839813343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: -749713193, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 724754010, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 262350367, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 274960120, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 1267216316, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &7976514335439902556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,7 +1787,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1493870282, guid: 780fcec80f463234b9579b68759b72e2, type: 3}
+  m_Sprite: {fileID: -1427080569, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1645,6 +1810,7 @@ GameObject:
   - component: {fileID: 6128373597601176218}
   - component: {fileID: 3070172456472544181}
   - component: {fileID: 2043793452039956491}
+  - component: {fileID: 1696060502214092153}
   m_Layer: 5
   m_Name: DirtSpawnPoint (6)
   m_TagString: DogDirt
@@ -1668,7 +1834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11.000015, y: -47.87799}
+  m_AnchoredPosition: {x: -164.12, y: 101.03}
   m_SizeDelta: {x: -415.1227, y: -337.8123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1012311014134239538
@@ -1692,14 +1858,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -742629689, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1744,3 +1910,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 70, y: 60, z: 6.42}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1696060502214092153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9181306236595532050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -916047872, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: -749713193, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 724754010, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 262350367, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 274960120, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 1267216316, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1

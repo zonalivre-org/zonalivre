@@ -1,0 +1,1731 @@
+fileFormatVersion: 2
+guid: 7c759875468ebb543b7c24f2d2661b31
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Janela1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 3875
+        width: 860
+        height: 643
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f211eede04c02640a701d06cc072343
+      internalID: -678655237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Janela2
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 3875
+        width: 861
+        height: 643
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53933bd18eea41b4c8a19b99583df7d6
+      internalID: 102925168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Janela3
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 3875
+        width: 860
+        height: 643
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6395568bf24f7ca419e162b0689a921d
+      internalID: -1713461670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manga1
+      rect:
+        serializedVersion: 2
+        x: 2852
+        y: 3880
+        width: 314
+        height: 450
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03bc504e2f3bd3c48ba0645be92c3403
+      internalID: 592339748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manga2
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3880
+        width: 314
+        height: 450
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eadfb6c947a9ef84da658b0b1d0ead56
+      internalID: 1437607930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manga3
+      rect:
+        serializedVersion: 2
+        x: 3529
+        y: 3880
+        width: 319
+        height: 450
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0407b39f99e9d934eaede2b6b4a7165c
+      internalID: 641517540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rede1
+      rect:
+        serializedVersion: 2
+        x: 4046
+        y: 3827
+        width: 348
+        height: 585
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b147a60ad74c994468ef498d261427d0
+      internalID: -823174930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rede2
+      rect:
+        serializedVersion: 2
+        x: 4433
+        y: 3827
+        width: 348
+        height: 585
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0fbb4cafd65d6a42ac71d3d2cea0146
+      internalID: -1355615416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rede3
+      rect:
+        serializedVersion: 2
+        x: 4819
+        y: 3827
+        width: 349
+        height: 585
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891285dd8d1e97745b1c7a93c9a6ed7e
+      internalID: 859894093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mangueira1
+      rect:
+        serializedVersion: 2
+        x: 5424
+        y: 2817
+        width: 1440
+        height: 1740
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832ce145a3832054e94e29146f3af5d0
+      internalID: 254916706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mangueira2
+      rect:
+        serializedVersion: 2
+        x: 6951
+        y: 2812
+        width: 1441
+        height: 1745
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9707f40b79b8d2d43ac13e942e8ce83c
+      internalID: 745043063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mangueira3
+      rect:
+        serializedVersion: 2
+        x: 8459
+        y: 2817
+        width: 1441
+        height: 1740
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5676fbffb3d01746b0b2b5f59c60f79
+      internalID: -736456361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vassoura1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 2919
+        width: 445
+        height: 884
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440d73484047dc64b80bd55070f78b45
+      internalID: 978024056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vassoura2
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 2919
+        width: 445
+        height: 884
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80da9f01f3abc8845a0c4935cb7ef620
+      internalID: -2033309110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vassoura3
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 2919
+        width: 445
+        height: 884
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a247ced1e236114e901a7da9bc11ad4
+      internalID: -1636125094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cesto1
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 3320
+        width: 691
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f500bd606026db4095a7f8ca119b1da
+      internalID: 2047695559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cesto2
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 3320
+        width: 692
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2d9bc25c4644041b68cc72893c3534
+      internalID: -554034789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cesto3
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 3320
+        width: 691
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cfb6f0c8e420454788f7ed4266fa762
+      internalID: -285115708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LataLixo1
+      rect:
+        serializedVersion: 2
+        x: 3674
+        y: 3180
+        width: 512
+        height: 633
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 619ac830284c3384a8ba0fd5b608a2eb
+      internalID: 1520608581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LataLixo2
+      rect:
+        serializedVersion: 2
+        x: 4264
+        y: 3180
+        width: 517
+        height: 633
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a9b4a8d0bd16145a05ba82545097e3
+      internalID: 771724009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LataLixo3
+      rect:
+        serializedVersion: 2
+        x: 4844
+        y: 3180
+        width: 517
+        height: 633
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cfbbead62eb67142bd1f31fac3e17ee
+      internalID: -1560335373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coleira1
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 2894
+        width: 459
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b915f5d9410d536409e516767106896d
+      internalID: -2048700220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coleira2
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 2894
+        width: 464
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bdae357e365ce4ab6cc41130a2d7cb
+      internalID: -1621605857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coleira3
+      rect:
+        serializedVersion: 2
+        x: 2586
+        y: 2894
+        width: 464
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39e339841ee91c468811077977abf2e
+      internalID: 974213605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lata1
+      rect:
+        serializedVersion: 2
+        x: 3166
+        y: 2513
+        width: 513
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec49c3a0ba326074b97470dcbafe6803
+      internalID: 748035601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lata2
+      rect:
+        serializedVersion: 2
+        x: 3756
+        y: 2513
+        width: 517
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea282fb7868823548be7dd78f088234a
+      internalID: 1508585865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lata3
+      rect:
+        serializedVersion: 2
+        x: 4336
+        y: 2513
+        width: 517
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dab1b5dc9ef2f943b293c13ac0852af
+      internalID: -167334106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Galinheiro1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1851
+        width: 962
+        height: 961
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a705640bfd023374d867370da49e2e2d
+      internalID: 329831806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Galinheiro2
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 1851
+        width: 962
+        height: 961
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef0d9a7c59fbcc4e94e428f995426b2
+      internalID: -1899082199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Galinheiro3
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 1851
+        width: 957
+        height: 961
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75402d26a7d0955478fc88505d7a57f1
+      internalID: -659212217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buraco1
+      rect:
+        serializedVersion: 2
+        x: 4916
+        y: 2604
+        width: 677
+        height: 155
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90e19ecf87364f46991aec256fd9775
+      internalID: 348263522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buraco2
+      rect:
+        serializedVersion: 2
+        x: 5598
+        y: 2604
+        width: 681
+        height: 155
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3211cc7f00bfec7479a09831f17a14e2
+      internalID: 1251328515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buraco3
+      rect:
+        serializedVersion: 2
+        x: 6299
+        y: 2604
+        width: 676
+        height: 155
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628af801d17a6ee42bd510fc836c8bbf
+      internalID: 504682137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Regador1
+      rect:
+        serializedVersion: 2
+        x: 7879
+        y: 1870
+        width: 1562
+        height: 807
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21945c6d2f4196845bddd4a0627469ef
+      internalID: -1522726513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pote1
+      rect:
+        serializedVersion: 2
+        x: 2983
+        y: 2121
+        width: 410
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fe7969454549147b214b72b72df420
+      internalID: -387738779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pote2
+      rect:
+        serializedVersion: 2
+        x: 3447
+        y: 2121
+        width: 415
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c92068e21bd2546a53c8467c35a662
+      internalID: 571753484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pote3
+      rect:
+        serializedVersion: 2
+        x: 3911
+        y: 2121
+        width: 415
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd8bda21ce0d8242a17a124e490b9e0
+      internalID: 1899868206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Semente1
+      rect:
+        serializedVersion: 2
+        x: 4452
+        y: 2073
+        width: 334
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe3ecd366d64b644ba893f1b0a7d185
+      internalID: -1548222276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Semente2
+      rect:
+        serializedVersion: 2
+        x: 4815
+        y: 2073
+        width: 328
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805561a51c21ed144954a5cfed48530e
+      internalID: 464265427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Semente3
+      rect:
+        serializedVersion: 2
+        x: 5163
+        y: 2073
+        width: 328
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7ba3b4806d7c94e800c9e58f85cc6a
+      internalID: 317990452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guia1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 957
+        width: 512
+        height: 715
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdfc1ff3c37253429837cac322d5d08
+      internalID: -1826976990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guia2
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 957
+        width: 512
+        height: 715
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8837cd77a3e7be4fa522d8e09bae46b
+      internalID: -873924011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Guia3
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 957
+        width: 512
+        height: 715
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5de7cfabe5b37648923446365d99796
+      internalID: -1230831503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoteRacao1
+      rect:
+        serializedVersion: 2
+        x: 2983
+        y: 1643
+        width: 410
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ef30b5e0cc8b94bbccbac26a5c8eba
+      internalID: -6523079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoteRacao2
+      rect:
+        serializedVersion: 2
+        x: 3442
+        y: 1648
+        width: 415
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128655541b065f04d858254417621b46
+      internalID: 257835292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoteRacao3
+      rect:
+        serializedVersion: 2
+        x: 3911
+        y: 1643
+        width: 415
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc13e2f91cf4af44863ceb3c3e08025
+      internalID: -1076741991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Galinha1
+      rect:
+        serializedVersion: 2
+        x: 4708
+        y: 952
+        width: 798
+        height: 1029
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e376b408d112f0a41a0412d905729465
+      internalID: -1975671274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Galinha2
+      rect:
+        serializedVersion: 2
+        x: 5520
+        y: 952
+        width: 798
+        height: 1029
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc0470ee16107a4689d34a8d1372414
+      internalID: -926128847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Galinha3
+      rect:
+        serializedVersion: 2
+        x: 6352
+        y: 952
+        width: 797
+        height: 1029
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d743bc6094de0b4ab0bc6e7a8f37c21
+      internalID: 219580545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Regador2
+      rect:
+        serializedVersion: 2
+        x: 7879
+        y: 1044
+        width: 1562
+        height: 807
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03c4df9eed7a5748a6ecb9705dba0d6
+      internalID: -209153859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Racao1
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 1029
+        width: 352
+        height: 570
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7da566460539724da80dbd123ef422c
+      internalID: -1425255407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Racao2
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 1029
+        width: 343
+        height: 570
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c145f1584d2a56d418d5dbb0b1e13711
+      internalID: 1498116510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Racao3
+      rect:
+        serializedVersion: 2
+        x: 2446
+        y: 1029
+        width: 352
+        height: 570
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957184f4f98505d49873334d9296af07
+      internalID: -815651786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsSpriteSheet_01_71
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 1049
+        width: 420
+        height: 439
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e33a04b231bf0049a42bf1428b00de7
+      internalID: -782492285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsSpriteSheet_01_72
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 1049
+        width: 421
+        height: 439
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6274b41bbd7e89f48a020da37eab610a
+      internalID: -1296792670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsSpriteSheet_01_73
+      rect:
+        serializedVersion: 2
+        x: 3911
+        y: 1049
+        width: 420
+        height: 439
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af9c404d34c71841acd85da9a0605a5
+      internalID: 289584094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folhas1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 155
+        width: 802
+        height: 671
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0476c2d6b980e6c4d87f5759406b4590
+      internalID: 605249518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folhas2
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 155
+        width: 802
+        height: 671
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ffe2f6be0a7e44780a458dcc1a36ec
+      internalID: 446710927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folhas3
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 155
+        width: 802
+        height: 671
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4697095fdafcf584283cfb208845d0af
+      internalID: -816181965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PacoteRacao1
+      rect:
+        serializedVersion: 2
+        x: 2639
+        y: 121
+        width: 542
+        height: 696
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be0289302cdbcb4f9a0d3c959d6631c
+      internalID: 479676435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PacoteRacao2
+      rect:
+        serializedVersion: 2
+        x: 3219
+        y: 121
+        width: 542
+        height: 696
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4329f2992538a24ba9bd6dc1cd91301
+      internalID: -12013259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PacoteRacao3
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 121
+        width: 541
+        height: 696
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79da6edc4573bc468fa4787a798acab
+      internalID: -506442777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JanelaComRede1
+      rect:
+        serializedVersion: 2
+        x: 4438
+        y: 97
+        width: 923
+        height: 734
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834c8e260ca096948949af973e7c7bcb
+      internalID: -899714365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JanelaComRede2
+      rect:
+        serializedVersion: 2
+        x: 5380
+        y: 97
+        width: 924
+        height: 734
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419d36117b83ee44dbf0f64a619ce013
+      internalID: -1469170124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JanelaComRede3
+      rect:
+        serializedVersion: 2
+        x: 6318
+        y: 97
+        width: 923
+        height: 734
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23097c536def70428fae11b9bcff944
+      internalID: 1383234211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Regador3
+      rect:
+        serializedVersion: 2
+        x: 7879
+        y: 159
+        width: 1562
+        height: 807
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540fd690d6f32a64daf22071d51fb89b
+      internalID: -922027712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agua1
+      rect:
+        serializedVersion: 2
+        x: 6008
+        y: 2021
+        width: 339
+        height: 497
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fe4c3e991f43f4bb9019a5e6750f83
+      internalID: 983262523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agua2
+      rect:
+        serializedVersion: 2
+        x: 6393
+        y: 2020
+        width: 344
+        height: 497
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0af26c8c5cb4b499a0a67648463518
+      internalID: 1581025326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agua3
+      rect:
+        serializedVersion: 2
+        x: 6753
+        y: 2020
+        width: 344
+        height: 497
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd98dfd11e31e1488ac8f837e78af06
+      internalID: 1458510028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Agua1: 983262523
+      Agua2: 1581025326
+      Agua3: 1458510028
+      AssetsSpriteSheet_01_40: -2126081284
+      AssetsSpriteSheet_01_41: -1573589887
+      AssetsSpriteSheet_01_42: -151347286
+      AssetsSpriteSheet_01_43: -453301163
+      AssetsSpriteSheet_01_44: -622076009
+      AssetsSpriteSheet_01_45: 1690509570
+      AssetsSpriteSheet_01_46: -1991447178
+      AssetsSpriteSheet_01_47: 1470619424
+      AssetsSpriteSheet_01_48: -208525092
+      AssetsSpriteSheet_01_49: -1641303678
+      AssetsSpriteSheet_01_50: 2044224096
+      AssetsSpriteSheet_01_51: 361873042
+      AssetsSpriteSheet_01_52: -2084025836
+      AssetsSpriteSheet_01_53: -1393748357
+      AssetsSpriteSheet_01_54: 1123858520
+      AssetsSpriteSheet_01_65: -134693516
+      AssetsSpriteSheet_01_67: 1425525409
+      AssetsSpriteSheet_01_69: 1581368735
+      AssetsSpriteSheet_01_71: -782492285
+      AssetsSpriteSheet_01_72: -1296792670
+      AssetsSpriteSheet_01_73: 289584094
+      AssetsSpriteSheet_01_74: 1782469473
+      AssetsSpriteSheet_01_75: 289235231
+      AssetsSpriteSheet_01_76: -837629456
+      Buraco1: 348263522
+      Buraco2: 1251328515
+      Buraco3: 504682137
+      Cesto1: 2047695559
+      Cesto2: -554034789
+      Cesto3: -285115708
+      Coleira1: -2048700220
+      Coleira2: -1621605857
+      Coleira3: 974213605
+      Folhas1: 605249518
+      Folhas2: 446710927
+      Folhas3: -816181965
+      Galinha1: -1975671274
+      Galinha2: -926128847
+      Galinha3: 219580545
+      Galinheiro1: 329831806
+      Galinheiro2: -1899082199
+      Galinheiro3: -659212217
+      Guia1: -1826976990
+      Guia2: -873924011
+      Guia3: -1230831503
+      Janela1: -678655237
+      Janela2: 102925168
+      Janela3: -1713461670
+      JanelaComRede1: -899714365
+      JanelaComRede2: -1469170124
+      JanelaComRede3: 1383234211
+      Lata1: 748035601
+      Lata2: 1508585865
+      Lata3: -167334106
+      LataLixo1: 1520608581
+      LataLixo2: 771724009
+      LataLixo3: -1560335373
+      Manga1: 592339748
+      Manga2: 1437607930
+      Manga3: 641517540
+      Mangueira1: 254916706
+      Mangueira2: 745043063
+      Mangueira3: -736456361
+      PacoteRacao1: 479676435
+      PacoteRacao2: -12013259
+      PacoteRacao3: -506442777
+      Pote1: -387738779
+      Pote2: 571753484
+      Pote3: 1899868206
+      PoteRacao1: -6523079
+      PoteRacao2: 257835292
+      PoteRacao3: -1076741991
+      Racao1: -1425255407
+      Racao2: 1498116510
+      Racao3: -815651786
+      Rede1: -823174930
+      Rede2: -1355615416
+      Rede3: 859894093
+      Regador1: -1522726513
+      Regador2: -209153859
+      Regador3: -922027712
+      Semente1: -1548222276
+      Semente2: 464265427
+      Semente3: 317990452
+      Vassoura1: 978024056
+      Vassoura2: -2033309110
+      Vassoura3: -1636125094
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

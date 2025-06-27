@@ -60,8 +60,6 @@ MonoBehaviour:
   indicator: {fileID: 6137518613436533858}
   taskItem: {fileID: 0}
   taskIcon: {fileID: -1909239900, guid: 543ab78ed937cb049ad3688378b2ade9, type: 3}
-  objectiveCompleteSprite: {fileID: 963206929, guid: 543ab78ed937cb049ad3688378b2ade9,
-    type: 3}
   spriteRenderer: {fileID: 3318222065943684444}
   clicklableLayers:
     serializedVersion: 2
@@ -70,8 +68,11 @@ MonoBehaviour:
   minigame: {fileID: 0}
   idCheck: 0
   idGive: 0
-  objectToActivate: {fileID: 0}
-  deactivateItself: 0
+  objectToActivate:
+  - {fileID: 0}
+  deactivateItself: 1
+  objectiveCompleteSprite: {fileID: 0}
+  objectiveToDeactivate: {fileID: 0}
   mangoGoal: 6
   mangoFallSpeed: 400
   coolDownBetweenMangos: 0.75
@@ -371,8 +372,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7439595613457238307}
   - component: {fileID: 3318222065943684444}
-  - component: {fileID: 8630596467439280968}
-  - component: {fileID: 7690346806783739106}
   m_Layer: 0
   m_Name: SpriteModel
   m_TagString: Untagged
@@ -390,7 +389,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 0, y: 2.22, z: -1.81}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1.57, y: 1.57, z: 1.57}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8359678680030306192}
@@ -436,7 +435,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1278776558, guid: 543ab78ed937cb049ad3688378b2ade9, type: 3}
+  m_Sprite: {fileID: -298595214, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -447,27 +446,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &8630596467439280968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7844932526769248964}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e34ae7e4e8768bb459c99b77cf0e061d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7690346806783739106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7844932526769248964}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e34ae7e4e8768bb459c99b77cf0e061d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -16,7 +16,6 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private GameObject indicator;
     [HideInInspector] public TaskItem taskItem;
     public Sprite taskIcon;
-    [SerializeField] private Sprite objectiveCompleteSprite;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private LayerMask clicklableLayers;
 
@@ -35,8 +34,12 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private int idGive;
 
     [Header("If object activates another object")]
-    [SerializeField] private GameObject objectToActivate;
+    [SerializeField] private GameObject[] objectToActivate;
     [SerializeField] private bool deactivateItself = false;
+
+    [Header("Sprite Change")]
+    [SerializeField] private GameObject objectiveCompleteSprite;
+    [SerializeField] private GameObject objectiveToDeactivate;
 
     [Header("Mango Catch")]
     [SerializeField] private int mangoGoal;
@@ -53,11 +56,11 @@ public class ObjectiveInteract : MonoBehaviour
     [SerializeField] private int trashAmount = 5;
 
     [Header("Whack A Mole")]
-    [Range(1, 5)] [SerializeField] private int scoreToWin = 3;
+    [Range(1, 5)][SerializeField] private int scoreToWin = 3;
     [SerializeField] private float spawnInterval = 1.0f;
 
     [Header("Plant The Citronela")]
-    [Range(0, 5)] [SerializeField] private float growthSpeed = 3f;
+    [Range(0, 5)][SerializeField] private float growthSpeed = 3f;
 
     [Header("Dog Clean")]
     [Range(1, 7)][SerializeField] private int maxDirtCount = 4; // Maximum number of dirt spots
@@ -125,15 +128,15 @@ public class ObjectiveInteract : MonoBehaviour
                     // Debug.Log($"Objetivo {gameObject.name} selecionado por clique. Trigger habilitado!"); // Para Debug
                     // TODO: Opcional: Mostrar feedback visual de seleção
                 }
-                 // else { Debug.Log($"Objetivo {gameObject.name} clicado, mas não interagível."); } // Feedback se clicou mas não interagiu
+                // else { Debug.Log($"Objetivo {gameObject.name} clicado, mas não interagível."); } // Feedback se clicou mas não interagiu
             }
             else if (enable)
             {
                 // Se clicou em outro objeto nas camadas clicklableLayers ENQUANTO este objetivo estava 'enable', CANCELA.
                 // Isso impede que um clique em outro objetivo dispare o minigame deste.
                 enable = false; // Desabilita a flag 'enable'
-                // Debug.Log($"Seleção de {gameObject.name} cancelada (clicou em outro lugar)."); // Para Debug
-                 CancelInvoke(nameof(StartMinigame)); // Cancela qualquer agendamento pendente
+                                // Debug.Log($"Seleção de {gameObject.name} cancelada (clicou em outro lugar)."); // Para Debug
+                CancelInvoke(nameof(StartMinigame)); // Cancela qualquer agendamento pendente
                 // A lógica de cancelamento de minigame em execução deve ser chamada externamente
                 // pelo sistema que gerencia minigames (ex: um GameManager).
             }
@@ -148,7 +151,16 @@ public class ObjectiveInteract : MonoBehaviour
 
     public void CompleteTask()
     {
-        if (spriteRenderer && objectiveCompleteSprite) spriteRenderer.sprite = objectiveCompleteSprite;
+        if (objectiveCompleteSprite != null)
+        {
+            objectiveCompleteSprite.SetActive(true);
+        }
+        
+        if (objectiveToDeactivate != null)
+        {
+            objectiveToDeactivate.SetActive(false);
+        }
+
 
         playerMovement.ToggleMovement(true);
         taskItem.MarkAsComplete();
@@ -159,11 +171,21 @@ public class ObjectiveInteract : MonoBehaviour
         playerInventory.RemoveItem();
         GameManager.Instance.AddScore(scoreValue);
 
-        if (objectToActivate)
+        if (objectToActivate != null && objectToActivate.Length > 0)
         {
-            objectToActivate.SetActive(true);
-            objectToActivate.GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(true);
+            foreach (GameObject obj in objectToActivate)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                    if (obj.GetComponent<ObjectiveInteract>() != null)
+                    {
+                        obj.GetComponent<ObjectiveInteract>().taskItem.gameObject.SetActive(true);
+                    }
+                }
+            }
         }
+
         if (deactivateItself) gameObject.SetActive(false);
     }
 
@@ -231,7 +253,7 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<PlantTheCitronela>().StartMiniGame();
         GameManager.Instance.isMinigameActive = true;
     }
-    
+
     private void StartDogCleanMinigame()
     {
         //if (!CheckIfCanStartMinigame("Sabao")) return;
@@ -251,7 +273,7 @@ public class ObjectiveInteract : MonoBehaviour
         minigame.GetComponent<MoskitoSlayer>().StartMiniGame();
         GameManager.Instance.isMinigameActive = true;
     }
-    
+
     private bool CheckIfCanStartMinigame(string itemId = null)
     {
 
