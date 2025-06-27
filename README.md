@@ -54,10 +54,14 @@ Tudo isso de forma **interativa e acessível**, através de um sistema de gamepl
 
 ## 👥 Equipe
 
-- 👨‍⚕️ Game Design: [Seu nome aqui]
-- 👨‍💻 Programação: [Seu nome aqui]
-- 🎨 Arte: [Colaboradores, se houver]
-- 📢 Agradecimentos especiais: [Veterinários, professores, etc.]
+Bernardo Bones Lataro
+Gabriel Logan
+Éric Catarina Parreiras
+Victor Diniz
+Caio Caquitão
+Gabriel
+
+
 
 ---
 
