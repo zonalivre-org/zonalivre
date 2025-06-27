@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 4587753808254701891}
   - component: {fileID: 5429867156026375516}
   - component: {fileID: 869191144634255862}
+  - component: {fileID: 6186195300382278399}
   m_Layer: 5
   m_Name: Pointer
   m_TagString: Untagged
@@ -448,6 +449,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2.35
+--- !u!114 &6186195300382278399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2724385561308324174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -823174930, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -1355615416, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 859894093, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &3364198578713679703
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +1000,7 @@ GameObject:
   - component: {fileID: 3660928146239373136}
   - component: {fileID: 1981374463678838804}
   - component: {fileID: 8160606900574770426}
+  - component: {fileID: 8217690193639415231}
   m_Layer: 5
   m_Name: Safe Zone
   m_TagString: Untagged
@@ -1043,6 +1065,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8217690193639415231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5187755538488856479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -678655237, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 102925168, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -1713461670, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &5303951134224556262
 GameObject:
   m_ObjectHideFlags: 0

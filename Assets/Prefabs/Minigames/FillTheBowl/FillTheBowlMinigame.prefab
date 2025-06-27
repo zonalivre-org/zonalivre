@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 4735666547431507731}
   - component: {fileID: 9065397927055880430}
   - component: {fileID: 6322236513704275687}
+  - component: {fileID: 6816310358100971844}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Bowl
@@ -605,6 +606,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6816310358100971844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917052572572735557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -6523079, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 257835292, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -1076741991, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &5322007764668067372
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +953,7 @@ GameObject:
   - component: {fileID: 1759258016977614304}
   - component: {fileID: 669368147819206040}
   - component: {fileID: 8900261802379043857}
+  - component: {fileID: 9211786116726084562}
   m_Layer: 5
   m_Name: Bowl
   m_TagString: Bowl
@@ -1031,6 +1053,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillTheBowl: {fileID: 1490232844682000671}
+--- !u!114 &9211786116726084562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752085192085658040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -387738779, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 571753484, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 1899868206, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &8908361473461967773
 GameObject:
   m_ObjectHideFlags: 0
