@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 610107721031967416}
   - component: {fileID: 7640538541277195830}
   - component: {fileID: 6416635897307267425}
+  - component: {fileID: 1376529346380532735}
   m_Layer: 5
   m_Name: SmokeEffect
   m_TagString: Untagged
@@ -97,3 +98,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1376529346380532735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848059299809290793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -298595214, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: -92456896, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: -850342083, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: -605478296, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: -1612563040, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1

@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7107817516500033192}
   - component: {fileID: 633195462323056995}
+  - component: {fileID: 3825352970675588720}
   m_Layer: 0
   m_Name: AmandaSprite
   m_TagString: Untagged
@@ -207,6 +208,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3825352970675588720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246842258772847829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  frameRate: 0.1
+  onEnable: 0
+  usingSpriteRenderer: 0
+  usingImageComponent: 0
 --- !u!1001 &7596280711412339982
 PrefabInstance:
   m_ObjectHideFlags: 0

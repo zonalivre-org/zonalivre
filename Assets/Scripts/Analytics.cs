@@ -38,17 +38,49 @@ public class Analytics : MonoBehaviour
         file.data = data.ToArray();
 
         string json = JsonUtility.ToJson(file, true);
-        SaveFile(json);
+        SaveJsonFile(json);
     }
 
-    private void SaveFile(string text)
+    private void SaveJsonFile(string jsonContent)
     {
-        string path = Application.dataPath + "/analytics.txt";
+        // Get playerName from SaveFile
+        SaveFile saveFile = SaveManager.Instance.LoadGame();
+        string playerName = saveFile.playerName;
+
+        // Format date and time
+        string timestamp = System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+
+        // Create filename
+        string fileName = $"{playerName}_{timestamp}.json";
+
+        // Save JSON file
+        string path = System.IO.Path.Combine(Application.dataPath, fileName);
         Debug.Log("Saving analytics data to " + path);
-        System.IO.File.WriteAllText(path, text);
+        System.IO.File.WriteAllText(path, jsonContent);
     }
 
-    public void SendToMail(string s)
+    public void SendMail()
+    {
+        AnalyticsData.AnalyticsFile file = new AnalyticsData.AnalyticsFile();
+        file.data = data.ToArray();
+
+        string json = JsonUtility.ToJson(file, true);
+
+        // Get playerName and timestamp for filename
+        SaveFile saveFile = SaveManager.Instance.LoadGame();
+        string playerName = saveFile.playerName;
+        string timestamp = System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+        string fileName = $"{playerName}_{timestamp}.json";
+        string path = System.IO.Path.Combine(Application.dataPath, fileName);
+
+        // Save the JSON file
+        System.IO.File.WriteAllText(path, json);
+
+        // Send the file as attachment
+        Mail(path, fileName);
+    }
+
+    private void Mail(string filePath, string fileName)
     {
         string password = "uzrnhxxvwsnsunxb";
         string mail = "gabriellogand@gmail.com";
@@ -57,18 +89,15 @@ public class Analytics : MonoBehaviour
             Credentials = new NetworkCredential(mail, password),
             EnableSsl = true
         };
-        client.Send(mail, mail, "Zona Livre - Analytics",s);
-        Debug.Log("!!!!! Mail sent !!!!!");
 
+        SaveFile saveFile = SaveManager.Instance.LoadGame();
+
+        MailMessage message = new MailMessage(mail, mail);
+        message.Subject = saveFile.playerName + ": Zona Livre - Analytics";
+        message.Body = "Analytics data attached as JSON file.";
+        message.Attachments.Add(new Attachment(filePath));
+
+        client.Send(message);
+        Debug.Log("!!!!! Mail with attachment sent !!!!!");
     }
-
-    // private void OnApplicationQuit()
-    // {
-    //     AnalyticsData.AnalyticsFile file = new AnalyticsData.AnalyticsFile();
-    //     file.data = data.ToArray();
-
-    //     string json = JsonUtility.ToJson(file, true);
-
-    //     SendToMail(json);
-    // }
 }

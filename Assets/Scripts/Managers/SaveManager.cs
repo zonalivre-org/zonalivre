@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            SetLevelLock(0, true); // Ensure the first level is unlocked by default
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -52,6 +53,13 @@ public class SaveManager : MonoBehaviour
     {
         SaveFile saveFile = LoadGame() ?? new SaveFile();
         saveFile.spawnPosition = position;
+        SaveGame(saveFile);
+    }
+
+    public void SetPlayerName(string name)
+    {
+        SaveFile saveFile = LoadGame() ?? new SaveFile();
+        saveFile.playerName = name;
         SaveGame(saveFile);
     }
 

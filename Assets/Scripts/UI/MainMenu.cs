@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject[] mainButtons;
     [SerializeField] private ChangeScene changeScene;
     [SerializeField] private VideoPanel videoPanel;
+    [SerializeField] private GameObject namePanel;
     private SaveFile saveFile;
 
     private void Awake()
@@ -28,6 +29,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         saveFile = SaveManager.Instance.LoadGame();
+        namePanel.SetActive(true);
     }
 
     public void StartGame()
