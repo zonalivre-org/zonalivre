@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            SetLevelLock(0, true); // Ensure the first level is unlocked by default
             DontDestroyOnLoad(gameObject);
         }
         else

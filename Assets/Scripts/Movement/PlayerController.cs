@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
                 agent.SetDestination(hit.point);
 
                 // Play click effect
-                ParticleSystem clickEffectInstance = Instantiate(clickEffect, hit.point + Vector3.up * 0.1f, clickEffect.transform.rotation);
+                ParticleSystem clickEffectInstance = Instantiate(clickEffect, hit.point + Vector3.up * 1.2f, clickEffect.transform.rotation);
                 Destroy(clickEffectInstance.gameObject, 1f);
             }
         }

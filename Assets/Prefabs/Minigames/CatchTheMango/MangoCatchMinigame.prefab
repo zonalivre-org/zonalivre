@@ -685,6 +685,7 @@ GameObject:
   - component: {fileID: 1544524409686543274}
   - component: {fileID: 1896064513702895706}
   - component: {fileID: 7262017520177521298}
+  - component: {fileID: 7048903078201887903}
   m_Layer: 5
   m_Name: PlayerMango
   m_TagString: MangoPlayer
@@ -806,6 +807,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7048903078201887903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411688343186846611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 2047695559, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -554034789, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -285115708, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 0
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &6850433473843914287
 GameObject:
   m_ObjectHideFlags: 0

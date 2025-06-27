@@ -1,0 +1,81 @@
+{
+    "data": [
+        {
+            "time": 5.652407169342041,
+            "sceneIndex": 3,
+            "sender": "FillTheBowlMinigame",
+            "track": "Time to finish: ",
+            "value": "1"
+        },
+        {
+            "time": 10.202193260192871,
+            "sceneIndex": 3,
+            "sender": "FillTheBowlMinigame",
+            "track": "Time to finish: ",
+            "value": "2"
+        },
+        {
+            "time": 18.785552978515626,
+            "sceneIndex": 3,
+            "sender": "PetHappines",
+            "track": "Time to finish: ",
+            "value": "0"
+        },
+        {
+            "time": 21.18550682067871,
+            "sceneIndex": 3,
+            "sender": "FillTheBowlMinigame",
+            "track": "Time to finish: ",
+            "value": "1"
+        },
+        {
+            "time": 24.18572425842285,
+            "sceneIndex": 3,
+            "sender": "PetHappines",
+            "track": "Time to finish: ",
+            "value": "0"
+        },
+        {
+            "time": 28.202381134033204,
+            "sceneIndex": 3,
+            "sender": "PetHappines",
+            "track": "Time to finish: ",
+            "value": "0"
+        },
+        {
+            "time": 31.402318954467775,
+            "sceneIndex": 3,
+            "sender": "PetHappines",
+            "track": "Time to finish: ",
+            "value": "0"
+        },
+        {
+            "time": 35.25216293334961,
+            "sceneIndex": 3,
+            "sender": "FillTheBowlMinigame",
+            "track": "Time to finish: ",
+            "value": "1"
+        },
+        {
+            "time": 9.9399995803833,
+            "sceneIndex": 2,
+            "sender": "MangoCatchMinigame",
+            "track": "Time to finish: ",
+            "value": "5"
+        },
+        {
+            "time": 14.273265838623047,
+            "sceneIndex": 2,
+            "sender": "QuickTimeEventMinigame",
+            "track": "Time to finish: ",
+            "value": "2"
+        },
+        {
+            "time": 26.05658721923828,
+            "sceneIndex": 2,
+            "sender": "PetWalkMinigame",
+            "track": "Time to finish: ",
+            "value": "7"
+        }
+    ]
+}
