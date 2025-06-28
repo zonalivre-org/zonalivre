@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         saveFile = SaveManager.Instance.LoadGame();
-        namePanel.SetActive(true);
+        //namePanel.SetActive(true);
     }
 
     public void StartGame()
