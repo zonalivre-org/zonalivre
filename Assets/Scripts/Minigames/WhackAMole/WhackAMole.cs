@@ -2,25 +2,33 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Collections;
 
 public class WhackAMole : MiniGameBase, IPointerDownHandler
 {
     [Header("Rules")]
-    [Range(1,5)] [SerializeField] private int scoreToWin = 3;
+    [Range(1, 5)][SerializeField] private int scoreToWin = 3;
     [SerializeField] private float spawnInterval = 1.0f;
 
     [Header("Components")]
     [SerializeField] private RectTransform[] holes;
-    [SerializeField] private Sprite chickenSprite;
-    [SerializeField] private Sprite trashSprite;
+    [SerializeField] private Sprite[] chickenSprites;
+    [SerializeField] private Sprite[] trashSprites;
     [SerializeField] private Image[] scorePoints;
-    [SerializeField] private Sprite checkSprite;
-    [SerializeField] private Sprite crossSprite;
+    [SerializeField] private Sprite[] checkSprites;
+    [SerializeField] private Sprite[] crossSprites;
     [HideInInspector] public ObjectiveInteract objectiveInteract;
     private GameObject lastTarget;
 
     [Header("Variables")]
     private int currentScore = 0;
+
+    private enum ScoreState { None, Cross, Check }
+    private ScoreState[] scorePointStates;
+
+    private Coroutine scorePointsAnimationCoroutine;
+    private int animationFrame = 0;
+    private float frameDuration = 0.1f;
 
     void OnEnable()
     {
@@ -39,7 +47,7 @@ public class WhackAMole : MiniGameBase, IPointerDownHandler
         bool isChicken = Random.Range(0, 2) == 0;
 
         // Set the sprite based on the target type
-        Sprite targetSprite = isChicken ? chickenSprite : trashSprite;
+        Sprite[] targetSprites = isChicken ? chickenSprites : trashSprites;
 
         // Create the target GameObject
         GameObject target = new GameObject("Target");
@@ -56,10 +64,14 @@ public class WhackAMole : MiniGameBase, IPointerDownHandler
 
         // Add an Image component to the target
         Image image = target.AddComponent<Image>();
-        image.sprite = targetSprite;
+        image.sprite = targetSprites[0];
         image.preserveAspect = true;
 
-        //image.rectTransform.position = new Vector3(selectedHole.position.x, selectedHole.position.y - -35.4f, 0);
+        TargetType type = target.AddComponent<TargetType>();
+        type.isChicken = isChicken;
+
+        // Animate the sprite of the target
+        StartCoroutine(AnimateSprite(image, targetSprites));
 
         lastTarget = target;
     }
@@ -72,21 +84,28 @@ public class WhackAMole : MiniGameBase, IPointerDownHandler
 
         InvokeRepeating(nameof(SpawnTarget), spawnInterval, spawnInterval);
 
-        //Activate the score points and set them to red
+        // Activate the score points and set them to red
+        scorePointStates = new ScoreState[scorePoints.Length];
+
         for (int i = 0; i < scorePoints.Length; i++)
         {
-            scorePoints[i].sprite = crossSprite;
-
             if (i < scoreToWin)
             {
                 scorePoints[i].gameObject.SetActive(true);
+                scorePointStates[i] = ScoreState.Cross;
             }
-                
             else
             {
                 scorePoints[i].gameObject.SetActive(false);
+                scorePointStates[i] = ScoreState.None;
             }
         }
+
+        // Start score point animation coroutine
+        if (scorePointsAnimationCoroutine != null)
+            StopCoroutine(scorePointsAnimationCoroutine);
+
+        scorePointsAnimationCoroutine = StartCoroutine(AnimateScorePoints());
     }
 
     public override void EndMiniGame()
@@ -99,7 +118,13 @@ public class WhackAMole : MiniGameBase, IPointerDownHandler
         Destroy(lastTarget);
 
         lastTarget = null;
-        
+
+        if (scorePointsAnimationCoroutine != null)
+        {
+            StopCoroutine(scorePointsAnimationCoroutine);
+            scorePointsAnimationCoroutine = null;
+        }
+
         base.EndMiniGame();
     }
 
@@ -117,14 +142,14 @@ public class WhackAMole : MiniGameBase, IPointerDownHandler
 
         for (int i = 0; i < scoreToWin; i++)
         {
-            scorePoints[i].sprite = crossSprite;
+            scorePointStates[i] = ScoreState.Cross;
         }
     }
 
     private void AddScore()
     {
         currentScore++;
-        scorePoints[currentScore - 1].sprite = checkSprite;
+        scorePointStates[currentScore - 1] = ScoreState.Check;
 
         AudioManager.Instance.PlaySFXSound(5);
 
@@ -144,24 +169,73 @@ public class WhackAMole : MiniGameBase, IPointerDownHandler
             if (RectTransformUtility.RectangleContainsScreenPoint(holes[i], eventData.position))
             {
                 RegisterPlayerClick();
-                // If the target is a chicken, increment score
-                if (holes[i].childCount > 0 && holes[i].GetChild(0).GetComponent<Image>().sprite == trashSprite)
-                {
-                    AddScore();
-                }
-                else if (holes[i].childCount > 0 && holes[i].GetChild(0).GetComponent<Image>().sprite == chickenSprite)
-                {
-                    AudioManager.Instance.PlaySFXSound(6);
 
-                    // If the target is trash, decrement score
-                    ResetMinigame();
-                    
+                if (holes[i].childCount > 0)
+                {
+                    var target = holes[i].GetChild(0).GetComponent<TargetType>();
+
+                    // If the target is a chicken, increment score
+                    if (!target.isChicken)
+                    {
+                        AddScore();
+                    }
+                    else
+                    {
+                        AudioManager.Instance.PlaySFXSound(6);
+
+                        // If the target is trash, decrement score
+                        ResetMinigame();
+                    }
+
+                    // Destroy the target
+                    Destroy(holes[i].GetChild(0).gameObject);
                 }
 
-                // Destroy the target
-                if (holes[i].childCount > 0) Destroy(holes[i].GetChild(0).gameObject);
                 break;
             }
         }
+    }
+
+    private IEnumerator AnimateSprite(Image image, Sprite[] animationFrames, float frameDuration = 0.1f)
+    {
+        int frame = 0;
+        while (image != null && image.gameObject != null)
+        {
+            image.sprite = animationFrames[frame];
+            frame = (frame + 1) % animationFrames.Length;
+            yield return new WaitForSeconds(frameDuration);
+        }
+    }
+
+    private IEnumerator AnimateScorePoints()
+    {
+        while (true)
+        {
+            animationFrame = (animationFrame + 1) % crossSprites.Length;
+
+            for (int i = 0; i < scorePoints.Length; i++)
+            {
+                if (!scorePoints[i].gameObject.activeSelf)
+                    continue;
+
+                switch (scorePointStates[i])
+                {
+                    case ScoreState.Cross:
+                        scorePoints[i].sprite = crossSprites[animationFrame];
+                        break;
+                    case ScoreState.Check:
+                        scorePoints[i].sprite = checkSprites[animationFrame];
+                        break;
+                }
+            }
+
+            yield return new WaitForSeconds(frameDuration);
+        }
+    }
+
+    // Helper class to store target type
+    private class TargetType : MonoBehaviour
+    {
+        public bool isChicken;
     }
 }
