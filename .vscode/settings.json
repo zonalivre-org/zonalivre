@@ -51,7 +51,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "zonalivre.sln",
+    "dotnet.defaultSolution": "ZonaLivre.sln",
     "cSpell.words": [
         "Rigidbody"
     ]

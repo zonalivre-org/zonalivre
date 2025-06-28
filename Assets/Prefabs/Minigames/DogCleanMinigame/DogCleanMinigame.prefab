@@ -1726,6 +1726,7 @@ GameObject:
   - component: {fileID: 8152405791125664562}
   - component: {fileID: 5765466643790442038}
   - component: {fileID: 5475117484113695865}
+  - component: {fileID: 6485467885648494139}
   m_Layer: 5
   m_Name: Dog
   m_TagString: Untagged
@@ -1797,6 +1798,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6485467885648494139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7976514335439902556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1427080569, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: -1020530055, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  - {fileID: 1798734468, guid: dbb5bd6c75d33ac46ab81ff9e477f998, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &9181306236595532050
 GameObject:
   m_ObjectHideFlags: 0

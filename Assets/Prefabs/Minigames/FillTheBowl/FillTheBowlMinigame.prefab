@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7889990347188006538}
   - component: {fileID: 1469927686457900534}
   - component: {fileID: 5094270152344788820}
+  - component: {fileID: 6910968051347499868}
   m_Layer: 5
   m_Name: Bag
   m_TagString: Untagged
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1717815786, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: 479676435, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -97,6 +98,26 @@ MonoBehaviour:
   moveArea: {fileID: 7565812679142309493}
   spawnCooldown: 0.06
   startSpeed: 600
+--- !u!114 &6910968051347499868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603872701653381980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 479676435, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -12013259, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -506442777, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &1469786759176783308
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1727125690, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -387738779, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1

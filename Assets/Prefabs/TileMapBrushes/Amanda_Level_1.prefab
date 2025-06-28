@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 7107817516500033192}
   - component: {fileID: 633195462323056995}
   - component: {fileID: 3825352970675588720}
+  - component: {fileID: 7253273188078316733}
   m_Layer: 0
   m_Name: AmandaSprite
   m_TagString: Untagged
@@ -196,8 +197,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -732370578, guid: 5254d8313c4df404a9c8319eeea5f446, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 648294116, guid: 635d56c43ea31eb41bb0a1b42d72bbd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -228,6 +229,27 @@ MonoBehaviour:
   onEnable: 0
   usingSpriteRenderer: 0
   usingImageComponent: 0
+--- !u!95 &7253273188078316733
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246842258772847829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2f6f548d245244409ff5c9516bbaabb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &7596280711412339982
 PrefabInstance:
   m_ObjectHideFlags: 0

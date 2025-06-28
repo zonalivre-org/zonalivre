@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7454872917337797315}
+  - component: {fileID: 5894910086895592951}
   m_Layer: 0
   m_Name: FlowerBed
   m_TagString: Untagged
@@ -40,6 +41,22 @@ Transform:
   - {fileID: 5106257911209766098}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &5894910086895592951
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13471244687551663}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5, y: 0.5, z: 3}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 18.48, y: 0, z: -4.88}
+  m_TimeToStationary: 0.5
 --- !u!1001 &2870223347065374042
 PrefabInstance:
   m_ObjectHideFlags: 0
