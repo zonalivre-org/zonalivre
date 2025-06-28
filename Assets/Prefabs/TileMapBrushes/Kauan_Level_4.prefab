@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5664250939510105791}
   - component: {fileID: 274969858864672770}
+  - component: {fileID: 3613505232671908612}
   m_Layer: 0
   m_Name: KauanSprite
   m_TagString: Untagged
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1728986836, guid: 5254d8313c4df404a9c8319eeea5f446, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -139941058, guid: 635d56c43ea31eb41bb0a1b42d72bbd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3613505232671908612
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381030576313753649}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe15d9586169b7c45a228e0f2071f351, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8692995690991901113
 GameObject:
   m_ObjectHideFlags: 0

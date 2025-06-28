@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1635379360033096764}
   - component: {fileID: 7951589040162590933}
   - component: {fileID: 5491521478424430254}
+  - component: {fileID: 5707651495050002175}
   m_Layer: 5
   m_Name: Water
   m_TagString: Water
@@ -125,3 +126,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 74.13, y: 39.8, z: 116.47}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5707651495050002175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4505184485163799647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 983262523, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 1581025326, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 1458510028, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
