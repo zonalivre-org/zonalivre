@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 328130166446351582}
   - component: {fileID: 6804738129831602604}
   - component: {fileID: 8646523632242588186}
+  - component: {fileID: 7335285781545490590}
   m_Layer: 5
   m_Name: Ration
   m_TagString: Ration
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -62257791, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -1425255407, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -125,3 +126,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 74.13, y: 39.8, z: 116.47}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7335285781545490590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151779701409446802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1425255407, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 1498116510, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -815651786, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1

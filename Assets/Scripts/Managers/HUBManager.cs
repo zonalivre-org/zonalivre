@@ -1,6 +1,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class HUBManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class HUBManager : MonoBehaviour
     [SerializeField] Image fadeImage;
     [SerializeField] ChangeScene changeScene;
     [SerializeField] SaveFile saveFile;
+    [SerializeField] PopUp popUp;
 
     [Header("Level Selection")]
     [SerializeField] RectTransform levelPanel;
@@ -22,6 +24,8 @@ public class HUBManager : MonoBehaviour
     private int currentLevelIndex;
     private string currentCutSceneClipName;
     private string currentCutSceneName;
+
+    [SerializeField] private GameObject map;
     private void Awake()
     {
         if (Instance == null)
@@ -37,7 +41,7 @@ public class HUBManager : MonoBehaviour
     void Start()
     {
         fadeImage.gameObject.SetActive(true);
-        fadeImage.DOFade(0f, 1f).SetEase(Ease.InOutQuad).OnComplete(() =>
+        fadeImage.DOFade(0f, 2f).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
             fadeImage.gameObject.SetActive(false);
         }).SetUpdate(true);
@@ -46,11 +50,30 @@ public class HUBManager : MonoBehaviour
 
         if (saveFile.firstTime)
         {
+            popUp.SetVideoPlayer("WalkingVet.mp4");
+            popUp.SetPopUp("Bem Vindo!", "Você se econtra na cidade onde mora Pedrinho. Toque/clique no veterinário para iniciar o tutorial.");
             SaveManager.Instance.ToggleFirstTime(false);
         }
+
         changeScene.ChangeToSceneMusic(1);
 
+        NavMeshAgent ag = player.GetComponent<NavMeshAgent>();
+
+        ag.enabled = false;
+
         player.transform.position = saveFile.spawnPosition;
+
+        ag.enabled = true;
+
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Save File Spawn Point: " + saveFile.spawnPosition);
+            Debug.Log("Player POS: " + player.transform.position);
+        }
     }
 
     public void StartLevelSelection(int levelIndex, string cutSceneClipName, string cutSceneName)
@@ -107,7 +130,7 @@ public class HUBManager : MonoBehaviour
         videoPanel.GetComponent<VideoPanel>().closeButton.GetComponent<ButtonAnimation>().SetClickable(true);
         videoPanel.GetComponent<VideoPanel>().SetVideoClip(currentCutSceneClipName);
         videoPanel.GetComponent<VideoPanel>().PlayVideoClip();
-        
+
     }
 
     public void OpenLevelSelection()
@@ -164,5 +187,10 @@ public class HUBManager : MonoBehaviour
                 button.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack)
             );
         }
+    }
+
+    public void SendInfo()
+    {
+        Analytics.Instance.SendMail();
     }
 }

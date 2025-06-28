@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7889990347188006538}
   - component: {fileID: 1469927686457900534}
   - component: {fileID: 5094270152344788820}
+  - component: {fileID: 6910968051347499868}
   m_Layer: 5
   m_Name: Bag
   m_TagString: Untagged
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1717815786, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: 479676435, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -97,6 +98,26 @@ MonoBehaviour:
   moveArea: {fileID: 7565812679142309493}
   spawnCooldown: 0.06
   startSpeed: 600
+--- !u!114 &6910968051347499868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603872701653381980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 479676435, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -12013259, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -506442777, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &1469786759176783308
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +562,7 @@ GameObject:
   - component: {fileID: 4735666547431507731}
   - component: {fileID: 9065397927055880430}
   - component: {fileID: 6322236513704275687}
+  - component: {fileID: 6816310358100971844}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Bowl
@@ -595,7 +617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1727125690, guid: 93a113ff14997a24885aa99bdf365d8a, type: 3}
+  m_Sprite: {fileID: -387738779, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -605,6 +627,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6816310358100971844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917052572572735557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -6523079, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 257835292, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -1076741991, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &5322007764668067372
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +974,7 @@ GameObject:
   - component: {fileID: 1759258016977614304}
   - component: {fileID: 669368147819206040}
   - component: {fileID: 8900261802379043857}
+  - component: {fileID: 9211786116726084562}
   m_Layer: 5
   m_Name: Bowl
   m_TagString: Bowl
@@ -1031,6 +1074,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillTheBowl: {fileID: 1490232844682000671}
+--- !u!114 &9211786116726084562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752085192085658040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -387738779, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 571753484, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 1899868206, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &8908361473461967773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,7 +1105,6 @@ GameObject:
   - component: {fileID: 6259530398151441315}
   - component: {fileID: 8039689348959780225}
   - component: {fileID: 4740877622296043245}
-  - component: {fileID: 3662461683995922321}
   - component: {fileID: 2885119744180406341}
   - component: {fileID: 2396236771810575835}
   m_Layer: 5
@@ -1109,21 +1171,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.5
---- !u!114 &3662461683995922321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8908361473461967773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &2885119744180406341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,6 +1240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+  isClickable: 1
+  buttonLock: {fileID: 0}
   scaleFactor: 1.2
   clickSoundEffectIndex: 3
   randomPitch: 0

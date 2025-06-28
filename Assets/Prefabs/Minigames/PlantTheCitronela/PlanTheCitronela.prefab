@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9197219475520494472}
   - component: {fileID: 4555379861540773566}
   - component: {fileID: 2876675195205789687}
+  - component: {fileID: 653221309797030196}
   m_Layer: 5
   m_Name: Dirt
   m_TagString: Bowl
@@ -128,6 +129,26 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 0.58431375, b: 0, a: 1}
   m_EffectDistance: {x: 12, y: 7.99}
   m_UseGraphicAlpha: 1
+--- !u!114 &653221309797030196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202606509976629457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1985994393, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: -1092880909, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: -1813372409, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &2649933542497595912
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +431,7 @@ GameObject:
   - component: {fileID: 8727196322262536361}
   - component: {fileID: 6649352734079767175}
   - component: {fileID: 7296875137987783134}
+  - component: {fileID: 8236428714215508723}
   m_Layer: 5
   m_Name: WaterCan
   m_TagString: Untagged
@@ -495,6 +517,26 @@ MonoBehaviour:
   moveArea: {fileID: 3355351282085225044}
   spawnCooldown: 0.05
   startSpeed: 600
+--- !u!114 &8236428714215508723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3028978700390677846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1522726513, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -209153859, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -922027712, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &3814299023524939169
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +669,7 @@ MonoBehaviour:
   seed: {fileID: 5644270569630676621}
   objectiveInteract: {fileID: 0}
   seedStartPos: {x: 0, y: 0}
-  waterCanEndPos: {x: 0, y: 0}
+  waterCanStartPos: {x: 0, y: 0}
   isPlanted: 0
 --- !u!1 &5220386780871955264
 GameObject:
@@ -640,6 +682,7 @@ GameObject:
   - component: {fileID: 1669071095739474652}
   - component: {fileID: 6490296697929350372}
   - component: {fileID: 8417765749431345053}
+  - component: {fileID: 2603650387364742228}
   m_Layer: 5
   m_Name: Citronela
   m_TagString: Untagged
@@ -704,6 +747,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2603650387364742228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220386780871955264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1995337145, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: 1995337145, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  - {fileID: 128748938, guid: b5e3ecb98809a084aa3717ff6fae2187, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &5396523357821012209
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +959,7 @@ GameObject:
   - component: {fileID: 3257680365125395325}
   - component: {fileID: 504321677068021219}
   - component: {fileID: 3442736885971327995}
+  - component: {fileID: 9185156477146150534}
   m_Layer: 5
   m_Name: CitronelaSeed
   m_TagString: Untagged
@@ -990,6 +1054,26 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 0.584206, b: 0, a: 1}
   m_EffectDistance: {x: 12, y: -12}
   m_UseGraphicAlpha: 1
+--- !u!114 &9185156477146150534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6504550552028108531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1548222276, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 464265427, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 317990452, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &7487829046321366713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1085,6 @@ GameObject:
   - component: {fileID: 6348094901322489377}
   - component: {fileID: 7957954123268961765}
   - component: {fileID: 3458501589516462487}
-  - component: {fileID: 5076895393028974144}
   - component: {fileID: 5215648435901997076}
   - component: {fileID: 530759531652118902}
   m_Layer: 5
@@ -1068,21 +1151,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.5
---- !u!114 &5076895393028974144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7487829046321366713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &5215648435901997076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,8 +1195,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FillTheBowl, Assembly-CSharp
+      - m_Target: {fileID: 7839335975348873091}
+        m_TargetAssemblyTypeName: PlantTheCitronela, Assembly-CSharp
         m_MethodName: EndMiniGame
         m_Mode: 1
         m_Arguments:

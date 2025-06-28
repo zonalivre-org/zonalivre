@@ -52,6 +52,7 @@ public class DogMovement : MonoBehaviour
     private Coroutine currentBehaviorCoroutine = null; // Referência para coroutines de espera, follow ou flee
     private Vector3 currentDestination; // O destino atual sendo buscado
 
+    private bool facingRight = true; // Para controle de direção, se necessário
     // --- Inicialização ---
     private void Awake()
     {
@@ -67,6 +68,11 @@ public class DogMovement : MonoBehaviour
 
     private void Start()
     {
+        if (waypointsParent == null)
+        {
+            Debug.Log("Dog Waypoints Parent não está definido!", this);
+            return;
+        }
 
         foreach (Transform child in waypointsParent.transform)
         {
@@ -474,15 +480,24 @@ public class DogMovement : MonoBehaviour
             if (angle > 0)
             {
                 isWalkingRight = true;
+                facingRight = true; // Atualiza a direção se necessário
             }
             // Se o ângulo é negativo (ou zero), está movendo para a esquerda relativa (ou reto)
             else // angle <= 0
             {
                 isWalkingLeft = true;
+                facingRight = false; // Atualiza a direção se necessário
             }
         }
         else{
-            animator.SetBool("Idle", true);
+            if (facingRight)
+            {
+                animator.Play("Idle_Right"); // Animação de Idle olhando para a direita
+            }
+            else
+            {
+                animator.Play("Idle_Left"); // Animação de Idle olhando para a esquerda
+            }
         }
         // else: Não está se movendo, ambos os booleanos permanecem false,
         //       o Animator deve transicionar para Idle (se configurado corretamente).

@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4998488256579951620}
   - component: {fileID: 1853043403876100286}
   - component: {fileID: 4977654647935812317}
+  - component: {fileID: 1708114990114188874}
   m_Layer: 5
   m_Name: SpawnArea
   m_TagString: Untagged
@@ -210,6 +211,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1708114990114188874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2874886589457945387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 605249518, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 446710927, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -816181965, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.1
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &2891398788211006005
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +486,7 @@ GameObject:
   - component: {fileID: 1652855226872945451}
   - component: {fileID: 6197398936998271321}
   - component: {fileID: 7905173739616435903}
+  - component: {fileID: 4643201174424073135}
   m_Layer: 5
   m_Name: TrashCan
   m_TagString: Untagged
@@ -544,6 +566,26 @@ MonoBehaviour:
   m_EffectColor: {r: 0.8701972, g: 1, b: 0, a: 1}
   m_EffectDistance: {x: 15.75, y: -13.65}
   m_UseGraphicAlpha: 1
+--- !u!114 &4643201174424073135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432146205347108473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea49fa7c7294864c9374fc3ae221391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1520608581, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: 771724009, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  - {fileID: -1560335373, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
+  frameRate: 0.06
+  onEnable: 1
+  usingSpriteRenderer: 0
+  usingImageComponent: 1
 --- !u!1 &3499039291909954752
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +597,6 @@ GameObject:
   - component: {fileID: 3080457145219431042}
   - component: {fileID: 1654094737903469348}
   - component: {fileID: 2928830171702111802}
-  - component: {fileID: 3834075192622561267}
   - component: {fileID: 7537944144240147093}
   - component: {fileID: 8176678257525431422}
   m_Layer: 5
@@ -622,21 +663,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.5
---- !u!114 &3834075192622561267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3499039291909954752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &7537944144240147093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,8 +707,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MangoCatch, Assembly-CSharp
+      - m_Target: {fileID: 3070940945447794653}
+        m_TargetAssemblyTypeName: CleanMinigame, Assembly-CSharp
         m_MethodName: EndMiniGame
         m_Mode: 1
         m_Arguments:
@@ -706,6 +732,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+  isClickable: 1
+  buttonLock: {fileID: 0}
   scaleFactor: 1.2
   clickSoundEffectIndex: 3
   randomPitch: 0

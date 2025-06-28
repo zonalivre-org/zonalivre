@@ -1,0 +1,994 @@
+fileFormatVersion: 2
+guid: 87fa86266b3772249a5b21a257f9f93e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LunaIdleLeft1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2448
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e65f4bcaf4d6748a4911ffc7daabc0
+      internalID: -111942314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaIdleLeft2
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 2448
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b011291a7a9cda349bb5678dbc5da909
+      internalID: 1989036598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaIdleLeft3
+      rect:
+        serializedVersion: 2
+        x: 2300
+        y: 2448
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: decd7dafd778e4640bfa0153e679c97b
+      internalID: -428217686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaIdleLeft4
+      rect:
+        serializedVersion: 2
+        x: 3450
+        y: 2448
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ab4c17be762e644b9c96f9b6b22c25
+      internalID: 501293138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaIdleRight1
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 2448
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4725241766203a34d95b4a1a46b799fa
+      internalID: -555817793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaIdleRight2
+      rect:
+        serializedVersion: 2
+        x: 5750
+        y: 2448
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc1d020c68583f4a81014dab318dac0
+      internalID: -931086038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaIdleRight3
+      rect:
+        serializedVersion: 2
+        x: 6900
+        y: 2448
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1378d267a50489a45b32e5d7143f49f6
+      internalID: -1601856329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaIdleRight4
+      rect:
+        serializedVersion: 2
+        x: 8050
+        y: 2448
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43cff4c2e258ad4a833a1be39fc4b61
+      internalID: -1344022607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1836
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12463545ec69b1d40aaea9b2ffa1bb92
+      internalID: -1326434556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft2
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1836
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d588dd37e4f43cf4eb441942e6f51cfc
+      internalID: -1730727329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft3
+      rect:
+        serializedVersion: 2
+        x: 2300
+        y: 1836
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757569ffa99088348b5e7833e923fee9
+      internalID: -586761505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft4
+      rect:
+        serializedVersion: 2
+        x: 3450
+        y: 1836
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ade8aeb93c6e3845926061577c64afb
+      internalID: 1027430388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft5
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 1836
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa03a242e5e5f34cb53a5239b92746f
+      internalID: 1681111276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft6
+      rect:
+        serializedVersion: 2
+        x: 5750
+        y: 1836
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 842e5c3a1e8ffa142aefdefeceea09b0
+      internalID: 358020295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft7
+      rect:
+        serializedVersion: 2
+        x: 6900
+        y: 1836
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e6613d297062f4f9556d4513d8ac05
+      internalID: 1846542502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft8
+      rect:
+        serializedVersion: 2
+        x: 8050
+        y: 1836
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4f593dfb06c144e96bbd886441d7ef
+      internalID: 1041374260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1224
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a88c2cd91805647be9445f80cf1018
+      internalID: -997413339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft10
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1224
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b968c5f1ab96cb4cb5b2c9b7538b935
+      internalID: -380857696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft11
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1224
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2668cc40c98c294498d539efab9ef830
+      internalID: -1581146815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft12
+      rect:
+        serializedVersion: 2
+        x: 3450
+        y: 1224
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959e5d1e7037bd241ae68a7fa4c901a9
+      internalID: 453550773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft13
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 1224
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b29490c2beb9447bfbe8d081b7f38e
+      internalID: 2025325356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft14
+      rect:
+        serializedVersion: 2
+        x: 5750
+        y: 1224
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f8301b55f94aea438ce14759d3928c3
+      internalID: -253067858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft15
+      rect:
+        serializedVersion: 2
+        x: 6900
+        y: 1224
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8cf279d4020a44db649e099bcb24cc
+      internalID: -1475373119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkLeft16
+      rect:
+        serializedVersion: 2
+        x: 8050
+        y: 1224
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ba35417ec196741966dbacf3c09361
+      internalID: -1312753438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 612
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa3504cc40053d4f93d3b29b361cc8e
+      internalID: -1389261049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight2
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 612
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94ddc1c4ff195c4c9fc4222a3263df9
+      internalID: 815455553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight3
+      rect:
+        serializedVersion: 2
+        x: 2300
+        y: 612
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 218237a1542bcbe4d9adb41daf039487
+      internalID: -307792100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight4
+      rect:
+        serializedVersion: 2
+        x: 3450
+        y: 612
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0a069f0fb1e3c41bc9801e011d54ec
+      internalID: 1848724047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight5
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 612
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5761e087793092e4293200f2f834b41f
+      internalID: -284783741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight6
+      rect:
+        serializedVersion: 2
+        x: 5750
+        y: 612
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713277c773f905d4293f198a9562ad24
+      internalID: 731448895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight7
+      rect:
+        serializedVersion: 2
+        x: 6900
+        y: 612
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394a307922e0e484da4643095f1ae863
+      internalID: -951847879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight8
+      rect:
+        serializedVersion: 2
+        x: 8050
+        y: 612
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb23f7534fa6b345a5c0df61504753d
+      internalID: -1907778331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692a315571f84a24f96c22b3b9a2ce70
+      internalID: 1326130041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight10
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 0
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7914c846fa7e0ea488bfcdfc2685e1a2
+      internalID: 846430318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight11
+      rect:
+        serializedVersion: 2
+        x: 2300
+        y: 0
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b303ca570a2544dbed400bd6e9d321
+      internalID: -2052473091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight12
+      rect:
+        serializedVersion: 2
+        x: 3450
+        y: 0
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a2ce39dbdd48e4796a2515bb178ad2
+      internalID: -1184525757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight13
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 0
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c21916ed2941ab49bcc59abc05bca71
+      internalID: 1415883776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight14
+      rect:
+        serializedVersion: 2
+        x: 5750
+        y: 0
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb9d5e3dcf180e40916db027577d11a
+      internalID: 1052135441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight15
+      rect:
+        serializedVersion: 2
+        x: 6900
+        y: 0
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b14fd99f45d3b644852e7f1776cc864
+      internalID: -1643148741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaWalkRight16
+      rect:
+        serializedVersion: 2
+        x: 8050
+        y: 0
+        width: 1150
+        height: 612
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33dbb1dc401b1e747a973b0cb1ec285a
+      internalID: 1756114827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      LunaIdleLeft1: -111942314
+      LunaIdleLeft2: 1989036598
+      LunaIdleLeft3: -428217686
+      LunaIdleLeft4: 501293138
+      LunaIdleRight1: -555817793
+      LunaIdleRight2: -931086038
+      LunaIdleRight3: -1601856329
+      LunaIdleRight4: -1344022607
+      LunaWalkLeft1: -1326434556
+      LunaWalkLeft10: -380857696
+      LunaWalkLeft11: -1581146815
+      LunaWalkLeft12: 453550773
+      LunaWalkLeft13: 2025325356
+      LunaWalkLeft14: -253067858
+      LunaWalkLeft15: -1475373119
+      LunaWalkLeft16: -1312753438
+      LunaWalkLeft2: -1730727329
+      LunaWalkLeft3: -586761505
+      LunaWalkLeft4: 1027430388
+      LunaWalkLeft5: 1681111276
+      LunaWalkLeft6: 358020295
+      LunaWalkLeft7: 1846542502
+      LunaWalkLeft8: 1041374260
+      LunaWalkLeft9: -997413339
+      LunaWalkRight1: -1389261049
+      LunaWalkRight10: 846430318
+      LunaWalkRight11: -2052473091
+      LunaWalkRight12: -1184525757
+      LunaWalkRight13: 1415883776
+      LunaWalkRight14: 1052135441
+      LunaWalkRight15: -1643148741
+      LunaWalkRight16: 1756114827
+      LunaWalkRight2: 815455553
+      LunaWalkRight3: -307792100
+      LunaWalkRight4: 1848724047
+      LunaWalkRight5: -284783741
+      LunaWalkRight6: 731448895
+      LunaWalkRight7: -951847879
+      LunaWalkRight8: -1907778331
+      LunaWalkRight9: 1326130041
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

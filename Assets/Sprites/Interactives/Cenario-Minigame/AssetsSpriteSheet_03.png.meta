@@ -1,0 +1,800 @@
+fileFormatVersion: 2
+guid: dbb5bd6c75d33ac46ab81ff9e477f998
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GalinheiroSujo1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 5167
+        width: 959
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dceec883aed75b941b80b643e07211f5
+      internalID: -1109824752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalinheiroSujo2
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 5167
+        width: 959
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5abe6f6c34e44048af1d61cdc8ce7c9
+      internalID: 1595444248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalinheiroSujo3
+      rect:
+        serializedVersion: 2
+        x: 2014
+        y: 5167
+        width: 956
+        height: 962
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b645f3fd0179eea499d51d04b7808302
+      internalID: -802279783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bolha1
+      rect:
+        serializedVersion: 2
+        x: 3239
+        y: 5203
+        width: 332
+        height: 333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8aecc1ecf3e254983c81ceb151aa83
+      internalID: 1337053172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bolha2
+      rect:
+        serializedVersion: 2
+        x: 3596
+        y: 5203
+        width: 332
+        height: 333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5757b61146cbe7841af9a4b7bf20a1d3
+      internalID: 274616715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bolha3
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 5203
+        width: 329
+        height: 333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631c1117408023c40bc11f6aab524b1c
+      internalID: 911373664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bolha4
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 4850
+        width: 329
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949fca94e58498e4ea3720ce1c33ea98
+      internalID: -642306292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balde1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 4336
+        width: 632
+        height: 432
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85332d59328869744a9c4f1b57b3538a
+      internalID: -952572534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balde2
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 4336
+        width: 632
+        height: 432
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1692d66a9a9f9846a01cf7f122fbae1
+      internalID: -393221620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsSpriteSheet_03_31
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 4336
+        width: 632
+        height: 432
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1474367b060e014b9eb16ffe3444e55
+      internalID: 440907555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sujeira1
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 4414
+        width: 281
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d53d7432f9c39c41b9b1c465b960b81
+      internalID: -916047872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sujeira2
+      rect:
+        serializedVersion: 2
+        x: 2516
+        y: 4369
+        width: 254
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcaa10c090facc4e8ad90afd66c319a
+      internalID: -749713193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sujeira3
+      rect:
+        serializedVersion: 2
+        x: 2806
+        y: 4381
+        width: 254
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06b0b7281ecaf54e92ceb4a750cc717
+      internalID: 724754010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sujeira4
+      rect:
+        serializedVersion: 2
+        x: 3112
+        y: 4400
+        width: 278
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b731c8a073ba54f89cd08c546417e5
+      internalID: 262350367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaBanho1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2509
+        width: 1412
+        height: 1455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d470eeaf8b3006647b9f69c5231a6201
+      internalID: -117858672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaBanho2
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 2509
+        width: 1412
+        height: 1455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a53a039344cd244fbce65d60cd93bf1
+      internalID: 333539541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaBanho3
+      rect:
+        serializedVersion: 2
+        x: 2951
+        y: 2509
+        width: 1416
+        height: 1455
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25053923eb006e46bea890bcc3ef283
+      internalID: -1810744760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaBanho4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 925
+        width: 1412
+        height: 1454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f7069f2b52eda41adc99627666e46a
+      internalID: -1427080569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaBanho5
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 925
+        width: 1412
+        height: 1454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49633d6ce97a5104a9f1a77615fec476
+      internalID: -1020530055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LunaBanho6
+      rect:
+        serializedVersion: 2
+        x: 2951
+        y: 925
+        width: 1416
+        height: 1454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efa6cefeaef4a94088b8a92e450bb9e
+      internalID: 1798734468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: X1
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 175
+        width: 459
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84072370f1327b4ea40c8f6e5606c9d
+      internalID: 1755618407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: X2
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 175
+        width: 463
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a05fa9211aa8234b98c8e6af8c0b661
+      internalID: -773686327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: X3
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 175
+        width: 459
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2239ff3e42f6d574f90728f229358bc6
+      internalID: 436593111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: V1
+      rect:
+        serializedVersion: 2
+        x: 2325
+        y: 148
+        width: 418
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c7fb975a4d55546a0e1a911e9f1117
+      internalID: -490752421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: V2
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 148
+        width: 417
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c28310752df1e645ab34c3d4da64cfd
+      internalID: -150554007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: V3
+      rect:
+        serializedVersion: 2
+        x: 3674
+        y: 148
+        width: 417
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c8dbfec2b819a4c8b1eef0f7a2ba88
+      internalID: 1525242787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bolha5
+      rect:
+        serializedVersion: 2
+        x: 3741
+        y: 4839
+        width: 348
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babe304efdc89364c96c65e0ca07791e
+      internalID: 344907792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sujeira5
+      rect:
+        serializedVersion: 2
+        x: 3395
+        y: 4361
+        width: 273
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43c3cbf63bb40c4d9f8f653024db731
+      internalID: 274960120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sujeira6
+      rect:
+        serializedVersion: 2
+        x: 3671
+        y: 4402
+        width: 304
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3612ffc393ee2c0468c3d16ac143a92d
+      internalID: 1267216316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2693cb702ed44ba489a4aedea0ad3964
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AssetsSpriteSheet_03_10: 1395300464
+      AssetsSpriteSheet_03_11: 215403493
+      AssetsSpriteSheet_03_12: 1052721226
+      AssetsSpriteSheet_03_13: -438461450
+      AssetsSpriteSheet_03_14: 920728996
+      AssetsSpriteSheet_03_15: 2113742336
+      AssetsSpriteSheet_03_16: -89119198
+      AssetsSpriteSheet_03_17: -976077
+      AssetsSpriteSheet_03_18: 1856156013
+      AssetsSpriteSheet_03_19: 430299065
+      AssetsSpriteSheet_03_20: 1754546417
+      AssetsSpriteSheet_03_21: 2123381568
+      AssetsSpriteSheet_03_22: 643361364
+      AssetsSpriteSheet_03_23: -1955944219
+      AssetsSpriteSheet_03_24: -1121050015
+      AssetsSpriteSheet_03_25: -876623964
+      AssetsSpriteSheet_03_26: -1695984405
+      AssetsSpriteSheet_03_27: -448596417
+      AssetsSpriteSheet_03_28: 242804133
+      AssetsSpriteSheet_03_31: 440907555
+      AssetsSpriteSheet_03_7: -1931356380
+      AssetsSpriteSheet_03_8: -229934984
+      AssetsSpriteSheet_03_9: 920431942
+      Balde1: -952572534
+      Balde2: -393221620
+      Bolha1: 1337053172
+      Bolha2: 274616715
+      Bolha3: 911373664
+      Bolha4: -642306292
+      Bolha5: 344907792
+      GalinheiroSujo1: -1109824752
+      GalinheiroSujo2: 1595444248
+      GalinheiroSujo3: -802279783
+      LunaBanho1: -117858672
+      LunaBanho2: 333539541
+      LunaBanho3: -1810744760
+      LunaBanho4: -1427080569
+      LunaBanho5: -1020530055
+      LunaBanho6: 1798734468
+      Sujeira1: -916047872
+      Sujeira2: -749713193
+      Sujeira3: 724754010
+      Sujeira4: 262350367
+      Sujeira5: 274960120
+      Sujeira6: 1267216316
+      V1: -490752421
+      V2: -150554007
+      V3: 1525242787
+      X1: 1755618407
+      X2: -773686327
+      X3: 436593111
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
