@@ -10390,10 +10390,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1570109443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 458.5595, y: -1905.79}
-  m_SizeDelta: {x: 906.177, y: 3811.58}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 906.177, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893264484
 MonoBehaviour:
@@ -10417,21 +10417,23 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<size=60>UM JOGO DA PUC MINAS\r</size>\r\n\r\n<b><size=80><color=yellow>DESIGN</color></size></b>\r\n\r\n<i><color=#CCCCCC>Coordena\xE7\xE3o
     geral</color></i>  \r\nBernardo Bones\r\n\r\n<i><color=#CCCCCC>Design de fases</color></i> 
-    \r\n[Nome(s)]\r\n\r\n<i><color=#CCCCCC>Design de jogabilidade</color></i>  \r\n[Nome(s)]\r\n\r\n<b><size=80><color=yellow>GAMEPLAY</color></size></b>\r\n\r\n<i><color=#CCCCCC>Regras
+    \r\nBernardo Bones\n\r\n<i><color=#CCCCCC>Design de jogabilidade</color></i> 
+    \r\nBernardo Bones\n\r\n<b><size=80><color=yellow>GAMEPLAY</color></size></b>\r\n\r\n<i><color=#CCCCCC>Regras
     e balanceamento</color></i>  \r\nBernardo Bones\r\n\r\n<i><color=#CCCCCC>Controle
     e movimenta\xE7\xE3o do personagem/pet</color></i>  \r\n\xC9ric Parreiras\r\n\r\n<i><color=#CCCCCC>Intera\xE7\xE3o
     com o cen\xE1rio</color></i>  \r\nJo\xE3o Pedro\r\n\r\n<i><color=#CCCCCC>Minijogos</color></i> 
     \r\nGabriel Logan\r\n\r\n<b><size=80><color=yellow>MODELAGEM</color></size></b>\r\n\r\n<i><color=#CCCCCC>Modelos
     interativos</color></i>  \r\nCaio Ribeiro\r\n\r\n<i><color=#CCCCCC>Modelos decorativos</color></i> 
-    \r\n[Nome(s)]\r\n\r\n<i><color=#CCCCCC>Montagem dos cen\xE1rios</color></i> 
-    \r\n[Nome(s)]\r\n\r\n<i><color=#CCCCCC>Sprites de personagem/pet</color></i> 
+    \r\nVictor Diniz\n\r\n<i><color=#CCCCCC>Montagem dos cen\xE1rios</color></i> 
+    \r\nGabriel Victor\n\r\n<i><color=#CCCCCC>Sprites de personagem/pet</color></i> 
     \r\nCaio Ribeiro\r\n\r\n<i><color=#CCCCCC>Anima\xE7\xF5es de personagem/pet</color></i> 
     \r\nGabriel Logan\r\n\r\n<b><size=80><color=yellow>INTERFACE E HUD</color></size></b>\r\n\r\n<i><color=#CCCCCC>Planejamento
     e design da interface e HUD</color></i>  \r\nGabriel Logan e Caio Ribeiro\r\n\r\n<i><color=#CCCCCC>Arte
     da interface</color></i>  \r\nCaio Ribeiro\r\n\r\n<i><color=#CCCCCC>Anima\xE7\xF5es
     e funcionalidades da interface</color></i>  \r\nGabriel Logan\r\n\r\n<b><size=80><color=yellow>SOM</color></size></b>\r\n\r\n<i><color=#CCCCCC>Implementa\xE7\xE3o
-    de \xE1udio</color></i>  \r\nGabriel Logan\r\n\r\n<color=#999999><i>*Campos em
-    branco ser\xE3o atualizados na vers\xE3o final.</i></color>\r\n"
+    de \xE1udio</color></i>  \r\nGabriel Logan\r\n\n<i><color=#CCCCCC>Creditos para
+    sons de terceiros</color></i>  \r\nRUSTED MUSIC STUDIO \nVOiD1 Gaming\nCyrex
+    Studios\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8df45a845750504d8a2795fbd22b608, type: 2}
   m_sharedMaterial: {fileID: -7351501579672171409, guid: c8df45a845750504d8a2795fbd22b608,
@@ -11840,12 +11842,12 @@ PrefabInstance:
     - target: {fileID: 742680567026193713, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 742680567026193713, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 742680567026193713, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
@@ -11855,12 +11857,12 @@ PrefabInstance:
     - target: {fileID: 742680567026193713, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 448.915
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 742680567026193713, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -80.068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1135775066777368528, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
@@ -11912,27 +11914,27 @@ PrefabInstance:
     - target: {fileID: 1783791468936135702, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1783791468936135702, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1783791468936135702, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 160.136
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1783791468936135702, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1783791468936135702, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -140.068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1837836457819541935, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
@@ -12022,27 +12024,27 @@ PrefabInstance:
     - target: {fileID: 3912507300875481669, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3912507300875481669, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3912507300875481669, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 739.864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3912507300875481669, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3912507300875481669, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -650.068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4090225845513661927, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
@@ -12122,7 +12124,7 @@ PrefabInstance:
     - target: {fileID: 5905583128144990382, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 3811.58
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5905583128144990382, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
@@ -12152,7 +12154,7 @@ PrefabInstance:
     - target: {fileID: 7520952330231111515, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7520952330231111515, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
@@ -12162,7 +12164,7 @@ PrefabInstance:
     - target: {fileID: 7520952330231111515, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7520952330231111515, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
@@ -12172,12 +12174,12 @@ PrefabInstance:
     - target: {fileID: 7520952330231111515, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1237.3981
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7520952330231111515, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -80.068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676342519226036804, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
@@ -12192,7 +12194,7 @@ PrefabInstance:
     - target: {fileID: 7728078569227672212, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8955467604413148973, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
