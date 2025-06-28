@@ -723,9 +723,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
+      propertyPath: QTEGoal
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
       propertyPath: minigame
       value: 
       objectReference: {fileID: 788938857}
+    - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: averageTimeToComplete
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: startPoint
@@ -1525,7 +1535,6 @@ Transform:
   - {fileID: 1532476745}
   - {fileID: 6771912617652705111}
   - {fileID: 1022050900}
-  - {fileID: 918538820}
   - {fileID: 5242443997539656842}
   - {fileID: 1781096638}
   m_Father: {fileID: 196454619}
@@ -2400,18 +2409,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 915901938}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &918538819 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 226166083410671620, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-    type: 3}
-  m_PrefabInstance: {fileID: 1086345572}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &918538820 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-    type: 3}
-  m_PrefabInstance: {fileID: 1086345572}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &922438579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3263,6 +3260,11 @@ PrefabInstance:
       objectReference: {fileID: 37043913}
     - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
+      propertyPath: mangoGoal
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
       propertyPath: deactivateItself
       value: 0
       objectReference: {fileID: 0}
@@ -3270,7 +3272,12 @@ PrefabInstance:
         type: 3}
       propertyPath: objectToActivate
       value: 
-      objectReference: {fileID: 918538819}
+      objectReference: {fileID: 0}
+    - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: coolDownBetweenMangos
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
       propertyPath: objectToActivate.Array.size
@@ -3280,7 +3287,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectToActivate.Array.data[0]
       value: 
-      objectReference: {fileID: 918538819}
+      objectReference: {fileID: 0}
     - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
       propertyPath: objectToActivate.Array.data[1]
@@ -3606,84 +3613,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77da5529be801934ea0f6a7baec9d33f, type: 3}
---- !u!1001 &1086345572
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 603030001}
-    m_Modifications:
-    - target: {fileID: 226166083410671620, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_Name
-      value: MangoLeaves (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 226166083410671620, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564739639126446988, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: minigame
-      value: 
-      objectReference: {fileID: 649071972}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -44
-      objectReference: {fileID: 0}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7615854874139529981, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03, type: 3}
 --- !u!4 &1113573430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 77da5529be801934ea0f6a7baec9d33f,
@@ -7686,6 +7615,11 @@ PrefabInstance:
       objectReference: {fileID: 649071972}
     - target: {fileID: 5564739639126446988, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
         type: 3}
+      propertyPath: averageTimeToComplete
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564739639126446988, guid: da6ac7baeb3a8ee4fb26b269e1dc0a03,
+        type: 3}
       propertyPath: objectiveCompleteSprite
       value: 
       objectReference: {fileID: 0}
@@ -7968,6 +7902,11 @@ PrefabInstance:
       propertyPath: minigame
       value: 
       objectReference: {fileID: 788938857}
+    - target: {fileID: 6001737411916535278, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: averageTimeToComplete
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: startPoint
