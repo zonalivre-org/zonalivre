@@ -454,62 +454,52 @@ public class DogMovement : MonoBehaviour
     {
         if (animator == null || agent == null) return;
 
-        // 1. Verificar se o agente está se movendo
         float speed = agent.velocity.magnitude;
         bool isMoving = speed > 0.1f;
-
-        // (Opcional) Se tiver o parâmetro IsMoving:
-        // animator.SetBool(IS_MOVING_PARAM, isMoving);
 
         bool isWalkingLeft = false;
         bool isWalkingRight = false;
 
-        // 2. Se estiver se movendo, determinar a direção relativa
         if (isMoving)
         {
-            // Direção que o agente está se movendo
             Vector3 velocity = agent.velocity;
-            // Direção para a qual o agente está virado
             Vector3 forward = transform.forward;
-
-            // Calcula o ângulo entre a direção de movimento e a direção que está virado
-            // Usando Vector3.up como eixo (plano horizontal XZ)
             float angle = Vector3.SignedAngle(forward, velocity, Vector3.up);
 
-            // Se o ângulo é positivo, está movendo para a direita relativa
             if (angle > 0)
             {
                 isWalkingRight = true;
-                facingRight = true; // Atualiza a direção se necessário
-            }
-            // Se o ângulo é negativo (ou zero), está movendo para a esquerda relativa (ou reto)
-            else // angle <= 0
-            {
-                isWalkingLeft = true;
-                facingRight = false; // Atualiza a direção se necessário
-            }
-        }
-        else{
-            if (facingRight)
-            {
-                animator.Play("Idle_Right"); // Animação de Idle olhando para a direita
+                facingRight = true;
             }
             else
             {
-                animator.Play("Idle_Left"); // Animação de Idle olhando para a esquerda
+                isWalkingLeft = true;
+                facingRight = false;
+            }
+
+            if (isWalkingRight && !IsPlaying("IsWalkingRight"))
+            {
+                animator.Play("IsWalkingRight");
+            }
+            else if (isWalkingLeft && !IsPlaying("IsWalkingLeft"))
+            {
+                animator.Play("IsWalkingLeft");
             }
         }
-        // else: Não está se movendo, ambos os booleanos permanecem false,
-        //       o Animator deve transicionar para Idle (se configurado corretamente).
-
-        // 3. Atualizar os parâmetros do Animator
-        animator.Play("IsWalkingLeft");
-        animator.Play("IsWalkingRight");
-
-        // Debug (opcional):
-      
+        else
+        {
+            if (facingRight && !IsPlaying("Idle_Right"))
+            {
+                animator.Play("Idle_Right");
+            }
+            else if (!facingRight && !IsPlaying("Idle_Left"))
+            {
+                animator.Play("Idle_Left");
+            }
+        }
     }
-
-
-
+    private bool IsPlaying(string animationName)
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).IsName(animationName);
+    }
 }
