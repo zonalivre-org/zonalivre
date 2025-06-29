@@ -7918,7 +7918,8 @@ PrefabInstance:
       value: QTE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4482067046648608532, guid: ec3d649e4c6334f4aa004f734b5dc576, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3d649e4c6334f4aa004f734b5dc576, type: 3}

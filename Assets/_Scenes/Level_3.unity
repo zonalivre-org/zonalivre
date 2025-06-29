@@ -447,6 +447,16 @@ PrefabInstance:
       propertyPath: QTESafeZoneSizePercentage
       value: 0.38
       objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 1246363925}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: endOffset.x
+      value: 2.39
+      objectReference: {fileID: 0}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -3412,6 +3422,16 @@ PrefabInstance:
         type: 3}
       propertyPath: QTESafeZoneSizePercentage
       value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 1246363925}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: endOffset.x
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
