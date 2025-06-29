@@ -1,11 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Video;
 public class GameManager : MonoBehaviour
 {
     [Header("Save System")]
     public int levelIndex;
     public int levelToUnlock;
+
+    [Header("Cutscene")]
+    [SerializeField] private bool hasCutscene = false;
+    [SerializeField] string cutsceneFileName;
+    [SerializeField] string cutSceneTitle;
+
+    [SerializeField] private VideoPanel cutsceneVideoPanel;
+
     [Header("Time")]
     [SerializeField] private int levelTime;
 
@@ -216,8 +225,16 @@ public class GameManager : MonoBehaviour
                 else if (clockSlider.value <= 0.0001) loseText.text = "Tempo zerado!";
                 else loseText.text = "Motivo não listado! Vai resolver >:(";
             }
-        }
 
+            if (hasCutscene)
+            {
+                cutsceneVideoPanel.gameObject.SetActive(true);
+                cutsceneVideoPanel.SetVideoClip(cutsceneFileName);
+                cutsceneVideoPanel.videoTitle.text = cutSceneTitle;
+                cutsceneVideoPanel.gameObject.SetActive(true);
+                cutsceneVideoPanel.PlayVideoClip();
+            }
+        }
     }
 
     public void AddScore(int score)

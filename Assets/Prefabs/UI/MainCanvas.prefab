@@ -10062,6 +10062,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3713628354804394884}
     m_Modifications:
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Sair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 78.1
+      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -10232,16 +10242,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Sair
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 78.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10530,6 +10530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: End_Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 849480909563321500, guid: 980a831af79d4ef42b897d5aac82d238,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4304601357135870622, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -11186,6 +11191,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 413843637394039968}
     m_Modifications:
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Jogar Novamente
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 32.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -11398,21 +11418,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Jogar Novamente
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 32.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSizeMax
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11835,6 +11840,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3713628354804394884}
     m_Modifications:
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Sair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 78.1
+      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -12000,16 +12015,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Sair
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 78.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12681,6 +12686,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6898681037539627967}
     m_Modifications:
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Sair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 78.1
+      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -12822,16 +12837,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Sair
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 78.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12851,6 +12856,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6898681037539627967}
     m_Modifications:
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Jogar Novamente
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 42.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -12986,21 +13006,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Jogar Novamente
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 42.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSizeMax
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13426,6 +13431,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3713628354804394884}
     m_Modifications:
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Sair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 78.1
+      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -13591,16 +13606,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Sair
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 78.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
