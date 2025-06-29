@@ -963,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 3294039871949936851, guid: eee9d11de3f06844282df4bb07a6f62b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.52
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: eee9d11de3f06844282df4bb07a6f62b,
         type: 3}
@@ -5548,6 +5548,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelIndex: 2
   levelToUnlock: 3
+  hasCutscene: 0
+  cutsceneFileName: 
+  cutSceneTitle: 
+  cutsceneVideoPanel: {fileID: 0}
   levelTime: 300
   goal: 4
   health: 100
