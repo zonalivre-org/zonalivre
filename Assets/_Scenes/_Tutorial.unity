@@ -8428,12 +8428,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!120 &1651098271 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 6121547642471221112, guid: ec3d649e4c6334f4aa004f734b5dc576,
-    type: 3}
-  m_PrefabInstance: {fileID: 6661625888262804081}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1676737842
 GameObject:
   m_ObjectHideFlags: 0
@@ -12113,6 +12107,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6661625888262804081}
   m_PrefabAsset: {fileID: 0}
+--- !u!120 &5242443997539656843 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 4192009218165287285, guid: ec3d649e4c6334f4aa004f734b5dc576,
+    type: 3}
+  m_PrefabInstance: {fileID: 6661625888262804081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6584764719198270787 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5827063084593919240, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
@@ -12228,7 +12228,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lineRenderer
       value: 
-      objectReference: {fileID: 1651098271}
+      objectReference: {fileID: 5242443997539656843}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name

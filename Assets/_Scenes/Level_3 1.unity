@@ -447,6 +447,11 @@ PrefabInstance:
       propertyPath: QTESafeZoneSizePercentage
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 1246363925}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -3228,6 +3233,11 @@ PrefabInstance:
       propertyPath: QTESafeZoneSizePercentage
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 1246363925}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -5194,6 +5204,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelIndex: 0
   levelToUnlock: 4
+  hasCutscene: 0
+  cutsceneFileName: 
+  cutSceneTitle: 
+  cutsceneVideoPanel: {fileID: 0}
   levelTime: 300
   goal: 4
   health: 100
