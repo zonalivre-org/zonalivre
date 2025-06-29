@@ -503,8 +503,8 @@ public class DogMovement : MonoBehaviour
         //       o Animator deve transicionar para Idle (se configurado corretamente).
 
         // 3. Atualizar os parâmetros do Animator
-        animator.SetBool("IsWalkingLeft", isWalkingLeft);
-        animator.SetBool("IsWalkingRight", isWalkingRight);
+        animator.Play("IsWalkingLeft");
+        animator.Play("IsWalkingRight");
 
         // Debug (opcional):
       

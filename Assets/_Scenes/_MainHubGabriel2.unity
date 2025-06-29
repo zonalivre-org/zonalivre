@@ -60090,6 +60090,11 @@ PrefabInstance:
       propertyPath: cutSceneName
       value: "Quadrinho Edi\xE7\xE3o 3"
       objectReference: {fileID: 0}
+    - target: {fileID: 88707031827603526, guid: e00a91a454d281b469c7b0bbe57b0f9f,
+        type: 3}
+      propertyPath: cutSceneClipName
+      value: Quadrinho05.mp4
+      objectReference: {fileID: 0}
     - target: {fileID: 4851122362914046733, guid: e00a91a454d281b469c7b0bbe57b0f9f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60357,6 +60362,11 @@ PrefabInstance:
       propertyPath: cutSceneName
       value: "Quadrinho Edi\xE7\xE3o 5"
       objectReference: {fileID: 0}
+    - target: {fileID: 6442628408128902804, guid: 9386fd9fbaf32ee4984b619e3f4fda6b,
+        type: 3}
+      propertyPath: cutSceneClipName
+      value: Quadrinho07.mp4
+      objectReference: {fileID: 0}
     - target: {fileID: 9027151814104597191, guid: 9386fd9fbaf32ee4984b619e3f4fda6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60484,6 +60494,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cutSceneName
       value: "Quadrinho Edi\xE7\xE3o 2"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718122105360340809, guid: 97e4b21fd8f74e44d8ccb09dbc4aad5b,
+        type: 3}
+      propertyPath: cutSceneClipName
+      value: Quadrinho04.mp4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -60632,6 +60647,11 @@ PrefabInstance:
       propertyPath: cutSceneName
       value: "Quadrinho Edi\xE7\xE3o 4"
       objectReference: {fileID: 0}
+    - target: {fileID: 5759283048494305508, guid: cc94718e46f9c0e45b7b9e49455d8188,
+        type: 3}
+      propertyPath: cutSceneClipName
+      value: Quadrinho06.mp4
+      objectReference: {fileID: 0}
     - target: {fileID: 6240278338072682617, guid: cc94718e46f9c0e45b7b9e49455d8188,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60713,6 +60733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cutSceneName
       value: "Quadrinho Edi\xE7\xE3o 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 194026494192144866, guid: 12edb5e3411a4c14db2035b5721ac62d,
+        type: 3}
+      propertyPath: cutSceneClipName
+      value: Quadrinho03.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 1778014608938465299, guid: 12edb5e3411a4c14db2035b5721ac62d,
         type: 3}
@@ -60868,6 +60893,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cutSceneName
       value: "Quadrinho Edi\xE7\xE3o 0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459470147461751991, guid: b9a0437b8d295f144adedc3c03c4f8b7,
+        type: 3}
+      propertyPath: cutSceneClipName
+      value: Quadrinho01.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 1652462037063388361, guid: b9a0437b8d295f144adedc3c03c4f8b7,
         type: 3}

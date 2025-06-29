@@ -198,8 +198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 678.8723, y: -440}
-  m_SizeDelta: {x: 1357.7446, y: 880}
+  m_AnchoredPosition: {x: 678.8723, y: -439.81213}
+  m_SizeDelta: {x: 1357.7446, y: 879.62427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8750725302057924604
 CanvasRenderer:
@@ -1634,8 +1634,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -540}
-  m_SizeDelta: {x: 1357.7446, y: 880}
+  m_AnchoredPosition: {x: 960, y: -539.81213}
+  m_SizeDelta: {x: 1357.7446, y: 879.62427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3964974669562734353
 CanvasRenderer:
@@ -3091,7 +3091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.9999, y: -566.38464}
+  m_AnchoredPosition: {x: 959.9999, y: -664.6006}
   m_SizeDelta: {x: 1919.9998, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3621768694407440397
@@ -3628,8 +3628,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 678.8723, y: -351.46692}
-  m_SizeDelta: {x: 1357.7446, y: 702.93384}
+  m_AnchoredPosition: {x: 678.8723, y: -351.28088}
+  m_SizeDelta: {x: 1357.7446, y: 702.56177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2924594333162828920
 CanvasRenderer:
@@ -6141,8 +6141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 678.8723, y: -88.53308}
-  m_SizeDelta: {x: 1357.7446, y: 177.06616}
+  m_AnchoredPosition: {x: 678.8723, y: -88.53124}
+  m_SizeDelta: {x: 1357.7446, y: 177.06248}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2167182978093292446
 CanvasRenderer:
@@ -8054,8 +8054,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 678.8723, y: -528.5331}
-  m_SizeDelta: {x: 1357.7446, y: 702.93384}
+  m_AnchoredPosition: {x: 678.8723, y: -528.3434}
+  m_SizeDelta: {x: 1357.7446, y: 702.56177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6634581933442229075
 CanvasRenderer:
@@ -8175,7 +8175,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 678.8723, y: -88.53308}
+  m_AnchoredPosition: {x: 678.8723, y: -88.53124}
   m_SizeDelta: {x: 997.7446, y: 172.0824}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8760653807389330764
@@ -10062,16 +10062,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3713628354804394884}
     m_Modifications:
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Sair
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 78.1
-      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -10221,12 +10211,12 @@ PrefabInstance:
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 541.52234
+      value: 678.8723
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -351.46692
+      value: -351.28088
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -10242,6 +10232,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Sair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 78.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11191,21 +11191,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 413843637394039968}
     m_Modifications:
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Jogar Novamente
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 32.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSizeMax
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -11402,7 +11387,7 @@ PrefabInstance:
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -88.53308
+      value: -88.53124
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -11418,6 +11403,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Jogar Novamente
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 32.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11840,16 +11840,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3713628354804394884}
     m_Modifications:
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Sair
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 78.1
-      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -11994,12 +11984,12 @@ PrefabInstance:
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 266.82233
+      value: 404.1723
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -351.46692
+      value: -351.28088
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -12015,6 +12005,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Sair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 78.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12686,16 +12686,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6898681037539627967}
     m_Modifications:
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Sair
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 78.1
-      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -12837,6 +12827,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Sair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 78.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12856,21 +12856,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6898681037539627967}
     m_Modifications:
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Jogar Novamente
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 42.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSizeMax
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -13006,6 +12991,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Jogar Novamente
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 42.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13431,16 +13431,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3713628354804394884}
     m_Modifications:
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_text
-      value: Sair
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 78.1
-      objectReference: {fileID: 0}
     - target: {fileID: 835462437880978459, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_Sprite
@@ -13585,12 +13575,12 @@ PrefabInstance:
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 816.2223
+      value: 953.57227
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -351.46692
+      value: -351.28088
       objectReference: {fileID: 0}
     - target: {fileID: 5208552659896611997, guid: 980a831af79d4ef42b897d5aac82d238,
         type: 3}
@@ -13606,6 +13596,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_text
+      value: Sair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724893845530678899, guid: 3952fa1b3b3f57647ad5d52e6df372db,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 78.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

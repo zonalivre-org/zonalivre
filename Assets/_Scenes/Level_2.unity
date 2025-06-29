@@ -581,6 +581,11 @@ PrefabInstance:
       propertyPath: objectToActivate.Array.data[0]
       value: 
       objectReference: {fileID: 442513594}
+    - target: {fileID: 1146779077994948225, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3248739765597737770, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -630,6 +635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032718004271547964, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
@@ -752,6 +762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483182275909858374, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2519537303724398963, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
@@ -963,7 +978,7 @@ PrefabInstance:
     - target: {fileID: 3294039871949936851, guid: eee9d11de3f06844282df4bb07a6f62b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.99
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: eee9d11de3f06844282df4bb07a6f62b,
         type: 3}
@@ -2068,6 +2083,11 @@ PrefabInstance:
       propertyPath: coolDownBetweenMangos
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1146779077994948225, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3248739765597737770, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2117,6 +2137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032718004271547964, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
@@ -4771,6 +4796,11 @@ PrefabInstance:
       propertyPath: objectToActivate.Array.data[0]
       value: 
       objectReference: {fileID: 265894310}
+    - target: {fileID: 1146779077994948225, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3248739765597737770, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4820,6 +4850,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032718004271547964, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
@@ -5416,6 +5451,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelIndex: 2
   levelToUnlock: 3
+  hasCutscene: 0
+  cutsceneFileName: 
+  cutSceneTitle: 
+  cutsceneVideoPanel: {fileID: 0}
   levelTime: 300
   goal: 4
   health: 100

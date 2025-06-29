@@ -827,6 +827,11 @@ PrefabInstance:
       propertyPath: averageTimeToComplete
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7903710443702573258, guid: 66284f7fe76415f43849e34ef749a435,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8094892872188300386, guid: 66284f7fe76415f43849e34ef749a435,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1019,7 +1024,7 @@ PrefabInstance:
     - target: {fileID: 3294039871949936851, guid: eee9d11de3f06844282df4bb07a6f62b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.59
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: eee9d11de3f06844282df4bb07a6f62b,
         type: 3}
@@ -2139,6 +2144,11 @@ PrefabInstance:
       propertyPath: coolDownBetweenMangos
       value: 0.66
       objectReference: {fileID: 0}
+    - target: {fileID: 1146779077994948225, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3248739765597737770, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2188,6 +2198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032718004271547964, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
@@ -3296,6 +3311,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603030001}
     m_Modifications:
+    - target: {fileID: 1126218417600954610, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9848078
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126218417600954610, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.17364816
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126218417600954610, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5065730365246612623, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3304,12 +3334,12 @@ PrefabInstance:
     - target: {fileID: 5065730365246612623, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 5065730365246612623, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.9
+      value: 3.13
       objectReference: {fileID: 0}
     - target: {fileID: 5065730365246612623, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
@@ -3375,6 +3405,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: QTE (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581235597612744998, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9848078
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581235597612744998, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.17364816
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581235597612744998, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8860113627281676813, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
@@ -4944,6 +4989,11 @@ PrefabInstance:
       propertyPath: coolDownBetweenMangos
       value: 0.54
       objectReference: {fileID: 0}
+    - target: {fileID: 1146779077994948225, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3248739765597737770, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4993,6 +5043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032718004271547964, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5335297561532913243, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
@@ -5491,6 +5546,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelIndex: 0
   levelToUnlock: 0
+  hasCutscene: 0
+  cutsceneFileName: 
+  cutSceneTitle: 
+  cutsceneVideoPanel: {fileID: 0}
   levelTime: 300
   goal: 4
   health: 100
@@ -5712,6 +5771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: averageTimeToComplete
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903710443702573258, guid: 66284f7fe76415f43849e34ef749a435,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8094892872188300386, guid: 66284f7fe76415f43849e34ef749a435,
         type: 3}
@@ -8562,8 +8626,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8158994104286677519, guid: 91006cddf4c71a2159e66e38aeb02b91,
         type: 3}
+      propertyPath: m_Extents.x
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158994104286677519, guid: 91006cddf4c71a2159e66e38aeb02b91,
+        type: 3}
       propertyPath: m_Extents.z
-      value: 2.635
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

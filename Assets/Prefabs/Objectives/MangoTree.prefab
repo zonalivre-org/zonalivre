@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 254916706, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -271,8 +271,7 @@ MonoBehaviour:
   minigame: {fileID: 0}
   idCheck: 0
   idGive: 0
-  objectToActivate:
-  - {fileID: 0}
+  objectToActivate: []
   deactivateItself: 0
   objectiveCompleteSprite: {fileID: 301996107281187099}
   objectiveToDeactivate: {fileID: 9152493385670463514}
@@ -434,7 +433,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 254916706, guid: 7c759875468ebb543b7c24f2d2661b31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -497,12 +496,12 @@ PrefabInstance:
     - target: {fileID: 3589370232137959794, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.3
+      value: 19.25
       objectReference: {fileID: 0}
     - target: {fileID: 3589370232137959794, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 11.43
       objectReference: {fileID: 0}
     - target: {fileID: 3589370232137959794, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
@@ -553,6 +552,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.013602972
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872955715322994447, guid: 87efd9fad480bea4bb223a1d2f506b07,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4309151851779775125, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}

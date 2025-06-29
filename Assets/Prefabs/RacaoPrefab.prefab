@@ -424,6 +424,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.19339621
       objectReference: {fileID: 0}
+    - target: {fileID: 3872955715322994447, guid: 87efd9fad480bea4bb223a1d2f506b07,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4309151851779775125, guid: 87efd9fad480bea4bb223a1d2f506b07,
         type: 3}
       propertyPath: offSet
