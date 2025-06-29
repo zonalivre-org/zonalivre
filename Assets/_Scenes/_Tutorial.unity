@@ -919,8 +919,13 @@ PrefabInstance:
       objectReference: {fileID: 8414564}
     - target: {fileID: 2857122773060904390, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
-      propertyPath: m_ApplyRootMotion
+      propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857122773060904390, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4538625637960168167, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
@@ -975,7 +980,7 @@ PrefabInstance:
     - target: {fileID: 5791069640016345649, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6800446877263688219, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
@@ -5854,19 +5859,13 @@ MonoBehaviour:
       pode come\xE7ar a jogar de verdade. Sempre que quiser, o tutorial poder\xE1
       ser repetido na sele\xE7\xE3o de n\xEDveis. Feche essa janela para come\xE7ar
       a jogar."
-    videoFileName: HappyDog.mp4
+    videoFileName: WalkingVet.mp4
   - title: 15 Close the tutorial
     description: 
     videoFileName: 
   replayIndex: 0
   replayEndIndex: 0
   isReplaying: 0
---- !u!1 &1176440310 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5400176761819116397, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 2496538277273570598}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1178560553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1856765457208144513, guid: 10a2d03414f8e0ab89eab431a6528bd8,
@@ -7522,10 +7521,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelIndex: 0
   levelToUnlock: 1
-  hasCutscene: 0
+  hasCutscene: 1
   cutsceneFileName: HelpButton.mp4
   cutSceneTitle: Titulo do video
   cutsceneVideoPanel: {fileID: 413356206}
+  cutsceneIndex: 1
   levelTime: 120
   goal: 4
   health: 100
@@ -7542,7 +7542,7 @@ MonoBehaviour:
   staminaFillImage: {fileID: 1014428311318274669}
   happynessSlider: {fileID: 8609196952459259760}
   happynessFillImage: {fileID: 6780863035480173686}
-  resultUI: {fileID: 1176440310}
+  resultUI: {fileID: 0}
   resultText: {fileID: 6584764719198270787}
   loseText: {fileID: 838776599}
   playerMovement: {fileID: 2249948526550260760}
@@ -10871,7 +10871,7 @@ PrefabInstance:
     - target: {fileID: 1171864725942429387, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1188918146292186302, guid: 0b32c6bc6404f7546902f423c5e6c7ae,
         type: 3}

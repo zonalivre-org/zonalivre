@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool hasCutscene = false;
     [SerializeField] string cutsceneFileName;
     [SerializeField] string cutSceneTitle;
-
     [SerializeField] private VideoPanel cutsceneVideoPanel;
+    [SerializeField] private int cutsceneIndex;
 
     [Header("Time")]
     [SerializeField] private int levelTime;
@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
     private int win = 0; // Player starts the game in a neutral state. +1 = they win. -1 = they lose.
     public bool isMinigameActive = false;
     [HideInInspector] public bool timeCount = true;
+    private bool ended = false;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -150,7 +152,11 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            UpdateUI();
+            if (ended == false)
+            {
+                UpdateUI();
+            }
+            
         }
     }
 
@@ -187,6 +193,7 @@ public class GameManager : MonoBehaviour
 
     private void ShowResultPanel(int state)
     {
+        ended = true;
         if (resultUI != null)
         {
             Time.timeScale = 0f;
@@ -202,17 +209,6 @@ public class GameManager : MonoBehaviour
             if (state > 0)
             {
                 resultText.text = "Parabéns! Você venceu!";
-
-                if (SaveManager.Instance != null)
-                {
-                    SaveManager.Instance.SetLevelCompletion(levelIndex, true);
-                    SaveManager.Instance.SetCutSceneLock(levelToUnlock, true);
-                    SaveManager.Instance.SetLevelLock(levelToUnlock, true);
-                }
-                else
-                {
-                    Debug.LogWarning("SaveManager is not present in the scene, cannot save game progress.");
-                }
             }
 
             else if (state < 0)
@@ -225,15 +221,16 @@ public class GameManager : MonoBehaviour
                 else if (clockSlider.value <= 0.0001) loseText.text = "Tempo zerado!";
                 else loseText.text = "Motivo não listado! Vai resolver >:(";
             }
+        }
 
-            if (hasCutscene)
-            {
-                cutsceneVideoPanel.gameObject.SetActive(true);
-                cutsceneVideoPanel.SetVideoClip(cutsceneFileName);
-                cutsceneVideoPanel.videoTitle.text = cutSceneTitle;
-                cutsceneVideoPanel.gameObject.SetActive(true);
-                cutsceneVideoPanel.PlayVideoClip();
-            }
+        if (hasCutscene)
+        {
+            cutsceneVideoPanel.gameObject.SetActive(true);
+            cutsceneVideoPanel.SetVideoClip(cutsceneFileName);
+            cutsceneVideoPanel.videoTitle.text = cutSceneTitle;
+            cutsceneVideoPanel.cutSceneIndex = cutsceneIndex;
+            cutsceneVideoPanel.gameObject.SetActive(true);
+            cutsceneVideoPanel.PlayVideoClip();
         }
     }
 

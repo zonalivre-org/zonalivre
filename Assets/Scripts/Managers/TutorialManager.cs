@@ -210,7 +210,8 @@ public class TutorialManager : MonoBehaviour
                     currentStep++;
                     ShowPopUp(14);
                     SetPupUpReplay(13, 14);
-                    
+
+                    gameManager.CompleteLevel();
                     SaveManager.Instance.SetLevelCompletion(gameManager.levelIndex, true);
                     SaveManager.Instance.SetCutSceneLock(gameManager.levelToUnlock, true);
                     SaveManager.Instance.SetLevelLock(gameManager.levelToUnlock, true);

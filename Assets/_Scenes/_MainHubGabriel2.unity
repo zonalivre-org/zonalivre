@@ -60726,6 +60726,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 194026494192144866, guid: 12edb5e3411a4c14db2035b5721ac62d,
         type: 3}
+      propertyPath: levelIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 194026494192144866, guid: 12edb5e3411a4c14db2035b5721ac62d,
+        type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1535675333}
