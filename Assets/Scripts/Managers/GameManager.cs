@@ -71,6 +71,32 @@ public class GameManager : MonoBehaviour
         wishHealthMultiplier = healthMultiplier;
         wishStaminaMultiplier = staminaMultiplier;
         wishHappynessMultiplier = happynessMultiplier;
+
+        switch (levelIndex)
+        {
+            case 0:
+                AudioManager.Instance.PlayMusicWithFade(2, 2f);
+                break;
+            case 1:
+                AudioManager.Instance.PlayMusicWithFade(3, 2f);
+                break;
+            case 2:
+                AudioManager.Instance.PlayMusicWithFade(4, 2f);
+                break;
+            case 3:
+                AudioManager.Instance.PlayMusicWithFade(5, 2f);
+                break;
+            case 4:
+                AudioManager.Instance.PlayMusicWithFade(6, 2f);
+                break;
+            case 5:
+                AudioManager.Instance.PlayMusicWithFade(7, 2f);
+                break;
+            default:
+                AudioManager.Instance.PlayMusicWithFade(7, 2f);
+                break;
+
+        }
     }
     void Start()
     {

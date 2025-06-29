@@ -120,7 +120,6 @@ public class HUBManager : MonoBehaviour
 
     public void StartCurrentLevel()
     {
-        changeScene.ChangeToSceneMusic(currentLevelIndex + 2);
         changeScene.LoadSceneDelay(currentLevelIndex + 2);
     }
 
