@@ -647,6 +647,11 @@ PrefabInstance:
       propertyPath: waypointsParent
       value: 
       objectReference: {fileID: 1787970244}
+    - target: {fileID: 7119006866852938028, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8632568341955832663, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
       propertyPath: m_Camera
@@ -7498,6 +7503,7 @@ MonoBehaviour:
   cutsceneFileName: Quadrinho08.mp4
   cutSceneTitle: A Zona Livre
   cutsceneVideoPanel: {fileID: 241493683}
+  cutsceneIndex: 0
   levelTime: 300
   goal: 4
   health: 100

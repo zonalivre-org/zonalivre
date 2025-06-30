@@ -5753,8 +5753,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneVideoPanel: {fileID: 413356206}
-  cutsceneFileName: WalkingVet.mp4
-  cutSceneTitle: AAAAAAAAAAA
+  cutsceneFileName: Quadrinho02.mp4
+  cutSceneTitle: "Quadrinho Edi\xE7\xE3o 0"
   cutsceneIndex: 1
   gameManager: {fileID: 1478815602}
   pauseMenu: {fileID: 1360116831}
