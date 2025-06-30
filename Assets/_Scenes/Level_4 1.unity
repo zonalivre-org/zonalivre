@@ -1812,6 +1812,11 @@ PrefabInstance:
       propertyPath: QTESafeZoneSizePercentage
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 1246363925}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -2444,6 +2449,11 @@ PrefabInstance:
       propertyPath: QTESafeZoneSizePercentage
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 1246363925}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -2502,6 +2512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: coolDownBetweenMangos
       value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: objectToActivate.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}
@@ -2616,8 +2631,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1348718222}
-  - {fileID: 554021424}
   - {fileID: 265894309}
+  - {fileID: 554021424}
   - {fileID: 830073953}
   - {fileID: 516659817}
   - {fileID: 919373497}
@@ -3056,6 +3071,11 @@ PrefabInstance:
       propertyPath: QTESafeZoneSizePercentage
       value: 0.18
       objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 1246363925}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -3175,6 +3195,11 @@ PrefabInstance:
       propertyPath: QTESafeZoneSizePercentage
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6335610618050940141, guid: ec3d649e4c6334f4aa004f734b5dc576,
+        type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 1246363925}
     - target: {fileID: 8530999463294988104, guid: ec3d649e4c6334f4aa004f734b5dc576,
         type: 3}
       propertyPath: m_Name
@@ -4794,6 +4819,11 @@ PrefabInstance:
         type: 3}
       propertyPath: coolDownBetweenMangos
       value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
+        type: 3}
+      propertyPath: objectToActivate.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 367461295766270339, guid: c12e41d12d0271f48a91f4f73e7fb00f,
         type: 3}

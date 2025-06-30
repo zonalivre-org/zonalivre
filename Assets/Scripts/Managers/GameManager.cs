@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
     {
         ended = true;
 
-        if (hasCutscene && SceneManager.GetActiveScene().buildIndex != 2)
+        if (hasCutscene && SceneManager.GetActiveScene().buildIndex != 2 && state > 0)
         {
             cutsceneVideoPanel.gameObject.SetActive(true);
             cutsceneVideoPanel.SetVideoClip(cutsceneFileName);
