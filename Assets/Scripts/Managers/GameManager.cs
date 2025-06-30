@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
     [Header("Save System")]
@@ -156,7 +158,7 @@ public class GameManager : MonoBehaviour
             {
                 UpdateUI();
             }
-            
+
         }
     }
 
@@ -194,24 +196,36 @@ public class GameManager : MonoBehaviour
     private void ShowResultPanel(int state)
     {
         ended = true;
-        if (resultUI != null)
+
+        if (hasCutscene && SceneManager.GetActiveScene().buildIndex != 2)
         {
-            Time.timeScale = 0f;
-            if (state != 0)
-            {
-                enablecountdown = false;
-                playerMovement.ToggleMovement(false);
-                petMovement.SetAutonomousMovement(false);
-                resultUI.SetActive(true);
-            }
-            else Debug.Log("The results panel was called but the players hasn't won or lost yet!");
+            cutsceneVideoPanel.gameObject.SetActive(true);
+            cutsceneVideoPanel.SetVideoClip(cutsceneFileName);
+            cutsceneVideoPanel.videoTitle.text = cutSceneTitle;
+            cutsceneVideoPanel.cutSceneIndex = cutsceneIndex;
+            cutsceneVideoPanel.gameObject.SetActive(true);
+            cutsceneVideoPanel.PlayVideoClip();
+        }
 
-            if (state > 0)
-            {
-                resultText.text = "Parabéns! Você venceu!";
-            }
+        if (SceneManager.GetActiveScene().buildIndex != 2) Time.timeScale = 0f;
 
-            else if (state < 0)
+        if (state != 0)
+        {
+            enablecountdown = false;
+            playerMovement.ToggleMovement(false);
+            petMovement.SetAutonomousMovement(false);
+            if (resultUI != null && SceneManager.GetActiveScene().buildIndex != 2) resultUI.SetActive(true);
+        }
+        else Debug.Log("The results panel was called but the players hasn't won or lost yet!");
+
+        if (state > 0)
+        {
+            if (resultUI != null) resultText.text = "Parabéns! Você venceu!";
+        }
+
+        else if (state < 0)
+        {
+            if (resultUI != null)
             {
                 loseText.gameObject.SetActive(true);
                 resultText.text = "Oh não! Voce perdeu!";
@@ -221,16 +235,6 @@ public class GameManager : MonoBehaviour
                 else if (clockSlider.value <= 0.0001) loseText.text = "Tempo zerado!";
                 else loseText.text = "Motivo não listado! Vai resolver >:(";
             }
-        }
-
-        if (hasCutscene)
-        {
-            cutsceneVideoPanel.gameObject.SetActive(true);
-            cutsceneVideoPanel.SetVideoClip(cutsceneFileName);
-            cutsceneVideoPanel.videoTitle.text = cutSceneTitle;
-            cutsceneVideoPanel.cutSceneIndex = cutsceneIndex;
-            cutsceneVideoPanel.gameObject.SetActive(true);
-            cutsceneVideoPanel.PlayVideoClip();
         }
     }
 

@@ -1,8 +1,15 @@
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
+    [Header("Cutscene Settings")]
+    [SerializeField] private VideoPanel cutsceneVideoPanel;
+    [SerializeField] private string cutsceneFileName;
+    [SerializeField] private string cutSceneTitle;
+    [SerializeField] private int cutsceneIndex;
     #region References
     [SerializeField] private GameManager gameManager;
     [SerializeField] private PauseMenu pauseMenu;
@@ -17,6 +24,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject[] minigameIndicators;
     [SerializeField] private GameObject[] petItems;
     [SerializeField] private GameObject[] statusIcons;
+    private bool skip = false; // Used to skip the tutorial in case of testing or debugging
     #endregion
 
     #region Tutorial Variables
@@ -205,16 +213,25 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case 14: // Finalmente acabou
-                if (CheckCompleteMinigames())
+                if (CheckCompleteMinigames() || skip == true)
                 {
                     currentStep++;
                     ShowPopUp(14);
                     SetPupUpReplay(13, 14);
 
-                    gameManager.CompleteLevel();
                     SaveManager.Instance.SetLevelCompletion(gameManager.levelIndex, true);
                     SaveManager.Instance.SetCutSceneLock(gameManager.levelToUnlock, true);
                     SaveManager.Instance.SetLevelLock(gameManager.levelToUnlock, true);
+
+                    cutsceneVideoPanel.SetVideoClip(cutsceneFileName);
+                    cutsceneVideoPanel.videoTitle.text = cutSceneTitle;
+                    cutsceneVideoPanel.cutSceneIndex = cutsceneIndex;
+                    cutsceneVideoPanel.gameObject.SetActive(true);
+                    cutsceneVideoPanel.PlayVideoClip();
+
+                    Time.timeScale = 1f; // Pause the game during the cutscene
+
+                    Debug.Log(Time.timeScale+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
                 }
                 break;
             case 15: // Close tutorial
@@ -260,7 +277,7 @@ public class TutorialManager : MonoBehaviour
         {
             return;
         }
-        
+
         else
         {
             isReplaying = true;
@@ -350,5 +367,13 @@ public class TutorialManager : MonoBehaviour
         }
         return minigameCount == taskManager.GetTaskListItems().Count;
     }
+
+    public void CompleteTutorial()
+    {
+        skip = true; // Set skip to true to bypass the tutorial steps
+        currentStep = 14; // Set to the last step to close the tutorial
+        popUpsClosed = 14; // Simulate all pop-ups closed
+    }
+
     #endregion
 }
