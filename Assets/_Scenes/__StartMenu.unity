@@ -10427,9 +10427,9 @@ MonoBehaviour:
     \r\nVictor Diniz\n\r\n<i><color=#CCCCCC>Montagem dos cen\xE1rios</color></i> 
     \r\nGabriel Victor\n\r\n<i><color=#CCCCCC>Sprites de personagem/pet</color></i> 
     \r\nCaio Ribeiro\r\n\r\n<i><color=#CCCCCC>Anima\xE7\xF5es de personagem/pet</color></i> 
-    \r\nGabriel Logan\r e Caio Ribeiro\n\r\n<b><size=80><color=yellow>INTERFACE E
+    \r\nGabriel Logan\r\nCaio Ribeiro\n\r\n<b><size=80><color=yellow>INTERFACE E
     HUD</color></size></b>\r\n\r\n<i><color=#CCCCCC>Planejamento e design da interface
-    e HUD</color></i>  \r\nGabriel Logan e Caio Ribeiro\r\n\r\n<i><color=#CCCCCC>Arte
+    e HUD</color></i>  \r\nGabriel Logan\nCaio Ribeiro\r\n\r\n<i><color=#CCCCCC>Arte
     da interface</color></i>  \r\nCaio Ribeiro\r\n\r\n<i><color=#CCCCCC>Anima\xE7\xF5es
     e funcionalidades da interface</color></i>  \r\nGabriel Logan\r\n\r\n<b><size=80><color=yellow>SOM</color></size></b>\r\n\r\n<i><color=#CCCCCC>Implementa\xE7\xE3o
     de \xE1udio</color></i>  \r\nGabriel Logan\r\n\n<i><color=#CCCCCC>Creditos para
@@ -10439,7 +10439,8 @@ MonoBehaviour:
     Gabriel Victor\n- Amanda: Ana Alice Pompilia Soares\n- Roberto: Caio Ribeiro\n-
     Gessica: Grazielli Ferreira Costa\n- Kauan: Arthur Daniel da Costa\n- Fabricio:
     Caio Ribeiro\n- Mariana: Ana Clara Batista Ferreira\n\nQuadrinhos:\n- Desenhista:
-    Caio Ribeiro\n- Edi\xE7\xE3o:\_Gabriel\_Victor\n"
+    Caio Ribeiro\n- Edi\xE7\xE3o:\_Gabriel\_Victor\n\n<b><size=80><color=yellow>PARCEIROS</color></size></b>\r\nDiogo
+    Joffily\nAna Alice Jardim\nLucas Hon\xF3rio"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8df45a845750504d8a2795fbd22b608, type: 2}
   m_sharedMaterial: {fileID: -7351501579672171409, guid: c8df45a845750504d8a2795fbd22b608,
