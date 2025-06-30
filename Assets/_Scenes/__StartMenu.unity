@@ -10392,8 +10392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 458.5595, y: -1960.885}
-  m_SizeDelta: {x: 906.177, y: 3921.77}
+  m_AnchoredPosition: {x: 458.5595, y: -2581.845}
+  m_SizeDelta: {x: 906.177, y: 5163.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893264484
 MonoBehaviour:
@@ -10434,7 +10434,12 @@ MonoBehaviour:
     e funcionalidades da interface</color></i>  \r\nGabriel Logan\r\n\r\n<b><size=80><color=yellow>SOM</color></size></b>\r\n\r\n<i><color=#CCCCCC>Implementa\xE7\xE3o
     de \xE1udio</color></i>  \r\nGabriel Logan\r\n\n<i><color=#CCCCCC>Creditos para
     sons de terceiros</color></i>  \r\nRUSTED MUSIC STUDIO \nVOiD1 Gaming\nCyrex
-    Studios\nPixabay\n"
+    Studios\nPixabay\n\n<b><size=80><color=yellow>QUADRINHOS ANIMADOS</color></size></b>\r\n\nDire\xE7\xE3o
+    de Dublagem\n- Caio Ribeiro\n\nDublagem\n- Pedrinho: Caio Ribeiro\n- Doutor Diego:
+    Gabriel Victor\n- Amanda: Ana Alice Pompilia Soares\n- Roberto: Caio Ribeiro\n-
+    Gessica: Grazielli Ferreira Costa\n- Kauan: Arthur Daniel da Costa\n- Fabricio:
+    Caio Ribeiro\n- Mariana: Ana Clara Batista Ferreira\n\nQuadrinhos:\n- Desenhista:
+    Caio Ribeiro\n- Edi\xE7\xE3o:\_Gabriel\_Victor\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8df45a845750504d8a2795fbd22b608, type: 2}
   m_sharedMaterial: {fileID: -7351501579672171409, guid: c8df45a845750504d8a2795fbd22b608,
@@ -12100,7 +12105,7 @@ PrefabInstance:
     - target: {fileID: 5165763282215602092, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.81644386
+      value: 0.86059093
       objectReference: {fileID: 0}
     - target: {fileID: 5885161423858798954, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
@@ -12125,7 +12130,7 @@ PrefabInstance:
     - target: {fileID: 5905583128144990382, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 3921.77
+      value: 5163.69
       objectReference: {fileID: 0}
     - target: {fileID: 5905583128144990382, guid: ededea37bcfe79f4bb57436ef402bf05,
         type: 3}
