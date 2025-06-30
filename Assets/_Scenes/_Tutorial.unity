@@ -920,7 +920,7 @@ PrefabInstance:
     - target: {fileID: 2857122773060904390, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2857122773060904390, guid: b869ed52a4019c49da527a2b1dfd5810,
         type: 3}
@@ -992,6 +992,11 @@ PrefabInstance:
       propertyPath: waypointsParent
       value: 
       objectReference: {fileID: 1787970244}
+    - target: {fileID: 7119006866852938028, guid: b869ed52a4019c49da527a2b1dfd5810,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
