@@ -59869,6 +59869,11 @@ PrefabInstance:
       propertyPath: clickEffect
       value: 
       objectReference: {fileID: 1259817721}
+    - target: {fileID: 1593401229998057448, guid: a34a15568408c8b40b88ad6c032eeb3f,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9180198397822702310, guid: a34a15568408c8b40b88ad6c032eeb3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60230,6 +60235,11 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 183811912}
+    - target: {fileID: 6938464935649458542, guid: 3129abaeaf1e8d64eaee278c7b6fe8ac,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8452307851320939285, guid: 3129abaeaf1e8d64eaee278c7b6fe8ac,
         type: 3}
       propertyPath: m_Camera
